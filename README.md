@@ -15,10 +15,9 @@ Tea-Rek'z is a modern boba tea shop serving the Fremont community with delicious
 ### Hours & Location
 
 - **Hours:**
-  - Monday-Friday: 10am - 8pm
-  - Saturday-Sunday: 10am - 9pm
-- **Address:** [PLACEHOLDER ADDRESS]
-- **Phone:** [PLACEHOLDER PHONE]
+  - Daily: 10am - 9pm
+- **Address:** 37390 Niles Blvd, Fremont, CA 94536
+- **Phone:** (510) 793-8161
 
 ## Website Technical Details
 
@@ -89,15 +88,16 @@ tearekz.cafe/
 └── package.json      # Dependencies and scripts
 ```
 
-## Customization
+## Configuration
 
-Key branding placeholders to update:
+Key configuration files:
 
-- `src/config/business.ts` - Business name, address, phone, hours
-- `src/config/colors.ts` - Brand colors (currently teal/tea-themed)
-- `src/config/social.ts` - Social media links
-- `public/images/logos/` - Add Tea-Rek'z logo images
-- `public/favicon.ico` - Add Tea-Rek'z favicon
+- `src/config/business.ts` - Business information, address, phone, hours
+- `src/config/analytics.ts` - Google Analytics tracking ID
+- `src/config/verification.ts` - Facebook domain verification
+- `src/config/colors.ts` - Brand colors (teal/tea-themed)
+- `src/config/social.ts` - Social media links (Facebook, Instagram, Yelp, Google Business)
+- `src/config/orderingPartners.ts` - Online ordering links (Toast, DoorDash)
 
 ## License
 
