@@ -1,0 +1,82 @@
+.page {
+  min-height: 68vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem 2rem;
+  margin: 0;
+  background:
+    linear-gradient(var(--hero-bg-overlay), var(--hero-bg-overlay)),
+    url('/images/tearekz_shop.jpg') center/cover no-repeat;
+  background-position: center -280px;
+}
+
+.hero {
+  max-width: 800px;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 2.75rem;
+  color: var(--text-color);
+  margin-bottom: 0.5rem;
+  text-shadow: 0 2px 8px var(--hero-text-shadow);
+  font-weight: 800;
+}
+
+.tagline {
+  font-size: 1.25rem;
+  color: var(--text-color);
+  margin-bottom: 0.75rem;
+  line-height: 1.5;
+  text-shadow: 0 2px 6px var(--hero-text-shadow);
+  font-weight: 600;
+}
+
+.cta {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.button {
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.2s;
+  box-shadow: 0 3px 8px var(--box-shadow);
+  text-shadow: 0 1px 3px var(--hero-text-shadow);
+}
+
+.button:hover {
+  background-color: var(--button-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px var(--box-shadow-hover);
+}
+
+@media (max-width: 768px) {
+  .page {
+    padding: 2rem 1rem;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .tagline {
+    font-size: 1.2rem;
+  }
+
+  .cta {
+    flex-direction: column;
+  }
+
+  .button {
+    width: 100%;
+    text-align: center;
+  }
+}

@@ -1,0 +1,1 @@
+export const GOOGLE_ANALYTICS_ID = '[PLACEHOLDER_GA_ID]';

@@ -1,0 +1,33 @@
+.page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+}
+
+.page h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.contactInfo {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.contactInfo section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--button-bg);
+}
+
+.contactInfo a {
+  color: var(--link-text);
+  text-decoration: underline;
+}
+
+.contactInfo a:hover {
+  color: var(--button-bg);
+}
