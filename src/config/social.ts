@@ -7,6 +7,7 @@ import {
   faYelp,
   faYoutube,
 } from '@fortawesome/free-brands-svg-icons';
+import { faHouse } from '@fortawesome/free-solid-svg-icons';
 
 interface SocialMediaLink {
   url: string;
@@ -39,5 +40,11 @@ export const SOCIAL_MEDIA: Record<string, SocialMediaLink> = {
     label: 'Google Business',
     icon: faGoogle,
     title: 'Find us on Google Business',
+  },
+  nextdoor: {
+    url: 'https://nextdoor.com/page/tea-rekz/',
+    label: 'Nextdoor',
+    icon: faHouse,
+    title: 'Connect with us on Nextdoor',
   },
 } as const;
