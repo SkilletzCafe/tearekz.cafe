@@ -26,15 +26,26 @@ export const BUSINESS = {
     email: 'hello@tearekz.cafe',
   },
   hours: {
-    weekday: {
-      days: 'Daily',
-      open: '10am',
-      close: '9pm',
+    mondayToWednesday: {
+      days: 'Monday - Wednesday',
+      dayList: ['Monday', 'Tuesday', 'Wednesday'],
+      open: '12:00',
+      close: '20:00',
+      display: '12pm - 8pm',
+    },
+    thursdayFriday: {
+      days: 'Thursday - Friday',
+      dayList: ['Thursday', 'Friday'],
+      open: '12:00',
+      close: '21:00',
+      display: '12pm - 9pm',
     },
     weekend: {
-      days: 'Daily',
-      open: '10am',
-      close: '9pm',
+      days: 'Saturday - Sunday',
+      dayList: ['Saturday', 'Sunday'],
+      open: '10:00',
+      close: '21:00',
+      display: '10am - 9pm',
     },
   },
 } as const;

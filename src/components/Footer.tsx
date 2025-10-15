@@ -35,8 +35,11 @@ export default function Footer() {
               {FULL_ADDRESS}
             </a>
             <br />
-            {BUSINESS.hours.weekday.days}: {BUSINESS.hours.weekday.open} -{' '}
-            {BUSINESS.hours.weekday.close}
+            {BUSINESS.hours.mondayToWednesday.days}: {BUSINESS.hours.mondayToWednesday.display}
+            <br />
+            {BUSINESS.hours.thursdayFriday.days}: {BUSINESS.hours.thursdayFriday.display}
+            <br />
+            {BUSINESS.hours.weekend.days}: {BUSINESS.hours.weekend.display}
           </p>
         </div>
 

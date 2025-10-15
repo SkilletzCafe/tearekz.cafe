@@ -90,10 +90,9 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
             <div className={styles.infoItem}>
               <FontAwesomeIcon icon={faClock} />
               <div>
-                <p>{BUSINESS.hours.weekday.days}</p>
-                <p>
-                  {BUSINESS.hours.weekday.open} - {BUSINESS.hours.weekday.close}
-                </p>
+                <p>{BUSINESS.hours.mondayToWednesday.days}: {BUSINESS.hours.mondayToWednesday.display}</p>
+                <p>{BUSINESS.hours.thursdayFriday.days}: {BUSINESS.hours.thursdayFriday.display}</p>
+                <p>{BUSINESS.hours.weekend.days}: {BUSINESS.hours.weekend.display}</p>
               </div>
             </div>
 

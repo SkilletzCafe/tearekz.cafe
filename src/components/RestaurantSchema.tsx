@@ -28,13 +28,19 @@ export const RestaurantSchema = ({ description }: RestaurantSchemaProps) => {
     openingHoursSpecification: [
       {
         '@type': 'OpeningHoursSpecification',
-        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-        opens: BUSINESS.hours.weekday.open,
-        closes: BUSINESS.hours.weekday.close,
+        dayOfWeek: BUSINESS.hours.mondayToWednesday.dayList,
+        opens: BUSINESS.hours.mondayToWednesday.open,
+        closes: BUSINESS.hours.mondayToWednesday.close,
       },
       {
         '@type': 'OpeningHoursSpecification',
-        dayOfWeek: ['Saturday', 'Sunday'],
+        dayOfWeek: BUSINESS.hours.thursdayFriday.dayList,
+        opens: BUSINESS.hours.thursdayFriday.open,
+        closes: BUSINESS.hours.thursdayFriday.close,
+      },
+      {
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: BUSINESS.hours.weekend.dayList,
         opens: BUSINESS.hours.weekend.open,
         closes: BUSINESS.hours.weekend.close,
       },
