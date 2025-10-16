@@ -10,6 +10,8 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "prepare": "husky install",
+    "precommit": "lint-staged",
+    "husky:setup": "husky install && (test -f .husky/pre-commit && echo 'pre-commit hook already exists' || husky add .husky/pre-commit 'npx lint-staged')",
     "menu:process": "tsx src/scripts/menu/process-menu.ts",
     "menu:images": "tsx src/scripts/menu/generate_image_mappings.ts"
   },

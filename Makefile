@@ -8,13 +8,21 @@ BUILD_DIR := docs
 install:
 	npm install
 
+## husky - initialize husky and set up git hooks
+husky:
+	npm run husky:setup
+
+## precommit - run pre-commit checks (lint-staged)
+precommit:
+	npm run precommit
+
 ## dev - starts the Next.js development server on port 3000
 dev: install
 	npm run dev
 
 ## run - run the Next.js app server
 run: install
-	npm run build && npm start
+	npm run build && npm run start
 
 ## clean - clean previous builds
 clean:
