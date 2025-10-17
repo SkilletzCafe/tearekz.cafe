@@ -17,7 +17,7 @@ export const ORDERING_PARTNERS: OrderingPartner[] = [
   {
     key: 'doordash',
     label: 'Order Delivery (DoorDash)',
-    url: 'https://www.doordash.com/store/tea-reks-by-skilletz-fremont-36102661/80646757/',
+    url: 'https://www.doordash.com/store/tea-rek\'z-fremont-36102661/80646757/',
     type: 'delivery',
     bgColor: '#e60023',
   },
