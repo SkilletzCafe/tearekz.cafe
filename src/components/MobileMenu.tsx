@@ -5,10 +5,9 @@ import Link from 'next/link';
 import { BUSINESS, FULL_ADDRESS, PAGES, SOCIAL_MEDIA } from '@/config';
 import { faClock, faEnvelope, faLocationDot, faPhone } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { createGoogleMapsUrl, createPhoneUrl } from '@nextjs-htk/core/utils';
 
 import { geist, margarine } from '@/config/fonts';
-
-import { createGoogleMapsUrl, createPhoneUrl } from '@/utils/urls';
 
 import styles from '@/styles/MobileMenu.module.css';
 
@@ -90,9 +89,16 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
             <div className={styles.infoItem}>
               <FontAwesomeIcon icon={faClock} />
               <div>
-                <p>{BUSINESS.hours.mondayToWednesday.days}: {BUSINESS.hours.mondayToWednesday.display}</p>
-                <p>{BUSINESS.hours.thursdayFriday.days}: {BUSINESS.hours.thursdayFriday.display}</p>
-                <p>{BUSINESS.hours.weekend.days}: {BUSINESS.hours.weekend.display}</p>
+                <p>
+                  {BUSINESS.hours.mondayToWednesday.days}:{' '}
+                  {BUSINESS.hours.mondayToWednesday.display}
+                </p>
+                <p>
+                  {BUSINESS.hours.thursdayFriday.days}: {BUSINESS.hours.thursdayFriday.display}
+                </p>
+                <p>
+                  {BUSINESS.hours.weekend.days}: {BUSINESS.hours.weekend.display}
+                </p>
               </div>
             </div>
 

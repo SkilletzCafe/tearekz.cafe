@@ -1,6 +1,5 @@
 import { BUSINESS, FULL_ADDRESS } from '@/config';
-
-import { createGoogleMapsUrl, createMailtoUrl, createPhoneUrl } from '@/utils/urls';
+import { createGoogleMapsUrl, createMailtoUrl, createPhoneUrl } from '@nextjs-htk/core/utils';
 
 import Layout from '@/components/Layout';
 
