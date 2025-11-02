@@ -1,3 +1,8 @@
+[![pages-build-deployment](https://github.com/SkilletzCafe/tearekz.cafe/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/SkilletzCafe/tearekz.cafe/actions/workflows/pages/pages-build-deployment)
+[![Proof HTML](https://github.com/SkilletzCafe/tearekz.cafe/actions/workflows/proof-html.yml/badge.svg)](https://github.com/SkilletzCafe/tearekz.cafe/actions/workflows/proof-html.yml)
+[![License: CC0-1.0](https://img.shields.io/badge/License-CC0_1.0-lightgrey.svg)](http://creativecommons.org/publicdomain/zero/1.0/)
+[![Built with Next.js](https://img.shields.io/badge/Built%20with-Next.js-000000?style=flat&logo=next.js&logoColor=white)](https://nextjs.org/)
+
 # Tea-Rek'z Website
 
 Welcome to the official repository for [Tea-Rek'z](https://tearekz.cafe), a premium boba tea and specialty drinks shop in the historic Niles district of Fremont, California.
