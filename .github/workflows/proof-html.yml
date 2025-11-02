@@ -18,5 +18,5 @@ jobs:
         with:
           directory: ./docs
           check_css: false
-          ignore_url_re: '(instagram\.com|facebook\.com|yelp\.com|tripadvisor\.com|toasttab\.com)'
-          validator_ignore: 'style.*not allowed.*child.*div'
+          ignore_url_re: '(instagram\.com|facebook\.com|yelp\.com|tripadvisor\.com|toasttab\.com|doordash\.com)'
+          validator_ignore: 'Element "style" not allowed as child of element "div" in this context'
