@@ -36,8 +36,13 @@ export const getStaticProps: GetStaticProps<TVRekzPageProps> = async () => {
   const menuData = loadMenuData();
 
   // Get only Tea-Rek'z menu items for the Tea-Rek'z TV display
+  // Note: There may be multiple Tea-Rek'z menus in the data (e.g., M-W and Th-Sun)
+  // for different visibility purposes (DoorDash vs in-store Kiosk).
+  // Using startsWith pattern matching with firstMatch to get the first menu only,
+  // which future-proofs against menu renames or reorganization.
   const filteredMenus = getMainMenus(menuData, {
-    only: ["Tea-Rek'z 🧋🦖"],
+    startsWith: "Tea-Rek'z 🧋🦖",
+    firstMatch: true,
   });
 
   // Create a temporary menuData object with filtered menus for getFeaturedItems
