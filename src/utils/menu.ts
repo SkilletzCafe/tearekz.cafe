@@ -15,7 +15,7 @@ export const getFeaturedItems = (
 ) => {
   const { excludeGroups = [] } = options || {};
 
-  return menuData.menus.flatMap((menu) =>
+  const allItems = menuData.menus.flatMap((menu) =>
     menu.groups
       .filter((group) => !excludeGroups.includes(group.name))
       .flatMap(
@@ -25,25 +25,49 @@ export const getFeaturedItems = (
         // Consider: item.isFeatured, item.isPopular, or manual curation
       )
   );
+
+  // Deduplicate by GUID to ensure each unique item only appears once
+  // (items may appear in multiple groups within the same menu)
+  const uniqueItems = Array.from(new Map(allItems.map((item) => [item.guid, item])).values());
+
+  return uniqueItems;
 };
 
 // Filter menus with optional inclusion/exclusion parameters
 export const getMainMenus = (
   menuData: MenuData,
   options?: {
-    only?: string[]; // Only include menus with these names
+    only?: string[]; // Only include menus with these exact names
+    startsWith?: string; // Only include menus whose name starts with this prefix
+    firstMatch?: boolean; // When using startsWith, only return the first match
     exclude?: string[]; // Exclude menus with these names
   }
 ) => {
-  const { only, exclude = ['Other'] } = options || {};
+  const { only, startsWith, firstMatch = false, exclude = ['Other'] } = options || {};
 
-  return menuData.menus.filter((menu) => {
-    // If 'only' is specified, only include those menus
-    if (only) {
-      return only.includes(menu.name);
-    }
+  let result = [];
 
-    // Otherwise, exclude the specified menu names
-    return !exclude.includes(menu.name);
-  });
+  // If 'startsWith' is specified with firstMatch, get only the first matching menu
+  if (startsWith && firstMatch) {
+    const found = menuData.menus.find((menu) => menu.name.startsWith(startsWith));
+    result = found ? [found] : [];
+  } else {
+    // Otherwise, filter menus based on criteria
+    result = menuData.menus.filter((menu) => {
+      // If 'startsWith' is specified, match menus by prefix
+      if (startsWith) {
+        return menu.name.startsWith(startsWith);
+      }
+
+      // If 'only' is specified, only include those menus
+      if (only) {
+        return only.includes(menu.name);
+      }
+
+      // Otherwise, exclude the specified menu names
+      return !exclude.includes(menu.name);
+    });
+  }
+
+  return result;
 };
