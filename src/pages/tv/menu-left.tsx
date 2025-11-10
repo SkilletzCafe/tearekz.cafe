@@ -3,11 +3,11 @@ import Image from 'next/image';
 
 import { imageLoader } from '@/utils/menu';
 
-export default function TVMenu() {
+export default function TVMenuLeft() {
   return (
     <>
       <Head>
-        <title>Menu Display</title>
+        <title>Menu Display - Left</title>
         <meta name="robots" content="noindex, nofollow" />
       </Head>
       <div
@@ -24,8 +24,8 @@ export default function TVMenu() {
         }}
       >
         <Image
-          src="/images/menu/tearekz_menu_20251018.png"
-          alt="Tea-Rek'z Menu"
+          src="/images/menu/tearekz_menu_left_20251109.jpg"
+          alt="Tea-Rek'z Menu - Left"
           fill
           style={{
             objectFit: 'contain',
