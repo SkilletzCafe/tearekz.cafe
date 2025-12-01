@@ -16,22 +16,17 @@ import { loadMenuData, loadMenuOptionGroupsData } from '@/utils/menu_static';
 
 import styles from '@/styles/MenuPrint.module.css';
 
-const TeaSelectionsSection: React.FC<{ teaRekzMenu: { groups: MenuGroup[] } }> = ({
-  teaRekzMenu,
-}) => {
-  const teaSelections = createTeaSelections(teaRekzMenu.groups);
+const TeaSelectionsSection: React.FC<{ optionGroups: any }> = ({ optionGroups }) => {
+  const teaSelections = getTeaSelectionsFromOptionGroups(optionGroups);
 
   return (
     <div className={`${styles.menuSection} menu-section`}>
       <div className={`${styles.sectionTitle} section-title ${margarine.className}`}>
         {moveEmojisToFront('Tea Selections 🌱')}
       </div>
-      {teaSelections.map((tea, index) => (
-        <div key={index} className={styles.teaSelectionItem}>
-          <div className={styles.teaSelectionName}>{tea.name}</div>
-          {tea.description && <div className={styles.teaSelectionDesc}>{tea.description}</div>}
-        </div>
-      ))}
+      <div className={styles.levelsList}>
+        {teaSelections.map((tea: { name: string }) => tea.name).join(' · ')}
+      </div>
     </div>
   );
 };
@@ -164,33 +159,36 @@ interface TeaRekzPrintProps {
 // Structure: landscape layout with three columns for Tea-Rek'z items
 const GRID_ORDER = [
   // Left column
-  ["Tea-Rek'z Favorites ❤️", 'Freshly Brewed Teas 🌱', 'Flavors 🍓'],
+  ['Freshly Brewed Teas 🌱', 'Matcha 🍵', 'Thai & Chai', 'Coffee Drinks ☕', 'Crème Brûlée 🍮'],
   // Middle column
+  ['Tropical & Dessert 🌴🍯', 'Lemonade & Juice 🍋🍊'],
+  // Right column - all configurations/options
   [
-    'Classic Milk Teas 🧋',
-    'Crème Brûlée 🍮',
-    'Dino Refreshers 🦖 (Caffeine-Free 🌙)',
-    'Matcha Creations 🍵',
+    'Tea Selections 🌱',
+    'Toppings 🌈',
+    'Flavors 🍓',
+    'Ice Levels 🧊',
+    'Sweetness Levels 🍯',
     'Milk Options 🥛',
     'Creamer Options ☕',
   ],
-  // Right column
-  ['Tea Selections 🌱', 'Toppings 🌈', 'Ice Levels 🧊', 'Sweetness Levels 🍯'],
 ];
 
 function getGroupByName(groups: MenuGroup[], name: string): MenuGroup | null {
   return groups.find((g) => g.name === name && g.items.length > 0) || null;
 }
 
-// Helper function to create Tea Selections from Freshly Brewed Teas group
-function createTeaSelections(groups: MenuGroup[]) {
-  const freshlyBrewedGroup = getGroupByName(groups, 'Freshly Brewed Teas 🌱');
-  if (!freshlyBrewedGroup || freshlyBrewedGroup.items.length === 0) return [];
+// Helper function to get Tea Selections from option groups
+function getTeaSelectionsFromOptionGroups(optionGroupsData: any) {
+  const optionGroups = optionGroupsData.optionGroups || [];
+  const teaGroup = optionGroups.find((group: any) => group.name === 'Choose a Tea (non-milk Tea)');
 
-  return freshlyBrewedGroup.items.map((item) => ({
-    name: item.name,
-    price: item.price,
-    description: item.description,
+  if (!teaGroup || !teaGroup.items) {
+    return [];
+  }
+
+  return teaGroup.items.map((item: any) => ({
+    name: moveEmojisToFront(item.name),
   }));
 }
 
@@ -277,11 +275,11 @@ function getSweetnessLevelsFromOptionGroups(optionGroupsData: any) {
     });
 }
 
-// Helper function to get flavor options from menu option groups
+// Helper function to get flavor options from menu option groups (fruit flavors)
 function getFlavorsFromOptionGroups(optionGroupsData: any) {
   const optionGroups = optionGroupsData.optionGroups || [];
   const flavorsGroup = optionGroups.find(
-    (group: any) => group.name === "Choose a Flavor (Tea-Rek'z)"
+    (group: any) => group.name === "Choose a Fruit (Tea-Rek'z)"
   );
 
   if (!flavorsGroup || !flavorsGroup.items) {
@@ -338,7 +336,7 @@ const TeaRekzPrint: React.FC<TeaRekzPrintProps> = ({ teaRekzMenu, optionGroups }
           // Render the appropriate component with proper props
           switch (groupName) {
             case 'Tea Selections 🌱':
-              return <TeaSelectionsSection key={key} teaRekzMenu={teaRekzMenu} />;
+              return <TeaSelectionsSection key={key} optionGroups={optionGroups} />;
             case 'Flavors 🍓':
               return <FlavorsSection key={key} optionGroups={optionGroups} />;
             case 'Toppings 🌈':
@@ -357,49 +355,7 @@ const TeaRekzPrint: React.FC<TeaRekzPrintProps> = ({ teaRekzMenu, optionGroups }
         }
 
         // Handle regular menu groups
-        let group = getGroupByName(teaRekzMenu.groups, groupName);
-
-        // Special case: Create faux items for Freshly Brewed Teas group
-        if (groupName === 'Freshly Brewed Teas 🌱') {
-          const freshlyBrewedGroup = getGroupByName(teaRekzMenu.groups, 'Freshly Brewed Teas 🌱');
-          const milkTeaGroup = getGroupByName(teaRekzMenu.groups, 'Freshly Brewed Milk Teas 🧋');
-          const dinoGroup = getGroupByName(teaRekzMenu.groups, 'Dino Smash Fresh Lemon Teas 🦖🍋');
-
-          group = {
-            name: 'Fresh Brewed Teas 🌱',
-            description: freshlyBrewedGroup!.description.replace(
-              / — enjoy them straight or with fruity twists.*/,
-              ' — enjoy them straight or with fruity twists.'
-            ),
-            guid: 'fresh-brewed-options',
-            items: [
-              {
-                guid: 'fresh-brewed-plain',
-                name: 'Fresh Brewed Tea',
-                price: freshlyBrewedGroup!.items[0].price,
-                description:
-                  'Freshly brewed teaspresso with a wide selection of teas, and option of adding fruity twists.',
-                imageUrl: null,
-              },
-              {
-                guid: 'fresh-brewed-milk',
-                name: 'Fresh Brewed Milk Tea',
-                price: milkTeaGroup!.items[0].price,
-                description: milkTeaGroup!.items[0].description.replace(', floral,', ''),
-                imageUrl: null,
-              },
-              {
-                guid: 'fresh-brewed-dino',
-                name: 'Dino Smash Fresh Lemon Teas 🍋',
-                price: dinoGroup!.items[0].price,
-                description: dinoGroup!.items[0].description
-                  .replace('jasmine green', '')
-                  .replace(', floral,', ''),
-                imageUrl: null,
-              },
-            ],
-          };
-        }
+        const group = getGroupByName(teaRekzMenu.groups, groupName);
 
         if (!group) return null;
 
@@ -411,25 +367,18 @@ const TeaRekzPrint: React.FC<TeaRekzPrintProps> = ({ teaRekzMenu, optionGroups }
             {group.description && (
               <div className={`${styles.sectionDesc} section-desc`}>{group.description}</div>
             )}
-            {group.items.map((item) => {
-              // Special case: Remove 🌙 from item names in Dino Refreshers group
-              const itemDisplayName = group.name.includes('Dino Refreshers')
-                ? item.name.replace(/🌙\s*$/, '')
-                : item.name;
-
-              return (
-                <div key={item.guid} className={styles.menuItem}>
-                  <div className={`${styles.itemRow} item-row`}>
-                    <span className={`${styles.itemName} item-name`}>{itemDisplayName}</span>
-                    <span className={`${styles.itemPrice} item-price`}>
-                      {Number.isInteger(item.price)
-                        ? item.price
-                        : item.price.toFixed(2).replace(/\.00$/, '')}
-                    </span>
-                  </div>
+            {group.items.map((item) => (
+              <div key={item.guid} className={styles.menuItem}>
+                <div className={`${styles.itemRow} item-row`}>
+                  <span className={`${styles.itemName} item-name`}>{item.name}</span>
+                  <span className={`${styles.itemPrice} item-price`}>
+                    {Number.isInteger(item.price)
+                      ? item.price
+                      : item.price.toFixed(2).replace(/\.00$/, '')}
+                  </span>
                 </div>
-              );
-            })}
+              </div>
+            ))}
           </div>
         );
       })}
