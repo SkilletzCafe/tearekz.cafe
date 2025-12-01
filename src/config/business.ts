@@ -6,7 +6,8 @@ export const BUSINESS = {
   branding: {
     welcome: 'Welcome to',
     tagline: 'Premium Boba Tea & Specialty Drinks in Historic Niles - Fresh, Handcrafted Beverages',
-    slogan: 'Dino-mite Boba & Tea - Fresh, Handcrafted Drinks in Historic Niles, Fremont, California',
+    slogan:
+      'Dino-mite Boba & Tea - Fresh, Handcrafted Drinks in Historic Niles, Fremont, California',
   },
   founding: {
     year: 2025,
@@ -30,8 +31,8 @@ export const BUSINESS = {
       days: 'Monday - Wednesday',
       dayList: ['Monday', 'Tuesday', 'Wednesday'],
       open: '12:00',
-      close: '20:00',
-      display: '12pm - 8pm',
+      close: '19:00',
+      display: '12pm - 7pm',
     },
     thursdayFriday: {
       days: 'Thursday - Friday',

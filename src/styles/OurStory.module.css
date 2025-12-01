@@ -1,0 +1,54 @@
+.page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+}
+
+.page h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.content {
+  line-height: 1.8;
+}
+
+.content p {
+  margin-bottom: 1.5rem;
+}
+
+.content h2 {
+  font-size: 1.75rem;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--button-bg);
+}
+
+.content blockquote {
+  border-left: 4px solid var(--button-bg);
+  margin: 2rem 0;
+  padding: 1rem 1.5rem;
+  background: var(--card-bg);
+  font-style: italic;
+}
+
+.content strong {
+  color: var(--button-bg);
+}
+
+.content ul {
+  margin: 0 0 1.5rem 1.5rem;
+  padding: 0;
+}
+
+.content li {
+  margin-bottom: 0.5rem;
+}
+
+.closing {
+  font-size: 1.25rem;
+  text-align: center;
+  margin-top: 2rem;
+  font-weight: bold;
+}

@@ -18,6 +18,11 @@ export const QUICK_LINKS: QuickLink[] = [
     isInternal: true,
   },
   {
+    label: 'Our Story',
+    href: '/our-story',
+    isInternal: true,
+  },
+  {
     label: 'Contact',
     href: '/contact',
     isInternal: true,
