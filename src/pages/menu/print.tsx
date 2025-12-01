@@ -490,7 +490,9 @@ const TeaRekzPrint: React.FC<TeaRekzPrintProps> = ({ teaRekzMenu, optionGroups }
 export const getStaticProps: GetStaticProps<TeaRekzPrintProps> = async () => {
   const menuData = loadMenuData();
   const optionGroups = loadMenuOptionGroupsData();
-  const teaRekzMenu = menuData.menus.find((m) => m.name === "Tea-Rek'z 🧋🦖");
+  const teaRekzMenu =
+    menuData.menus.find((m) => m.name.startsWith("Tea-Rek'z") && m.name.includes('Sun')) ||
+    menuData.menus.find((m) => m.name.startsWith("Tea-Rek'z"));
 
   if (!teaRekzMenu) {
     return { notFound: true };

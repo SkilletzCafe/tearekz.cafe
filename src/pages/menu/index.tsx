@@ -40,8 +40,10 @@ export default function Menu({ menuData, menuOptionGroupsData }: MenuPageProps) 
     (group) => group.guid === '9145a88a-16f0-4a02-bccd-d227ed2e8f87'
   );
 
-  // Get Tea-Rek'z menu
-  const teaRekzMenu = menuData.menus.find((menu) => menu.name === "Tea-Rek'z 🧋🦖");
+  // Get Tea-Rek'z menu (prefer Sun variant for extended hours)
+  const teaRekzMenu =
+    menuData.menus.find((menu) => menu.name.startsWith("Tea-Rek'z") && menu.name.includes('Sun')) ||
+    menuData.menus.find((menu) => menu.name.startsWith("Tea-Rek'z"));
 
   // Create a special "Toppings" group for Tea-Rek'z if we have the data
   const createTeaRekzWithToppings = () => {
@@ -112,7 +114,6 @@ export default function Menu({ menuData, menuOptionGroupsData }: MenuPageProps) 
       }
     };
   }, []);
-
 
   // Add parallax effect to category headings
   useEffect(() => {
@@ -219,7 +220,11 @@ export default function Menu({ menuData, menuOptionGroupsData }: MenuPageProps) 
   };
 
   return (
-    <BasicPageLayout title="Menu" heading="Our Menu" intro="Explore our delicious boba tea and specialty drinks">
+    <BasicPageLayout
+      title="Menu"
+      heading="Our Menu"
+      intro="Explore our delicious boba tea and specialty drinks"
+    >
       <div className={styles.menuContainer}>
         {/* Category navigation */}
         <MenuCategorySwitcher
