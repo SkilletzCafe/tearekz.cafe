@@ -24,7 +24,7 @@ export default function TVMenuRight() {
         }}
       >
         <Image
-          src="/images/menu/tearekz_menu_right.png"
+          src="/images/menu/tearekz_menu_right.jpg"
           alt="Tea-Rek'z Menu - Right"
           fill
           style={{
