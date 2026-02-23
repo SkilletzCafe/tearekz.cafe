@@ -40,6 +40,11 @@ export default function Menu({ menuData, menuOptionGroupsData }: MenuPageProps) 
     (group) => group.guid === '9145a88a-16f0-4a02-bccd-d227ed2e8f87'
   );
 
+  // Find the cream tops option group
+  const creamTopsGroup = menuOptionGroupsData.optionGroups.find(
+    (group) => group.guid === '8876b8d5-0d83-4d63-9495-ff08b0ccc15c'
+  );
+
   // Get Tea-Rek'z menu (prefer Sun variant for extended hours)
   const teaRekzMenu =
     menuData.menus.find((menu) => menu.name.startsWith("Tea-Rek'z") && menu.name.includes('Sun')) ||
@@ -74,6 +79,32 @@ export default function Menu({ menuData, menuOptionGroupsData }: MenuPageProps) 
       teaRekzWithToppings.groups.push(toppingsGroup);
     }
 
+    // Add the Cream Tops group if we have the data and it doesn't already exist
+    if (creamTopsGroup && !teaRekzWithToppings.groups.find((g) => g.name.includes('Cream Tops'))) {
+      const creamTopsMenuGroup = {
+        name: 'Cream Tops 🍦',
+        guid: 'cream-tops-special-group',
+        description: 'Add a premium cream top to any drink',
+        items: creamTopsGroup.items.map((item) => ({
+          name: item.name,
+          guid: item.guid,
+          description: item.description,
+          price: item.price,
+          imageUrl: null,
+        })),
+      };
+
+      // Insert Cream Tops after Toppings (or at the end)
+      const toppingsIndex = teaRekzWithToppings.groups.findIndex((g) =>
+        g.name.includes('Toppings')
+      );
+      if (toppingsIndex >= 0) {
+        teaRekzWithToppings.groups.splice(toppingsIndex + 1, 0, creamTopsMenuGroup);
+      } else {
+        teaRekzWithToppings.groups.push(creamTopsMenuGroup);
+      }
+    }
+
     return teaRekzWithToppings;
   };
 
@@ -81,7 +112,7 @@ export default function Menu({ menuData, menuOptionGroupsData }: MenuPageProps) 
 
   // Define excluded menu groups by selected tab
   const excludedGroups: Partial<Record<MenuTab, string[]>> = {
-    "Tea-Rek'z": ['Grab n Go', 'Archived Items (Not Displayed)'],
+    "Tea-Rek'z": ['Grab n Go', 'Archived Items (Not Displayed)', 'Warm Add-Ons 🍜'],
     // Add other exclusions as needed
   };
 
