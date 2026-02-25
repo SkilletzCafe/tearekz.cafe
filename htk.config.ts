@@ -1,5 +1,5 @@
 import { BUSINESS, PAGES, QUICK_LINKS, SEO, SOCIAL_MEDIA } from '@/config';
-import { defineConfig } from '@nextjs-htk/core';
+import { defineConfig } from '@hacktoolkit/nextjs-htk';
 
 export default defineConfig({
   site: {
