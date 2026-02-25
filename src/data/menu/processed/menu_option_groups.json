@@ -2449,6 +2449,78 @@
       ]
     },
     {
+      "name": "Sweetness Level (10% minimum)",
+      "guid": "96b9e7c6-dd56-4aa4-be66-0195f31d58ca",
+      "minSelections": 1,
+      "maxSelections": 1,
+      "pricingMode": "ADJUSTS_PRICE",
+      "items": [
+        {
+          "name": "100% sweet (cane sugar)",
+          "guid": "6533c0bd-89f0-4f76-8ca7-9d628b021e36",
+          "description": "",
+          "price": 0,
+          "orderableOnline": "YES"
+        },
+        {
+          "name": "75% sweet (cane sugar)",
+          "guid": "670184fa-613b-4c94-8c39-e1c6bcb164ef",
+          "description": "",
+          "price": 0,
+          "orderableOnline": "YES"
+        },
+        {
+          "name": "50% sweet (cane sugar)",
+          "guid": "44bb65ae-8510-47e8-bd7c-88b39c57353a",
+          "description": "",
+          "price": 0,
+          "orderableOnline": "YES"
+        },
+        {
+          "name": "25% sweet (cane sugar)",
+          "guid": "7eea4f77-f3b2-4fe8-a247-e6b62b648319",
+          "description": "",
+          "price": 0,
+          "orderableOnline": "YES"
+        },
+        {
+          "name": "10% sweet (built in cane sugar)",
+          "guid": "1f57c949-6a81-4715-a609-6fef9081caed",
+          "description": "",
+          "price": 0,
+          "orderableOnline": "YES"
+        },
+        {
+          "name": "100% sweet (monk fruit added)",
+          "guid": "6fdd0235-1908-4118-96a4-a022e09e36c2",
+          "description": "",
+          "price": 0.5,
+          "orderableOnline": "YES"
+        },
+        {
+          "name": "75% sweet (monk fruit added)",
+          "guid": "69aac531-a317-4204-a92a-eac1dea7b8a3",
+          "description": "",
+          "price": 0.5,
+          "orderableOnline": "YES"
+        },
+        {
+          "name": "50% sweet (monk fruit added)",
+          "guid": "f87200d6-a036-4cd0-916c-7afaed93ae70",
+          "description": "",
+          "price": 0.5,
+          "orderableOnline": "YES"
+        },
+        {
+          "name": "25% sweet (monk fruit added)",
+          "guid": "f87200d6-a036-4cd0-916c-7afaed93ae70",
+          "description": "",
+          "price": 0.5,
+          "orderableOnline": "YES"
+        }
+      ]
+    },
+    {
       "name": "Sweetness Level (25% minimum)",
       "guid": "142cd2ef-2ab6-46be-b01d-434039dcb9d6",
       "minSelections": 1,
