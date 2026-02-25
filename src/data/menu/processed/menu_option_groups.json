@@ -2789,36 +2789,6 @@
       ]
     },
     {
-      "name": "Iced/Hot (Tea-Rek'z coffee)",
-      "guid": "0033a743-dc16-4231-b282-2508857704ac",
-      "minSelections": 1,
-      "maxSelections": 1,
-      "pricingMode": "ADJUSTS_PRICE",
-      "items": [
-        {
-          "name": "Iced (2 espresso shots)",
-          "guid": "1072692f-71db-47bc-bb9e-c925177516e7",
-          "description": "",
-          "price": 0,
-          "orderableOnline": "YES"
-        },
-        {
-          "name": "Iced (4 espresso shots)",
-          "guid": "8750173c-ddf1-4291-9d34-6756aea9417e",
-          "description": "",
-          "price": 2,
-          "orderableOnline": "YES"
-        },
-        {
-          "name": "Hot (4 espresso shots)",
-          "guid": "8037aeb4-782f-4710-9aa6-006fce864f9c",
-          "description": "",
-          "price": 2,
-          "orderableOnline": "YES"
-        }
-      ]
-    },
-    {
       "name": "Choose Color (Mini Rex Stuffie Keychain)",
       "guid": "41420ab0-663c-464d-9eaa-c7c25c71f90c",
       "minSelections": 1,
