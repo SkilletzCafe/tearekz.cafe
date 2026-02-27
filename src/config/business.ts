@@ -5,7 +5,8 @@ export const BUSINESS = {
   name: "Tea-Rek'z",
   branding: {
     welcome: 'Welcome to',
-    tagline: 'Premium Boba Tea & Specialty Drinks in Historic Niles - Fresh, Handcrafted Beverages',
+    tagline:
+      'Premium Boba & Specialty Beverages in Historic Niles, Fremont — Made with Real Ingredients and No Artificial Non-Dairy Creamer.',
     slogan:
       'Dino-mite Boba & Tea - Fresh, Handcrafted Drinks in Historic Niles, Fremont, California',
   },
