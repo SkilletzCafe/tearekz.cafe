@@ -5,6 +5,8 @@ import {
   createPhoneUrl,
 } from '@hacktoolkit/nextjs-htk/utils';
 
+import { margarine } from '@/config/fonts';
+
 import Layout from '@/components/Layout';
 
 import styles from '@/styles/Contact.module.css';
@@ -13,7 +15,7 @@ export default function ContactPage() {
   return (
     <Layout title="Contact Us" description={`Get in touch with ${BUSINESS.name}`}>
       <div className={styles.page}>
-        <h1>Contact Us</h1>
+        <h1 className={margarine.className}>Contact Us</h1>
 
         <div className={styles.contactInfo}>
           <section>

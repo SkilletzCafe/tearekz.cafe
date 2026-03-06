@@ -1,5 +1,7 @@
 import { BUSINESS } from '@/config';
 
+import { margarine } from '@/config/fonts';
+
 import Layout from '@/components/Layout';
 
 import styles from '@/styles/OurStory.module.css';
@@ -8,7 +10,7 @@ export default function OurStoryPage() {
   return (
     <Layout title="Our Story" description={`How ${BUSINESS.name} came to life`}>
       <div className={styles.page}>
-        <h1>Tea-Rek&apos;z: A Different Kind of Boba Story</h1>
+        <h1 className={margarine.className}>Tea-Rek&apos;z: A Different Kind of Boba Story</h1>
 
         <div className={styles.content}>
           <p>Most boba shops begin with a dream.</p>
