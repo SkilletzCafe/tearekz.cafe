@@ -4,6 +4,12 @@ import styles from '@/styles/BasicPage.module.css';
 
 const pressArticles = [
   {
+    source: 'Fremont Restaurant Week',
+    title: "Tea-Rek'z by Skillet'z — Restaurant Week Feature",
+    url: 'https://www.fremontrestaurantweek.com/tearekzbyskilletz.html',
+    date: 'March 2026',
+  },
+  {
     source: 'Mercury News',
     title: 'Cafe culture: 10 new coffee and tea shops that are as diverse as the Bay Area is',
     url: 'https://www.mercurynews.com/2026/02/25/cafe-culture-10-new-coffee-and-tea-shops-that-are-as-diverse-as-the-bay-area-is/',
@@ -20,12 +26,6 @@ const pressArticles = [
     title: "Skillet'z Cafe partners open Tea-Rek'z boba shop in Fremont's Niles district",
     url: 'https://www.newsbreak.com/news/4428581825001-skillet-z-cafe-partners-open-tea-rek-z-boba-shop-in-fremont-s-niles-district',
     date: 'January 2026',
-  },
-  {
-    source: 'Fremont Restaurant Week',
-    title: "Tea-Rek'z by Skillet'z — Restaurant Week Feature",
-    url: 'https://www.fremontrestaurantweek.com/tearekzbyskilletz.html',
-    date: 'March 2026',
   },
 ];
 
