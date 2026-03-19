@@ -2044,84 +2044,84 @@
           "name": "Boba (tapioca) ⚫️",
           "guid": "9c4c60b3-b0be-4326-93a2-31eedd3e37db",
           "description": "Classic honey-sweetened tapioca pearls",
-          "price": 0.75,
+          "price": 0,
           "orderableOnline": "YES"
         },
         {
           "name": "Mango Popping Boba 🟠",
           "guid": "523809b3-a4f8-4cfc-8061-175bd38c601c",
           "description": "Bursting mango-flavored boba",
-          "price": 0.75,
+          "price": 0,
           "orderableOnline": "YES"
         },
         {
           "name": "Strawberry Popping Boba 🔴",
           "guid": "1684ef1f-2f3f-409d-bba6-ead4d692ce59",
           "description": "Bursting strawberry-flavored boba",
-          "price": 0.75,
+          "price": 0,
           "orderableOnline": "YES"
         },
         {
           "name": "Lychee Popping Boba ⚪️",
           "guid": "9d1063c9-acde-4988-bea1-1612e28607fe",
           "description": "Bursting lychee-flavored boba",
-          "price": 0.75,
+          "price": 0,
           "orderableOnline": "YES"
         },
         {
           "name": "Mango Star Jelly ⭐️",
           "guid": "0f46f70c-ff24-4650-97aa-72cac7215a2e",
           "description": "Star-shaped mango jelly",
-          "price": 0.75,
+          "price": 0,
           "orderableOnline": "YES"
         },
         {
           "name": "Strawberry Heart Jelly ❤️",
           "guid": "125f5ecb-0668-412d-8458-b62652de53b1",
           "description": "Heart-shaped strawberry jelly",
-          "price": 0.75,
+          "price": 0,
           "orderableOnline": "YES"
         },
         {
           "name": "Lychee Jelly 🤍",
           "guid": "dacfef9b-5a8b-4c94-b0e2-398d2f9c2f31",
           "description": "Delicate lychee jelly",
-          "price": 0.75,
+          "price": 0,
           "orderableOnline": "YES"
         },
         {
           "name": "Agar Crystal Boba 💎",
           "guid": "aa42fe8c-a3f7-4dbe-8950-5d7799e2b227",
           "description": "",
-          "price": 0.75,
+          "price": 0,
           "orderableOnline": "YES"
         },
         {
           "name": "Agar Brown Sugar Boba 🍯",
           "guid": "53b21d05-a78f-4af0-9bc7-c4f5f2ed10b4",
           "description": "",
-          "price": 0.75,
+          "price": 0,
           "orderableOnline": "YES"
         },
         {
           "name": "Dalgona (Honeycomb Toffee)",
           "guid": "0b7602e4-6cf6-450e-ad19-db6b4b0cd56f",
           "description": "",
-          "price": 0.75,
+          "price": 0,
           "orderableOnline": "YES"
         },
         {
           "name": "Grapefruit Pulp",
           "guid": "57294a4b-463d-47f5-87b6-4159568d9ee4",
           "description": "",
-          "price": 0.75,
+          "price": 0,
           "orderableOnline": "YES"
         },
         {
           "name": "Diced Mango",
           "guid": "072343dd-6e83-46f9-bbf5-ad502226921a",
           "description": "",
-          "price": 0.75,
+          "price": 0,
           "orderableOnline": "YES"
         }
       ]
@@ -2141,8 +2141,15 @@
           "orderableOnline": "YES"
         },
         {
-          "name": "Sea Salt Cheese Cream",
-          "guid": "261ceea7-cd61-4274-a7d5-b35a5ad588d5",
+          "name": "Vanilla Ice Cream Float (on cold drinks only)",
+          "guid": "051a2cc7-ba35-4a4a-9cde-5a41590929d3",
+          "description": "",
+          "price": 2,
+          "orderableOnline": "YES"
+        },
+        {
+          "name": "Jasmine Cream (Whipped)",
+          "guid": "39dca51b-99ee-4cb4-aa93-dd5788f8ae8c",
           "description": "",
           "price": 1.5,
           "orderableOnline": "YES"
@@ -2169,8 +2176,8 @@
           "orderableOnline": "YES"
         },
         {
-          "name": "Jasmine Cream (Whipped)",
-          "guid": "39dca51b-99ee-4cb4-aa93-dd5788f8ae8c",
+          "name": "Sea Salt Cheese Cream",
+          "guid": "261ceea7-cd61-4274-a7d5-b35a5ad588d5",
           "description": "",
           "price": 1.5,
           "orderableOnline": "YES"
@@ -2188,7 +2195,7 @@
           "name": "No Boba",
           "guid": "e0cbb7d6-429e-4243-9c1d-5514508a4479",
           "description": "",
-          "price": -0.5,
+          "price": 0,
           "orderableOnline": "YES"
         }
       ]
@@ -2412,11 +2419,11 @@
       ]
     },
     {
-      "name": "Fruit Choices (up to 2) (Dino Freeze)",
-      "guid": "6764bc69-e93d-48c6-a49b-78627b992b23",
+      "name": "Choose up to 2 fruits",
+      "guid": "532cbf0c-e453-4f0d-9759-05a68fbfefde",
       "minSelections": 1,
       "maxSelections": 2,
-      "pricingMode": "ADJUSTS_PRICE",
+      "pricingMode": "INCLUDED",
       "items": [
         {
           "name": "Strawberry 🍓",
@@ -2440,8 +2447,15 @@
           "orderableOnline": "YES"
         },
         {
-          "name": "Raspberry ❤️",
+          "name": "Peach 🍑",
           "guid": "85adfbdb-7a60-48f4-90c3-6f3ba0159542",
+          "description": "",
+          "price": 0,
+          "orderableOnline": "YES"
+        },
+        {
+          "name": "Lychee",
+          "guid": "c3089b74-0457-47f2-aa46-a3fd302c3901",
           "description": "",
           "price": 0,
           "orderableOnline": "YES"
@@ -2787,6 +2801,29 @@
         {
           "name": "0% ice",
           "guid": "90bc7d25-63b2-4a1e-9b4a-d883d208a738",
+          "description": "",
+          "price": 0,
+          "orderableOnline": "YES"
+        }
+      ]
+    },
+    {
+      "name": "Choose a tea",
+      "guid": "c2164949-3ddc-4520-b7cb-79b3672bdc37",
+      "minSelections": 1,
+      "maxSelections": 1,
+      "pricingMode": "INCLUDED",
+      "items": [
+        {
+          "name": "Jasmine Green",
+          "guid": "9f38673b-1a9e-4215-bb6f-e8ccae0c64bc",
+          "description": "",
+          "price": 0,
+          "orderableOnline": "YES"
+        },
+        {
+          "name": "Four Seasons Jade Oolong",
+          "guid": "cf5bfc23-795c-4cc9-a05f-490f6584f23a",
           "description": "",
           "price": 0,
           "orderableOnline": "YES"
