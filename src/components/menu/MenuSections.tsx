@@ -75,7 +75,7 @@ export const MenuSections: React.FC<MenuSectionsProps> = ({
             };
             return (
               <MenuItem
-                key={item.guid}
+                key={`${section.guid}-${item.guid}`}
                 item={item}
                 index={itemIndex}
                 totalItems={totalMenuItems}
@@ -83,6 +83,7 @@ export const MenuSections: React.FC<MenuSectionsProps> = ({
                 onImageLoad={handleImageLoad}
                 onKeyDown={handleMenuItemKeyDown}
                 setRef={setItemRef}
+                sectionGuid={section.guid}
               />
             );
           })}
