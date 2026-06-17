@@ -55,10 +55,10 @@
   position: absolute;
   left: 8.05cqw;
   top: 0.02cqh;
-  font-size: 1.2cqw;
-  line-height: 1.38;
-  font-weight: 820;
-  color: #171717;
+  font-size: 1.16cqw;
+  line-height: 1.34;
+  font-weight: 680;
+  color: #151515;
   white-space: nowrap;
 }
 
@@ -70,7 +70,6 @@
   vertical-align: -0.08em;
   line-height: 1;
   font-family: 'Apple Color Emoji', 'Segoe UI Emoji', sans-serif;
-  filter: saturate(1.15) contrast(1.04) drop-shadow(0 0.09cqh 0.035cqw rgb(0 0 0 / 0.2));
 }
 
 .emoji {
@@ -81,28 +80,16 @@
 }
 
 .legendIcon {
-  width: 1.32cqw;
-  height: 1.32cqw;
-  margin-right: 0.2cqw;
-  border-radius: 999px;
-  font-size: 0.92cqw;
-  font-weight: 900;
-  box-shadow: inset 0 -0.05cqw 0 rgba(0, 0, 0, 0.18);
+  width: 1.08cqw;
+  margin-right: 0.18cqw;
+  font-size: 1.02cqw;
+  font-weight: 400;
 }
 
-.iceIcon {
-  color: #fff;
-  background: linear-gradient(135deg, #91dff5, #52b8d2);
-}
-
-.moonIcon {
-  color: #5e4612;
-  background: linear-gradient(135deg, #ffe88d, #e3bb34);
-}
-
+.iceIcon,
+.moonIcon,
 .cloudIcon {
-  color: #6e8ea0;
-  background: radial-gradient(circle at 35% 25%, #fff 0%, #f6fbfd 38%, #cfe8f0 100%);
+  color: inherit;
 }
 
 .options {
@@ -153,31 +140,27 @@
 }
 
 .sectionTitle {
-  min-height: 5.9cqh;
+  min-height: 5.15cqh;
   display: flex;
   align-items: center;
   gap: 0.12cqw;
   padding: 0 0.9cqw;
   box-sizing: border-box;
-  color: #fff9e9;
-  font-size: 1.9cqw;
+  color: #fff;
+  font-size: 1.72cqw;
   line-height: 1;
-  font-weight: 1000;
-  letter-spacing: -0.045em;
-  -webkit-text-stroke: 0.012cqw rgba(72, 45, 18, 0.28);
-  paint-order: stroke fill;
-  text-shadow:
-    0 0.1cqw 0 rgba(0, 0, 0, 0.24),
-    0 0.018cqw 0 rgba(255, 255, 255, 0.35);
+  font-weight: 780;
+  letter-spacing: -0.035em;
+  text-shadow: 0 0.055cqw 0 rgba(0, 0, 0, 0.2);
   white-space: nowrap;
 }
 
 .green {
-  background: linear-gradient(90deg, #aeb63d 0%, #9ea932 38%, #7f9117 100%);
+  background: linear-gradient(90deg, #9baa24 0%, #8ea11a 42%, #748a0b 100%);
 }
 
 .orange {
-  background: linear-gradient(90deg, #f3ad20 0%, #ed9d0a 46%, #df8500 100%);
+  background: linear-gradient(90deg, #f2a21b 0%, #ee9800 46%, #e08300 100%);
 }
 
 .sectionBody {
@@ -193,12 +176,11 @@
 }
 
 .item {
-  margin: 0 0 0.78cqh;
-  font-weight: 930;
-  font-size: 1.51cqw;
-  line-height: 1.02;
-  letter-spacing: -0.052em;
-  text-shadow: 0 0.012cqw 0 rgb(0 0 0 / 0.42);
+  margin: 0 0 0.72cqh;
+  font-weight: 820;
+  font-size: 1.5cqw;
+  line-height: 1.05;
+  letter-spacing: -0.046em;
 }
 
 .itemLine {
@@ -209,16 +191,16 @@
 .code {
   flex: 0 0 auto;
   min-width: 2.25cqw;
-  color: #6d8118;
+  color: #6d7d18;
   text-decoration: underline;
-  text-underline-offset: 0.11em;
-  font-weight: 1000;
+  text-underline-offset: 0.1em;
+  font-weight: 860;
   margin-right: 0.38cqw;
 }
 
 .price {
   color: #050505;
-  font-weight: 950;
+  font-weight: 860;
   white-space: nowrap;
 }
 
@@ -227,13 +209,13 @@
 }
 
 .description {
-  margin: 0.14cqh 0 0 2.62cqw;
-  font-size: 1.18cqw;
-  line-height: 1.04;
+  margin: 0.12cqh 0 0 2.62cqw;
+  font-size: 1.12cqw;
+  line-height: 1.08;
   font-style: italic;
-  font-weight: 760;
-  color: #303030;
-  letter-spacing: -0.03em;
+  font-weight: 560;
+  color: #333;
+  letter-spacing: -0.024em;
 }
 
 .signatures .item {
@@ -337,26 +319,26 @@
 
 /* Right-board tuning */
 .rightGrid .sectionTitle {
-  min-height: 5.8cqh;
-  font-size: 1.82cqw;
+  min-height: 5.15cqh;
+  font-size: 1.7cqw;
 }
 
 .rightGrid .item {
-  font-size: 1.47cqw;
-  margin-bottom: 0.8cqh;
+  font-size: 1.46cqw;
+  margin-bottom: 0.74cqh;
 }
 
 .rightGrid .description {
-  font-size: 1.13cqw;
+  font-size: 1.09cqw;
   margin-left: 2.55cqw;
 }
 
 .builderCopy {
   margin: 0.36cqh 0 0 2.55cqw;
-  font-size: 1.2cqw;
+  font-size: 1.15cqw;
   line-height: 1.16;
-  font-weight: 870;
-  letter-spacing: -0.04em;
+  font-weight: 640;
+  letter-spacing: -0.03em;
   color: #202020;
 }
 
