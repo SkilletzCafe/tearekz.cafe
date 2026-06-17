@@ -717,33 +717,20 @@ function RightMenu() {
             <Item code="H2">
               Build Your Own Shaved Ice <Price>$8</Price>
             </Item>
-            <div className={styles.builderCopy}>
+            <div className={`${styles.builderCopy} ${styles.shavedIceBuilder}`}>
               <b>Choose a base flavor:</b>
               <br />
               <Colored color="#c43c37">Strawberry</Colored> |{' '}
               <Colored color="#d28a17">Mango</Colored> |{' '}
               <Colored color="#7b3f98">Passionfruit</Colored> |{' '}
-              <Colored color="#c58aa8">Peach</Colored> |<br />
-              <Colored color="#7c1f1f">Lychee</Colored> |{' '}
+              <Colored color="#c58aa8">Peach</Colored> | <Colored color="#7c1f1f">Lychee</Colored> |{' '}
               <Colored color="#b71c1c">Raspberry</Colored> |{' '}
               <Colored color="#5d8a2a">Pineapple</Colored>
               <br />
               <br />
-              <b>Add toppings (choose up to 3):</b>
+              <b>Includes up to 3 toppings:</b>
               <br />
-              Fresh Strawberries • Diced Mango • Grapefruit Pulp
-              <br />
-              Popping Boba: <Colored color="#d28a17">Mango</Colored> |{' '}
-              <Colored color="#c43c37">Strawberry</Colored> |{' '}
-              <Colored color="#7c1f1f">Lychee</Colored>
-              <br />
-              Jelly: <Colored color="#d28a17">Mango Star</Colored> |{' '}
-              <Colored color="#c43c37">Strawberry Heart</Colored> |{' '}
-              <Colored color="#7c1f1f">Lychee</Colored>
-              <br />
-              Agar Boba: <Colored color="#9e9e9e">Crystal</Colored> |{' '}
-              <Colored color="#7a4b21">Brown Sugar</Colored>
-              <br />
+              Fresh fruit • Popping boba • Jelly • Agar boba
               <br />
               <em>Optional condensed milk drizzle</em>
             </div>

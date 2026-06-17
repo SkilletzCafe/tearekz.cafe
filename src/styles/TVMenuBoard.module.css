@@ -228,10 +228,10 @@
 
 .description {
   margin: 0.14cqh 0 0 2.62cqw;
-  font-size: 1.14cqw;
-  line-height: 1;
+  font-size: 1.18cqw;
+  line-height: 1.04;
   font-style: italic;
-  font-weight: 720;
+  font-weight: 760;
   color: #303030;
   letter-spacing: -0.03em;
 }
@@ -347,15 +347,15 @@
 }
 
 .rightGrid .description {
-  font-size: 1.09cqw;
+  font-size: 1.13cqw;
   margin-left: 2.55cqw;
 }
 
 .builderCopy {
-  margin: 0.28cqh 0 0 2.55cqw;
-  font-size: 1.14cqw;
-  line-height: 1.11;
-  font-weight: 850;
+  margin: 0.36cqh 0 0 2.55cqw;
+  font-size: 1.2cqw;
+  line-height: 1.16;
+  font-weight: 870;
   letter-spacing: -0.04em;
   color: #202020;
 }
@@ -363,6 +363,12 @@
 .builderCopy b {
   font-style: italic;
   font-weight: 900;
+}
+
+.shavedIceBuilder {
+  margin-top: 0.65cqh;
+  font-size: 1.24cqw;
+  line-height: 1.2;
 }
 
 .fruitTeas {
