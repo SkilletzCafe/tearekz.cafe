@@ -102,13 +102,13 @@ function LeftMenu() {
         </div>
         <div className={styles.legend}>
           <div>
-            <span className={`${styles.legendIcon} ${styles.iceIcon}`}>❄</span> Iced only
+            <span className={`${styles.legendIcon} ${styles.iceIcon}`}>❄️</span> Iced only
           </div>
           <div>
-            <span className={`${styles.legendIcon} ${styles.moonIcon}`}>☾</span> Caffeine-free
+            <span className={`${styles.legendIcon} ${styles.moonIcon}`}>🌙</span> Caffeine-free
           </div>
           <div>
-            <span className={`${styles.legendIcon} ${styles.cloudIcon}`}>☁</span> Pairs well with
+            <span className={`${styles.legendIcon} ${styles.cloudIcon}`}>☁️</span> Pairs well with
             Cream Tops
           </div>
         </div>
@@ -129,7 +129,7 @@ function LeftMenu() {
         <Section
           title={
             <>
-              <Emoji>🦖</Emoji> Tea-Rek&apos;z Signatures <Emoji>❄</Emoji>
+              <Emoji>🦖</Emoji> Tea-Rek&apos;z Signatures <Emoji>❄️</Emoji>
             </>
           }
           className={styles.signatures}
@@ -194,7 +194,7 @@ function LeftMenu() {
           <Section
             title={
               <>
-                <Emoji>🥤</Emoji> Milk Teas
+                <Emoji>🧋</Emoji> Milk Teas
               </>
             }
             tone="orange"
@@ -210,13 +210,13 @@ function LeftMenu() {
               Roasted Oolong Milk Tea <Price>$6.75</Price>
             </Item>
             <Item code="24">
-              Classic Thai Tea ❄ <Price>$6.75</Price>
+              Classic Thai Tea ❄️ <Price>$6.75</Price>
             </Item>
             <Item code="25">
               <span>
                 Crème Brûlée
                 <br />
-                Classic Thai Tea ❄ <Price>$8</Price>
+                Classic Thai Tea ❄️ <Price>$8</Price>
               </span>
             </Item>
             <Item code="26">
@@ -236,22 +236,22 @@ function LeftMenu() {
           <Section
             title={
               <>
-                <Emoji>🍵</Emoji> Pure Teas
+                <Emoji>🫖</Emoji> Pure Teas
               </>
             }
             className={styles.pureTeas}
           >
             <Item code="1">
-              Jasmine Green ☁ <Price>$5.75</Price>
+              Jasmine Green ☁️ <Price>$5.75</Price>
             </Item>
             <Item code="2">
-              Magnolia Green ❄ ☁ <Price>$6</Price>
+              Magnolia Green ❄️ ☁️ <Price>$6</Price>
             </Item>
             <Item code="3">
               Lychee Black <Price>$5.75</Price>
             </Item>
             <Item code="4">
-              White Peach Oolong <Price>$6</Price> ☁
+              White Peach Oolong <Price>$6</Price> ☁️
             </Item>
             <Item code="5">
               Rooibos 🌙 <Price>$5.75</Price>
@@ -263,33 +263,33 @@ function LeftMenu() {
           <Section
             title={
               <>
-                <Emoji>🥛</Emoji> Milk Drinks <Emoji>☾</Emoji>
+                <Emoji>🥛</Emoji> Milk Drinks <Emoji>🌙</Emoji>
               </>
             }
             tone="orange"
             className={styles.compactSection}
           >
             <Item code="41">
-              🐯 Tiger Milk (with boba) 🌙 ❄ <Price>$7</Price>
+              🐯 Tiger Milk (with boba) 🌙 ❄️ <Price>$7</Price>
             </Item>
             <Item code="42">
               <span>
                 🐯 Crème Brûlée
                 <br />
-                Tiger Milk (with boba) 🌙 ❄ <Price>$8</Price>
+                Tiger Milk (with boba) 🌙 ❄️ <Price>$8</Price>
               </span>
             </Item>
             <Item code="43" description="real taro & ube, no artificial flavor or color">
               Ube Taro Milk 🌙 <Price>$7.5</Price>
             </Item>
             <Item code="44" description="organic strawberries and fresh milk">
-              Strawberry Milk 🌙 ❄ ☁ <Price>$7</Price>
+              Strawberry Milk 🌙 ❄️ ☁️ <Price>$7</Price>
             </Item>
             <Item code="45" description="organic mango and fresh milk">
-              Korean Mango Milk 🌙 ❄ ☁ <Price>$7</Price>
+              Korean Mango Milk 🌙 ❄️ ☁️ <Price>$7</Price>
             </Item>
             <Item code="46" description="oat milk horchata">
-              Horchata de Avena 🌙 ❄ <Price>$7</Price>
+              Horchata de Avena 🌙 ❄️ <Price>$7</Price>
             </Item>
           </Section>
 
@@ -302,10 +302,10 @@ function LeftMenu() {
             className={styles.matcha}
           >
             <Item code="31">
-              Matcha Latte ☁ <Price>$7</Price>
+              Matcha Latte ☁️ <Price>$7</Price>
             </Item>
             <Item code="32">
-              Brown Sugar Matcha Latte ☁ <Price>$7.25</Price>
+              Brown Sugar Matcha Latte ☁️ <Price>$7.25</Price>
             </Item>
             <Item code="33">
               <Colored color="#c43c37">Strawberry</Colored> Matcha Latte <Price>$8</Price>
@@ -325,7 +325,7 @@ function LeftMenu() {
         <aside className={styles.leftAside}>
           <div className={`${styles.box} ${styles.creamBox}`}>
             <div className={`${styles.boxTitle} ${styles.creamTitle}`}>
-              <Emoji>☁</Emoji> Cream Tops
+              <Emoji>☁️</Emoji> Cream Tops
             </div>
             <div className={styles.boxBody}>
               <p className={styles.boxNote}>(Made with Real Cream • Contains Dairy)</p>
@@ -406,11 +406,11 @@ function RightMenu() {
             className={styles.fruitTeas}
           >
             <Item code="51">
-              Lychee Jasmine Green ☁ <Price>$6.75</Price>
+              Lychee Jasmine Green ☁️ <Price>$6.75</Price>
             </Item>
             <Item code="52">
               <Colored color="#c43c37">Strawberry</Colored> <Colored color="#c58aa8">Peach</Colored>{' '}
-              Jade Oolong ☁ <Price>$6.75</Price>
+              Jade Oolong ☁️ <Price>$6.75</Price>
             </Item>
             <Item code="53">
               <Colored color="#d28a17">Mango</Colored>{' '}
@@ -418,7 +418,7 @@ function RightMenu() {
             </Item>
             <Item code="54">
               <Colored color="#c58aa8">Peach</Colored> <Colored color="#7c1f1f">Lychee</Colored>{' '}
-              Magnolia Green ❄ ☁ <Price>$7</Price>
+              Magnolia Green ❄️ ☁️ <Price>$7</Price>
             </Item>
             <Item code="55">
               Build Your Own Fruit Tea <Price>$6.75</Price>
@@ -444,8 +444,8 @@ function RightMenu() {
             title={
               <>
                 Smash Lemonades <Emoji>🍋</Emoji>
-                <Emoji>❄</Emoji>
-                <Emoji>☾</Emoji>
+                <Emoji>❄️</Emoji>
+                <Emoji>🌙</Emoji>
               </>
             }
             subhead={
@@ -485,25 +485,25 @@ function RightMenu() {
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 className={`${styles.productPhoto} ${styles.productPhoto62}`}
-                src="https://toasttab.s3.amazonaws.com/menu_service/restaurants/2d838293-2776-4151-b65b-1c9eea686461/MenuItem/f885eb1f-5056-4f95-aac5-388e287932b4.png"
+                src="/images/menu/tv-native/drinks/01-strawberry-lemonade-cutout.png"
                 alt="Strawberry Lemonade"
               />
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 className={`${styles.productPhoto} ${styles.productPhoto63}`}
-                src="https://toasttab.s3.amazonaws.com/restaurants/restaurant-244719000000000000/menu/items/7/item-1300000005355804257_1758274181.jpg"
+                src="/images/menu/tv-native/drinks/02-mango-lemonade-cutout.png"
                 alt="Mango Lemonade"
               />
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 className={`${styles.productPhoto} ${styles.productPhoto64}`}
-                src="https://toasttab.s3.amazonaws.com/restaurants/restaurant-244719000000000000/menu/items/8/item-1300000005355808498_1758274196.jpg"
+                src="/images/menu/tv-native/drinks/03-passionfruit-lemonade-cutout.png"
                 alt="Passionfruit Lemonade"
               />
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 className={`${styles.productPhoto} ${styles.productPhoto65}`}
-                src="https://toasttab.s3.amazonaws.com/restaurants/restaurant-244719000000000000/menu/items/6/item-1300000006111297916_1766828237.png"
+                src="/images/menu/tv-native/drinks/04-purple-lemonade-cutout.png"
                 alt="Purple Lemonade"
               />
             </div>
@@ -516,7 +516,7 @@ function RightMenu() {
               <>
                 Blended Drinks <Emoji>🥭</Emoji>
                 <Emoji>🥥</Emoji>
-                <Emoji>❄</Emoji>
+                <Emoji>❄️</Emoji>
               </>
             }
             className={styles.blended}
@@ -525,7 +525,7 @@ function RightMenu() {
               🥭 Golden Mango 🌙 <Price>$8</Price>
             </Item>
             <Item code="72" description="½ lb. organic mango, jasmine or magnolia tea">
-              🥭 Jasmine / Magnolia Mango ☁ <Price>$8</Price>
+              🥭 Jasmine / Magnolia Mango ☁️ <Price>$8</Price>
             </Item>
             <Item code="73" description="½ lb. organic mango, organic coconut milk">
               🥭 Coco Mango <Price>$8</Price>
@@ -540,7 +540,7 @@ function RightMenu() {
                 </>
               }
             >
-              🥭 Mango Grapefruit Crystal (🌙) <Price>$8.5</Price>
+              🥭 Mango Grapefruit Crystal 🌙 <Price>$8.5</Price>
             </Item>
             <Item code="75" description={<>icy and refreshing, made with real fruit purée</>}>
               🦕 Dino Freeze (Build Your Own) 🌙 <Price>$6.5</Price>
@@ -562,25 +562,25 @@ function RightMenu() {
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 className={`${styles.productPhoto} ${styles.productPhoto71}`}
-                src="https://toasttab.s3.amazonaws.com/restaurants/restaurant-244719000000000000/menu/items/1/item-1300000007709137801_1770463661.png"
+                src="/images/menu/tv-native/drinks/05-golden-mango-blended-drink-cutout.png"
                 alt="Golden Mango blended drink"
               />
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 className={`${styles.productPhoto} ${styles.productPhoto72}`}
-                src="https://toasttab.s3.amazonaws.com/restaurants/restaurant-244719000000000000/menu/items/3/item-1300000007709137803_1770463677.png"
+                src="/images/menu/tv-native/drinks/06-jasmine-or-magnolia-mango-blended-drink-cutout.png"
                 alt="Jasmine or Magnolia Mango blended drink"
               />
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 className={`${styles.productPhoto} ${styles.productPhoto73}`}
-                src="https://toasttab.s3.amazonaws.com/restaurants/restaurant-244719000000000000/menu/items/5/item-1300000007709137805_1770463698.png"
+                src="/images/menu/tv-native/drinks/07-coco-mango-blended-drink-cutout.png"
                 alt="Coco Mango blended drink"
               />
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 className={`${styles.productPhoto} ${styles.productPhoto74}`}
-                src="https://toasttab.s3.amazonaws.com/restaurants/restaurant-244719000000000000/menu/items/5/item-1300000005355541035_1770463715.png"
+                src="/images/menu/tv-native/drinks/08-mango-grapefruit-crystal-blended-drink-cutout.png"
                 alt="Mango Grapefruit Crystal blended drink"
               />
             </div>
@@ -596,20 +596,20 @@ function RightMenu() {
             className={styles.coffee}
           >
             <Item code="81">
-              Vietnamese Iced Coffee ❄ ☁ <Price>$6.75</Price>
+              Vietnamese Iced Coffee ❄️ ☁️ <Price>$6.75</Price>
             </Item>
             <Item code="82">
               <span>
                 Crème Brûlée
                 <br />
-                Vietnamese Iced Coffee ❄ <Price>$8</Price>
+                Vietnamese Iced Coffee ❄️ <Price>$8</Price>
               </span>
             </Item>
             <Item code="83">
               <span>
                 Pistachio Cream
                 <br />
-                Vietnamese Iced Coffee ❄ <Price>$8</Price>
+                Vietnamese Iced Coffee ❄️ <Price>$8</Price>
               </span>
             </Item>
             <Item code="84">
@@ -620,7 +620,7 @@ function RightMenu() {
               </span>
             </Item>
             <Item code="85">
-              Dirty Horchata de Avena ❄ <Price>$8</Price>
+              Dirty Horchata de Avena ❄️ <Price>$8</Price>
             </Item>
             <Item code="86">
               Vietnamese Mocha (Iced or Hot) <Price>$8</Price>
@@ -632,19 +632,19 @@ function RightMenu() {
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 className={`${styles.productPhoto} ${styles.productPhoto82}`}
-                src="https://toasttab.s3.amazonaws.com/restaurants/restaurant-244719000000000000/menu/items/3/item-1300000005291458123_1766840134.png"
+                src="/images/menu/tv-native/drinks/09-cr-me-br-l-e-vietnamese-iced-coffee-cutout.png"
                 alt="Crème Brûlée Vietnamese Iced Coffee"
               />
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 className={`${styles.productPhoto} ${styles.productPhoto83}`}
-                src="https://toasttab.s3.amazonaws.com/restaurants/restaurant-244719000000000000/menu/items/4/item-1300000007709066774_1772013562.jpg"
+                src="/images/menu/tv-native/drinks/10-pistachio-cream-vietnamese-iced-coffee-cutout.png"
                 alt="Pistachio Cream Vietnamese Iced Coffee"
               />
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 className={`${styles.productPhoto} ${styles.productPhoto84}`}
-                src="https://toasttab.s3.amazonaws.com/restaurants/restaurant-244719000000000000/menu/items/4/item-1300000006111243964_1766829653.png"
+                src="/images/menu/tv-native/drinks/11-dino-fuel-vietnamese-coffee-and-thai-tea-cutout.png"
                 alt="Dino Fuel Vietnamese Coffee and Thai Tea"
               />
             </div>
@@ -681,7 +681,7 @@ function RightMenu() {
           <Section
             title={
               <>
-                Extras <Emoji>❄</Emoji>
+                Extras <Emoji>❄️</Emoji>
               </>
             }
             className={styles.extras}
