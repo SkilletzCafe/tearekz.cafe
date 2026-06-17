@@ -473,7 +473,7 @@ function RightMenu() {
               <Colored color="#7b3f98">Purple</Colored> Lemonade <Price>$7.5</Price>
             </Item>
             <Item code="66">
-              Rose Hibiscus Lemonade <Price>$6.75</Price>
+              Rose Hibiscus Lemonade <Price>$7</Price>
             </Item>
             <Item code="67">
               Ginger Lemonade <Price>$7</Price>
