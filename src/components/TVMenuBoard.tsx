@@ -488,24 +488,14 @@ function RightMenu() {
                 src="/images/menu/tv-native/drinks/01-strawberry-lemonade-cutout.png"
                 alt="Strawberry Lemonade"
               />
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                className={`${styles.productPhoto} ${styles.productPhoto63}`}
-                src="/images/menu/tv-native/drinks/02-mango-lemonade-cutout.png"
-                alt="Mango Lemonade"
-              />
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                className={`${styles.productPhoto} ${styles.productPhoto64}`}
-                src="/images/menu/tv-native/drinks/03-passionfruit-lemonade-cutout.png"
-                alt="Passionfruit Lemonade"
-              />
+              <span className={`${styles.photoCaption} ${styles.photoCaption62}`}>62</span>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 className={`${styles.productPhoto} ${styles.productPhoto65}`}
                 src="/images/menu/tv-native/drinks/04-purple-lemonade-cutout.png"
                 alt="Purple Lemonade"
               />
+              <span className={`${styles.photoCaption} ${styles.photoCaption65}`}>65</span>
             </div>
           </Section>
         </div>
@@ -565,24 +555,14 @@ function RightMenu() {
                 src="/images/menu/tv-native/drinks/05-golden-mango-blended-drink-cutout.png"
                 alt="Golden Mango blended drink"
               />
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                className={`${styles.productPhoto} ${styles.productPhoto72}`}
-                src="/images/menu/tv-native/drinks/06-jasmine-or-magnolia-mango-blended-drink-cutout.png"
-                alt="Jasmine or Magnolia Mango blended drink"
-              />
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                className={`${styles.productPhoto} ${styles.productPhoto73}`}
-                src="/images/menu/tv-native/drinks/07-coco-mango-blended-drink-cutout.png"
-                alt="Coco Mango blended drink"
-              />
+              <span className={`${styles.photoCaption} ${styles.photoCaption71}`}>71</span>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 className={`${styles.productPhoto} ${styles.productPhoto74}`}
                 src="/images/menu/tv-native/drinks/08-mango-grapefruit-crystal-blended-drink-cutout.png"
                 alt="Mango Grapefruit Crystal blended drink"
               />
+              <span className={`${styles.photoCaption} ${styles.photoCaption74}`}>74</span>
             </div>
           </Section>
 
@@ -635,18 +615,14 @@ function RightMenu() {
                 src="/images/menu/tv-native/drinks/09-cr-me-br-l-e-vietnamese-iced-coffee-cutout.png"
                 alt="Crème Brûlée Vietnamese Iced Coffee"
               />
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                className={`${styles.productPhoto} ${styles.productPhoto83}`}
-                src="/images/menu/tv-native/drinks/10-pistachio-cream-vietnamese-iced-coffee-cutout.png"
-                alt="Pistachio Cream Vietnamese Iced Coffee"
-              />
+              <span className={`${styles.photoCaption} ${styles.photoCaption82}`}>82</span>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 className={`${styles.productPhoto} ${styles.productPhoto84}`}
                 src="/images/menu/tv-native/drinks/11-dino-fuel-vietnamese-coffee-and-thai-tea-cutout.png"
                 alt="Dino Fuel Vietnamese Coffee and Thai Tea"
               />
+              <span className={`${styles.photoCaption} ${styles.photoCaption84}`}>84</span>
             </div>
           </Section>
         </div>
@@ -728,9 +704,20 @@ function RightMenu() {
               <Colored color="#5d8a2a">Pineapple</Colored>
               <br />
               <br />
-              <b>Includes up to 3 toppings:</b>
+              <b>Add toppings (choose up to 3):</b>
               <br />
-              Fresh fruit • Popping boba • Jelly • Agar boba
+              <Colored color="#c43c37">Fresh Strawberries</Colored> •{' '}
+              <Colored color="#d28a17">Diced Mango</Colored> • Grapefruit Pulp
+              <br />
+              <b>Popping Boba:</b> <Colored color="#d28a17">Mango</Colored> |{' '}
+              <Colored color="#c43c37">Strawberry</Colored> |{' '}
+              <Colored color="#7c1f1f">Lychee</Colored>
+              <br />
+              <b>Jelly:</b> <Colored color="#d28a17">Mango Star</Colored> |{' '}
+              <Colored color="#c43c37">Strawberry Heart</Colored> |{' '}
+              <Colored color="#7c1f1f">Lychee</Colored>
+              <br />
+              <b>Agar Boba:</b> Crystal | <Colored color="#7a4b21">Brown Sugar</Colored>
               <br />
               <em>Optional condensed milk drizzle</em>
             </div>
