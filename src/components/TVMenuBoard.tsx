@@ -1,4 +1,4 @@
-import { ReactNode, useEffect } from 'react';
+import { CSSProperties, ReactNode, useEffect, useState } from 'react';
 
 import Head from 'next/head';
 
@@ -21,6 +21,13 @@ type SectionProps = {
   children: ReactNode;
   className?: string;
   subhead?: ReactNode;
+};
+
+type RegionDef = {
+  id: number;
+  label: string;
+  color: string;
+  style: CSSProperties;
 };
 
 function useTvRefresh() {
@@ -49,6 +56,162 @@ function useTvRefresh() {
     };
   }, []);
 }
+
+function useDebugRegions() {
+  const [enabled, setEnabled] = useState(false);
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const value = params.get('debugRegions') ?? params.get('regions') ?? '';
+    setEnabled(['1', 'true', 'yes'].includes(value.toLowerCase()));
+  }, []);
+
+  return enabled;
+}
+
+function RegionOverlay({ regions }: { regions: RegionDef[] }) {
+  return (
+    <div className={styles.regionOverlay} aria-hidden="true">
+      {regions.map((region) => (
+        <div
+          key={region.id}
+          className={styles.regionBox}
+          style={{ ...region.style, borderColor: region.color, color: region.color }}
+        >
+          <span className={styles.regionLabel} style={{ backgroundColor: region.color }}>
+            {region.id}. {region.label}
+          </span>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+const LEFT_REGIONS: RegionDef[] = [
+  {
+    id: 1,
+    label: 'Logo',
+    color: '#e53935',
+    style: { left: '0.2cqw', top: '0.1cqh', width: '7.1cqw', height: '11.5cqh' },
+  },
+  {
+    id: 2,
+    label: 'Legend',
+    color: '#8e24aa',
+    style: { left: '7.6cqw', top: '0.4cqh', width: '19.2cqw', height: '9.5cqh' },
+  },
+  {
+    id: 3,
+    label: 'Sweetness / ice / milk options',
+    color: '#1e88e5',
+    style: { left: '27.5cqw', top: '0.35cqh', width: '70.3cqw', height: '8.4cqh' },
+  },
+  {
+    id: 4,
+    label: 'Signatures',
+    color: '#43a047',
+    style: { left: '0.48cqw', top: '13.45cqh', width: '24.35cqw', height: '81.8cqh' },
+  },
+  {
+    id: 5,
+    label: 'Milk Teas',
+    color: '#fb8c00',
+    style: { left: '25.85cqw', top: '13.45cqh', width: '20.85cqw', height: '34.4cqh' },
+  },
+  {
+    id: 6,
+    label: 'Pure Teas',
+    color: '#00acc1',
+    style: { left: '25.85cqw', top: '57.6cqh', width: '20.85cqw', height: '33.0cqh' },
+  },
+  {
+    id: 7,
+    label: 'Fruit Teas',
+    color: '#7cb342',
+    style: { left: '47.72cqw', top: '13.45cqh', width: '22.25cqw', height: '39.3cqh' },
+  },
+  {
+    id: 8,
+    label: 'Matcha / Chocolate',
+    color: '#3949ab',
+    style: { left: '47.72cqw', top: '62.0cqh', width: '22.25cqw', height: '30.4cqh' },
+  },
+  {
+    id: 9,
+    label: 'Cream Tops box',
+    color: '#6d4c41',
+    style: { left: '70.95cqw', top: '13.45cqh', width: '28.0cqw', height: '44.8cqh' },
+  },
+  {
+    id: 10,
+    label: 'Toppings box',
+    color: '#d81b60',
+    style: { left: '70.95cqw', top: '62.8cqh', width: '28.0cqw', height: '34.9cqh' },
+  },
+];
+
+const RIGHT_REGIONS: RegionDef[] = [
+  {
+    id: 1,
+    label: 'Fruit Teas',
+    color: '#43a047',
+    style: { left: '0.85cqw', top: '1.05cqh', width: '31.6cqw', height: '48.3cqh' },
+  },
+  {
+    id: 2,
+    label: 'Smash Lemonades',
+    color: '#e53935',
+    style: { left: '0.85cqw', top: '50.7cqh', width: '31.6cqw', height: '45.5cqh' },
+  },
+  {
+    id: 3,
+    label: 'Lemonade photo pair',
+    color: '#c2185b',
+    style: { left: '21.2cqw', top: '62.9cqh', width: '11.2cqw', height: '22.0cqh' },
+  },
+  {
+    id: 4,
+    label: 'Blended Drinks',
+    color: '#fb8c00',
+    style: { left: '33.6cqw', top: '1.05cqh', width: '34.7cqw', height: '51.9cqh' },
+  },
+  {
+    id: 5,
+    label: 'Blended photo pair',
+    color: '#8e24aa',
+    style: { left: '55.0cqw', top: '10.2cqh', width: '13.2cqw', height: '22.0cqh' },
+  },
+  {
+    id: 6,
+    label: 'Coffee Drinks',
+    color: '#6d4c41',
+    style: { left: '33.6cqw', top: '54.3cqh', width: '34.7cqw', height: '42.5cqh' },
+  },
+  {
+    id: 7,
+    label: 'Coffee photo pair',
+    color: '#3949ab',
+    style: { left: '55.8cqw', top: '65.0cqh', width: '12.4cqw', height: '19.8cqh' },
+  },
+  {
+    id: 8,
+    label: 'Hot Drinks',
+    color: '#1e88e5',
+    style: { left: '69.45cqw', top: '1.05cqh', width: '29.5cqw', height: '27.7cqh' },
+  },
+  {
+    id: 9,
+    label: 'Extras',
+    color: '#00acc1',
+    style: { left: '69.45cqw', top: '30.1cqh', width: '29.5cqw', height: '15.9cqh' },
+  },
+  {
+    id: 10,
+    label: 'Hawaiian Shaved Ice',
+    color: '#7cb342',
+    style: { left: '69.45cqw', top: '47.4cqh', width: '29.5cqw', height: '47.2cqh' },
+  },
+];
 
 function Section({ title, tone = 'green', children, className = '', subhead }: SectionProps) {
   return (
@@ -92,7 +255,7 @@ function Emoji({ children }: { children: ReactNode }) {
   );
 }
 
-function LeftMenu() {
+function LeftMenu({ debugRegions = false }: { debugRegions?: boolean }) {
   return (
     <div className={`${styles.board} ${styles.leftBoard}`}>
       <header className={styles.leftTopBar}>
@@ -384,11 +547,12 @@ function LeftMenu() {
           </div>
         </aside>
       </main>
+      {debugRegions && <RegionOverlay regions={LEFT_REGIONS} />}
     </div>
   );
 }
 
-function RightMenu() {
+function RightMenu({ debugRegions = false }: { debugRegions?: boolean }) {
   return (
     <div className={`${styles.board} ${styles.rightBoard}`}>
       <main className={styles.rightGrid}>
@@ -724,12 +888,14 @@ function RightMenu() {
           </Section>
         </div>
       </main>
+      {debugRegions && <RegionOverlay regions={RIGHT_REGIONS} />}
     </div>
   );
 }
 
 export function TVMenuBoard({ side }: { side: MenuSide }) {
   useTvRefresh();
+  const debugRegions = useDebugRegions();
 
   const pageTitle = `Menu Display - ${side === 'left' ? 'Left' : 'Right'}`;
 
@@ -739,7 +905,13 @@ export function TVMenuBoard({ side }: { side: MenuSide }) {
         <title>{pageTitle}</title>
         <meta name="robots" content="noindex, nofollow" />
       </Head>
-      <div className={styles.viewport}>{side === 'left' ? <LeftMenu /> : <RightMenu />}</div>
+      <div className={styles.viewport}>
+        {side === 'left' ? (
+          <LeftMenu debugRegions={debugRegions} />
+        ) : (
+          <RightMenu debugRegions={debugRegions} />
+        )}
+      </div>
     </>
   );
 }
