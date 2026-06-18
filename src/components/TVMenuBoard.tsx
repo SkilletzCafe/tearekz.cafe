@@ -622,7 +622,7 @@ function RightMenu({ debugRegions = false }: { debugRegions?: boolean }) {
               Ginger Lemonade <Price>$7</Price>
             </Item>
             <div
-              className={`${styles.productPhotoGroup} ${styles.lemonadeCluster}`}
+              className={`${styles.productPhotoSlot} ${styles.lemonadeCluster}`}
               aria-hidden="true"
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -690,7 +690,7 @@ function RightMenu({ debugRegions = false }: { debugRegions?: boolean }) {
               <Colored color="#5d8a2a">Pineapple</Colored>
             </div>
             <div
-              className={`${styles.productPhotoGroup} ${styles.blendedCluster}`}
+              className={`${styles.productPhotoSlot} ${styles.blendedCluster}`}
               aria-hidden="true"
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -750,7 +750,7 @@ function RightMenu({ debugRegions = false }: { debugRegions?: boolean }) {
               Vietnamese Mocha (Iced or Hot) <Price>$8</Price>
             </Item>
             <div
-              className={`${styles.productPhotoGroup} ${styles.coffeeCluster}`}
+              className={`${styles.productPhotoSlot} ${styles.coffeeCluster}`}
               aria-hidden="true"
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
