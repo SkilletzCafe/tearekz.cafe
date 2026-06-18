@@ -599,7 +599,8 @@ function RightMenu({ debugRegions = false }: { debugRegions?: boolean }) {
               <Colored color="#d28a17">Mango</Colored> |{' '}
               <Colored color="#7b3f98">Passionfruit</Colored> |{' '}
               <Colored color="#c58aa8">Peach</Colored> | <Colored color="#7c1f1f">Lychee</Colored>
-              <br />| <Colored color="#b71c1c">Raspberry</Colored> |{' '}
+              <br />
+              <Colored color="#b71c1c">Raspberry</Colored> |{' '}
               <Colored color="#5d8a2a">Pineapple</Colored>
             </div>
           </Section>
@@ -612,13 +613,7 @@ function RightMenu({ debugRegions = false }: { debugRegions?: boolean }) {
                 <Emoji>🌙</Emoji>
               </>
             }
-            subhead={
-              <>
-                Freshly smashed whole lemons blended with all-
-                <br />
-                natural fruit purée
-              </>
-            }
+            subhead="Freshly smashed whole lemons blended with all-natural fruit purée"
             className={styles.lemonades}
           >
             <Item code="61">
@@ -706,7 +701,8 @@ function RightMenu({ debugRegions = false }: { debugRegions?: boolean }) {
               <Colored color="#d28a17">Mango</Colored> |{' '}
               <Colored color="#7b3f98">Passionfruit</Colored> |{' '}
               <Colored color="#c58aa8">Peach</Colored> | <Colored color="#7c1f1f">Lychee</Colored>
-              <br />| <Colored color="#b71c1c">Raspberry</Colored> |{' '}
+              <br />
+              <Colored color="#b71c1c">Raspberry</Colored> |{' '}
               <Colored color="#5d8a2a">Pineapple</Colored>
             </div>
             <div

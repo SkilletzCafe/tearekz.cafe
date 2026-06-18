@@ -130,14 +130,14 @@
 
 .options {
   position: absolute;
-  left: 28cqw;
+  left: 27.2cqw;
   right: 1.6cqw;
   top: 0;
   text-align: center;
   color: #8b5269;
-  font-size: 1.1cqw;
+  font-size: 1.13cqw;
   line-height: 1.48;
-  font-weight: 740;
+  font-weight: 700;
 }
 
 .options b {
@@ -176,16 +176,16 @@
 }
 
 .sectionTitle {
-  min-height: 5.15cqh;
+  min-height: 5cqh;
   display: flex;
   align-items: center;
   gap: 0.12cqw;
   padding: 0 0.9cqw;
   box-sizing: border-box;
   color: #fff;
-  font-size: 1.72cqw;
+  font-size: 1.66cqw;
   line-height: 1;
-  font-weight: 780;
+  font-weight: 740;
   letter-spacing: -0.035em;
   text-shadow: 0 0.055cqw 0 rgba(0, 0, 0, 0.2);
   white-space: nowrap;
@@ -213,8 +213,8 @@
 
 .item {
   margin: 0 0 0.72cqh;
-  font-weight: 820;
-  font-size: 1.5cqw;
+  font-weight: 780;
+  font-size: 1.47cqw;
   line-height: 1.05;
   letter-spacing: -0.046em;
 }
@@ -230,14 +230,14 @@
   color: #6d7d18;
   text-decoration: underline;
   text-underline-offset: 0.1em;
-  font-weight: 860;
+  font-weight: 820;
   margin-right: 0.38cqw;
 }
 
 .price {
   margin-left: 0.24cqw;
   color: #050505;
-  font-weight: 860;
+  font-weight: 820;
   white-space: nowrap;
 }
 
@@ -282,7 +282,7 @@
 }
 
 .pureTeas {
-  margin-top: 8.8cqh;
+  margin-top: 6.8cqh;
 }
 
 .pureTeas .item,
@@ -291,7 +291,7 @@
 }
 
 .matcha {
-  margin-top: 11cqh;
+  margin-top: 9.1cqh;
 }
 
 .leftAside {
@@ -305,14 +305,14 @@
 }
 
 .boxTitle {
-  height: 5.9cqh;
+  height: 5.55cqh;
   border-bottom: 0.08cqw solid #222;
   display: flex;
   align-items: center;
   gap: 0.08cqw;
   padding: 0 0.9cqw;
   box-sizing: border-box;
-  font-size: 1.84cqw;
+  font-size: 1.74cqw;
   font-weight: 1000;
   font-style: italic;
   letter-spacing: -0.04em;
@@ -327,15 +327,15 @@
 }
 
 .boxBody {
-  padding: 0.92cqh 0.95cqw 1.05cqh;
-  font-size: 1.36cqw;
-  font-weight: 660;
-  line-height: 1.18;
+  padding: 0.78cqh 0.95cqw 0.88cqh;
+  font-size: 1.32cqw;
+  font-weight: 620;
+  line-height: 1.15;
   letter-spacing: -0.034em;
 }
 
 .boxBody p {
-  margin: 0 0 1.05cqh;
+  margin: 0 0 0.86cqh;
 }
 
 .boxNote {
@@ -347,32 +347,36 @@
 }
 
 .creamBox {
-  min-height: 40.6cqh;
+  min-height: 39.4cqh;
 }
 
 .toppingBox {
-  min-height: 37.4cqh;
+  min-height: 33.2cqh;
 }
 
 /* Right-board tuning */
+.rightGrid .section {
+  margin-bottom: 0.95cqh;
+}
+
 .rightGrid .sectionTitle {
-  min-height: 5.15cqh;
-  font-size: 1.7cqw;
+  min-height: 4.95cqh;
+  font-size: 1.62cqw;
 }
 
 .rightGrid .item {
-  font-size: 1.46cqw;
-  margin-bottom: 0.74cqh;
+  font-size: 1.39cqw;
+  margin-bottom: 0.7cqh;
 }
 
 .rightGrid .description {
-  font-size: 1.09cqw;
+  font-size: 1.05cqw;
   margin-left: 2.55cqw;
 }
 
 .builderCopy {
   margin: 0.36cqh 0 0 2.55cqw;
-  font-size: 1.15cqw;
+  font-size: 1.09cqw;
   line-height: 1.16;
   font-weight: 640;
   letter-spacing: -0.03em;
@@ -386,7 +390,7 @@
 
 .shavedIceBuilder {
   margin-top: 0.65cqh;
-  font-size: 1.04cqw;
+  font-size: 1cqw;
   line-height: 1.16;
 }
 
@@ -420,13 +424,13 @@
 
 .lemonades .subhead,
 .lemonades .item {
-  max-width: 18.7cqw;
+  max-width: 20.2cqw;
 }
 
 .blended .item,
 .blended .builderCopy,
 .coffee .item {
-  max-width: 21.6cqw;
+  max-width: 23.1cqw;
 }
 
 .productPhotoGroup {
@@ -453,38 +457,38 @@
 }
 
 .blendedCluster {
-  right: 0.05cqw;
-  top: 9.4cqh;
-  width: 12.8cqw;
-  height: 20.8cqh;
+  right: -0.15cqw;
+  top: 10.2cqh;
+  width: 12.4cqw;
+  height: 19.8cqh;
 }
 
 .lemonadeCluster {
-  right: 0.05cqw;
-  top: 11.4cqh;
-  width: 12.8cqw;
-  height: 21.8cqh;
+  right: -0.05cqw;
+  top: 10.5cqh;
+  width: 12.3cqw;
+  height: 20.6cqh;
 }
 
 .coffeeCluster {
-  right: 0.15cqw;
-  top: 10.4cqh;
-  width: 12.2cqw;
-  height: 18.6cqh;
+  right: 0.1cqw;
+  top: 9.8cqh;
+  width: 11.8cqw;
+  height: 17.8cqh;
 }
 
 .productPhoto62 {
   left: 0;
   top: 0.4cqh;
-  width: 6.2cqw;
-  height: 11.6cqh;
+  width: 5.95cqw;
+  height: 11.2cqh;
 }
 
 .productPhoto65 {
   right: 0.35cqw;
-  bottom: 1.9cqh;
-  width: 5.65cqw;
-  height: 12.6cqh;
+  bottom: 2.35cqh;
+  width: 5.35cqw;
+  height: 11.9cqh;
 }
 
 .photoCaption62 {
@@ -500,15 +504,15 @@
 .productPhoto71 {
   left: 0;
   top: 0.1cqh;
-  width: 6.05cqw;
-  height: 13.6cqh;
+  width: 5.82cqw;
+  height: 13.05cqh;
 }
 
 .productPhoto74 {
   right: 0.95cqw;
-  bottom: 1.8cqh;
-  width: 6.2cqw;
-  height: 13.7cqh;
+  bottom: 2.45cqh;
+  width: 5.82cqw;
+  height: 12.85cqh;
 }
 
 .photoCaption71 {
@@ -524,15 +528,15 @@
 .productPhoto82 {
   left: 0;
   top: 0.2cqh;
-  width: 6.2cqw;
-  height: 15.25cqh;
+  width: 5.72cqw;
+  height: 14.15cqh;
 }
 
 .productPhoto84 {
   right: 0.3cqw;
   top: 0;
-  width: 6.1cqw;
-  height: 15.55cqh;
+  width: 5.7cqw;
+  height: 14.5cqh;
 }
 
 .photoCaption82 {
