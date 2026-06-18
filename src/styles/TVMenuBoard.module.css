@@ -170,6 +170,26 @@
   gap: 1.15cqw;
 }
 
+.menuColumn {
+  position: relative;
+  min-width: 0;
+}
+
+.leftCol1,
+.rightCol1 {
+  grid-column: 1;
+}
+
+.leftCol2,
+.rightCol2 {
+  grid-column: 2;
+}
+
+.leftCol3,
+.rightCol3 {
+  grid-column: 3;
+}
+
 .section {
   position: relative;
   margin: 0 0 1.35cqh;
@@ -269,16 +289,11 @@
   font-size: 1.49cqw;
 }
 
-.signatures {
-  width: 24.35cqw;
-}
-
-.leftMiddleA {
-  width: 20.85cqw;
-}
-
-.leftMiddleB {
-  width: 22.25cqw;
+.signatures,
+.leftCol1,
+.leftCol2,
+.leftCol3 {
+  width: 100%;
 }
 
 .pureTeas {
@@ -295,6 +310,7 @@
 }
 
 .leftAside {
+  grid-column: 4;
   padding-left: 0.35cqw;
 }
 
@@ -436,6 +452,7 @@
 .productPhotoGroup {
   position: absolute;
   pointer-events: none;
+  z-index: 1;
 }
 
 .productPhoto {

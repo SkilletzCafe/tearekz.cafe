@@ -102,113 +102,95 @@ const LEFT_REGIONS: RegionDef[] = [
   },
   {
     id: 3,
-    label: 'Sweetness / ice / milk options',
+    label: 'Options',
     color: '#1e88e5',
-    style: { left: '27.5cqw', top: '0.35cqh', width: '70.3cqw', height: '8.4cqh' },
+    style: { left: '27.2cqw', top: '0.35cqh', width: '70.2cqw', height: '8.4cqh' },
   },
   {
     id: 4,
-    label: 'Signatures',
+    label: 'Col 1 — Signatures',
     color: '#43a047',
     style: { left: '0.48cqw', top: '13.45cqh', width: '24.35cqw', height: '81.8cqh' },
   },
   {
     id: 5,
-    label: 'Milk Teas',
+    label: 'Col 2 — Milk Teas',
     color: '#fb8c00',
-    style: { left: '25.85cqw', top: '13.45cqh', width: '20.85cqw', height: '34.4cqh' },
+    style: { left: '25.85cqw', top: '13.45cqh', width: '20.85cqw', height: '38.0cqh' },
   },
   {
     id: 6,
-    label: 'Pure Teas',
-    color: '#00acc1',
-    style: { left: '25.85cqw', top: '57.6cqh', width: '20.85cqw', height: '33.0cqh' },
+    label: 'Col 2 — Pure Teas',
+    color: '#fb8c00',
+    style: { left: '25.85cqw', top: '56.05cqh', width: '20.85cqw', height: '34.6cqh' },
   },
   {
     id: 7,
-    label: 'Fruit Teas',
+    label: 'Col 3 — Milk Drinks',
     color: '#7cb342',
     style: { left: '47.72cqw', top: '13.45cqh', width: '22.25cqw', height: '39.3cqh' },
   },
   {
     id: 8,
-    label: 'Matcha / Chocolate',
-    color: '#3949ab',
-    style: { left: '47.72cqw', top: '62.0cqh', width: '22.25cqw', height: '30.4cqh' },
+    label: 'Col 3 — Matcha',
+    color: '#7cb342',
+    style: { left: '47.72cqw', top: '57.8cqh', width: '22.25cqw', height: '34.6cqh' },
   },
   {
     id: 9,
-    label: 'Cream Tops box',
+    label: 'Col 4 — Cream Tops',
     color: '#6d4c41',
-    style: { left: '70.95cqw', top: '13.45cqh', width: '28.0cqw', height: '44.8cqh' },
+    style: { left: '70.95cqw', top: '13.45cqh', width: '28.0cqw', height: '39.4cqh' },
   },
   {
     id: 10,
-    label: 'Toppings box',
+    label: 'Col 4 — Toppings',
     color: '#d81b60',
-    style: { left: '70.95cqw', top: '62.8cqh', width: '28.0cqw', height: '34.9cqh' },
+    style: { left: '70.95cqw', top: '54.9cqh', width: '28.0cqw', height: '33.2cqh' },
   },
 ];
 
 const RIGHT_REGIONS: RegionDef[] = [
   {
     id: 1,
-    label: 'Fruit Teas',
+    label: 'Col 1 — Fruit Teas',
     color: '#43a047',
     style: { left: '0.85cqw', top: '1.05cqh', width: '31.6cqw', height: '48.3cqh' },
   },
   {
     id: 2,
-    label: 'Smash Lemonades',
-    color: '#e53935',
+    label: 'Col 1 — Smash Lemonades',
+    color: '#43a047',
     style: { left: '0.85cqw', top: '50.7cqh', width: '31.6cqw', height: '45.5cqh' },
   },
   {
     id: 3,
-    label: 'Lemonade photo pair',
-    color: '#c2185b',
-    style: { left: '21.2cqw', top: '62.9cqh', width: '11.2cqw', height: '22.0cqh' },
-  },
-  {
-    id: 4,
-    label: 'Blended Drinks',
+    label: 'Col 2 — Blended Drinks',
     color: '#fb8c00',
     style: { left: '33.6cqw', top: '1.05cqh', width: '34.7cqw', height: '51.9cqh' },
   },
   {
-    id: 5,
-    label: 'Blended photo pair',
-    color: '#8e24aa',
-    style: { left: '55.0cqw', top: '10.2cqh', width: '13.2cqw', height: '22.0cqh' },
-  },
-  {
-    id: 6,
-    label: 'Coffee Drinks',
-    color: '#6d4c41',
+    id: 4,
+    label: 'Col 2 — Coffee Drinks',
+    color: '#fb8c00',
     style: { left: '33.6cqw', top: '54.3cqh', width: '34.7cqw', height: '42.5cqh' },
   },
   {
-    id: 7,
-    label: 'Coffee photo pair',
-    color: '#3949ab',
-    style: { left: '55.8cqw', top: '65.0cqh', width: '12.4cqw', height: '19.8cqh' },
-  },
-  {
-    id: 8,
-    label: 'Hot Drinks',
+    id: 5,
+    label: 'Col 3 — Hot Drinks',
     color: '#1e88e5',
     style: { left: '69.45cqw', top: '1.05cqh', width: '29.5cqw', height: '27.7cqh' },
   },
   {
-    id: 9,
-    label: 'Extras',
-    color: '#00acc1',
+    id: 6,
+    label: 'Col 3 — Extras',
+    color: '#1e88e5',
     style: { left: '69.45cqw', top: '30.1cqh', width: '29.5cqw', height: '15.9cqh' },
   },
   {
-    id: 10,
-    label: 'Hawaiian Shaved Ice',
-    color: '#7cb342',
+    id: 7,
+    label: 'Col 3 — Hawaiian Shaved Ice',
+    color: '#1e88e5',
     style: { left: '69.45cqw', top: '47.4cqh', width: '29.5cqw', height: '47.2cqh' },
   },
 ];
@@ -289,71 +271,73 @@ function LeftMenu({ debugRegions = false }: { debugRegions?: boolean }) {
       </header>
 
       <main className={styles.leftGrid}>
-        <Section
-          title={
-            <>
-              <Emoji>🦖</Emoji> Tea-Rek&apos;z Signatures <Emoji>❄️</Emoji>
-            </>
-          }
-          className={styles.signatures}
-        >
-          <Item code="S1" description="Magnolia Green Tea with Jasmine Cream">
-            Magnolia Cloud <Price>$7.5</Price>
-          </Item>
-          <Item code="S2" description="Magnolia Green Tea with Sea Salt Cheese Cream">
-            Magnolia Velvet <Price>$7.5</Price>
-          </Item>
-          <Item code="S3" description="Magnolia Green Tea with Matcha Cream">
-            Magnolia Matcha Cloud <Price>$8</Price>
-          </Item>
-          <Item
-            code="S4"
-            description={
+        <div className={`${styles.menuColumn} ${styles.leftCol1}`}>
+          <Section
+            title={
               <>
-                Lychee and Peach Infused Magnolia Green Tea
-                <br />
-                with Jasmine Cream
+                <Emoji>🦖</Emoji> Tea-Rek&apos;z Signatures <Emoji>❄️</Emoji>
               </>
             }
+            className={styles.signatures}
           >
-            Magnolia Orchard <Price>$8</Price>
-          </Item>
-          <Item code="S5" description="Lychee Jasmine Green Tea with Jasmine Cream">
-            Lychee Blossom <Price>$8</Price>
-          </Item>
-          <Item code="S6" description="Vietnamese Iced Coffee with Pistachio Cream">
-            Pistachio Cream Coffee <Price>$8</Price>
-          </Item>
-          <Item code="S7" description="Matcha Latte with Raspberry Cream">
-            Matcha Blossom <Price>$8</Price>
-          </Item>
-          <Item
-            code="S8"
-            description={
-              <>
-                Organic strawberries, fresh milk, and naturally
-                <br />
-                colored strawberry popping boba
-              </>
-            }
-          >
-            Strawberry Pop Milk 🌙 <Price>$7.5</Price>
-          </Item>
-          <Item
-            code="S9"
-            description={
-              <>
-                Organic mango, fresh milk, and naturally colored
-                <br />
-                mango popping boba
-              </>
-            }
-          >
-            Mango Pop Milk 🌙 <Price>$7.5</Price>
-          </Item>
-        </Section>
+            <Item code="S1" description="Magnolia Green Tea with Jasmine Cream">
+              Magnolia Cloud <Price>$7.5</Price>
+            </Item>
+            <Item code="S2" description="Magnolia Green Tea with Sea Salt Cheese Cream">
+              Magnolia Velvet <Price>$7.5</Price>
+            </Item>
+            <Item code="S3" description="Magnolia Green Tea with Matcha Cream">
+              Magnolia Matcha Cloud <Price>$8</Price>
+            </Item>
+            <Item
+              code="S4"
+              description={
+                <>
+                  Lychee and Peach Infused Magnolia Green Tea
+                  <br />
+                  with Jasmine Cream
+                </>
+              }
+            >
+              Magnolia Orchard <Price>$8</Price>
+            </Item>
+            <Item code="S5" description="Lychee Jasmine Green Tea with Jasmine Cream">
+              Lychee Blossom <Price>$8</Price>
+            </Item>
+            <Item code="S6" description="Vietnamese Iced Coffee with Pistachio Cream">
+              Pistachio Cream Coffee <Price>$8</Price>
+            </Item>
+            <Item code="S7" description="Matcha Latte with Raspberry Cream">
+              Matcha Blossom <Price>$8</Price>
+            </Item>
+            <Item
+              code="S8"
+              description={
+                <>
+                  Organic strawberries, fresh milk, and naturally
+                  <br />
+                  colored strawberry popping boba
+                </>
+              }
+            >
+              Strawberry Pop Milk 🌙 <Price>$7.5</Price>
+            </Item>
+            <Item
+              code="S9"
+              description={
+                <>
+                  Organic mango, fresh milk, and naturally colored
+                  <br />
+                  mango popping boba
+                </>
+              }
+            >
+              Mango Pop Milk 🌙 <Price>$7.5</Price>
+            </Item>
+          </Section>
+        </div>
 
-        <div className={styles.leftMiddleA}>
+        <div className={`${styles.menuColumn} ${styles.leftCol2}`}>
           <Section
             title={
               <>
@@ -422,7 +406,7 @@ function LeftMenu({ debugRegions = false }: { debugRegions?: boolean }) {
           </Section>
         </div>
 
-        <div className={styles.leftMiddleB}>
+        <div className={`${styles.menuColumn} ${styles.leftCol3}`}>
           <Section
             title={
               <>
@@ -485,7 +469,7 @@ function LeftMenu({ debugRegions = false }: { debugRegions?: boolean }) {
           </Section>
         </div>
 
-        <aside className={styles.leftAside}>
+        <aside className={`${styles.menuColumn} ${styles.leftAside}`}>
           <div className={`${styles.box} ${styles.creamBox}`}>
             <div className={`${styles.boxTitle} ${styles.creamTitle}`}>
               <Emoji>☁️</Emoji> Cream Tops
@@ -556,7 +540,7 @@ function RightMenu({ debugRegions = false }: { debugRegions?: boolean }) {
   return (
     <div className={`${styles.board} ${styles.rightBoard}`}>
       <main className={styles.rightGrid}>
-        <div>
+        <div className={`${styles.menuColumn} ${styles.rightCol1}`}>
           <Section
             title={
               <>
@@ -659,7 +643,7 @@ function RightMenu({ debugRegions = false }: { debugRegions?: boolean }) {
           </Section>
         </div>
 
-        <div>
+        <div className={`${styles.menuColumn} ${styles.rightCol2}`}>
           <Section
             title={
               <>
@@ -787,7 +771,7 @@ function RightMenu({ debugRegions = false }: { debugRegions?: boolean }) {
           </Section>
         </div>
 
-        <div>
+        <div className={`${styles.menuColumn} ${styles.rightCol3}`}>
           <Section
             title={
               <>
