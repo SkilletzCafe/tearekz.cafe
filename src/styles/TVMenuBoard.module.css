@@ -187,9 +187,6 @@
   left: 27.2cqw;
   right: 7.15cqw;
   top: -0.04cqh;
-  display: grid;
-  grid-template-columns: minmax(0, 1.82fr) minmax(0, 0.68fr);
-  gap: 1.45cqw;
   color: var(--palette-sugar-pink);
   font-size: 1.29cqw;
   line-height: 1.22;
@@ -217,10 +214,10 @@
 }
 
 .iceMilkOptions {
-  margin-top: 4.25cqh;
-  padding-left: 1.25cqw;
-  border-left: 0.16cqw solid rgb(21 63 115 / 0.28);
-  transform: translateX(-8.75cqw);
+  display: flex;
+  gap: 2.25cqw;
+  margin-top: 0.42cqh;
+  align-items: baseline;
 }
 
 .iceMilkOptions .optionRow:first-child {
