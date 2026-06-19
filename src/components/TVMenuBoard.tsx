@@ -590,7 +590,7 @@ function RightMenu({ debugRegions = false }: { debugRegions?: boolean }) {
             <Item code="55">
               Build Your Own Fruit Tea <Price>$6.75</Price>
             </Item>
-            <div className={styles.builderCopy}>
+            <div className={`${styles.builderCopy} ${styles.builderOptions}`}>
               <b>Choose a tea:</b>
               <br />
               <Colored color="#3e7a3b">Jasmine Green</Colored> |{' '}
@@ -702,7 +702,7 @@ function RightMenu({ debugRegions = false }: { debugRegions?: boolean }) {
             >
               🦖 Dino Freeze (Build Your Own) 🌙 <Price>$6.5</Price>
             </Item>
-            <div className={styles.builderCopy}>
+            <div className={`${styles.builderCopy} ${styles.builderOptions}`}>
               <b>Choose up to 2 fruits:</b>
               <br />
               <Colored color="#c43c37">Strawberry</Colored> |{' '}
@@ -861,7 +861,7 @@ function RightMenu({ debugRegions = false }: { debugRegions?: boolean }) {
             <Item code="H2">
               Build Your Own Shaved Ice <Price>$8</Price>
             </Item>
-            <div className={`${styles.builderCopy} ${styles.shavedIceBuilder}`}>
+            <div className={`${styles.builderCopy} ${styles.builderOptions}`}>
               <b>Choose a base flavor:</b>
               <br />
               <Colored color="#c43c37">Strawberry</Colored> |{' '}

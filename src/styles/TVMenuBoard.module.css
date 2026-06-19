@@ -52,6 +52,8 @@
   --menu-description-font-weight: 520;
   --menu-description-letter-spacing: -0.028em;
   --right-menu-description-font-size: 1.2cqw;
+  --builder-options-font-size: 1.43cqw;
+  --builder-options-line-height: 1.12;
   --photo-shadow: 0 0.24cqh 0.12cqw rgb(0 0 0 / 0.16);
   container-type: size;
   width: min(100vw, 177.7778vh);
@@ -462,10 +464,10 @@
   font-weight: 900;
 }
 
-.shavedIceBuilder {
+.builderOptions {
   margin-top: 0.62cqh;
-  font-size: 1.43cqw;
-  line-height: 1.12;
+  font-size: var(--builder-options-font-size);
+  line-height: var(--builder-options-line-height);
 }
 
 .fruitTeas {
