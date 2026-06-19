@@ -554,7 +554,7 @@ function RightMenu({ debugRegions = false }: { debugRegions?: boolean }) {
             className={styles.fruitTeas}
           >
             <Item code="51">
-              Lychee Jasmine Green ☁️ <Price>$6.75</Price>
+              <Colored color="#7c1f1f">Lychee</Colored> Jasmine Green ☁️ <Price>$6.75</Price>
             </Item>
             <Item code="52">
               <Colored color="#c43c37">Strawberry</Colored> <Colored color="#c58aa8">Peach</Colored>{' '}
@@ -607,7 +607,7 @@ function RightMenu({ debugRegions = false }: { debugRegions?: boolean }) {
               <Colored color="#c43c37">Strawberry</Colored> Lemonade <Price>$7</Price>
             </Item>
             <Item code="63">
-              <Colored color="#d28a17">Mango</Colored> Lemonade <Price>$7</Price>
+              <Colored color="#f2a21b">Mango</Colored> Lemonade <Price>$7</Price>
             </Item>
             <Item code="64">
               <Colored color="#7b3f98">Passionfruit</Colored> Lemonade <Price>$7</Price>
@@ -675,8 +675,12 @@ function RightMenu({ debugRegions = false }: { debugRegions?: boolean }) {
             >
               🥭 Mango Grapefruit Crystal 🌙 <Price>$8.5</Price>
             </Item>
-            <Item code="75" description={<>icy and refreshing, made with real fruit purée</>}>
-              🦕 Dino Freeze (Build Your Own) 🌙 <Price>$6.5</Price>
+            <Item
+              code="75"
+              description={<>icy and refreshing, made with real fruit purée</>}
+              className={styles.noWrapItem}
+            >
+              🦖 Dino Freeze (Build Your Own) 🌙 <Price>$6.5</Price>
             </Item>
             <div className={styles.builderCopy}>
               <b>Choose up to 2 fruits:</b>
@@ -738,7 +742,7 @@ function RightMenu({ debugRegions = false }: { debugRegions?: boolean }) {
             </Item>
             <Item code="84">
               <span>
-                🦕 Dino Fuel
+                🦖 Dino Fuel
                 <br />
                 (Vietnamese Coffee x Thai Tea) <Price>$8</Price>
               </span>

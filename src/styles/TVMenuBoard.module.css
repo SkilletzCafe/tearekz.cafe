@@ -19,7 +19,7 @@
   --palette-black: #151515;
   --palette-near-black: #050505;
   --palette-charcoal: #292929;
-  --palette-body-gray: #333333;
+  --palette-body-gray: #706962;
   --palette-caption-gray: #5a5a5a;
   --palette-border: #222222;
   --palette-brand-green: #567e36;
@@ -277,9 +277,9 @@
 
 .item {
   margin: 0 0 0.72cqh;
-  font-weight: 780;
-  font-size: 1.47cqw;
-  line-height: 1.05;
+  font-weight: 705;
+  font-size: 1.53cqw;
+  line-height: 1.12;
   letter-spacing: -0.046em;
 }
 
@@ -294,27 +294,31 @@
   color: var(--palette-section-green-dark);
   text-decoration: underline;
   text-underline-offset: 0.1em;
-  font-weight: 820;
+  font-weight: 760;
   margin-right: 0.38cqw;
 }
 
 .price {
   margin-left: 0.24cqw;
   color: var(--palette-near-black);
-  font-weight: 820;
+  font-weight: 760;
   white-space: nowrap;
 }
 
 .colored {
-  font-weight: 850;
+  font-weight: 760;
+}
+
+.noWrapItem .itemLine > span:last-child {
+  white-space: nowrap;
 }
 
 .description {
   margin: 0.12cqh 0 0 2.62cqw;
-  font-size: 1.12cqw;
-  line-height: 1.08;
+  font-size: 1.13cqw;
+  line-height: 1.16;
   font-style: italic;
-  font-weight: 560;
+  font-weight: 430;
   color: var(--palette-body-gray);
   letter-spacing: -0.024em;
 }
@@ -325,12 +329,12 @@
 }
 
 .signatures .description {
-  font-size: 1.1cqw;
+  font-size: 1.13cqw;
 }
 
 .compactSection .item {
   margin-bottom: 0.88cqh;
-  font-size: 1.49cqw;
+  font-size: 1.54cqw;
 }
 
 .signatures,
@@ -425,22 +429,22 @@
 }
 
 .rightGrid .item {
-  font-size: 1.39cqw;
-  margin-bottom: 0.7cqh;
+  font-size: 1.48cqw;
+  margin-bottom: 0.78cqh;
 }
 
 .rightGrid .description {
-  font-size: 1.05cqw;
+  font-size: 1.11cqw;
   margin-left: 2.55cqw;
 }
 
 .builderCopy {
   margin: 0.36cqh 0 0 2.55cqw;
-  font-size: 1.09cqw;
-  line-height: 1.16;
-  font-weight: 640;
+  font-size: 1.11cqw;
+  line-height: 1.2;
+  font-weight: 500;
   letter-spacing: -0.03em;
-  color: var(--palette-charcoal);
+  color: var(--palette-body-gray);
 }
 
 .builderCopy b {
@@ -450,8 +454,8 @@
 
 .shavedIceBuilder {
   margin-top: 0.65cqh;
-  font-size: 1cqw;
-  line-height: 1.16;
+  font-size: 1.04cqw;
+  line-height: 1.2;
 }
 
 .fruitTeas {
@@ -490,7 +494,7 @@
 .blended .item,
 .blended .builderCopy,
 .coffee .item {
-  max-width: 22.6cqw;
+  max-width: 23.3cqw;
 }
 
 .productPhotoSlot {
@@ -529,9 +533,9 @@
 }
 
 .blendedCluster {
-  right: -0.55cqw;
-  top: 9.45cqh;
-  width: 13.1cqw;
+  right: -0.75cqw;
+  top: 9.25cqh;
+  width: 12.9cqw;
   height: 24.4cqh;
 }
 
@@ -567,27 +571,27 @@
 }
 
 .productPhoto71 {
-  left: -0.3cqw;
-  top: 0;
-  width: 6.55cqw;
-  height: 16.85cqh;
+  left: -0.25cqw;
+  top: 0.25cqh;
+  width: 6.45cqw;
+  height: 17.05cqh;
 }
 
 .productPhoto74 {
-  right: 0.35cqw;
-  top: 3.6cqh;
-  width: 6.15cqw;
-  height: 16.8cqh;
+  right: 0.25cqw;
+  top: 0.25cqh;
+  width: 6.45cqw;
+  height: 17.05cqh;
 }
 
 .photoCaption71 {
-  left: 2.2cqw;
-  top: 17.15cqh;
+  left: 2.25cqw;
+  top: 17.55cqh;
 }
 
 .photoCaption74 {
-  right: 2.85cqw;
-  top: 20.8cqh;
+  right: 2.7cqw;
+  top: 17.55cqh;
 }
 
 .productPhoto82 {
