@@ -573,12 +573,14 @@ function LeftMenu({ debugRegions = false }: { debugRegions?: boolean }) {
             <div className={styles.boxBody}>
               <p className={styles.boxNote}>(Made with Real Cream · Contains Dairy)</p>
               <p>
-                <Colored color={CREAM_COLORS.brulee}>Crème Brûlée</Colored> (on cold drinks only){' '}
+                <Colored color={CREAM_COLORS.brulee}>Crème Brûlée</Colored>{' '}
+                <span className={styles.creamQualifier}>(on cold drinks only)</span>{' '}
                 <Price>$1.5</Price>
               </p>
               <p>
-                <Colored color={CREAM_COLORS.iceCream}>Vanilla Ice Cream Float</Colored> (on cold
-                drinks only) <Price>$2</Price>
+                <Colored color={CREAM_COLORS.iceCream}>Vanilla Ice Cream Float</Colored>{' '}
+                <span className={styles.creamQualifier}>(on cold drinks only)</span>{' '}
+                <Price>$2</Price>
               </p>
               <p>
                 <Colored color={CREAM_COLORS.jasmine}>Jasmine Cream</Colored> (Whipped){' '}

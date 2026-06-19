@@ -507,6 +507,13 @@
   color: var(--palette-body-gray);
 }
 
+.creamQualifier {
+  color: var(--palette-body-gray);
+  font-size: 0.94em;
+  font-style: italic;
+  font-weight: 360;
+}
+
 .creamBox {
   min-height: 39.4cqh;
 }
@@ -638,7 +645,7 @@
 }
 
 .productPhoto62 {
-  left: 0.65cqw;
+  left: 1.2cqw;
   top: 5.15cqh;
   width: 6.35cqw;
   height: 15.4cqh;
@@ -652,7 +659,7 @@
 }
 
 .photoCaption62 {
-  left: 2.95cqw;
+  left: 3.5cqw;
   top: 20.9cqh;
 }
 
@@ -662,7 +669,7 @@
 }
 
 .productPhoto71 {
-  left: 0.35cqw;
+  left: 0.95cqw;
   top: 0.25cqh;
   width: 6.45cqw;
   height: 17.05cqh;
@@ -676,7 +683,7 @@
 }
 
 .photoCaption71 {
-  left: 2.25cqw;
+  left: 2.85cqw;
   top: 17.55cqh;
 }
 
@@ -686,7 +693,7 @@
 }
 
 .productPhoto82 {
-  left: -0.2cqw;
+  left: 0.4cqw;
   top: 0.1cqh;
   width: 6.25cqw;
   height: 17.1cqh;
@@ -700,7 +707,7 @@
 }
 
 .photoCaption82 {
-  left: 2.45cqw;
+  left: 3.05cqw;
   top: 17.55cqh;
 }
 
