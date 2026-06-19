@@ -308,9 +308,9 @@
 }
 
 .subhead {
-  font-size: 1.15cqw;
+  font-size: 1.28cqw;
   font-style: italic;
-  line-height: 1.12;
+  line-height: 1.08;
   margin: 0.65cqh 0 0.35cqh 0.7cqw;
   color: var(--palette-charcoal);
 }
@@ -527,14 +527,8 @@
   height: 47.2cqh;
 }
 
-.lemonades .subhead,
-.lemonades .item {
-  max-width: 19.7cqw;
-}
-
 .blended .item,
-.blended .builderCopy,
-.coffee .item {
+.blended .builderCopy {
   max-width: 23.3cqw;
 }
 
@@ -572,7 +566,7 @@
 
 .lemonadeCluster {
   right: -0.35cqw;
-  top: 9.1cqh;
+  top: 5.8cqh;
   width: 12.9cqw;
   height: 24.8cqh;
 }
