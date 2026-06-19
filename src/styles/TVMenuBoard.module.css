@@ -260,12 +260,12 @@
 
 .showcasePreview {
   position: absolute;
-  right: 0.8cqw;
-  bottom: 0.82cqh;
-  width: 23.6cqw;
-  height: 18.4cqh;
+  right: 0.35cqw;
+  bottom: 0.18cqh;
+  width: 14.4cqw;
+  height: 15.9cqh;
   pointer-events: none;
-  z-index: 2;
+  z-index: 3;
 }
 
 .showcaseSlide {
@@ -278,9 +278,9 @@
 
 .showcaseImage {
   position: absolute;
-  inset: 0 0 2.8cqh;
+  inset: 0 0 2.45cqh;
   width: 100%;
-  height: calc(100% - 2.8cqh);
+  height: calc(100% - 2.45cqh);
   object-fit: contain;
   object-position: center bottom;
   filter: drop-shadow(0 0.28cqh 0.2cqw rgb(0 0 0 / 0.18));
@@ -294,7 +294,7 @@
   right: 0;
   bottom: 0;
   color: var(--palette-section-green-dark);
-  font-size: 1.45cqw;
+  font-size: 1.28cqw;
   font-weight: 900;
   line-height: 1;
   text-align: center;
@@ -319,7 +319,7 @@
   inset: 13.45cqh 1.05cqw 1.55cqh 0.48cqw;
   display: grid;
   grid-template-columns: 24.35cqw 20.85cqw 23.2cqw 1fr;
-  gap: 1.02cqw;
+  gap: 0.72cqw;
 }
 
 .rightGrid {
@@ -493,7 +493,6 @@
 .leftAside {
   grid-column: 4;
   padding-left: 0.35cqw;
-  transform: translateY(-2.85cqh);
 }
 
 .box {
@@ -566,7 +565,22 @@
 }
 
 .toppingBox {
-  min-height: 33.2cqh;
+  position: relative;
+  min-height: 43.4cqh;
+  overflow: hidden;
+}
+
+.toppingBox::after {
+  content: '';
+  position: absolute;
+  right: -0.08cqw;
+  bottom: -0.08cqh;
+  width: 13.1cqw;
+  height: 15.7cqh;
+  background: var(--palette-background);
+  border-top: 0.08cqw solid var(--palette-border);
+  border-left: 0.08cqw solid var(--palette-border);
+  z-index: 2;
 }
 
 /* Right-board tuning */
@@ -581,7 +595,7 @@
 }
 
 .rightGrid .blended + .coffee {
-  margin-top: 16px;
+  margin-top: 22px;
 }
 
 .rightGrid .item {

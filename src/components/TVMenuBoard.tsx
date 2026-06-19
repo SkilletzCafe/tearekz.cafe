@@ -159,19 +159,19 @@ const LEFT_REGIONS: RegionDef[] = [
     id: 9,
     label: 'Col 4 — Cream Tops',
     color: '#6d4c41',
-    style: { left: '70.95cqw', top: '10.6cqh', width: '28.0cqw', height: '37.1cqh' },
+    style: { left: '70.05cqw', top: '13.45cqh', width: '28.9cqw', height: '37.1cqh' },
   },
   {
     id: 10,
     label: 'Col 4 — Toppings',
     color: '#d81b60',
-    style: { left: '70.95cqw', top: '48.85cqh', width: '28.0cqw', height: '33.2cqh' },
+    style: { left: '70.05cqw', top: '51.75cqh', width: '28.9cqw', height: '43.4cqh' },
   },
   {
     id: 11,
     label: 'Showcase',
     color: '#f6a000',
-    style: { left: '75.6cqw', top: '80.8cqh', width: '23.6cqw', height: '18.4cqh' },
+    style: { left: '84.2cqw', top: '83.9cqh', width: '14.4cqw', height: '15.9cqh' },
   },
 ];
 
