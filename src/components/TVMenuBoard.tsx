@@ -381,8 +381,9 @@ function LeftMenu({ debugRegions = false }: { debugRegions?: boolean }) {
             </div>
           </div>
         </div>
-        <ShowcasePreview />
       </header>
+
+      <ShowcasePreview />
 
       <main className={styles.leftGrid}>
         <div className={`${styles.menuColumn} ${styles.leftCol1}`}>

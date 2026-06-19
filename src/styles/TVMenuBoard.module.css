@@ -256,25 +256,23 @@
 
 .showcasePreview {
   position: absolute;
-  top: -0.55cqh;
-  right: 0.2cqw;
-  width: 10.4cqh;
-  height: 10.4cqh;
-  border-radius: 1cqh;
-  background: linear-gradient(145deg, #fffdf8 0%, #f4f8eb 100%);
-  border: 0.12cqw solid rgb(86 126 54 / 0.24);
-  box-shadow: 0 0.24cqh 0.22cqw rgb(0 0 0 / 0.1);
-  overflow: hidden;
+  left: 0.9cqw;
+  bottom: 1.15cqh;
+  width: 17.6cqw;
+  height: 22.8cqh;
+  pointer-events: none;
+  z-index: 2;
 }
 
 .showcaseImage {
   position: absolute;
-  inset: 0.45cqh;
-  width: calc(100% - 0.9cqh);
-  height: calc(100% - 0.9cqh);
+  inset: 0;
+  width: 100%;
+  height: 100%;
   object-fit: contain;
+  object-position: left bottom;
   opacity: 0;
-  filter: drop-shadow(0 0.18cqh 0.12cqw rgb(0 0 0 / 0.16));
+  filter: drop-shadow(0 0.28cqh 0.2cqw rgb(0 0 0 / 0.18));
   animation: showcaseFade 15s infinite;
   animation-delay: calc(var(--showcase-index) * 5s);
 }
