@@ -743,34 +743,34 @@ function RightMenu({ debugRegions = false }: { debugRegions?: boolean }) {
             className={styles.coffee}
           >
             <Item code="81">
-              Vietnamese Iced Coffee ❄️ ☁️ <Price>$6.75</Price>
+              <Colored color="#4f2f20">Vietnamese Iced Coffee</Colored> ❄️ ☁️ <Price>$6.75</Price>
             </Item>
             <Item code="82">
               <span>
-                Crème Brûlée
+                <Colored color="#7b5a1f">Crème Brûlée</Colored>
                 <br />
                 Vietnamese Iced Coffee ❄️ <Price>$8</Price>
               </span>
             </Item>
             <Item code="83">
               <span>
-                Pistachio Cream
+                <Colored color="#77711f">Pistachio Cream</Colored>
                 <br />
                 Vietnamese Iced Coffee ❄️ <Price>$8</Price>
               </span>
             </Item>
             <Item code="84">
               <span>
-                🦖 Dino Fuel
+                🦖 <Colored color="#305d32">Dino Fuel</Colored>
                 <br />
                 (Vietnamese Coffee x Thai Tea) <Price>$8</Price>
               </span>
             </Item>
             <Item code="85">
-              Dirty Horchata de Avena ❄️ <Price>$8</Price>
+              <Colored color="#744b2a">Dirty Horchata de Avena</Colored> ❄️ <Price>$8</Price>
             </Item>
             <Item code="86">
-              Vietnamese Mocha (Iced or Hot) <Price>$8</Price>
+              <Colored color="#502d1d">Vietnamese Mocha</Colored> (Iced or Hot) <Price>$8</Price>
             </Item>
             <div
               className={`${styles.productPhotoSlot} ${styles.coffeeCluster}`}

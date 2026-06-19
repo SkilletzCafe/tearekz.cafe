@@ -319,12 +319,12 @@
 
 .description {
   margin: 0.12cqh 0 0 2.62cqw;
-  font-size: 1.13cqw;
-  line-height: 1.16;
+  font-size: 1.17cqw;
+  line-height: 1.17;
   font-style: italic;
-  font-weight: 430;
+  font-weight: 480;
   color: var(--palette-body-gray);
-  letter-spacing: -0.024em;
+  letter-spacing: -0.026em;
 }
 
 .signatures .item {
@@ -439,7 +439,7 @@
 }
 
 .rightGrid .description {
-  font-size: 1.11cqw;
+  font-size: 1.15cqw;
   margin-left: 2.55cqw;
 }
 
