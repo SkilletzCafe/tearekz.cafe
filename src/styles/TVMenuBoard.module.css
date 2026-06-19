@@ -421,6 +421,14 @@
   font-weight: 760;
 }
 
+.gradientText {
+  color: transparent;
+  background: linear-gradient(90deg, var(--gradient-from), var(--gradient-to));
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+
 .noWrapItem .itemLine > span:last-child {
   white-space: nowrap;
 }

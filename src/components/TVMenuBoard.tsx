@@ -244,6 +244,17 @@ function Colored({ color, children }: { color: string; children: ReactNode }) {
   );
 }
 
+function GradientText({ from, to, children }: { from: string; to: string; children: ReactNode }) {
+  return (
+    <span
+      className={`${styles.colored} ${styles.gradientText}`}
+      style={{ '--gradient-from': from, '--gradient-to': to } as CSSProperties}
+    >
+      {children}
+    </span>
+  );
+}
+
 function Price({ children }: { children: ReactNode }) {
   return <span className={styles.price}>{children}</span>;
 }
@@ -384,13 +395,14 @@ function LeftMenu({ debugRegions = false }: { debugRegions?: boolean }) {
             className={styles.signatures}
           >
             <Item code="S1" description="Magnolia Green Tea with Jasmine Cream">
-              Magnolia Cloud <Price>$7.5</Price>
+              Magnolia <Colored color={CREAM_COLORS.jasmine}>Cloud</Colored> <Price>$7.5</Price>
             </Item>
             <Item code="S2" description="Magnolia Green Tea with Sea Salt Cheese Cream">
-              Magnolia Velvet <Price>$7.5</Price>
+              Magnolia <Colored color={CREAM_COLORS.seaSaltCheese}>Velvet</Colored>{' '}
+              <Price>$7.5</Price>
             </Item>
             <Item code="S3" description="Magnolia Green Tea with Matcha Cream">
-              Magnolia Matcha Cloud <Price>$8</Price>
+              Magnolia <Colored color={CREAM_COLORS.matcha}>Matcha</Colored> Cloud <Price>$8</Price>
             </Item>
             <Item
               code="S4"
@@ -402,17 +414,22 @@ function LeftMenu({ debugRegions = false }: { debugRegions?: boolean }) {
                 </>
               }
             >
-              Magnolia Orchard <Price>$8</Price>
+              Magnolia{' '}
+              <GradientText from={FRUIT_COLORS.lychee} to={FRUIT_COLORS.peach}>
+                Orchard
+              </GradientText>{' '}
+              <Price>$8</Price>
             </Item>
             <Item code="S5" description="Lychee Jasmine Green Tea with Jasmine Cream">
-              <Colored color={FRUIT_COLORS.lychee}>Lychee Blossom</Colored> <Price>$8</Price>
+              <Colored color={FRUIT_COLORS.lychee}>Lychee</Colored> Blossom <Price>$8</Price>
             </Item>
             <Item code="S6" description="Vietnamese Iced Coffee with Pistachio Cream">
-              <Colored color={CREAM_COLORS.pistachio}>Pistachio Cream</Colored> Coffee{' '}
+              <Colored color={CREAM_COLORS.pistachio}>Pistachio</Colored> Cream Coffee{' '}
               <Price>$8</Price>
             </Item>
             <Item code="S7" description="Matcha Latte with Raspberry Cream">
-              Matcha Blossom <Price>$8</Price>
+              <Colored color={CREAM_COLORS.matcha}>Matcha</Colored>{' '}
+              <Colored color={CREAM_COLORS.raspberry}>Blossom</Colored> <Price>$8</Price>
             </Item>
             <Item
               code="S8"
