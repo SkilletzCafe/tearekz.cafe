@@ -571,7 +571,7 @@ function LeftMenu({ debugRegions = false }: { debugRegions?: boolean }) {
               <Emoji>☁️</Emoji> Cream Tops
             </div>
             <div className={styles.boxBody}>
-              <p className={styles.boxNote}>(Made with Real Cream • Contains Dairy)</p>
+              <p className={styles.boxNote}>(Made with Real Cream · Contains Dairy)</p>
               <p>
                 <Colored color={CREAM_COLORS.brulee}>Crème Brûlée</Colored> (on cold drinks only){' '}
                 <Price>$1.5</Price>
@@ -608,17 +608,17 @@ function LeftMenu({ debugRegions = false }: { debugRegions?: boolean }) {
             <div className={styles.boxBody}>
               <p>⚫ Boba (Tapioca Pearls)</p>
               <p>
-                🔴 Popping Boba: <Colored color={FRUIT_COLORS.mango}>Mango</Colored> |{' '}
-                <Colored color={FRUIT_COLORS.strawberry}>Strawberry</Colored> |{' '}
+                🔴 Popping Boba: <Colored color={FRUIT_COLORS.mango}>Mango</Colored> ·{' '}
+                <Colored color={FRUIT_COLORS.strawberry}>Strawberry</Colored> ·{' '}
                 <Colored color={FRUIT_COLORS.lychee}>Lychee</Colored>
               </p>
               <p>
-                ⭐ Jelly: <Colored color={FRUIT_COLORS.mango}>Mango Star</Colored> |{' '}
-                <Colored color={FRUIT_COLORS.strawberry}>Strawberry Heart</Colored> |{' '}
+                ⭐ Jelly: <Colored color={FRUIT_COLORS.mango}>Mango Star</Colored> ·{' '}
+                <Colored color={FRUIT_COLORS.strawberry}>Strawberry Heart</Colored> ·{' '}
                 <Colored color={FRUIT_COLORS.lychee}>Lychee</Colored>
               </p>
               <p>
-                🟤 Agar Boba: <Colored color={TOPPING_COLORS.crystal}>Crystal</Colored> |{' '}
+                🟤 Agar Boba: <Colored color={TOPPING_COLORS.crystal}>Crystal</Colored> ·{' '}
                 <Colored color={TOPPING_COLORS.brownSugar}>Brown Sugar</Colored>
               </p>
               <p>
@@ -677,18 +677,18 @@ function RightMenu({ debugRegions = false }: { debugRegions?: boolean }) {
             <div className={`${styles.builderCopy} ${styles.builderOptions}`}>
               <b>Choose a tea:</b>
               <br />
-              <Colored color="#3e7a3b">Jasmine Green</Colored> |{' '}
-              <Colored color="#3e7a3b">Magnolia Green</Colored> | Four Seasons Oolong
+              <Colored color="#3e7a3b">Jasmine Green</Colored> ·{' '}
+              <Colored color="#3e7a3b">Magnolia Green</Colored> · Four Seasons Oolong
               <br />
               <b>Choose up to 2 fruits:</b>
               <br />
-              <Colored color={FRUIT_COLORS.strawberry}>Strawberry</Colored> |{' '}
-              <Colored color={FRUIT_COLORS.mango}>Mango</Colored> |{' '}
-              <Colored color={FRUIT_COLORS.passionfruit}>Passionfruit</Colored> |{' '}
-              <Colored color={FRUIT_COLORS.peach}>Peach</Colored> |{' '}
+              <Colored color={FRUIT_COLORS.strawberry}>Strawberry</Colored> ·{' '}
+              <Colored color={FRUIT_COLORS.mango}>Mango</Colored> ·{' '}
+              <Colored color={FRUIT_COLORS.passionfruit}>Passionfruit</Colored> ·{' '}
+              <Colored color={FRUIT_COLORS.peach}>Peach</Colored> ·{' '}
               <Colored color={FRUIT_COLORS.lychee}>Lychee</Colored>
               <br />
-              <Colored color={FRUIT_COLORS.raspberry}>Raspberry</Colored> |{' '}
+              <Colored color={FRUIT_COLORS.raspberry}>Raspberry</Colored> ·{' '}
               <Colored color={FRUIT_COLORS.pineapple}>Pineapple</Colored>
             </div>
           </Section>
@@ -785,12 +785,12 @@ function RightMenu({ debugRegions = false }: { debugRegions?: boolean }) {
             </Item>
             <div className={`${styles.builderCopy} ${styles.builderOptions}`}>
               <b>Choose up to 2 fruits:</b>{' '}
-              <Colored color={FRUIT_COLORS.strawberry}>Strawberry</Colored> |{' '}
-              <Colored color={FRUIT_COLORS.mango}>Mango</Colored> |{' '}
-              <Colored color={FRUIT_COLORS.passionfruit}>Passionfruit</Colored> |{' '}
-              <Colored color={FRUIT_COLORS.peach}>Peach</Colored> |{' '}
-              <Colored color={FRUIT_COLORS.lychee}>Lychee</Colored> |{' '}
-              <Colored color={FRUIT_COLORS.raspberry}>Raspberry</Colored> |{' '}
+              <Colored color={FRUIT_COLORS.strawberry}>Strawberry</Colored> ·{' '}
+              <Colored color={FRUIT_COLORS.mango}>Mango</Colored> ·{' '}
+              <Colored color={FRUIT_COLORS.passionfruit}>Passionfruit</Colored> ·{' '}
+              <Colored color={FRUIT_COLORS.peach}>Peach</Colored> ·{' '}
+              <Colored color={FRUIT_COLORS.lychee}>Lychee</Colored> ·{' '}
+              <Colored color={FRUIT_COLORS.raspberry}>Raspberry</Colored> ·{' '}
               <Colored color={FRUIT_COLORS.pineapple}>Pineapple</Colored>
             </div>
             <div
@@ -945,28 +945,28 @@ function RightMenu({ debugRegions = false }: { debugRegions?: boolean }) {
             <div className={`${styles.builderCopy} ${styles.builderOptions}`}>
               <b>Choose a base flavor:</b>
               <br />
-              <Colored color={FRUIT_COLORS.strawberry}>Strawberry</Colored> |{' '}
-              <Colored color={FRUIT_COLORS.mango}>Mango</Colored> |{' '}
-              <Colored color={FRUIT_COLORS.passionfruit}>Passionfruit</Colored> |{' '}
-              <Colored color={FRUIT_COLORS.peach}>Peach</Colored> |{' '}
-              <Colored color={FRUIT_COLORS.lychee}>Lychee</Colored> |{' '}
-              <Colored color={FRUIT_COLORS.raspberry}>Raspberry</Colored> |{' '}
+              <Colored color={FRUIT_COLORS.strawberry}>Strawberry</Colored> ·{' '}
+              <Colored color={FRUIT_COLORS.mango}>Mango</Colored> ·{' '}
+              <Colored color={FRUIT_COLORS.passionfruit}>Passionfruit</Colored> ·{' '}
+              <Colored color={FRUIT_COLORS.peach}>Peach</Colored> ·{' '}
+              <Colored color={FRUIT_COLORS.lychee}>Lychee</Colored> ·{' '}
+              <Colored color={FRUIT_COLORS.raspberry}>Raspberry</Colored> ·{' '}
               <Colored color={FRUIT_COLORS.pineapple}>Pineapple</Colored>
               <br />
               <b>Add toppings (choose up to 3):</b>
               <br />
-              <Colored color={FRUIT_COLORS.strawberry}>Fresh Strawberries</Colored> •{' '}
-              <Colored color={FRUIT_COLORS.mango}>Diced Mango</Colored> • Grapefruit Pulp
+              <Colored color={FRUIT_COLORS.strawberry}>Fresh Strawberries</Colored> ·{' '}
+              <Colored color={FRUIT_COLORS.mango}>Diced Mango</Colored> · Grapefruit Pulp
               <br />
-              <b>Popping Boba:</b> <Colored color={FRUIT_COLORS.mango}>Mango</Colored> |{' '}
-              <Colored color={FRUIT_COLORS.strawberry}>Strawberry</Colored> |{' '}
+              <b>Popping Boba:</b> <Colored color={FRUIT_COLORS.mango}>Mango</Colored> ·{' '}
+              <Colored color={FRUIT_COLORS.strawberry}>Strawberry</Colored> ·{' '}
               <Colored color={FRUIT_COLORS.lychee}>Lychee</Colored>
               <br />
-              <b>Jelly:</b> <Colored color={FRUIT_COLORS.mango}>Mango Star</Colored> |{' '}
-              <Colored color={FRUIT_COLORS.strawberry}>Strawberry Heart</Colored> |{' '}
+              <b>Jelly:</b> <Colored color={FRUIT_COLORS.mango}>Mango Star</Colored> ·{' '}
+              <Colored color={FRUIT_COLORS.strawberry}>Strawberry Heart</Colored> ·{' '}
               <Colored color={FRUIT_COLORS.lychee}>Lychee</Colored>
               <br />
-              <b>Agar Boba:</b> <Colored color={TOPPING_COLORS.crystal}>Crystal</Colored> |{' '}
+              <b>Agar Boba:</b> <Colored color={TOPPING_COLORS.crystal}>Crystal</Colored> ·{' '}
               <Colored color={TOPPING_COLORS.brownSugar}>Brown Sugar</Colored>
               <br />
               <em>Optional condensed milk drizzle</em>

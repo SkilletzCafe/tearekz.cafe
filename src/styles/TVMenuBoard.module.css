@@ -72,7 +72,7 @@
   --menu-color-brown-sugar: #7a4b21;
   --menu-color-dalgona: #a9771c;
   --section-stack-gap: var(--section-stack-gap-default);
-  --section-stack-gap-default: 20px;
+  --section-stack-gap-default: 16px;
   --menu-description-font-size: 1.23cqw;
   --menu-description-line-height: 1.18;
   --menu-description-font-weight: 520;
@@ -518,7 +518,7 @@
 /* Right-board tuning */
 .rightGrid {
   --section-stack-gap: var(--section-stack-gap-right);
-  --section-stack-gap-right: 30px;
+  --section-stack-gap-right: 20px;
 }
 
 .rightGrid .sectionTitle {
