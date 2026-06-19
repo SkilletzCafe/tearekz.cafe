@@ -4425,13 +4425,6 @@
               "imageUrl": "https://toasttab.s3.amazonaws.com/menu_service/restaurants/2d838293-2776-4151-b65b-1c9eea686461/MenuItem/a9066480-ceea-44c8-b5d2-44b07892385e.png"
             },
             {
-              "name": "35 Taro Matcha Latte 🍠🍵",
-              "guid": "c4924a80-f3da-4e0e-bd6c-406f21853eae",
-              "description": "Top grade Japanese Royal matcha, real taro and ube.",
-              "price": 8.5,
-              "imageUrl": "https://toasttab.s3.amazonaws.com/restaurants/restaurant-244719000000000000/menu/items/1/item-1300000008109510341_1772013412.jpg"
-            },
-            {
               "name": "36 Dalgona Matcha Latte 🍯🍵",
               "guid": "4a78efb8-8262-4ec5-a583-083c33d7793a",
               "description": "Creamy matcha with honeycomb toffee-like dalgona crumbles for a sweet, toasty crunch, inspired by the Korean street treat in Squid Game.",
@@ -4458,13 +4451,6 @@
               "description": "",
               "price": 8,
               "imageUrl": "https://toasttab.s3.amazonaws.com/restaurants/restaurant-244719000000000000/menu/items/1/item-1300000008087959751_1768258758.png"
-            },
-            {
-              "name": "43 Ube Taro Milk 🍠🌙",
-              "guid": "29ed0bdd-c183-4b76-8a6e-0b9861d806e9",
-              "description": "Real taro and real Ube blended with milk — naturally creamy, with no artificial colors or flavors.",
-              "price": 7.5,
-              "imageUrl": "https://toasttab.s3.amazonaws.com/restaurants/restaurant-244719000000000000/menu/items/2/item-1300000004994025832_1766816106.png"
             },
             {
               "name": "44 Strawberry Milk 🍓🥛🌙",
@@ -5111,13 +5097,6 @@
               "imageUrl": "https://toasttab.s3.amazonaws.com/menu_service/restaurants/2d838293-2776-4151-b65b-1c9eea686461/MenuItem/a9066480-ceea-44c8-b5d2-44b07892385e.png"
             },
             {
-              "name": "35 Taro Matcha Latte 🍠🍵",
-              "guid": "c4924a80-f3da-4e0e-bd6c-406f21853eae",
-              "description": "Top grade Japanese Royal matcha, real taro and ube.",
-              "price": 8.5,
-              "imageUrl": "https://toasttab.s3.amazonaws.com/restaurants/restaurant-244719000000000000/menu/items/1/item-1300000008109510341_1772013412.jpg"
-            },
-            {
               "name": "36 Dalgona Matcha Latte 🍯🍵",
               "guid": "4a78efb8-8262-4ec5-a583-083c33d7793a",
               "description": "Creamy matcha with honeycomb toffee-like dalgona crumbles for a sweet, toasty crunch, inspired by the Korean street treat in Squid Game.",
@@ -5144,13 +5123,6 @@
               "description": "",
               "price": 8,
               "imageUrl": "https://toasttab.s3.amazonaws.com/restaurants/restaurant-244719000000000000/menu/items/1/item-1300000008087959751_1768258758.png"
-            },
-            {
-              "name": "43 Ube Taro Milk 🍠🌙",
-              "guid": "29ed0bdd-c183-4b76-8a6e-0b9861d806e9",
-              "description": "Real taro and real Ube blended with milk — naturally creamy, with no artificial colors or flavors.",
-              "price": 7.5,
-              "imageUrl": "https://toasttab.s3.amazonaws.com/restaurants/restaurant-244719000000000000/menu/items/2/item-1300000004994025832_1766816106.png"
             },
             {
               "name": "44 Strawberry Milk 🍓🥛🌙",
