@@ -45,7 +45,7 @@
   --palette-options-rose: #8b5269;
   --palette-sugar-pink: #b64d76;
   --palette-ice-navy: #153f73;
-  --palette-milk-blue: #7eb9e6;
+  --palette-milk-blue: #4f9fd4;
   --palette-cream-top-start: #cab19b;
   --palette-cream-top-end: #efe4dc;
   --palette-boost-start: #b7d27b;
@@ -75,12 +75,15 @@
   --menu-color-dalgona: #a9771c;
   --section-stack-gap: var(--section-stack-gap-default);
   --section-stack-gap-default: 14px;
-  --menu-description-font-size: 1.23cqw;
-  --menu-description-line-height: 1.18;
+  --menu-item-font-size: 1.58cqw;
+  --menu-item-line-height: 1.1;
+  --menu-price-font-size: calc(var(--menu-item-font-size) * 0.98);
+  --menu-description-font-size: 1.18cqw;
+  --menu-description-line-height: 1.16;
   --menu-description-font-weight: 520;
   --menu-description-letter-spacing: -0.028em;
-  --right-menu-description-font-size: 1.21cqw;
-  --builder-options-font-size: 1.44cqw;
+  --right-menu-description-font-size: 1.16cqw;
+  --builder-options-font-size: 1.36cqw;
   --builder-options-line-height: 1.12;
   --photo-shadow: 0 0.24cqh 0.12cqw rgb(0 0 0 / 0.16);
   container-type: size;
@@ -384,8 +387,8 @@
 .item {
   margin: 0 0 0.72cqh;
   font-weight: 705;
-  font-size: 1.66cqw;
-  line-height: 1.12;
+  font-size: var(--menu-item-font-size);
+  line-height: var(--menu-item-line-height);
   letter-spacing: -0.046em;
 }
 
@@ -404,9 +407,14 @@
   margin-right: 0.38cqw;
 }
 
+.itemName {
+  min-width: 0;
+}
+
 .price {
-  margin-left: 0.24cqw;
+  margin-left: 0.18cqw;
   color: var(--palette-near-black);
+  font-size: var(--menu-price-font-size);
   font-weight: 760;
   white-space: nowrap;
 }
@@ -430,8 +438,7 @@
 }
 
 .signatures .item {
-  margin-bottom: 1.03cqh;
-  font-size: 1.48cqw;
+  margin-bottom: 0.84cqh;
 }
 
 .signatures .description {
@@ -439,8 +446,7 @@
 }
 
 .compactSection .item {
-  margin-bottom: 0.88cqh;
-  font-size: 1.55cqw;
+  margin-bottom: 0.78cqh;
 }
 
 .signatures,
@@ -573,9 +579,12 @@
   font-size: 1.75cqw;
 }
 
+.rightGrid .blended + .coffee {
+  margin-top: 16px;
+}
+
 .rightGrid .item {
-  font-size: 1.61cqw;
-  margin-bottom: 0.78cqh;
+  margin-bottom: 0.72cqh;
 }
 
 .rightGrid .description {

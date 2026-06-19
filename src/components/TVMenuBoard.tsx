@@ -235,7 +235,7 @@ function Item({ code, children, description, className = '' }: ItemProps) {
     <div className={`${styles.item} ${className}`}>
       <div className={styles.itemLine}>
         <span className={styles.code}>{code}</span>
-        <span>{children}</span>
+        <span className={styles.itemName}>{children}</span>
       </div>
       {description && <div className={styles.description}>{description}</div>}
     </div>
@@ -276,6 +276,16 @@ const CREAM_COLORS = {
   pistachio: 'var(--menu-color-pistachio-cream)',
   raspberry: 'var(--menu-color-raspberry-cream)',
   seaSaltCheese: 'var(--menu-color-sea-salt-cheese)',
+} as const;
+
+const TEA_COLORS = {
+  assam: '#7a4b21',
+  jasmine: CREAM_COLORS.jasmine,
+  lychee: FRUIT_COLORS.lychee,
+  magnolia: '#3e7a3b',
+  peach: FRUIT_COLORS.peach,
+  rooibos: '#a86f17',
+  white: '#6f7f4a',
 } as const;
 
 const TOPPING_COLORS = {
@@ -490,19 +500,23 @@ function LeftMenu({ debugRegions = false }: { debugRegions?: boolean }) {
             className={styles.pureTeas}
           >
             <Item code="1">
-              Jasmine Green ☁️ <Price>$5.75</Price>
+              <Colored color={TEA_COLORS.jasmine}>Jasmine</Colored>{' '}
+              <Colored color={TEA_COLORS.magnolia}>Green</Colored> ☁️ <Price>$5.75</Price>
             </Item>
             <Item code="2">
-              Magnolia Green ❄️ ☁️ <Price>$6</Price>
+              <Colored color={TEA_COLORS.magnolia}>Magnolia Green</Colored> ❄️ ☁️ <Price>$6</Price>
             </Item>
             <Item code="3">
-              <Colored color={FRUIT_COLORS.lychee}>Lychee</Colored> Black <Price>$5.75</Price>
+              <Colored color={TEA_COLORS.lychee}>Lychee</Colored>{' '}
+              <Colored color={TEA_COLORS.assam}>Black</Colored> <Price>$5.75</Price>
             </Item>
             <Item code="4">
-              White <Colored color={FRUIT_COLORS.peach}>Peach</Colored> Oolong <Price>$6</Price> ☁️
+              <Colored color={TEA_COLORS.white}>White</Colored>{' '}
+              <Colored color={TEA_COLORS.peach}>Peach</Colored>{' '}
+              <Colored color={TEA_COLORS.assam}>Oolong</Colored> <Price>$6</Price> ☁️
             </Item>
             <Item code="5">
-              Rooibos 🌙 <Price>$5.75</Price>
+              <Colored color={TEA_COLORS.rooibos}>Rooibos</Colored> 🌙 <Price>$5.75</Price>
             </Item>
           </Section>
         </div>
@@ -552,7 +566,7 @@ function LeftMenu({ debugRegions = false }: { debugRegions?: boolean }) {
             <Item code="31">
               Matcha Latte ☁️ <Price>$7</Price>
             </Item>
-            <Item code="32">
+            <Item code="32" className={styles.noWrapItem}>
               Brown Sugar Matcha Latte ☁️ <Price>$7.25</Price>
             </Item>
             <Item code="33">
