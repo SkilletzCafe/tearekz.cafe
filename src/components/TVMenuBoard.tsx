@@ -123,7 +123,7 @@ const LEFT_REGIONS: RegionDef[] = [
     id: 3,
     label: 'Options',
     color: '#1e88e5',
-    style: { left: '27.2cqw', top: '0.35cqh', width: '70.2cqw', height: '8.4cqh' },
+    style: { left: '23.6cqw', top: '0.35cqh', width: '75.0cqw', height: '8.4cqh' },
   },
   {
     id: 4,
@@ -159,13 +159,19 @@ const LEFT_REGIONS: RegionDef[] = [
     id: 9,
     label: 'Col 4 — Cream Tops',
     color: '#6d4c41',
-    style: { left: '70.95cqw', top: '13.45cqh', width: '28.0cqw', height: '37.1cqh' },
+    style: { left: '70.95cqw', top: '10.6cqh', width: '28.0cqw', height: '37.1cqh' },
   },
   {
     id: 10,
     label: 'Col 4 — Toppings',
     color: '#d81b60',
-    style: { left: '70.95cqw', top: '51.7cqh', width: '28.0cqw', height: '33.2cqh' },
+    style: { left: '70.95cqw', top: '48.85cqh', width: '28.0cqw', height: '33.2cqh' },
+  },
+  {
+    id: 11,
+    label: 'Showcase',
+    color: '#f6a000',
+    style: { left: '75.6cqw', top: '80.8cqh', width: '23.6cqw', height: '18.4cqh' },
   },
 ];
 
@@ -301,14 +307,17 @@ const TOPPING_COLORS = {
 
 const SHOWCASE_IMAGES = [
   {
+    name: 'Golden Mango',
     alt: 'Golden Mango blended drink preview',
     src: '/images/menu/tv-native/drinks/05-golden-mango-blended-drink-cutout.png',
   },
   {
+    name: 'Coco Mango',
     alt: 'Coco Mango blended drink preview',
     src: '/images/menu/tv-native/drinks/07-coco-mango-blended-drink-cutout.png',
   },
   {
+    name: 'Dino Fuel',
     alt: 'Dino Fuel coffee drink preview',
     src: '/images/menu/tv-native/drinks/11-dino-fuel-vietnamese-coffee-and-thai-tea-cutout.png',
   },
@@ -326,14 +335,15 @@ function ShowcasePreview() {
   return (
     <div className={styles.showcasePreview} aria-hidden="true">
       {SHOWCASE_IMAGES.map((image, index) => (
-        // eslint-disable-next-line @next/next/no-img-element
-        <img
+        <div
           key={image.src}
-          src={image.src}
-          alt={image.alt}
-          className={styles.showcaseImage}
+          className={styles.showcaseSlide}
           style={{ '--showcase-index': index } as CSSProperties}
-        />
+        >
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={image.src} alt={image.alt} className={styles.showcaseImage} />
+          <div className={styles.showcaseName}>{image.name}</div>
+        </div>
       ))}
     </div>
   );
@@ -378,6 +388,10 @@ function LeftMenu({ debugRegions = false }: { debugRegions?: boolean }) {
             </div>
             <div className={styles.optionRow}>
               <span className={styles.optionLabel}>Milk Options:</span> Dairy · Oat (+$0.75)
+            </div>
+            <div className={`${styles.optionRow} ${styles.boostOptions}`}>
+              <span className={styles.optionLabel}>Additional Boosts (+$1):</span> Protein 💪 ·
+              Creatine ⚡
             </div>
           </div>
         </div>
