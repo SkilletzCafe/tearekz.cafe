@@ -265,9 +265,23 @@
   grid-column: 3;
 }
 
+.leftCol2,
+.leftCol3 {
+  --section-margin-below: clamp(10px, 1.35cqh, 20px);
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--section-margin-below);
+}
+
 .section {
   position: relative;
-  margin: 0 0 1.35cqh;
+  margin: 0 0 var(--section-margin-below, 1.35cqh);
+}
+
+.leftCol2 .section,
+.leftCol3 .section {
+  margin-bottom: 0;
 }
 
 .sectionTitle {
@@ -385,17 +399,9 @@
   width: 100%;
 }
 
-.pureTeas {
-  margin-top: 5.45cqh;
-}
-
 .pureTeas .item,
 .matcha .item {
   margin-bottom: 1.25cqh;
-}
-
-.matcha {
-  margin-top: 4.65cqh;
 }
 
 .leftAside {
