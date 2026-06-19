@@ -249,13 +249,13 @@
   object-fit: contain;
   opacity: 0;
   filter: drop-shadow(0 0.18cqh 0.12cqw rgb(0 0 0 / 0.16));
-  animation: showcaseFade 12s infinite;
-  animation-delay: calc(var(--showcase-index) * 4s);
+  animation: showcaseFade 15s infinite;
+  animation-delay: calc(var(--showcase-index) * 5s);
 }
 
 @keyframes showcaseFade {
   0%,
-  25% {
+  28% {
     opacity: 1;
   }
 
