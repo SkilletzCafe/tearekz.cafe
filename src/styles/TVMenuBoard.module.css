@@ -217,8 +217,10 @@
 }
 
 .iceMilkOptions {
+  margin-top: 4.25cqh;
   padding-left: 1.25cqw;
   border-left: 0.16cqw solid rgb(21 63 115 / 0.28);
+  transform: translateX(-8.75cqw);
 }
 
 .iceMilkOptions .optionRow:first-child {
