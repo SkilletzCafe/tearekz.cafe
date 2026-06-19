@@ -193,7 +193,7 @@
   color: var(--palette-sugar-pink);
   font-size: 1.28cqw;
   line-height: 1.22;
-  font-weight: 560;
+  font-weight: 400;
   letter-spacing: -0.025em;
 }
 
@@ -213,7 +213,7 @@
 .optionExplainer {
   color: var(--palette-sugar-pink);
   font-style: italic;
-  font-weight: 520;
+  font-weight: 400;
 }
 
 .iceMilkOptions {

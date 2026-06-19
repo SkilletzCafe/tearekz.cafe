@@ -290,8 +290,12 @@ function LeftMenu({ debugRegions = false }: { debugRegions?: boolean }) {
             </div>
           </div>
           <div className={`${styles.optionGroup} ${styles.iceMilkOptions}`}>
-            <div className={styles.optionRow}>Ice Options: 100% · 50% · 0%</div>
-            <div className={styles.optionRow}>Milk Options: Dairy · Oat (+$0.75)</div>
+            <div className={styles.optionRow}>
+              <span className={styles.optionLabel}>Ice Options:</span> 100% · 50% · 0%
+            </div>
+            <div className={styles.optionRow}>
+              <span className={styles.optionLabel}>Milk Options:</span> Dairy · Oat (+$0.75)
+            </div>
           </div>
         </div>
       </header>
