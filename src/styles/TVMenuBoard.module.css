@@ -188,12 +188,12 @@
   right: 1.05cqw;
   top: -0.04cqh;
   display: grid;
-  grid-template-columns: minmax(0, 1.45fr) minmax(0, 0.92fr);
-  gap: 1.2cqw;
+  grid-template-columns: minmax(0, 1.82fr) minmax(0, 0.68fr);
+  gap: 1.45cqw;
   color: var(--palette-sugar-pink);
   font-size: 1.28cqw;
   line-height: 1.22;
-  font-weight: 740;
+  font-weight: 560;
   letter-spacing: -0.025em;
 }
 
@@ -205,18 +205,19 @@
   margin-bottom: 0.22cqh;
 }
 
-.options b {
+.optionLabel {
   color: inherit;
   font-weight: 900;
 }
 
-.options span {
+.optionExplainer {
   color: var(--palette-sugar-pink);
-  font-weight: 560;
+  font-style: italic;
+  font-weight: 520;
 }
 
 .iceMilkOptions {
-  padding-left: 1.15cqw;
+  padding-left: 1.25cqw;
   border-left: 0.16cqw solid rgb(21 63 115 / 0.28);
 }
 

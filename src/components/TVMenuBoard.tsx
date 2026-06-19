@@ -279,20 +279,19 @@ function LeftMenu({ debugRegions = false }: { debugRegions?: boolean }) {
         <div className={styles.options}>
           <div className={`${styles.optionGroup} ${styles.sweetenerOptions}`}>
             <div className={styles.optionRow}>
-              <b>Sweetness Options:</b> 100% · 75% · 50% · 25% · 10% · 0%{' '}
-              <span>(Some drinks contain built-in cane sugar)</span>
+              <span className={styles.optionLabel}>Sweetness Options:</span> 100% · 75% · 50% · 25%
+              · 10% · 0%{' '}
+              <span className={styles.optionExplainer}>
+                (Some drinks contain built-in cane sugar)
+              </span>
             </div>
-            <div className={styles.optionRow}>
+            <div className={`${styles.optionRow} ${styles.optionExplainer}`}>
               Sugar-free sweetener (Allulose & Monk Fruit) available for most drinks (+$0.5)
             </div>
           </div>
           <div className={`${styles.optionGroup} ${styles.iceMilkOptions}`}>
-            <div className={styles.optionRow}>
-              <b>Ice Options:</b> 100% · 50% · 0%
-            </div>
-            <div className={styles.optionRow}>
-              <b>Milk Options:</b> Dairy · Oat (+$0.75)
-            </div>
+            <div className={styles.optionRow}>Ice Options: 100% · 50% · 0%</div>
+            <div className={styles.optionRow}>Milk Options: Dairy · Oat (+$0.75)</div>
           </div>
         </div>
       </header>
