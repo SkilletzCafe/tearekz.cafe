@@ -185,7 +185,7 @@
 .options {
   position: absolute;
   left: 27.2cqw;
-  right: 1.05cqw;
+  right: 7.15cqw;
   top: -0.04cqh;
   display: grid;
   grid-template-columns: minmax(0, 1.82fr) minmax(0, 0.68fr);
@@ -229,6 +229,43 @@
 
 .iceMilkOptions .optionRow:last-child {
   color: var(--palette-milk-blue);
+}
+
+.showcasePreview {
+  position: absolute;
+  top: -0.55cqh;
+  right: 0.2cqw;
+  width: 10.4cqh;
+  height: 10.4cqh;
+  border-radius: 1cqh;
+  background: linear-gradient(145deg, #fffdf8 0%, #f4f8eb 100%);
+  border: 0.12cqw solid rgb(86 126 54 / 0.24);
+  box-shadow: 0 0.24cqh 0.22cqw rgb(0 0 0 / 0.1);
+  overflow: hidden;
+}
+
+.showcaseImage {
+  position: absolute;
+  inset: 0.45cqh;
+  width: calc(100% - 0.9cqh);
+  height: calc(100% - 0.9cqh);
+  object-fit: contain;
+  opacity: 0;
+  filter: drop-shadow(0 0.18cqh 0.12cqw rgb(0 0 0 / 0.16));
+  animation: showcaseFade 12s infinite;
+  animation-delay: calc(var(--showcase-index) * 4s);
+}
+
+@keyframes showcaseFade {
+  0%,
+  25% {
+    opacity: 1;
+  }
+
+  33.333%,
+  100% {
+    opacity: 0;
+  }
 }
 
 .leftGrid {

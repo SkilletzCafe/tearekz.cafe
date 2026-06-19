@@ -248,11 +248,34 @@ function Price({ children }: { children: ReactNode }) {
   return <span className={styles.price}>{children}</span>;
 }
 
+const SHOWCASE_IMAGES = [
+  '/images/menu/tv-native/drinks/05-golden-mango-blended-drink-cutout.png',
+  '/images/menu/tv-native/drinks/07-coco-mango-blended-drink-cutout.png',
+  '/images/menu/tv-native/drinks/11-dino-fuel-vietnamese-coffee-and-thai-tea-cutout.png',
+];
+
 function Emoji({ children }: { children: ReactNode }) {
   return (
     <span className={styles.emoji} aria-hidden="true">
       {children}
     </span>
+  );
+}
+
+function ShowcasePreview() {
+  return (
+    <div className={styles.showcasePreview} aria-hidden="true">
+      {SHOWCASE_IMAGES.map((src, index) => (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img
+          key={src}
+          src={src}
+          alt=""
+          className={styles.showcaseImage}
+          style={{ '--showcase-index': index } as CSSProperties}
+        />
+      ))}
+    </div>
   );
 }
 
@@ -298,6 +321,7 @@ function LeftMenu({ debugRegions = false }: { debugRegions?: boolean }) {
             </div>
           </div>
         </div>
+        <ShowcasePreview />
       </header>
 
       <main className={styles.leftGrid}>
