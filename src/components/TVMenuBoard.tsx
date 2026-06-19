@@ -635,10 +635,11 @@ function RightMenu({ debugRegions = false }: { debugRegions?: boolean }) {
               <Colored color="#7b3f98">Purple</Colored> Lemonade <Price>$7.5</Price>
             </Item>
             <Item code="66">
-              Rose Hibiscus Lemonade <Price>$7</Price>
+              <Colored color="#c43c37">Rose</Colored> <Colored color="#7c1f1f">Hibiscus</Colored>{' '}
+              Lemonade <Price>$7</Price>
             </Item>
             <Item code="67">
-              Ginger Lemonade <Price>$7</Price>
+              <Colored color="#a86f17">Ginger</Colored> Lemonade <Price>$7</Price>
             </Item>
             <div
               className={`${styles.productPhotoSlot} ${styles.lemonadeCluster}`}

@@ -47,6 +47,11 @@
   --palette-cream-top-end: #efe4dc;
   --palette-topping-start: #a994d6;
   --palette-topping-end: #eee8ff;
+  --menu-description-font-size: 1.22cqw;
+  --menu-description-line-height: 1.18;
+  --menu-description-font-weight: 520;
+  --menu-description-letter-spacing: -0.028em;
+  --right-menu-description-font-size: 1.2cqw;
   --photo-shadow: 0 0.24cqh 0.12cqw rgb(0 0 0 / 0.16);
   container-type: size;
   width: min(100vw, 177.7778vh);
@@ -234,14 +239,14 @@
 }
 
 .sectionTitle {
-  min-height: 5cqh;
+  min-height: 5.22cqh;
   display: flex;
   align-items: center;
   gap: 0.12cqw;
-  padding: 0 0.9cqw;
+  padding: 0 1.02cqw;
   box-sizing: border-box;
   color: var(--palette-white);
-  font-size: 1.66cqw;
+  font-size: 1.78cqw;
   line-height: 1;
   font-weight: 740;
   letter-spacing: -0.035em;
@@ -282,7 +287,7 @@
 .item {
   margin: 0 0 0.72cqh;
   font-weight: 705;
-  font-size: 1.53cqw;
+  font-size: 1.65cqw;
   line-height: 1.12;
   letter-spacing: -0.046em;
 }
@@ -319,12 +324,12 @@
 
 .description {
   margin: 0.12cqh 0 0 2.62cqw;
-  font-size: 1.17cqw;
-  line-height: 1.17;
+  font-size: var(--menu-description-font-size);
+  line-height: var(--menu-description-line-height);
   font-style: italic;
-  font-weight: 480;
+  font-weight: var(--menu-description-font-weight);
   color: var(--palette-body-gray);
-  letter-spacing: -0.026em;
+  letter-spacing: var(--menu-description-letter-spacing);
 }
 
 .signatures .item {
@@ -333,7 +338,7 @@
 }
 
 .signatures .description {
-  font-size: 1.13cqw;
+  font-size: calc(var(--menu-description-font-size) - 0.04cqw);
 }
 
 .compactSection .item {
@@ -349,7 +354,7 @@
 }
 
 .pureTeas {
-  margin-top: 6.8cqh;
+  margin-top: 5.45cqh;
 }
 
 .pureTeas .item,
@@ -358,7 +363,7 @@
 }
 
 .matcha {
-  margin-top: 5.8cqh;
+  margin-top: 4.65cqh;
 }
 
 .leftAside {
@@ -373,14 +378,14 @@
 }
 
 .boxTitle {
-  height: 5.55cqh;
+  height: 5.78cqh;
   border-bottom: 0.08cqw solid var(--palette-border);
   display: flex;
   align-items: center;
   gap: 0.08cqw;
-  padding: 0 0.9cqw;
+  padding: 0 1.02cqw;
   box-sizing: border-box;
-  font-size: 1.82cqw;
+  font-size: 1.94cqw;
   font-weight: 820;
   font-style: italic;
   letter-spacing: -0.04em;
@@ -429,25 +434,25 @@
 }
 
 .rightGrid .sectionTitle {
-  min-height: 4.95cqh;
-  font-size: 1.62cqw;
+  min-height: 5.16cqh;
+  font-size: 1.74cqw;
 }
 
 .rightGrid .item {
-  font-size: 1.48cqw;
+  font-size: 1.6cqw;
   margin-bottom: 0.78cqh;
 }
 
 .rightGrid .description {
-  font-size: 1.15cqw;
+  font-size: var(--right-menu-description-font-size);
   margin-left: 2.55cqw;
 }
 
 .builderCopy {
   margin: 0.36cqh 0 0 2.55cqw;
-  font-size: 1.11cqw;
+  font-size: 1.22cqw;
   line-height: 1.2;
-  font-weight: 500;
+  font-weight: 540;
   letter-spacing: -0.03em;
   color: var(--palette-body-gray);
 }
@@ -459,8 +464,8 @@
 
 .shavedIceBuilder {
   margin-top: 0.62cqh;
-  font-size: 1.34cqw;
-  line-height: 1.13;
+  font-size: 1.43cqw;
+  line-height: 1.12;
 }
 
 .fruitTeas {
@@ -552,8 +557,8 @@
 }
 
 .productPhoto62 {
-  left: -0.15cqw;
-  top: 0;
+  left: 0.65cqw;
+  top: 2.15cqh;
   width: 6.35cqw;
   height: 15.4cqh;
 }
@@ -566,8 +571,8 @@
 }
 
 .photoCaption62 {
-  left: 2.15cqw;
-  top: 15.65cqh;
+  left: 2.95cqw;
+  top: 17.8cqh;
 }
 
 .photoCaption65 {
