@@ -69,6 +69,25 @@ function useDebugRegions() {
   return enabled;
 }
 
+function useShowCursor() {
+  const [enabled, setEnabled] = useState(false);
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const override = params.get('debug') ?? params.get('showCursor') ?? params.get('cursor');
+
+    if (override) {
+      setEnabled(['1', 'true', 'yes'].includes(override.toLowerCase()));
+      return;
+    }
+
+    const hostname = window.location.hostname.toLowerCase();
+    setEnabled(hostname !== 'tearekz.cafe' && hostname !== 'www.tearekz.cafe');
+  }, []);
+
+  return enabled;
+}
+
 function RegionOverlay({ regions }: { regions: RegionDef[] }) {
   return (
     <div className={styles.regionOverlay} aria-hidden="true">
@@ -134,7 +153,7 @@ const LEFT_REGIONS: RegionDef[] = [
     id: 8,
     label: 'Col 3 — Matcha',
     color: '#7cb342',
-    style: { left: '47.72cqw', top: '57.8cqh', width: '22.25cqw', height: '34.6cqh' },
+    style: { left: '47.72cqw', top: '54.5cqh', width: '22.25cqw', height: '38.0cqh' },
   },
   {
     id: 9,
@@ -851,7 +870,6 @@ function RightMenu({ debugRegions = false }: { debugRegions?: boolean }) {
               <Colored color="#b71c1c">Raspberry</Colored> |{' '}
               <Colored color="#5d8a2a">Pineapple</Colored>
               <br />
-              <br />
               <b>Add toppings (choose up to 3):</b>
               <br />
               <Colored color="#c43c37">Fresh Strawberries</Colored> •{' '}
@@ -880,6 +898,7 @@ function RightMenu({ debugRegions = false }: { debugRegions?: boolean }) {
 export function TVMenuBoard({ side }: { side: MenuSide }) {
   useTvRefresh();
   const debugRegions = useDebugRegions();
+  const showCursor = useShowCursor();
 
   const pageTitle = `Menu Display - ${side === 'left' ? 'Left' : 'Right'}`;
 
@@ -889,7 +908,7 @@ export function TVMenuBoard({ side }: { side: MenuSide }) {
         <title>{pageTitle}</title>
         <meta name="robots" content="noindex, nofollow" />
       </Head>
-      <div className={styles.viewport}>
+      <div className={`${styles.viewport} ${showCursor ? styles.showCursor : ''}`}>
         {side === 'left' ? (
           <LeftMenu debugRegions={debugRegions} />
         ) : (

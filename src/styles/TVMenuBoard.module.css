@@ -9,6 +9,10 @@
   cursor: none;
 }
 
+.showCursor {
+  cursor: auto;
+}
+
 .board {
   --palette-white: #ffffff;
   --palette-board-cream: #fafaf5;
@@ -354,7 +358,7 @@
 }
 
 .matcha {
-  margin-top: 9.1cqh;
+  margin-top: 5.8cqh;
 }
 
 .leftAside {
@@ -376,8 +380,8 @@
   gap: 0.08cqw;
   padding: 0 0.9cqw;
   box-sizing: border-box;
-  font-size: 1.74cqw;
-  font-weight: 1000;
+  font-size: 1.82cqw;
+  font-weight: 820;
   font-style: italic;
   letter-spacing: -0.04em;
 }
@@ -391,23 +395,24 @@
 }
 
 .boxBody {
-  padding: 0.78cqh 0.95cqw 0.88cqh;
-  font-size: 1.32cqw;
-  font-weight: 620;
-  line-height: 1.15;
+  padding: 0.74cqh 0.95cqw 0.82cqh;
+  font-size: 1.43cqw;
+  font-weight: 520;
+  line-height: 1.18;
   letter-spacing: -0.034em;
 }
 
 .boxBody p {
-  margin: 0 0 0.86cqh;
+  margin: 0 0 0.74cqh;
 }
 
 .boxNote {
   text-align: center;
-  font-size: 1.16cqw;
+  font-size: 1.18cqw;
   font-style: italic;
-  font-weight: 740;
+  font-weight: 500;
   letter-spacing: -0.03em;
+  color: var(--palette-body-gray);
 }
 
 .creamBox {
@@ -453,9 +458,9 @@
 }
 
 .shavedIceBuilder {
-  margin-top: 0.65cqh;
-  font-size: 1.04cqw;
-  line-height: 1.2;
+  margin-top: 0.62cqh;
+  font-size: 1.34cqw;
+  line-height: 1.13;
 }
 
 .fruitTeas {
