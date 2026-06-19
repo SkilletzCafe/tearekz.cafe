@@ -248,6 +248,12 @@ function Price({ children }: { children: ReactNode }) {
   return <span className={styles.price}>{children}</span>;
 }
 
+const FRUIT_COLORS = {
+  lychee: '#7c1f1f',
+  mango: '#d28a17',
+  strawberry: '#c43c37',
+} as const;
+
 const SHOWCASE_IMAGES = [
   '/images/menu/tv-native/drinks/05-golden-mango-blended-drink-cutout.png',
   '/images/menu/tv-native/drinks/07-coco-mango-blended-drink-cutout.png',
@@ -608,19 +614,21 @@ function RightMenu({ debugRegions = false }: { debugRegions?: boolean }) {
             className={styles.fruitTeas}
           >
             <Item code="51">
-              <Colored color="#7c1f1f">Lychee</Colored> Jasmine Green ☁️ <Price>$6.75</Price>
+              <Colored color={FRUIT_COLORS.lychee}>Lychee</Colored> Jasmine Green ☁️{' '}
+              <Price>$6.75</Price>
             </Item>
             <Item code="52">
-              <Colored color="#c43c37">Strawberry</Colored> <Colored color="#c58aa8">Peach</Colored>{' '}
-              Jade Oolong ☁️ <Price>$6.75</Price>
+              <Colored color={FRUIT_COLORS.strawberry}>Strawberry</Colored>{' '}
+              <Colored color="#c58aa8">Peach</Colored> Jade Oolong ☁️ <Price>$6.75</Price>
             </Item>
             <Item code="53">
-              <Colored color="#d28a17">Mango</Colored>{' '}
+              <Colored color={FRUIT_COLORS.mango}>Mango</Colored>{' '}
               <Colored color="#7b3f98">Passionfruit</Colored> Jasmine Green <Price>$6.75</Price>
             </Item>
             <Item code="54">
-              <Colored color="#c58aa8">Peach</Colored> <Colored color="#7c1f1f">Lychee</Colored>{' '}
-              Magnolia Green ❄️ ☁️ <Price>$7</Price>
+              <Colored color="#c58aa8">Peach</Colored>{' '}
+              <Colored color={FRUIT_COLORS.lychee}>Lychee</Colored> Magnolia Green ❄️ ☁️{' '}
+              <Price>$7</Price>
             </Item>
             <Item code="55">
               Build Your Own Fruit Tea <Price>$6.75</Price>
@@ -633,10 +641,11 @@ function RightMenu({ debugRegions = false }: { debugRegions?: boolean }) {
               <br />
               <b>Choose up to 2 fruits:</b>
               <br />
-              <Colored color="#c43c37">Strawberry</Colored> |{' '}
-              <Colored color="#d28a17">Mango</Colored> |{' '}
+              <Colored color={FRUIT_COLORS.strawberry}>Strawberry</Colored> |{' '}
+              <Colored color={FRUIT_COLORS.mango}>Mango</Colored> |{' '}
               <Colored color="#7b3f98">Passionfruit</Colored> |{' '}
-              <Colored color="#c58aa8">Peach</Colored> | <Colored color="#7c1f1f">Lychee</Colored>
+              <Colored color="#c58aa8">Peach</Colored> |{' '}
+              <Colored color={FRUIT_COLORS.lychee}>Lychee</Colored>
               <br />
               <Colored color="#b71c1c">Raspberry</Colored> |{' '}
               <Colored color="#5d8a2a">Pineapple</Colored>
