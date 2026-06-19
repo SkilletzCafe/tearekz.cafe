@@ -249,8 +249,16 @@ function Price({ children }: { children: ReactNode }) {
 }
 
 const FRUIT_COLORS = {
+  ginger: '#a86f17',
+  hibiscus: '#7c1f1f',
   lychee: '#7c1f1f',
   mango: '#d28a17',
+  passionfruit: '#7b3f98',
+  peach: '#c58aa8',
+  pineapple: '#5d8a2a',
+  purple: '#7b3f98',
+  raspberry: '#b71c1c',
+  rose: '#c43c37',
   strawberry: '#c43c37',
 } as const;
 
@@ -619,14 +627,16 @@ function RightMenu({ debugRegions = false }: { debugRegions?: boolean }) {
             </Item>
             <Item code="52">
               <Colored color={FRUIT_COLORS.strawberry}>Strawberry</Colored>{' '}
-              <Colored color="#c58aa8">Peach</Colored> Jade Oolong ☁️ <Price>$6.75</Price>
+              <Colored color={FRUIT_COLORS.peach}>Peach</Colored> Jade Oolong ☁️{' '}
+              <Price>$6.75</Price>
             </Item>
             <Item code="53">
               <Colored color={FRUIT_COLORS.mango}>Mango</Colored>{' '}
-              <Colored color="#7b3f98">Passionfruit</Colored> Jasmine Green <Price>$6.75</Price>
+              <Colored color={FRUIT_COLORS.passionfruit}>Passionfruit</Colored> Jasmine Green{' '}
+              <Price>$6.75</Price>
             </Item>
             <Item code="54">
-              <Colored color="#c58aa8">Peach</Colored>{' '}
+              <Colored color={FRUIT_COLORS.peach}>Peach</Colored>{' '}
               <Colored color={FRUIT_COLORS.lychee}>Lychee</Colored> Magnolia Green ❄️ ☁️{' '}
               <Price>$7</Price>
             </Item>
@@ -643,12 +653,12 @@ function RightMenu({ debugRegions = false }: { debugRegions?: boolean }) {
               <br />
               <Colored color={FRUIT_COLORS.strawberry}>Strawberry</Colored> |{' '}
               <Colored color={FRUIT_COLORS.mango}>Mango</Colored> |{' '}
-              <Colored color="#7b3f98">Passionfruit</Colored> |{' '}
-              <Colored color="#c58aa8">Peach</Colored> |{' '}
+              <Colored color={FRUIT_COLORS.passionfruit}>Passionfruit</Colored> |{' '}
+              <Colored color={FRUIT_COLORS.peach}>Peach</Colored> |{' '}
               <Colored color={FRUIT_COLORS.lychee}>Lychee</Colored>
               <br />
-              <Colored color="#b71c1c">Raspberry</Colored> |{' '}
-              <Colored color="#5d8a2a">Pineapple</Colored>
+              <Colored color={FRUIT_COLORS.raspberry}>Raspberry</Colored> |{' '}
+              <Colored color={FRUIT_COLORS.pineapple}>Pineapple</Colored>
             </div>
           </Section>
 
@@ -667,23 +677,25 @@ function RightMenu({ debugRegions = false }: { debugRegions?: boolean }) {
               Lemonade <Price>$6</Price>
             </Item>
             <Item code="62">
-              <Colored color="#c43c37">Strawberry</Colored> Lemonade <Price>$7</Price>
+              <Colored color={FRUIT_COLORS.strawberry}>Strawberry</Colored> Lemonade{' '}
+              <Price>$7</Price>
             </Item>
             <Item code="63">
-              <Colored color="#f2a21b">Mango</Colored> Lemonade <Price>$7</Price>
+              <Colored color={FRUIT_COLORS.mango}>Mango</Colored> Lemonade <Price>$7</Price>
             </Item>
             <Item code="64">
-              <Colored color="#7b3f98">Passionfruit</Colored> Lemonade <Price>$7</Price>
+              <Colored color={FRUIT_COLORS.passionfruit}>Passionfruit</Colored> Lemonade{' '}
+              <Price>$7</Price>
             </Item>
             <Item code="65" description="Butterfly pea–infused lemonade with passionfruit">
-              <Colored color="#7b3f98">Purple</Colored> Lemonade <Price>$7.5</Price>
+              <Colored color={FRUIT_COLORS.purple}>Purple</Colored> Lemonade <Price>$7.5</Price>
             </Item>
             <Item code="66">
-              <Colored color="#c43c37">Rose</Colored> <Colored color="#7c1f1f">Hibiscus</Colored>{' '}
-              Lemonade <Price>$7</Price>
+              <Colored color={FRUIT_COLORS.rose}>Rose</Colored>{' '}
+              <Colored color={FRUIT_COLORS.hibiscus}>Hibiscus</Colored> Lemonade <Price>$7</Price>
             </Item>
             <Item code="67">
-              <Colored color="#a86f17">Ginger</Colored> Lemonade <Price>$7</Price>
+              <Colored color={FRUIT_COLORS.ginger}>Ginger</Colored> Lemonade <Price>$7</Price>
             </Item>
             <div
               className={`${styles.productPhotoSlot} ${styles.lemonadeCluster}`}
@@ -741,12 +753,14 @@ function RightMenu({ debugRegions = false }: { debugRegions?: boolean }) {
               🦖 Dino Freeze (Build Your Own) 🌙 <Price>$6.5</Price>
             </Item>
             <div className={`${styles.builderCopy} ${styles.builderOptions}`}>
-              <b>Choose up to 2 fruits:</b> <Colored color="#c43c37">Strawberry</Colored> |{' '}
-              <Colored color="#d28a17">Mango</Colored> |{' '}
-              <Colored color="#7b3f98">Passionfruit</Colored> |{' '}
-              <Colored color="#c58aa8">Peach</Colored> | <Colored color="#7c1f1f">Lychee</Colored> |{' '}
-              <Colored color="#b71c1c">Raspberry</Colored> |{' '}
-              <Colored color="#5d8a2a">Pineapple</Colored>
+              <b>Choose up to 2 fruits:</b>{' '}
+              <Colored color={FRUIT_COLORS.strawberry}>Strawberry</Colored> |{' '}
+              <Colored color={FRUIT_COLORS.mango}>Mango</Colored> |{' '}
+              <Colored color={FRUIT_COLORS.passionfruit}>Passionfruit</Colored> |{' '}
+              <Colored color={FRUIT_COLORS.peach}>Peach</Colored> |{' '}
+              <Colored color={FRUIT_COLORS.lychee}>Lychee</Colored> |{' '}
+              <Colored color={FRUIT_COLORS.raspberry}>Raspberry</Colored> |{' '}
+              <Colored color={FRUIT_COLORS.pineapple}>Pineapple</Colored>
             </div>
             <div
               className={`${styles.productPhotoSlot} ${styles.blendedCluster}`}
@@ -899,12 +913,13 @@ function RightMenu({ debugRegions = false }: { debugRegions?: boolean }) {
             <div className={`${styles.builderCopy} ${styles.builderOptions}`}>
               <b>Choose a base flavor:</b>
               <br />
-              <Colored color="#c43c37">Strawberry</Colored> |{' '}
-              <Colored color="#d28a17">Mango</Colored> |{' '}
-              <Colored color="#7b3f98">Passionfruit</Colored> |{' '}
-              <Colored color="#c58aa8">Peach</Colored> | <Colored color="#7c1f1f">Lychee</Colored> |{' '}
-              <Colored color="#b71c1c">Raspberry</Colored> |{' '}
-              <Colored color="#5d8a2a">Pineapple</Colored>
+              <Colored color={FRUIT_COLORS.strawberry}>Strawberry</Colored> |{' '}
+              <Colored color={FRUIT_COLORS.mango}>Mango</Colored> |{' '}
+              <Colored color={FRUIT_COLORS.passionfruit}>Passionfruit</Colored> |{' '}
+              <Colored color={FRUIT_COLORS.peach}>Peach</Colored> |{' '}
+              <Colored color={FRUIT_COLORS.lychee}>Lychee</Colored> |{' '}
+              <Colored color={FRUIT_COLORS.raspberry}>Raspberry</Colored> |{' '}
+              <Colored color={FRUIT_COLORS.pineapple}>Pineapple</Colored>
               <br />
               <b>Add toppings (choose up to 3):</b>
               <br />
