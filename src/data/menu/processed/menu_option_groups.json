@@ -2104,13 +2104,6 @@
           "orderableOnline": "YES"
         },
         {
-          "name": "Dalgona (Honeycomb Toffee)",
-          "guid": "0b7602e4-6cf6-450e-ad19-db6b4b0cd56f",
-          "description": "",
-          "price": 0.75,
-          "orderableOnline": "YES"
-        },
-        {
           "name": "Grapefruit Pulp",
           "guid": "57294a4b-463d-47f5-87b6-4159568d9ee4",
           "description": "",
