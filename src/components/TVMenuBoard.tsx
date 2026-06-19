@@ -693,13 +693,7 @@ function RightMenu({ debugRegions = false }: { debugRegions?: boolean }) {
             </Item>
             <Item
               code="74"
-              description={
-                <>
-                  organic mango, jasmine tea, organic coconut milk, grapefruit
-                  <br />
-                  pulp and crystal boba
-                </>
-              }
+              description="organic mango, jasmine tea, organic coconut milk, grapefruit pulp and crystal boba"
             >
               🥭 Mango Grapefruit Crystal 🌙 <Price>$8.5</Price>
             </Item>

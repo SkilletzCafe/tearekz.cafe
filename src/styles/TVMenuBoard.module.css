@@ -500,39 +500,34 @@
 }
 
 .fruitTeas {
-  height: 48.3cqh;
+  min-height: 48.3cqh;
 }
 
 .lemonades {
-  height: 45.5cqh;
+  min-height: 45.5cqh;
 }
 
 .blended {
-  height: 51.9cqh;
+  min-height: 51.9cqh;
 }
 
 .coffee {
-  height: 42.5cqh;
+  min-height: 42.5cqh;
 }
 
 .hotDrinks {
-  height: 27.7cqh;
+  min-height: 27.7cqh;
 }
 
 .extras {
-  height: 15.9cqh;
+  min-height: 15.9cqh;
 }
 
 .shavedIce {
-  height: 47.2cqh;
+  min-height: 47.2cqh;
 }
 
-.blended .item,
 .blended .builderCopy {
-  max-width: 23.3cqw;
-}
-
-.blended .builderCopy.builderOptions {
   max-width: 31.5cqw;
 }
 
