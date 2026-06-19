@@ -50,12 +50,12 @@
   --palette-cream-top-end: #efe4dc;
   --palette-topping-start: #a994d6;
   --palette-topping-end: #eee8ff;
-  --menu-description-font-size: 1.22cqw;
+  --menu-description-font-size: 1.23cqw;
   --menu-description-line-height: 1.18;
   --menu-description-font-weight: 520;
   --menu-description-letter-spacing: -0.028em;
-  --right-menu-description-font-size: 1.2cqw;
-  --builder-options-font-size: 1.43cqw;
+  --right-menu-description-font-size: 1.21cqw;
+  --builder-options-font-size: 1.44cqw;
   --builder-options-line-height: 1.12;
   --photo-shadow: 0 0.24cqh 0.12cqw rgb(0 0 0 / 0.16);
   container-type: size;
@@ -97,7 +97,7 @@
   max-width: calc(100% - 0.44cqw);
   padding: 0.28cqh 0.5cqw 0.34cqh;
   color: var(--palette-white);
-  font-size: 0.88cqw;
+  font-size: 0.89cqw;
   font-weight: 800;
   line-height: 1;
   letter-spacing: 0;
@@ -139,7 +139,7 @@
   position: absolute;
   left: 8.05cqw;
   top: 0.02cqh;
-  font-size: 1.16cqw;
+  font-size: 1.17cqw;
   line-height: 1.34;
   font-weight: 680;
   color: var(--palette-black);
@@ -172,7 +172,7 @@
 .legendIcon {
   width: 1.08cqw;
   margin-right: 0.18cqw;
-  font-size: 1.02cqw;
+  font-size: 1.03cqw;
   font-weight: 400;
 }
 
@@ -191,7 +191,7 @@
   grid-template-columns: minmax(0, 1.82fr) minmax(0, 0.68fr);
   gap: 1.45cqw;
   color: var(--palette-sugar-pink);
-  font-size: 1.28cqw;
+  font-size: 1.29cqw;
   line-height: 1.22;
   font-weight: 400;
   letter-spacing: -0.025em;
@@ -292,7 +292,7 @@
   padding: 0 1.02cqw;
   box-sizing: border-box;
   color: var(--palette-white);
-  font-size: 1.78cqw;
+  font-size: 1.79cqw;
   line-height: 1;
   font-weight: 740;
   letter-spacing: -0.035em;
@@ -323,7 +323,7 @@
 }
 
 .subhead {
-  font-size: 1.28cqw;
+  font-size: 1.29cqw;
   font-style: italic;
   line-height: 1.08;
   margin: 0.65cqh 0 0.35cqh 0.7cqw;
@@ -333,7 +333,7 @@
 .item {
   margin: 0 0 0.72cqh;
   font-weight: 705;
-  font-size: 1.65cqw;
+  font-size: 1.66cqw;
   line-height: 1.12;
   letter-spacing: -0.046em;
 }
@@ -380,7 +380,7 @@
 
 .signatures .item {
   margin-bottom: 1.03cqh;
-  font-size: 1.47cqw;
+  font-size: 1.48cqw;
 }
 
 .signatures .description {
@@ -389,7 +389,7 @@
 
 .compactSection .item {
   margin-bottom: 0.88cqh;
-  font-size: 1.54cqw;
+  font-size: 1.55cqw;
 }
 
 .signatures,
@@ -423,7 +423,7 @@
   gap: 0.08cqw;
   padding: 0 1.02cqw;
   box-sizing: border-box;
-  font-size: 1.94cqw;
+  font-size: 1.95cqw;
   font-weight: 820;
   font-style: italic;
   letter-spacing: -0.04em;
@@ -439,7 +439,7 @@
 
 .boxBody {
   padding: 0.74cqh 0.95cqw 0.82cqh;
-  font-size: 1.43cqw;
+  font-size: 1.44cqw;
   font-weight: 520;
   line-height: 1.18;
   letter-spacing: -0.034em;
@@ -451,7 +451,7 @@
 
 .boxNote {
   text-align: center;
-  font-size: 1.18cqw;
+  font-size: 1.19cqw;
   font-style: italic;
   font-weight: 500;
   letter-spacing: -0.03em;
@@ -473,11 +473,11 @@
 
 .rightGrid .sectionTitle {
   min-height: 5.16cqh;
-  font-size: 1.74cqw;
+  font-size: 1.75cqw;
 }
 
 .rightGrid .item {
-  font-size: 1.6cqw;
+  font-size: 1.61cqw;
   margin-bottom: 0.78cqh;
 }
 
@@ -488,7 +488,7 @@
 
 .builderCopy {
   margin: 0.36cqh 0 0 2.55cqw;
-  font-size: 1.22cqw;
+  font-size: 1.23cqw;
   line-height: 1.2;
   font-weight: 540;
   letter-spacing: -0.03em;
@@ -559,7 +559,7 @@
 .photoCaption {
   position: absolute;
   color: var(--palette-caption-gray);
-  font-size: 1.02cqw;
+  font-size: 1.03cqw;
   line-height: 1;
   font-weight: 620;
   letter-spacing: -0.02em;
