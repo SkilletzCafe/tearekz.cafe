@@ -50,6 +50,28 @@
   --palette-cream-top-end: #efe4dc;
   --palette-topping-start: #a994d6;
   --palette-topping-end: #eee8ff;
+  --menu-color-ginger: #a86f17;
+  --menu-color-hibiscus: #7c1f1f;
+  --menu-color-lychee: #7c1f1f;
+  --menu-color-mango: #d28a17;
+  --menu-color-passionfruit: #7b3f98;
+  --menu-color-peach: #c58aa8;
+  --menu-color-pineapple: #5d8a2a;
+  --menu-color-purple: #7b3f98;
+  --menu-color-raspberry: #b71c1c;
+  --menu-color-rose: #c43c37;
+  --menu-color-strawberry: #c43c37;
+  --menu-color-brulee: #a7771b;
+  --menu-color-ice-cream: #5a8fba;
+  --menu-color-jasmine-cream: #4b9f4d;
+  --menu-color-matcha-cream: #7f9d22;
+  --menu-color-pistachio-cream: #77711f;
+  --menu-color-raspberry-cream: #b63249;
+  --menu-color-sea-salt-cheese: #b77a3d;
+  --menu-color-crystal: #9e9e9e;
+  --menu-color-brown-sugar: #7a4b21;
+  --menu-color-dalgona: #a9771c;
+  --section-stack-gap: clamp(14px, 1.85cqh, 20px);
   --menu-description-font-size: 1.23cqw;
   --menu-description-line-height: 1.18;
   --menu-description-font-weight: 520;
@@ -301,23 +323,13 @@
   grid-column: 3;
 }
 
-.leftCol2,
-.leftCol3 {
-  --section-margin-below: clamp(10px, 1.35cqh, 20px);
-
-  display: flex;
-  flex-direction: column;
-  gap: var(--section-margin-below);
-}
-
 .section {
   position: relative;
-  margin: 0 0 var(--section-margin-below, 1.35cqh);
+  margin: 0;
 }
 
-.leftCol2 .section,
-.leftCol3 .section {
-  margin-bottom: 0;
+.menuColumn .section + .section {
+  margin-top: var(--section-stack-gap);
 }
 
 .sectionTitle {
@@ -503,8 +515,8 @@
 }
 
 /* Right-board tuning */
-.rightGrid .section {
-  margin-bottom: 0.95cqh;
+.rightGrid {
+  --section-stack-gap: clamp(16px, 1.95cqh, 22px);
 }
 
 .rightGrid .sectionTitle {

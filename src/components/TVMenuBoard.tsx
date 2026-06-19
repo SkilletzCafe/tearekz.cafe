@@ -249,23 +249,48 @@ function Price({ children }: { children: ReactNode }) {
 }
 
 const FRUIT_COLORS = {
-  ginger: '#a86f17',
-  hibiscus: '#7c1f1f',
-  lychee: '#7c1f1f',
-  mango: '#d28a17',
-  passionfruit: '#7b3f98',
-  peach: '#c58aa8',
-  pineapple: '#5d8a2a',
-  purple: '#7b3f98',
-  raspberry: '#b71c1c',
-  rose: '#c43c37',
-  strawberry: '#c43c37',
+  ginger: 'var(--menu-color-ginger)',
+  hibiscus: 'var(--menu-color-hibiscus)',
+  lychee: 'var(--menu-color-lychee)',
+  mango: 'var(--menu-color-mango)',
+  passionfruit: 'var(--menu-color-passionfruit)',
+  peach: 'var(--menu-color-peach)',
+  pineapple: 'var(--menu-color-pineapple)',
+  purple: 'var(--menu-color-purple)',
+  raspberry: 'var(--menu-color-raspberry)',
+  rose: 'var(--menu-color-rose)',
+  strawberry: 'var(--menu-color-strawberry)',
+} as const;
+
+const CREAM_COLORS = {
+  brulee: 'var(--menu-color-brulee)',
+  iceCream: 'var(--menu-color-ice-cream)',
+  jasmine: 'var(--menu-color-jasmine-cream)',
+  matcha: 'var(--menu-color-matcha-cream)',
+  pistachio: 'var(--menu-color-pistachio-cream)',
+  raspberry: 'var(--menu-color-raspberry-cream)',
+  seaSaltCheese: 'var(--menu-color-sea-salt-cheese)',
+} as const;
+
+const TOPPING_COLORS = {
+  crystal: 'var(--menu-color-crystal)',
+  brownSugar: 'var(--menu-color-brown-sugar)',
+  dalgona: 'var(--menu-color-dalgona)',
 } as const;
 
 const SHOWCASE_IMAGES = [
-  '/images/menu/tv-native/drinks/05-golden-mango-blended-drink-cutout.png',
-  '/images/menu/tv-native/drinks/07-coco-mango-blended-drink-cutout.png',
-  '/images/menu/tv-native/drinks/11-dino-fuel-vietnamese-coffee-and-thai-tea-cutout.png',
+  {
+    alt: 'Golden Mango blended drink preview',
+    src: '/images/menu/tv-native/drinks/05-golden-mango-blended-drink-cutout.png',
+  },
+  {
+    alt: 'Coco Mango blended drink preview',
+    src: '/images/menu/tv-native/drinks/07-coco-mango-blended-drink-cutout.png',
+  },
+  {
+    alt: 'Dino Fuel coffee drink preview',
+    src: '/images/menu/tv-native/drinks/11-dino-fuel-vietnamese-coffee-and-thai-tea-cutout.png',
+  },
 ];
 
 function Emoji({ children }: { children: ReactNode }) {
@@ -279,12 +304,12 @@ function Emoji({ children }: { children: ReactNode }) {
 function ShowcasePreview() {
   return (
     <div className={styles.showcasePreview} aria-hidden="true">
-      {SHOWCASE_IMAGES.map((src, index) => (
+      {SHOWCASE_IMAGES.map((image, index) => (
         // eslint-disable-next-line @next/next/no-img-element
         <img
-          key={src}
-          src={src}
-          alt=""
+          key={image.src}
+          src={image.src}
+          alt={image.alt}
           className={styles.showcaseImage}
           style={{ '--showcase-index': index } as CSSProperties}
         />
@@ -370,10 +395,11 @@ function LeftMenu({ debugRegions = false }: { debugRegions?: boolean }) {
               Magnolia Orchard <Price>$8</Price>
             </Item>
             <Item code="S5" description="Lychee Jasmine Green Tea with Jasmine Cream">
-              Lychee Blossom <Price>$8</Price>
+              <Colored color={FRUIT_COLORS.lychee}>Lychee Blossom</Colored> <Price>$8</Price>
             </Item>
             <Item code="S6" description="Vietnamese Iced Coffee with Pistachio Cream">
-              Pistachio Cream Coffee <Price>$8</Price>
+              <Colored color={CREAM_COLORS.pistachio}>Pistachio Cream</Colored> Coffee{' '}
+              <Price>$8</Price>
             </Item>
             <Item code="S7" description="Matcha Latte with Raspberry Cream">
               Matcha Blossom <Price>$8</Price>
@@ -388,7 +414,8 @@ function LeftMenu({ debugRegions = false }: { debugRegions?: boolean }) {
                 </>
               }
             >
-              Strawberry Pop Milk 🌙 <Price>$7.5</Price>
+              <Colored color={FRUIT_COLORS.strawberry}>Strawberry</Colored> Pop Milk 🌙{' '}
+              <Price>$7.5</Price>
             </Item>
             <Item
               code="S9"
@@ -400,7 +427,7 @@ function LeftMenu({ debugRegions = false }: { debugRegions?: boolean }) {
                 </>
               }
             >
-              Mango Pop Milk 🌙 <Price>$7.5</Price>
+              <Colored color={FRUIT_COLORS.mango}>Mango</Colored> Pop Milk 🌙 <Price>$7.5</Price>
             </Item>
           </Section>
         </div>
@@ -463,10 +490,10 @@ function LeftMenu({ debugRegions = false }: { debugRegions?: boolean }) {
               Magnolia Green ❄️ ☁️ <Price>$6</Price>
             </Item>
             <Item code="3">
-              Lychee Black <Price>$5.75</Price>
+              <Colored color={FRUIT_COLORS.lychee}>Lychee</Colored> Black <Price>$5.75</Price>
             </Item>
             <Item code="4">
-              White Peach Oolong <Price>$6</Price> ☁️
+              White <Colored color={FRUIT_COLORS.peach}>Peach</Colored> Oolong <Price>$6</Price> ☁️
             </Item>
             <Item code="5">
               Rooibos 🌙 <Price>$5.75</Price>
@@ -523,10 +550,11 @@ function LeftMenu({ debugRegions = false }: { debugRegions?: boolean }) {
               Brown Sugar Matcha Latte ☁️ <Price>$7.25</Price>
             </Item>
             <Item code="33">
-              <Colored color="#c43c37">Strawberry</Colored> Matcha Latte <Price>$8</Price>
+              <Colored color={FRUIT_COLORS.strawberry}>Strawberry</Colored> Matcha Latte{' '}
+              <Price>$8</Price>
             </Item>
             <Item code="34">
-              <Colored color="#bb841a">Mango</Colored> Matcha Latte <Price>$8</Price>
+              <Colored color={FRUIT_COLORS.mango}>Mango</Colored> Matcha Latte <Price>$8</Price>
             </Item>
             <Item code="35">
               <Colored color="#7760a8">Taro</Colored> Matcha Latte <Price>$8.5</Price>
@@ -545,27 +573,30 @@ function LeftMenu({ debugRegions = false }: { debugRegions?: boolean }) {
             <div className={styles.boxBody}>
               <p className={styles.boxNote}>(Made with Real Cream • Contains Dairy)</p>
               <p>
-                <Colored color="#a7771b">Crème Brûlée</Colored> (on cold drinks only){' '}
+                <Colored color={CREAM_COLORS.brulee}>Crème Brûlée</Colored> (on cold drinks only){' '}
                 <Price>$1.5</Price>
               </p>
               <p>
-                <Colored color="#5a8fba">Vanilla Ice Cream Float</Colored> (on cold drinks only){' '}
-                <Price>$2</Price>
+                <Colored color={CREAM_COLORS.iceCream}>Vanilla Ice Cream Float</Colored> (on cold
+                drinks only) <Price>$2</Price>
               </p>
               <p>
-                <Colored color="#4b9f4d">Jasmine Cream</Colored> (Whipped) <Price>$1.5</Price>
+                <Colored color={CREAM_COLORS.jasmine}>Jasmine Cream</Colored> (Whipped){' '}
+                <Price>$1.5</Price>
               </p>
               <p>
-                <Colored color="#7f9d22">Matcha Cream</Colored> <Price>$2</Price>
+                <Colored color={CREAM_COLORS.matcha}>Matcha Cream</Colored> <Price>$2</Price>
               </p>
               <p>
-                <Colored color="#77711f">Pistachio Cream</Colored> <Price>$2</Price>
+                <Colored color={CREAM_COLORS.pistachio}>Pistachio Cream</Colored> <Price>$2</Price>
               </p>
               <p>
-                <Colored color="#b63249">Raspberry Cream</Colored> <Price>$1.5</Price>
+                <Colored color={CREAM_COLORS.raspberry}>Raspberry Cream</Colored>{' '}
+                <Price>$1.5</Price>
               </p>
               <p>
-                <Colored color="#b77a3d">Sea Salt Cheese Cream</Colored> <Price>$1.5</Price>
+                <Colored color={CREAM_COLORS.seaSaltCheese}>Sea Salt Cheese Cream</Colored>{' '}
+                <Price>$1.5</Price>
               </p>
             </div>
           </div>
@@ -577,21 +608,21 @@ function LeftMenu({ debugRegions = false }: { debugRegions?: boolean }) {
             <div className={styles.boxBody}>
               <p>⚫ Boba (Tapioca Pearls)</p>
               <p>
-                🔴 Popping Boba: <Colored color="#d28a17">Mango</Colored> |{' '}
-                <Colored color="#c43c37">Strawberry</Colored> |{' '}
-                <Colored color="#7c1f1f">Lychee</Colored>
+                🔴 Popping Boba: <Colored color={FRUIT_COLORS.mango}>Mango</Colored> |{' '}
+                <Colored color={FRUIT_COLORS.strawberry}>Strawberry</Colored> |{' '}
+                <Colored color={FRUIT_COLORS.lychee}>Lychee</Colored>
               </p>
               <p>
-                ⭐ Jelly: <Colored color="#d28a17">Mango Star</Colored> |{' '}
-                <Colored color="#c43c37">Strawberry Heart</Colored> |{' '}
-                <Colored color="#7c1f1f">Lychee</Colored>
+                ⭐ Jelly: <Colored color={FRUIT_COLORS.mango}>Mango Star</Colored> |{' '}
+                <Colored color={FRUIT_COLORS.strawberry}>Strawberry Heart</Colored> |{' '}
+                <Colored color={FRUIT_COLORS.lychee}>Lychee</Colored>
               </p>
               <p>
-                🟤 Agar Boba: <Colored color="#9e9e9e">Crystal</Colored> |{' '}
-                <Colored color="#7a4b21">Brown Sugar</Colored>
+                🟤 Agar Boba: <Colored color={TOPPING_COLORS.crystal}>Crystal</Colored> |{' '}
+                <Colored color={TOPPING_COLORS.brownSugar}>Brown Sugar</Colored>
               </p>
               <p>
-                🍯 <Colored color="#a9771c">Dalgona</Colored> (Honeycomb Toffee)
+                🍯 <Colored color={TOPPING_COLORS.dalgona}>Dalgona</Colored> (Honeycomb Toffee)
               </p>
               <p>🍉 Grapefruit Pulp</p>
               <p>🟨 Diced Mango</p>
@@ -804,7 +835,7 @@ function RightMenu({ debugRegions = false }: { debugRegions?: boolean }) {
             </Item>
             <Item code="83">
               <span>
-                <Colored color="#77711f">Pistachio Cream</Colored>
+                <Colored color={CREAM_COLORS.pistachio}>Pistachio Cream</Colored>
                 <br />
                 Vietnamese Iced Coffee ❄️ <Price>$8</Price>
               </span>
@@ -905,7 +936,8 @@ function RightMenu({ debugRegions = false }: { debugRegions?: boolean }) {
                 </>
               }
             >
-              <Colored color="#c43c37">Strawberry</Colored> Shaved Ice <Price>$8</Price>
+              <Colored color={FRUIT_COLORS.strawberry}>Strawberry</Colored> Shaved Ice{' '}
+              <Price>$8</Price>
             </Item>
             <Item code="H2">
               Build Your Own Shaved Ice <Price>$8</Price>
@@ -923,18 +955,19 @@ function RightMenu({ debugRegions = false }: { debugRegions?: boolean }) {
               <br />
               <b>Add toppings (choose up to 3):</b>
               <br />
-              <Colored color="#c43c37">Fresh Strawberries</Colored> •{' '}
-              <Colored color="#d28a17">Diced Mango</Colored> • Grapefruit Pulp
+              <Colored color={FRUIT_COLORS.strawberry}>Fresh Strawberries</Colored> •{' '}
+              <Colored color={FRUIT_COLORS.mango}>Diced Mango</Colored> • Grapefruit Pulp
               <br />
-              <b>Popping Boba:</b> <Colored color="#d28a17">Mango</Colored> |{' '}
-              <Colored color="#c43c37">Strawberry</Colored> |{' '}
-              <Colored color="#7c1f1f">Lychee</Colored>
+              <b>Popping Boba:</b> <Colored color={FRUIT_COLORS.mango}>Mango</Colored> |{' '}
+              <Colored color={FRUIT_COLORS.strawberry}>Strawberry</Colored> |{' '}
+              <Colored color={FRUIT_COLORS.lychee}>Lychee</Colored>
               <br />
-              <b>Jelly:</b> <Colored color="#d28a17">Mango Star</Colored> |{' '}
-              <Colored color="#c43c37">Strawberry Heart</Colored> |{' '}
-              <Colored color="#7c1f1f">Lychee</Colored>
+              <b>Jelly:</b> <Colored color={FRUIT_COLORS.mango}>Mango Star</Colored> |{' '}
+              <Colored color={FRUIT_COLORS.strawberry}>Strawberry Heart</Colored> |{' '}
+              <Colored color={FRUIT_COLORS.lychee}>Lychee</Colored>
               <br />
-              <b>Agar Boba:</b> Crystal | <Colored color="#7a4b21">Brown Sugar</Colored>
+              <b>Agar Boba:</b> <Colored color={TOPPING_COLORS.crystal}>Crystal</Colored> |{' '}
+              <Colored color={TOPPING_COLORS.brownSugar}>Brown Sugar</Colored>
               <br />
               <em>Optional condensed milk drizzle</em>
             </div>
