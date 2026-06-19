@@ -43,6 +43,9 @@
   --palette-purple: #7b3f98;
   --palette-blue: #507aa0;
   --palette-options-rose: #8b5269;
+  --palette-sugar-pink: #b64d76;
+  --palette-ice-navy: #153f73;
+  --palette-milk-blue: #7eb9e6;
   --palette-cream-top-start: #cab19b;
   --palette-cream-top-end: #efe4dc;
   --palette-topping-start: #a994d6;
@@ -160,6 +163,12 @@
   letter-spacing: 0;
 }
 
+.sectionTitle .emoji,
+.boxTitle .emoji {
+  align-self: center;
+  transform: translateY(0.01em);
+}
+
 .legendIcon {
   width: 1.08cqw;
   margin-right: 0.18cqw;
@@ -176,34 +185,54 @@
 .options {
   position: absolute;
   left: 27.2cqw;
-  right: 1.6cqw;
-  top: 0;
-  text-align: center;
-  color: var(--palette-options-rose);
-  font-size: 1.13cqw;
-  line-height: 1.48;
-  font-weight: 700;
+  right: 1.05cqw;
+  top: -0.04cqh;
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(0, 0.92fr);
+  gap: 1.2cqw;
+  color: var(--palette-sugar-pink);
+  font-size: 1.28cqw;
+  line-height: 1.22;
+  font-weight: 740;
+  letter-spacing: -0.025em;
+}
+
+.optionGroup {
+  min-width: 0;
+}
+
+.optionRow {
+  margin-bottom: 0.22cqh;
 }
 
 .options b {
-  color: var(--palette-blue);
-  font-weight: 800;
+  color: inherit;
+  font-weight: 900;
 }
 
 .options span {
-  color: var(--palette-options-rose);
-  font-weight: 500;
+  color: var(--palette-sugar-pink);
+  font-weight: 560;
 }
 
-.milkOptions {
-  margin-left: 4.3cqw;
+.iceMilkOptions {
+  padding-left: 1.15cqw;
+  border-left: 0.16cqw solid rgb(21 63 115 / 0.28);
+}
+
+.iceMilkOptions .optionRow:first-child {
+  color: var(--palette-ice-navy);
+}
+
+.iceMilkOptions .optionRow:last-child {
+  color: var(--palette-milk-blue);
 }
 
 .leftGrid {
   position: absolute;
   inset: 13.45cqh 1.05cqw 1.55cqh 0.48cqw;
   display: grid;
-  grid-template-columns: 24.35cqw 20.85cqw 22.25cqw 1fr;
+  grid-template-columns: 24.35cqw 20.85cqw 23.2cqw 1fr;
   gap: 1.02cqw;
 }
 
