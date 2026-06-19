@@ -48,6 +48,8 @@
   --palette-milk-blue: #7eb9e6;
   --palette-cream-top-start: #cab19b;
   --palette-cream-top-end: #efe4dc;
+  --palette-boost-start: #b7d27b;
+  --palette-boost-end: #edf6d7;
   --palette-topping-start: #a994d6;
   --palette-topping-end: #eee8ff;
   --menu-color-ginger: #a86f17;
@@ -482,6 +484,10 @@
   background: linear-gradient(90deg, var(--palette-cream-top-start), var(--palette-cream-top-end));
 }
 
+.boostTitle {
+  background: linear-gradient(90deg, var(--palette-boost-start), var(--palette-boost-end));
+}
+
 .toppingTitle {
   background: linear-gradient(90deg, var(--palette-topping-start), var(--palette-topping-end));
 }
@@ -515,7 +521,41 @@
 }
 
 .creamBox {
-  min-height: 39.4cqh;
+  min-height: 37.1cqh;
+  margin-bottom: 1.2cqh;
+}
+
+.creamBox .boxBody {
+  padding-bottom: 0.22cqh;
+}
+
+.creamBox .boxBody p {
+  margin-bottom: 0.48cqh;
+}
+
+.boostBox {
+  min-height: 10cqh;
+  margin-bottom: 1.2cqh;
+}
+
+.boostBox .boxTitle {
+  height: 4.1cqh;
+  font-size: 1.58cqw;
+}
+
+.boostBody {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.7cqw;
+  padding: 0.54cqh 0.95cqw 0.58cqh;
+  font-size: 1.42cqw;
+  line-height: 1.05;
+}
+
+.boostBody p {
+  margin: 0;
+  white-space: nowrap;
 }
 
 .toppingBox {

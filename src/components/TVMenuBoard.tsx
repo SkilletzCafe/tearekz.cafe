@@ -159,13 +159,19 @@ const LEFT_REGIONS: RegionDef[] = [
     id: 9,
     label: 'Col 4 — Cream Tops',
     color: '#6d4c41',
-    style: { left: '70.95cqw', top: '13.45cqh', width: '28.0cqw', height: '39.4cqh' },
+    style: { left: '70.95cqw', top: '13.45cqh', width: '28.0cqw', height: '37.1cqh' },
   },
   {
     id: 10,
+    label: 'Col 4 — Boosts',
+    color: '#2e7d32',
+    style: { left: '70.95cqw', top: '51.7cqh', width: '28.0cqw', height: '10.0cqh' },
+  },
+  {
+    id: 11,
     label: 'Col 4 — Toppings',
     color: '#d81b60',
-    style: { left: '70.95cqw', top: '54.9cqh', width: '28.0cqw', height: '33.2cqh' },
+    style: { left: '70.95cqw', top: '62.9cqh', width: '28.0cqw', height: '33.2cqh' },
   },
 ];
 
@@ -599,6 +605,20 @@ function LeftMenu({ debugRegions = false }: { debugRegions?: boolean }) {
               <p>
                 <Colored color={CREAM_COLORS.seaSaltCheese}>Sea Salt Cheese Cream</Colored>{' '}
                 <Price>$1.5</Price>
+              </p>
+            </div>
+          </div>
+
+          <div className={`${styles.box} ${styles.boostBox}`}>
+            <div className={`${styles.boxTitle} ${styles.boostTitle}`}>
+              <Emoji>💪</Emoji> Boosts $1 each
+            </div>
+            <div className={`${styles.boxBody} ${styles.boostBody}`}>
+              <p>
+                <Colored color="#567e36">Protein Power</Colored>
+              </p>
+              <p>
+                <Colored color="#a7771b">Creatine</Colored>
               </p>
             </div>
           </div>
