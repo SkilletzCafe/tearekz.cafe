@@ -166,7 +166,7 @@
 .sectionTitle .emoji,
 .boxTitle .emoji {
   align-self: center;
-  transform: translateY(0.01em);
+  transform: translateY(0.06em);
 }
 
 .legendIcon {
@@ -536,6 +536,10 @@
 .blended .builderCopy,
 .coffee .item {
   max-width: 23.3cqw;
+}
+
+.blended .builderCopy.builderOptions {
+  max-width: 31.5cqw;
 }
 
 .productPhotoSlot {

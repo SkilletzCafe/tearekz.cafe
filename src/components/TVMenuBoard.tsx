@@ -711,13 +711,10 @@ function RightMenu({ debugRegions = false }: { debugRegions?: boolean }) {
               🦖 Dino Freeze (Build Your Own) 🌙 <Price>$6.5</Price>
             </Item>
             <div className={`${styles.builderCopy} ${styles.builderOptions}`}>
-              <b>Choose up to 2 fruits:</b>
-              <br />
-              <Colored color="#c43c37">Strawberry</Colored> |{' '}
+              <b>Choose up to 2 fruits:</b> <Colored color="#c43c37">Strawberry</Colored> |{' '}
               <Colored color="#d28a17">Mango</Colored> |{' '}
               <Colored color="#7b3f98">Passionfruit</Colored> |{' '}
-              <Colored color="#c58aa8">Peach</Colored> | <Colored color="#7c1f1f">Lychee</Colored>
-              <br />
+              <Colored color="#c58aa8">Peach</Colored> | <Colored color="#7c1f1f">Lychee</Colored> |{' '}
               <Colored color="#b71c1c">Raspberry</Colored> |{' '}
               <Colored color="#5d8a2a">Pineapple</Colored>
             </div>
