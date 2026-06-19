@@ -828,7 +828,7 @@ function RightMenu({ debugRegions = false }: { debugRegions?: boolean }) {
             </Item>
             <Item code="82">
               <span>
-                <Colored color="#7b5a1f">Crème Brûlée</Colored>
+                <Colored color={CREAM_COLORS.brulee}>Crème Brûlée</Colored>
                 <br />
                 Vietnamese Iced Coffee ❄️ <Price>$8</Price>
               </span>

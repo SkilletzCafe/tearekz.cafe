@@ -71,7 +71,8 @@
   --menu-color-crystal: #9e9e9e;
   --menu-color-brown-sugar: #7a4b21;
   --menu-color-dalgona: #a9771c;
-  --section-stack-gap: clamp(14px, 1.85cqh, 20px);
+  --section-stack-gap: var(--section-stack-gap-default);
+  --section-stack-gap-default: 20px;
   --menu-description-font-size: 1.23cqw;
   --menu-description-line-height: 1.18;
   --menu-description-font-weight: 520;
@@ -516,7 +517,8 @@
 
 /* Right-board tuning */
 .rightGrid {
-  --section-stack-gap: clamp(16px, 1.95cqh, 22px);
+  --section-stack-gap: var(--section-stack-gap-right);
+  --section-stack-gap-right: 30px;
 }
 
 .rightGrid .sectionTitle {
