@@ -852,14 +852,17 @@ function RightMenu({ debugRegions = false }: { debugRegions?: boolean }) {
             <Item code="73" description="½ lb. organic mango, organic coconut milk">
               🥭 Coco Mango <Price>$8</Price>
             </Item>
+            <Item code="74" description="Golden Mango with chamoy and Tajin">
+              🥭 Mangonada <Price>$8</Price>
+            </Item>
             <Item
-              code="74"
+              code="75"
               description="organic mango, jasmine tea, organic coconut milk, grapefruit pulp and crystal boba"
             >
               🥭 Mango Grapefruit Crystal 🌙 <Price>$8.5</Price>
             </Item>
             <Item
-              code="75"
+              code="76"
               description={<>icy and refreshing, made with real fruit purée</>}
               className={styles.noWrapItem}
             >
@@ -888,11 +891,11 @@ function RightMenu({ debugRegions = false }: { debugRegions?: boolean }) {
               <span className={`${styles.photoCaption} ${styles.photoCaption71}`}>71</span>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                className={`${styles.productPhoto} ${styles.productPhoto74}`}
+                className={`${styles.productPhoto} ${styles.productPhoto75}`}
                 src="/images/menu/tv-native/drinks/08-mango-grapefruit-crystal-blended-drink-cutout.png"
                 alt="Mango Grapefruit Crystal blended drink"
               />
-              <span className={`${styles.photoCaption} ${styles.photoCaption74}`}>74</span>
+              <span className={`${styles.photoCaption} ${styles.photoCaption75}`}>75</span>
             </div>
           </Section>
 
