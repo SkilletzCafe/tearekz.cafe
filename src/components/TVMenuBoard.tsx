@@ -397,8 +397,8 @@ function LeftMenu({ debugRegions = false }: { debugRegions?: boolean }) {
               <span className={styles.optionLabel}>Milk Options:</span> Dairy · Oat (+$0.75)
             </div>
             <div className={`${styles.optionRow} ${styles.boostOptions}`}>
-              <span className={styles.optionLabel}>Additional Boosts (+$1):</span> Whey Protein 💪 ·
-              Pea Protein 🫛 · Creatine ⚡
+              <span className={styles.optionLabel}>Additional Boosts 💪:</span> Whey Protein 🥛 +$2
+              · Pea Protein 🫛 +$2 · Creatine ⚡ +$1
             </div>
           </div>
         </div>
