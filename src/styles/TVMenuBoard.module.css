@@ -260,10 +260,10 @@
 
 .showcasePreview {
   position: absolute;
-  right: 0.35cqw;
-  bottom: 0.18cqh;
-  width: 14.4cqw;
-  height: 15.9cqh;
+  right: 0.22cqw;
+  bottom: 0.95cqh;
+  width: 15.7cqw;
+  height: 18.25cqh;
   pointer-events: none;
   z-index: 3;
 }
@@ -278,13 +278,13 @@
 
 .showcaseImage {
   position: absolute;
-  inset: 0 0 2.45cqh;
+  inset: 0 0 2.32cqh;
   width: 100%;
-  height: calc(100% - 2.45cqh);
+  height: calc(100% - 2.32cqh);
   object-fit: contain;
   object-position: center bottom;
   filter: drop-shadow(0 0.28cqh 0.2cqw rgb(0 0 0 / 0.18));
-  transform: scale(1.16);
+  transform: scale(1.24);
   transform-origin: center bottom;
 }
 
@@ -575,8 +575,8 @@
   position: absolute;
   right: -0.22cqw;
   bottom: -0.22cqh;
-  width: 13.35cqw;
-  height: 15.95cqh;
+  width: 14.65cqw;
+  height: 18.08cqh;
   background: var(--palette-background);
   border-top: 0.08cqw solid var(--palette-border);
   border-left: 0.08cqw solid var(--palette-border);

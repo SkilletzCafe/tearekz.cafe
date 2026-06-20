@@ -171,7 +171,7 @@ const LEFT_REGIONS: RegionDef[] = [
     id: 11,
     label: 'Showcase',
     color: '#f6a000',
-    style: { left: '84.2cqw', top: '83.9cqh', width: '14.4cqw', height: '15.9cqh' },
+    style: { left: '84.1cqw', top: '80.8cqh', width: '15.7cqw', height: '18.25cqh' },
   },
 ];
 
