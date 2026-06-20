@@ -83,6 +83,7 @@
   --right-menu-description-font-size: 1.16cqw;
   --builder-options-font-size: 1.36cqw;
   --builder-options-line-height: 1.12;
+  --addon-section-title-font-size: 1.78cqw;
   --photo-shadow: 0 0.24cqh 0.12cqw rgb(0 0 0 / 0.16);
   container-type: size;
   width: min(100vw, 177.7778vh);
@@ -533,7 +534,7 @@
   gap: 0.08cqw;
   padding: 0 1.02cqw;
   box-sizing: border-box;
-  font-size: 1.95cqw;
+  font-size: var(--addon-section-title-font-size);
   font-weight: 820;
   font-style: italic;
   letter-spacing: -0.04em;
