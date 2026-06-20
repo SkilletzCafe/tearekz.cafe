@@ -1,4 +1,4 @@
-[![pages-build-deployment](https://github.com/SkilletzCafe/tearekz.cafe/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/SkilletzCafe/tearekz.cafe/actions/workflows/pages/pages-build-deployment)
+[![Deploy GitHub Pages](https://github.com/SkilletzCafe/tearekz.cafe/actions/workflows/deploy-pages.yml/badge.svg)](https://github.com/SkilletzCafe/tearekz.cafe/actions/workflows/deploy-pages.yml)
 [![Proof HTML](https://github.com/SkilletzCafe/tearekz.cafe/actions/workflows/proof-html.yml/badge.svg)](https://github.com/SkilletzCafe/tearekz.cafe/actions/workflows/proof-html.yml)
 [![License: CC0-1.0](https://img.shields.io/badge/License-CC0_1.0-lightgrey.svg)](http://creativecommons.org/publicdomain/zero/1.0/)
 [![Built with Next.js](https://img.shields.io/badge/Built%20with-Next.js-000000?style=flat&logo=next.js&logoColor=white)](https://nextjs.org/)
@@ -63,7 +63,7 @@ npm run dev
 npm run build
 ```
 
-The static site will be generated in the `docs/` directory, ready for deployment to GitHub Pages.
+The static site will be generated in the `docs/` directory. Production deploys use the `Deploy GitHub Pages` workflow, which uploads the committed `docs/` folder without cloning private submodules.
 
 ### Features
 

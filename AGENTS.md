@@ -20,8 +20,9 @@ If you accidentally commit sensitive data, alert the maintainer immediately. The
 
 1. **GitHub Pages** hosts the production site at [tearekz.cafe](https://tearekz.cafe)
 2. The `docs/` directory contains the static build output
-3. **Any push to `master` automatically deploys to production**
-4. There is no staging environment - master IS production
+3. The `Deploy GitHub Pages` workflow uploads the committed `docs/` folder without cloning private submodules
+4. **Any push to `master` automatically deploys to production**
+5. There is no staging environment - master IS production
 
 ### The Golden Rule
 
@@ -50,7 +51,7 @@ Changes pushed to master go live immediately. This includes:
 1. Get explicit approval from the maintainer
 2. Merge the approved PR to master
 3. Run `make deploy` to build and stage the deployment
-4. Push to master - GitHub Pages automatically deploys the `docs/` folder
+4. Push to master - the `Deploy GitHub Pages` workflow uploads the `docs/` folder
 
 ### Build Commands
 
@@ -121,7 +122,7 @@ After approval to deploy:
 
 1. [ ] Run `make deploy` to build and stage
 2. [ ] Review the staged changes
-3. [ ] Push to master
+3. [ ] Push to master and verify the `Deploy GitHub Pages` workflow succeeds
 
 ---
 
@@ -138,6 +139,7 @@ Changes to `docs/` will be overwritten on the next build. Always edit `src/` and
 ### Don't Skip the Build Step
 
 Running `make deploy` ensures:
+
 - Clean build from source
 - CNAME file is copied
 - `.nojekyll` file is created
