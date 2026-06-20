@@ -373,15 +373,21 @@ function LeftMenu({ debugRegions = false }: { debugRegions?: boolean }) {
           <img src="/images/menu/tv-native/tearekz-logo-cropped.png" alt="Tea-Rek'z" />
         </div>
         <div className={styles.legend}>
-          <div>
-            <span className={`${styles.legendIcon} ${styles.iceIcon}`}>❄️</span> Iced only
+          <div className={styles.legendItem}>
+            <span className={`${styles.legendIcon} ${styles.iceIcon}`}>❄️</span>
+            <span className={styles.legendText}>Iced only</span>
           </div>
-          <div>
-            <span className={`${styles.legendIcon} ${styles.moonIcon}`}>🌙</span> Caffeine-free
+          <div className={styles.legendItem}>
+            <span className={`${styles.legendIcon} ${styles.moonIcon}`}>🌙</span>
+            <span className={styles.legendText}>Caffeine-free</span>
           </div>
-          <div>
-            <span className={`${styles.legendIcon} ${styles.cloudIcon}`}>☁️</span> Pairs well with
-            Cream Tops
+          <div className={styles.legendItem}>
+            <span className={`${styles.legendIcon} ${styles.cloudIcon}`}>☁️</span>
+            <span className={`${styles.legendText} ${styles.legendTextStack}`}>
+              Pairs well with
+              <br />
+              Cream Tops
+            </span>
           </div>
         </div>
         <div className={styles.options}>

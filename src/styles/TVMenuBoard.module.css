@@ -164,12 +164,27 @@
 .legend {
   position: absolute;
   left: 8.05cqw;
-  top: 0.02cqh;
-  font-size: 1.17cqw;
-  line-height: 1.34;
-  font-weight: 680;
+  top: -0.1cqh;
   color: var(--palette-black);
   white-space: nowrap;
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: 0.3cqw;
+  font-size: 1.52cqw;
+  line-height: 1.13;
+  font-weight: 760;
+  letter-spacing: -0.045em;
+}
+
+.legendText {
+  display: inline-block;
+}
+
+.legendTextStack {
+  line-height: 1.02;
 }
 
 .legendIcon,
@@ -196,9 +211,8 @@
 }
 
 .legendIcon {
-  width: 1.08cqw;
-  margin-right: 0.18cqw;
-  font-size: 1.03cqw;
+  width: 1.42cqw;
+  font-size: 1.34cqw;
   font-weight: 400;
 }
 
