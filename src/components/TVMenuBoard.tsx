@@ -312,14 +312,29 @@ const SHOWCASE_IMAGES = [
     src: '/images/menu/tv-native/drinks/05-golden-mango-blended-drink-cutout.png',
   },
   {
+    name: 'Tiger Milk',
+    alt: 'Tiger Milk with Boba preview',
+    src: '/images/menu/tv-native/drinks/41-tiger-milk-with-boba-cutout.png',
+  },
+  {
     name: 'Coco Mango',
     alt: 'Coco Mango blended drink preview',
     src: '/images/menu/tv-native/drinks/07-coco-mango-blended-drink-cutout.png',
   },
   {
+    name: 'Strawberry Milk',
+    alt: 'Strawberry Milk preview',
+    src: '/images/menu/tv-native/drinks/44-strawberry-milk-cutout.png',
+  },
+  {
     name: 'Dino Fuel',
     alt: 'Dino Fuel coffee drink preview',
     src: '/images/menu/tv-native/drinks/11-dino-fuel-vietnamese-coffee-and-thai-tea-cutout.png',
+  },
+  {
+    name: 'Viet Coffee',
+    alt: 'Vietnamese Iced Coffee preview',
+    src: '/images/menu/tv-native/drinks/81-vietnamese-iced-coffee-cutout.png',
   },
 ];
 
