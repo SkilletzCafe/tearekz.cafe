@@ -85,18 +85,20 @@
   --addon-section-title-font-size: 1.78cqw;
   --photo-shadow: 0 0.24cqh 0.12cqw rgb(0 0 0 / 0.16);
   --showcase-widget-width: 16.25cqw;
-  --showcase-widget-height: 24.35cqh;
+  --showcase-widget-height: 26.35cqh;
   --showcase-widget-right: 1.05cqw;
   --showcase-widget-bottom: 1.72cqh;
   --showcase-widget-background: var(--palette-white);
   --showcase-widget-border: 0.085cqw solid rgb(55 55 55 / 0.5);
   --showcase-widget-radius: 0.18cqw;
   --showcase-widget-shadow: 0 0.92cqh 1.35cqw rgb(0 0 0 / 0.28), 0 0 0.55cqw rgb(0 0 0 / 0.12);
-  --showcase-image-bottom-space: 3.25cqh;
-  --showcase-image-scale: 1.16;
-  --showcase-caption-font-size: 1.28cqw;
+  --showcase-image-bottom-space: 3.65cqh;
+  --showcase-image-scale: 1.1;
+  --showcase-caption-font-size: 1.26cqw;
   --showcase-frame-padding-inline: 0.48cqw;
-  --showcase-frame-padding-top: 1.18cqh;
+  --showcase-frame-padding-top: 1.68cqh;
+  --showcase-image-y-offset: 0.62cqh;
+  --showcase-caption-bottom: 0.82cqh;
   container-type: size;
   width: min(100vw, 177.7778vh);
   aspect-ratio: 16 / 9;
@@ -322,7 +324,7 @@
   object-fit: contain;
   object-position: center center;
   filter: drop-shadow(0 0.28cqh 0.2cqw rgb(0 0 0 / 0.18));
-  transform: scale(var(--showcase-image-scale));
+  transform: translateY(var(--showcase-image-y-offset)) scale(var(--showcase-image-scale));
   transform-origin: center bottom;
 }
 
@@ -330,7 +332,7 @@
   position: absolute;
   left: 0;
   right: 0;
-  bottom: 0.5cqh;
+  bottom: var(--showcase-caption-bottom);
   color: var(--palette-section-green-dark);
   font-size: var(--showcase-caption-font-size);
   font-weight: 900;
