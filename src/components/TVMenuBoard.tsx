@@ -2,6 +2,8 @@ import { CSSProperties, ReactNode, useEffect, useState } from 'react';
 
 import Head from 'next/head';
 
+import { SHOWCASE_IMAGES } from '@/data/drink-images/showcaseImages';
+
 import styles from '@/styles/TVMenuBoard.module.css';
 
 const RELOAD_INTERVAL_MILLIS = 30 * 60 * 1000;
@@ -311,39 +313,6 @@ const TOPPING_COLORS = {
   crystal: 'var(--menu-color-crystal)',
   brownSugar: 'var(--menu-color-brown-sugar)',
 } as const;
-
-const SHOWCASE_IMAGES = [
-  {
-    name: 'Golden Mango',
-    alt: 'Golden Mango blended drink preview',
-    src: '/images/menu/tv-native/drinks/05-golden-mango-blended-drink-cutout.png',
-  },
-  {
-    name: 'Tiger Milk',
-    alt: 'Tiger Milk with Boba preview',
-    src: '/images/menu/tv-native/drinks/41-tiger-milk-with-boba-cutout.png',
-  },
-  {
-    name: 'Coco Mango',
-    alt: 'Coco Mango blended drink preview',
-    src: '/images/menu/tv-native/drinks/07-coco-mango-blended-drink-cutout.png',
-  },
-  {
-    name: 'Strawberry Milk',
-    alt: 'Strawberry Milk preview',
-    src: '/images/menu/tv-native/drinks/44-strawberry-milk-cutout.png',
-  },
-  {
-    name: 'Dino Fuel',
-    alt: 'Dino Fuel coffee drink preview',
-    src: '/images/menu/tv-native/drinks/11-dino-fuel-vietnamese-coffee-and-thai-tea-cutout.png',
-  },
-  {
-    name: 'Vietnamese Iced Coffee',
-    alt: 'Vietnamese Iced Coffee preview',
-    src: '/images/menu/tv-native/drinks/81-vietnamese-iced-coffee-cutout.png',
-  },
-];
 
 function Emoji({ children }: { children: ReactNode }) {
   return (

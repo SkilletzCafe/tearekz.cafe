@@ -8,7 +8,7 @@
   },
   "scripts": {
     "dev": "next dev",
-    "build": "next build && tsx src/scripts/generate_sitemap.ts",
+    "build": "npm run drink-images:sync && next build && tsx src/scripts/generate_sitemap.ts",
     "start": "next start",
     "lint": "next lint",
     "format": "prettier --write .",
@@ -17,7 +17,8 @@
     "precommit": "lint-staged",
     "husky:setup": "husky install && (test -f .husky/pre-commit && echo 'pre-commit hook already exists' || husky add .husky/pre-commit 'npx lint-staged')",
     "menu:process": "tsx src/scripts/menu/process-menu.ts",
-    "menu:images": "tsx src/scripts/menu/generate_image_mappings.ts"
+    "menu:images": "tsx src/scripts/menu/generate_image_mappings.ts",
+    "drink-images:sync": "tsx src/scripts/drink-images/sync-drink-images.ts"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,json,css,scss,md}": [

@@ -312,7 +312,7 @@
   position: absolute;
   inset: var(--showcase-frame-padding-top) var(--showcase-frame-padding-inline) 0;
   opacity: 0;
-  animation: showcaseFade 30s infinite;
+  animation: showcaseFade 155s infinite;
   animation-delay: calc(var(--showcase-index) * 5s);
 }
 
@@ -344,11 +344,11 @@
 
 @keyframes showcaseFade {
   0%,
-  14% {
+  2.71% {
     opacity: 1;
   }
 
-  16.667%,
+  3.23%,
   100% {
     opacity: 0;
   }
