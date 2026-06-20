@@ -83,6 +83,9 @@
   --right-menu-description-font-size: 1.16cqw;
   --builder-options-font-size: 1.36cqw;
   --builder-options-line-height: 1.12;
+  --addon-section-font-size: 1.3cqw;
+  --addon-section-line-height: 1.14;
+  --addon-section-note-font-size: 1.08cqw;
   --photo-shadow: 0 0.24cqh 0.12cqw rgb(0 0 0 / 0.16);
   container-type: size;
   width: min(100vw, 177.7778vh);
@@ -548,20 +551,20 @@
 }
 
 .boxBody {
-  padding: 0.74cqh 0.95cqw 0.82cqh;
-  font-size: 1.44cqw;
+  padding: 0.48cqh 0.95cqw 0.82cqh;
+  font-size: var(--addon-section-font-size);
   font-weight: 520;
-  line-height: 1.18;
+  line-height: var(--addon-section-line-height);
   letter-spacing: -0.034em;
 }
 
 .boxBody p {
-  margin: 0 0 0.74cqh;
+  margin: 0 0 0.52cqh;
 }
 
 .boxNote {
   text-align: center;
-  font-size: 1.19cqw;
+  font-size: var(--addon-section-note-font-size);
   font-style: italic;
   font-weight: 500;
   letter-spacing: -0.03em;
@@ -585,7 +588,7 @@
 }
 
 .creamBox .boxBody p {
-  margin-bottom: 0.48cqh;
+  margin-bottom: 0.44cqh;
 }
 
 .toppingBox {
