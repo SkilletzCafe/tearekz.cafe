@@ -421,8 +421,6 @@ function LeftMenu({ debugRegions = false }: { debugRegions?: boolean }) {
         </div>
       </header>
 
-      <ShowcasePreview />
-
       <main className={styles.leftGrid}>
         <div className={`${styles.menuColumn} ${styles.leftCol1}`}>
           <Section
@@ -701,6 +699,8 @@ function LeftMenu({ debugRegions = false }: { debugRegions?: boolean }) {
           </div>
         </aside>
       </main>
+
+      <ShowcasePreview />
       {debugRegions && <RegionOverlay regions={LEFT_REGIONS} />}
     </div>
   );

@@ -88,8 +88,8 @@
   --showcase-widget-height: 19.9cqh;
   --showcase-widget-right: 0.65cqw;
   --showcase-widget-bottom: 1.18cqh;
-  --showcase-widget-background: rgb(255 253 248 / 0.96);
-  --showcase-widget-border: 0.08cqw solid rgb(34 34 34 / 0.16);
+  --showcase-widget-background: var(--palette-white);
+  --showcase-widget-border: 0.08cqw solid var(--palette-border);
   --showcase-widget-radius: 0.1cqw;
   --showcase-widget-shadow: 0 0.72cqh 0.92cqw rgb(0 0 0 / 0.2);
   --showcase-image-bottom-space: 2.75cqh;
@@ -296,7 +296,7 @@
   height: var(--showcase-widget-height);
   box-sizing: border-box;
   pointer-events: none;
-  z-index: 5;
+  z-index: 30;
   overflow: hidden;
   background: var(--showcase-widget-background);
   border: var(--showcase-widget-border);
@@ -352,6 +352,7 @@
 
 .leftGrid {
   position: absolute;
+  z-index: 1;
   inset: 13.45cqh 1.05cqw 1.55cqh 0.48cqw;
   display: grid;
   grid-template-columns: 24.35cqw 20.85cqw 23.2cqw 1fr;
@@ -607,6 +608,7 @@
 
 .toppingBox {
   position: relative;
+  z-index: 1;
   height: auto;
   min-height: 0;
   overflow: visible;
