@@ -4614,14 +4614,21 @@
               "imageUrl": "https://toasttab.s3.amazonaws.com/restaurants/restaurant-244719000000000000/menu/items/5/item-1300000007709137805_1770463698.png"
             },
             {
-              "name": "74 Mango Grapefruit Crystal 🥭🥥💎(🌙)",
+              "name": "74 Mangonada 🥭🌶️🌙",
+              "guid": "0ebafdf6-2a2f-5c6b-9a9d-49149951f45f",
+              "description": "Blended mango with chamoy and Tajín for a sweet, tangy, spicy kick.",
+              "price": 8,
+              "imageUrl": null
+            },
+            {
+              "name": "75 Mango Grapefruit Crystal 🥭🥥💎(🌙)",
               "guid": "47908528-b0f5-4977-ae65-e72fdfb14edc",
               "description": "organic mangos, jasmine tea, organic coconut milk, grapefruit pulp and crystal boba",
               "price": 8.5,
               "imageUrl": "https://toasttab.s3.amazonaws.com/restaurants/restaurant-244719000000000000/menu/items/5/item-1300000005355541035_1770463715.png"
             },
             {
-              "name": "75 Dino Freeze 🍓🥭🍑🦖❄️🌙",
+              "name": "76 Dino Freeze 🍓🥭🍑🦖❄️🌙",
               "guid": "f65e8ad8-357e-4cac-be70-685d9dc414c8",
               "description": "A frosty slush of your choices of real fruit purees blended into the ultimate sweet chill.",
               "price": 6.5,
@@ -5300,14 +5307,21 @@
               "imageUrl": "https://toasttab.s3.amazonaws.com/restaurants/restaurant-244719000000000000/menu/items/5/item-1300000007709137805_1770463698.png"
             },
             {
-              "name": "74 Mango Grapefruit Crystal 🥭🥥💎(🌙)",
+              "name": "74 Mangonada 🥭🌶️🌙",
+              "guid": "0ebafdf6-2a2f-5c6b-9a9d-49149951f45f",
+              "description": "Blended mango with chamoy and Tajín for a sweet, tangy, spicy kick.",
+              "price": 8,
+              "imageUrl": null
+            },
+            {
+              "name": "75 Mango Grapefruit Crystal 🥭🥥💎(🌙)",
               "guid": "47908528-b0f5-4977-ae65-e72fdfb14edc",
               "description": "organic mangos, jasmine tea, organic coconut milk, grapefruit pulp and crystal boba",
               "price": 8.5,
               "imageUrl": "https://toasttab.s3.amazonaws.com/restaurants/restaurant-244719000000000000/menu/items/5/item-1300000005355541035_1770463715.png"
             },
             {
-              "name": "75 Dino Freeze 🍓🥭🍑🦖❄️🌙",
+              "name": "76 Dino Freeze 🍓🥭🍑🦖❄️🌙",
               "guid": "f65e8ad8-357e-4cac-be70-685d9dc414c8",
               "description": "A frosty slush of your choices of real fruit purees blended into the ultimate sweet chill.",
               "price": 6.5,
