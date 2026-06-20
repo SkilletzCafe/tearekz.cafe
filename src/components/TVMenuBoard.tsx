@@ -310,7 +310,6 @@ const TEA_COLORS = {
 const TOPPING_COLORS = {
   crystal: 'var(--menu-color-crystal)',
   brownSugar: 'var(--menu-color-brown-sugar)',
-  dalgona: 'var(--menu-color-dalgona)',
 } as const;
 
 const SHOWCASE_IMAGES = [
@@ -636,9 +635,6 @@ function LeftMenu({ debugRegions = false }: { debugRegions?: boolean }) {
             <Item code="35">
               <Colored color="#7760a8">Taro</Colored> Matcha Latte <Price>$8.5</Price>
             </Item>
-            <Item code="36" description="Matcha latte with honeycomb toffee">
-              Dalgona Matcha Latte <Price>$7.5</Price>
-            </Item>
           </Section>
         </div>
 
@@ -693,15 +689,11 @@ function LeftMenu({ debugRegions = false }: { debugRegions?: boolean }) {
               </p>
               <p>
                 ⭐ Jelly: <Colored color={FRUIT_COLORS.mango}>Mango Star</Colored> ·{' '}
-                <Colored color={FRUIT_COLORS.strawberry}>Strawberry Heart</Colored> ·{' '}
                 <Colored color={FRUIT_COLORS.lychee}>Lychee</Colored>
               </p>
               <p>
                 🟤 Agar Boba: <Colored color={TOPPING_COLORS.crystal}>Crystal</Colored> ·{' '}
                 <Colored color={TOPPING_COLORS.brownSugar}>Brown Sugar</Colored>
-              </p>
-              <p>
-                🍯 <Colored color={TOPPING_COLORS.dalgona}>Dalgona</Colored> (Honeycomb Toffee)
               </p>
               <p>🍉 Grapefruit Pulp</p>
               <p>🟨 Diced Mango</p>
@@ -852,14 +844,17 @@ function RightMenu({ debugRegions = false }: { debugRegions?: boolean }) {
             <Item code="73" description="½ lb. organic mango, organic coconut milk">
               🥭 Coco Mango <Price>$8</Price>
             </Item>
+            <Item code="74" description="Golden Mango with chamoy and Tajín">
+              🥭 Mangonada <Price>$8</Price>
+            </Item>
             <Item
-              code="74"
+              code="75"
               description="organic mango, jasmine tea, organic coconut milk, grapefruit pulp and crystal boba"
             >
               🥭 Mango Grapefruit Crystal 🌙 <Price>$8.5</Price>
             </Item>
             <Item
-              code="75"
+              code="76"
               description={<>icy and refreshing, made with real fruit purée</>}
               className={styles.noWrapItem}
             >
@@ -888,11 +883,11 @@ function RightMenu({ debugRegions = false }: { debugRegions?: boolean }) {
               <span className={`${styles.photoCaption} ${styles.photoCaption71}`}>71</span>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                className={`${styles.productPhoto} ${styles.productPhoto74}`}
+                className={`${styles.productPhoto} ${styles.productPhoto75}`}
                 src="/images/menu/tv-native/drinks/08-mango-grapefruit-crystal-blended-drink-cutout.png"
                 alt="Mango Grapefruit Crystal blended drink"
               />
-              <span className={`${styles.photoCaption} ${styles.photoCaption74}`}>74</span>
+              <span className={`${styles.photoCaption} ${styles.photoCaption75}`}>75</span>
             </div>
           </Section>
 
@@ -1049,7 +1044,6 @@ function RightMenu({ debugRegions = false }: { debugRegions?: boolean }) {
               <Colored color={FRUIT_COLORS.lychee}>Lychee</Colored>
               <br />
               <b>Jelly:</b> <Colored color={FRUIT_COLORS.mango}>Mango Star</Colored> ·{' '}
-              <Colored color={FRUIT_COLORS.strawberry}>Strawberry Heart</Colored> ·{' '}
               <Colored color={FRUIT_COLORS.lychee}>Lychee</Colored>
               <br />
               <b>Agar Boba:</b> <Colored color={TOPPING_COLORS.crystal}>Crystal</Colored> ·{' '}

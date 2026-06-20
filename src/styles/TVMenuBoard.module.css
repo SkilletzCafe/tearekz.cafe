@@ -70,7 +70,6 @@
   --menu-color-sea-salt-cheese: #b77a3d;
   --menu-color-crystal: #9e9e9e;
   --menu-color-brown-sugar: #7a4b21;
-  --menu-color-dalgona: #a9771c;
   --section-stack-gap: var(--section-stack-gap-default);
   --section-stack-gap-default: 14px;
   --menu-item-font-size: 1.58cqw;
@@ -788,7 +787,7 @@
   height: 17.05cqh;
 }
 
-.productPhoto74 {
+.productPhoto75 {
   right: 0.25cqw;
   top: 0.25cqh;
   width: 6.45cqw;
@@ -800,7 +799,7 @@
   top: 17.55cqh;
 }
 
-.photoCaption74 {
+.photoCaption75 {
   right: 2.7cqw;
   top: 17.55cqh;
 }
