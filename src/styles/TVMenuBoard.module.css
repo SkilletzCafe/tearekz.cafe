@@ -567,19 +567,23 @@
 .toppingBox {
   position: relative;
   min-height: 43.4cqh;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .toppingBox::after {
   content: '';
   position: absolute;
-  right: -0.08cqw;
-  bottom: -0.08cqh;
-  width: 13.1cqw;
-  height: 15.7cqh;
+  right: -0.22cqw;
+  bottom: -0.22cqh;
+  width: 13.35cqw;
+  height: 15.95cqh;
   background: var(--palette-background);
   border-top: 0.08cqw solid var(--palette-border);
   border-left: 0.08cqw solid var(--palette-border);
+  box-shadow:
+    0.32cqw 0 0 var(--palette-background),
+    0 0.32cqh 0 var(--palette-background),
+    0.32cqw 0.32cqh 0 var(--palette-background);
   z-index: 2;
 }
 
