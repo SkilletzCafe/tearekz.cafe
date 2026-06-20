@@ -1,0 +1,3 @@
+[submodule "vendor/tearekz-drink-images"]
+	path = vendor/tearekz-drink-images
+	url = ../tearekz-drink-images.git
