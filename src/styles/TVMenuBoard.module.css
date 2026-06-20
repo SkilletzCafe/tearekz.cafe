@@ -84,6 +84,17 @@
   --builder-options-line-height: 1.12;
   --addon-section-title-font-size: 1.78cqw;
   --photo-shadow: 0 0.24cqh 0.12cqw rgb(0 0 0 / 0.16);
+  --showcase-widget-width: 16.95cqw;
+  --showcase-widget-height: 19.9cqh;
+  --showcase-widget-right: 0.65cqw;
+  --showcase-widget-bottom: 1.18cqh;
+  --showcase-widget-background: rgb(255 253 248 / 0.96);
+  --showcase-widget-border: 0.08cqw solid rgb(34 34 34 / 0.16);
+  --showcase-widget-radius: 0.1cqw;
+  --showcase-widget-shadow: 0 0.72cqh 0.92cqw rgb(0 0 0 / 0.2);
+  --showcase-image-bottom-space: 2.75cqh;
+  --showcase-image-scale: 1.42;
+  --showcase-caption-font-size: 1.36cqw;
   container-type: size;
   width: min(100vw, 177.7778vh);
   aspect-ratio: 16 / 9;
@@ -277,14 +288,20 @@
   white-space: nowrap;
 }
 
-.showcasePreview {
+.showcaseWidget {
   position: absolute;
-  right: 0.22cqw;
-  bottom: 0.95cqh;
-  width: 15.7cqw;
-  height: 18.25cqh;
+  right: var(--showcase-widget-right);
+  bottom: var(--showcase-widget-bottom);
+  width: var(--showcase-widget-width);
+  height: var(--showcase-widget-height);
+  box-sizing: border-box;
   pointer-events: none;
-  z-index: 3;
+  z-index: 5;
+  overflow: hidden;
+  background: var(--showcase-widget-background);
+  border: var(--showcase-widget-border);
+  border-radius: var(--showcase-widget-radius);
+  box-shadow: var(--showcase-widget-shadow);
 }
 
 .showcaseSlide {
@@ -297,13 +314,13 @@
 
 .showcaseImage {
   position: absolute;
-  inset: 0 0 2.32cqh;
+  inset: 0 0 var(--showcase-image-bottom-space);
   width: 100%;
-  height: calc(100% - 2.32cqh);
+  height: calc(100% - var(--showcase-image-bottom-space));
   object-fit: contain;
   object-position: center bottom;
   filter: drop-shadow(0 0.28cqh 0.2cqw rgb(0 0 0 / 0.18));
-  transform: scale(1.24);
+  transform: scale(var(--showcase-image-scale));
   transform-origin: center bottom;
 }
 
@@ -313,7 +330,7 @@
   right: 0;
   bottom: 0;
   color: var(--palette-section-green-dark);
-  font-size: 1.28cqw;
+  font-size: var(--showcase-caption-font-size);
   font-weight: 900;
   line-height: 1;
   text-align: center;
@@ -589,46 +606,10 @@
 }
 
 .toppingBox {
-  --topping-cutout-width: 14.65cqw;
-  --topping-cutout-height: 18.08cqh;
-
   position: relative;
-  min-height: 43.4cqh;
+  height: auto;
+  min-height: 0;
   overflow: visible;
-  border-right-color: transparent;
-  border-bottom-color: transparent;
-}
-
-.toppingBox::before,
-.toppingBox::after {
-  content: '';
-  position: absolute;
-  pointer-events: none;
-}
-
-.toppingBox::before {
-  inset: -0.08cqw;
-  background:
-    linear-gradient(var(--palette-border), var(--palette-border)) right top / 0.08cqw
-      calc(100% - var(--topping-cutout-height)) no-repeat,
-    linear-gradient(var(--palette-border), var(--palette-border)) left bottom /
-      calc(100% - var(--topping-cutout-width)) 0.08cqw no-repeat;
-  z-index: 2;
-}
-
-.toppingBox::after {
-  right: -0.22cqw;
-  bottom: -0.22cqh;
-  width: var(--topping-cutout-width);
-  height: var(--topping-cutout-height);
-  background: var(--palette-background);
-  border-top: 0.08cqw solid var(--palette-border);
-  border-left: 0.08cqw solid var(--palette-border);
-  box-shadow:
-    0.32cqw 0 0 var(--palette-background),
-    0 0.32cqh 0 var(--palette-background),
-    0.32cqw 0.32cqh 0 var(--palette-background);
-  z-index: 3;
 }
 
 /* Right-board tuning */

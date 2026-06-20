@@ -355,7 +355,7 @@ function Emoji({ children }: { children: ReactNode }) {
 
 function ShowcasePreview() {
   return (
-    <div className={styles.showcasePreview} aria-hidden="true">
+    <div className={`${styles.showcaseWidget} showcase-slideshow-widget`} aria-hidden="true">
       {SHOWCASE_IMAGES.map((image, index) => (
         <div
           key={image.src}
