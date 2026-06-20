@@ -172,10 +172,10 @@
 .legendItem {
   display: flex;
   align-items: center;
-  gap: 0.3cqw;
-  font-size: 1.52cqw;
-  line-height: 1.13;
-  font-weight: 760;
+  gap: 0.26cqw;
+  font-size: 1.36cqw;
+  line-height: 1.12;
+  font-weight: 740;
   letter-spacing: -0.045em;
 }
 
@@ -211,8 +211,8 @@
 }
 
 .legendIcon {
-  width: 1.42cqw;
-  font-size: 1.34cqw;
+  width: 1.26cqw;
+  font-size: 1.18cqw;
   font-weight: 400;
 }
 
@@ -579,18 +579,38 @@
 }
 
 .toppingBox {
+  --topping-cutout-width: 14.65cqw;
+  --topping-cutout-height: 18.08cqh;
+
   position: relative;
   min-height: 43.4cqh;
   overflow: visible;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
 }
 
+.toppingBox::before,
 .toppingBox::after {
   content: '';
   position: absolute;
+  pointer-events: none;
+}
+
+.toppingBox::before {
+  inset: -0.08cqw;
+  background:
+    linear-gradient(var(--palette-border), var(--palette-border)) right top / 0.08cqw
+      calc(100% - var(--topping-cutout-height)) no-repeat,
+    linear-gradient(var(--palette-border), var(--palette-border)) left bottom /
+      calc(100% - var(--topping-cutout-width)) 0.08cqw no-repeat;
+  z-index: 2;
+}
+
+.toppingBox::after {
   right: -0.22cqw;
   bottom: -0.22cqh;
-  width: 14.65cqw;
-  height: 18.08cqh;
+  width: var(--topping-cutout-width);
+  height: var(--topping-cutout-height);
   background: var(--palette-background);
   border-top: 0.08cqw solid var(--palette-border);
   border-left: 0.08cqw solid var(--palette-border);
@@ -598,7 +618,7 @@
     0.32cqw 0 0 var(--palette-background),
     0 0.32cqh 0 var(--palette-background),
     0.32cqw 0.32cqh 0 var(--palette-background);
-  z-index: 2;
+  z-index: 3;
 }
 
 /* Right-board tuning */
