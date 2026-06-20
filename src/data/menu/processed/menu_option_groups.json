@@ -2076,13 +2076,6 @@
           "orderableOnline": "YES"
         },
         {
-          "name": "Strawberry Heart Jelly ❤️",
-          "guid": "125f5ecb-0668-412d-8458-b62652de53b1",
-          "description": "Heart-shaped strawberry jelly",
-          "price": 0.75,
-          "orderableOnline": "YES"
-        },
-        {
           "name": "Lychee Jelly 🤍",
           "guid": "dacfef9b-5a8b-4c94-b0e2-398d2f9c2f31",
           "description": "Delicate lychee jelly",
@@ -2099,13 +2092,6 @@
         {
           "name": "Agar Brown Sugar Boba 🍯",
           "guid": "53b21d05-a78f-4af0-9bc7-c4f5f2ed10b4",
-          "description": "",
-          "price": 0.75,
-          "orderableOnline": "YES"
-        },
-        {
-          "name": "Dalgona (Honeycomb Toffee)",
-          "guid": "0b7602e4-6cf6-450e-ad19-db6b4b0cd56f",
           "description": "",
           "price": 0.75,
           "orderableOnline": "YES"
@@ -2996,13 +2982,6 @@
           "name": "Mango Star Jelly ⭐️",
           "guid": "0f46f70c-ff24-4650-97aa-72cac7215a2e",
           "description": "Star-shaped mango jelly",
-          "price": 0,
-          "orderableOnline": "YES"
-        },
-        {
-          "name": "Strawberry Heart Jelly ❤️",
-          "guid": "125f5ecb-0668-412d-8458-b62652de53b1",
-          "description": "Heart-shaped strawberry jelly",
           "price": 0,
           "orderableOnline": "YES"
         },

@@ -70,7 +70,6 @@
   --menu-color-sea-salt-cheese: #b77a3d;
   --menu-color-crystal: #9e9e9e;
   --menu-color-brown-sugar: #7a4b21;
-  --menu-color-dalgona: #a9771c;
   --section-stack-gap: var(--section-stack-gap-default);
   --section-stack-gap-default: 14px;
   --menu-item-font-size: 1.58cqw;
@@ -85,6 +84,21 @@
   --builder-options-line-height: 1.12;
   --addon-section-title-font-size: 1.78cqw;
   --photo-shadow: 0 0.24cqh 0.12cqw rgb(0 0 0 / 0.16);
+  --showcase-widget-width: 16.25cqw;
+  --showcase-widget-height: 25.42cqh;
+  --showcase-widget-right: 1.05cqw;
+  --showcase-widget-bottom: 1.72cqh;
+  --showcase-widget-background: var(--palette-white);
+  --showcase-widget-border: 0.085cqw solid rgb(55 55 55 / 0.5);
+  --showcase-widget-radius: 0.18cqw;
+  --showcase-widget-shadow: 0 0.92cqh 1.35cqw rgb(0 0 0 / 0.28), 0 0 0.55cqw rgb(0 0 0 / 0.12);
+  --showcase-image-bottom-space: 3.65cqh;
+  --showcase-image-scale: 1.1;
+  --showcase-caption-font-size: 1.26cqw;
+  --showcase-frame-padding-inline: 0.48cqw;
+  --showcase-frame-padding-top: 1.22cqh;
+  --showcase-image-y-offset: 0.62cqh;
+  --showcase-caption-bottom: 0.82cqh;
   container-type: size;
   width: min(100vw, 177.7778vh);
   aspect-ratio: 16 / 9;
@@ -278,19 +292,25 @@
   white-space: nowrap;
 }
 
-.showcasePreview {
+.showcaseWidget {
   position: absolute;
-  right: 0.22cqw;
-  bottom: 0.95cqh;
-  width: 15.7cqw;
-  height: 18.25cqh;
+  right: var(--showcase-widget-right);
+  bottom: var(--showcase-widget-bottom);
+  width: var(--showcase-widget-width);
+  height: var(--showcase-widget-height);
+  box-sizing: border-box;
   pointer-events: none;
-  z-index: 3;
+  z-index: 30;
+  overflow: hidden;
+  background: var(--showcase-widget-background);
+  border: var(--showcase-widget-border);
+  border-radius: var(--showcase-widget-radius);
+  box-shadow: var(--showcase-widget-shadow);
 }
 
 .showcaseSlide {
   position: absolute;
-  inset: 0;
+  inset: var(--showcase-frame-padding-top) var(--showcase-frame-padding-inline) 0;
   opacity: 0;
   animation: showcaseFade 30s infinite;
   animation-delay: calc(var(--showcase-index) * 5s);
@@ -298,13 +318,13 @@
 
 .showcaseImage {
   position: absolute;
-  inset: 0 0 2.32cqh;
+  inset: 0 0 var(--showcase-image-bottom-space);
   width: 100%;
-  height: calc(100% - 2.32cqh);
+  height: calc(100% - var(--showcase-image-bottom-space));
   object-fit: contain;
-  object-position: center bottom;
+  object-position: center center;
   filter: drop-shadow(0 0.28cqh 0.2cqw rgb(0 0 0 / 0.18));
-  transform: scale(1.24);
+  transform: translateY(var(--showcase-image-y-offset)) scale(var(--showcase-image-scale));
   transform-origin: center bottom;
 }
 
@@ -312,9 +332,9 @@
   position: absolute;
   left: 0;
   right: 0;
-  bottom: 0;
+  bottom: var(--showcase-caption-bottom);
   color: var(--palette-section-green-dark);
-  font-size: 1.28cqw;
+  font-size: var(--showcase-caption-font-size);
   font-weight: 900;
   line-height: 1;
   text-align: center;
@@ -336,6 +356,7 @@
 
 .leftGrid {
   position: absolute;
+  z-index: 1;
   inset: 13.45cqh 1.05cqw 1.55cqh 0.48cqw;
   display: grid;
   grid-template-columns: 24.35cqw 20.85cqw 23.2cqw 1fr;
@@ -590,46 +611,11 @@
 }
 
 .toppingBox {
-  --topping-cutout-width: 14.65cqw;
-  --topping-cutout-height: 18.08cqh;
-
   position: relative;
-  min-height: 43.4cqh;
+  z-index: 1;
+  height: auto;
+  min-height: 0;
   overflow: visible;
-  border-right-color: transparent;
-  border-bottom-color: transparent;
-}
-
-.toppingBox::before,
-.toppingBox::after {
-  content: '';
-  position: absolute;
-  pointer-events: none;
-}
-
-.toppingBox::before {
-  inset: -0.08cqw;
-  background:
-    linear-gradient(var(--palette-border), var(--palette-border)) right top / 0.08cqw
-      calc(100% - var(--topping-cutout-height)) no-repeat,
-    linear-gradient(var(--palette-border), var(--palette-border)) left bottom /
-      calc(100% - var(--topping-cutout-width)) 0.08cqw no-repeat;
-  z-index: 2;
-}
-
-.toppingBox::after {
-  right: -0.22cqw;
-  bottom: -0.22cqh;
-  width: var(--topping-cutout-width);
-  height: var(--topping-cutout-height);
-  background: var(--palette-background);
-  border-top: 0.08cqw solid var(--palette-border);
-  border-left: 0.08cqw solid var(--palette-border);
-  box-shadow:
-    0.32cqw 0 0 var(--palette-background),
-    0 0.32cqh 0 var(--palette-background),
-    0.32cqw 0.32cqh 0 var(--palette-background);
-  z-index: 3;
 }
 
 /* Right-board tuning */
@@ -788,7 +774,7 @@
   height: 17.05cqh;
 }
 
-.productPhoto74 {
+.productPhoto75 {
   right: 0.25cqw;
   top: 0.25cqh;
   width: 6.45cqw;
@@ -800,7 +786,7 @@
   top: 17.55cqh;
 }
 
-.photoCaption74 {
+.photoCaption75 {
   right: 2.7cqw;
   top: 17.55cqh;
 }
