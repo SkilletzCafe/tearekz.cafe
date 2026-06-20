@@ -84,17 +84,19 @@
   --builder-options-line-height: 1.12;
   --addon-section-title-font-size: 1.78cqw;
   --photo-shadow: 0 0.24cqh 0.12cqw rgb(0 0 0 / 0.16);
-  --showcase-widget-width: 16.95cqw;
-  --showcase-widget-height: 19.9cqh;
+  --showcase-widget-width: 17.15cqw;
+  --showcase-widget-height: 20.35cqh;
   --showcase-widget-right: 0.65cqw;
   --showcase-widget-bottom: 1.18cqh;
   --showcase-widget-background: var(--palette-white);
-  --showcase-widget-border: 0.08cqw solid var(--palette-border);
-  --showcase-widget-radius: 0.1cqw;
-  --showcase-widget-shadow: 0 0.72cqh 0.92cqw rgb(0 0 0 / 0.2);
-  --showcase-image-bottom-space: 2.75cqh;
-  --showcase-image-scale: 1.42;
-  --showcase-caption-font-size: 1.36cqw;
+  --showcase-widget-border: 0.14cqw solid var(--palette-border);
+  --showcase-widget-radius: 0.58cqw;
+  --showcase-widget-shadow: 0 0.86cqh 1.05cqw rgb(0 0 0 / 0.24);
+  --showcase-image-bottom-space: 3.15cqh;
+  --showcase-image-scale: 1.08;
+  --showcase-caption-font-size: 1.34cqw;
+  --showcase-frame-padding-inline: 0.55cqw;
+  --showcase-frame-padding-top: 0.72cqh;
   container-type: size;
   width: min(100vw, 177.7778vh);
   aspect-ratio: 16 / 9;
@@ -306,7 +308,7 @@
 
 .showcaseSlide {
   position: absolute;
-  inset: 0;
+  inset: var(--showcase-frame-padding-top) var(--showcase-frame-padding-inline) 0;
   opacity: 0;
   animation: showcaseFade 30s infinite;
   animation-delay: calc(var(--showcase-index) * 5s);
@@ -318,7 +320,7 @@
   width: 100%;
   height: calc(100% - var(--showcase-image-bottom-space));
   object-fit: contain;
-  object-position: center bottom;
+  object-position: center center;
   filter: drop-shadow(0 0.28cqh 0.2cqw rgb(0 0 0 / 0.18));
   transform: scale(var(--showcase-image-scale));
   transform-origin: center bottom;
@@ -328,7 +330,7 @@
   position: absolute;
   left: 0;
   right: 0;
-  bottom: 0;
+  bottom: 0.5cqh;
   color: var(--palette-section-green-dark);
   font-size: var(--showcase-caption-font-size);
   font-weight: 900;
