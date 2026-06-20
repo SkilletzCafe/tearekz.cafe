@@ -20,6 +20,7 @@ type SectionProps = {
   tone?: 'green' | 'orange';
   children: ReactNode;
   className?: string;
+  semanticClassName?: string;
   subhead?: ReactNode;
 };
 
@@ -220,9 +221,16 @@ const RIGHT_REGIONS: RegionDef[] = [
   },
 ];
 
-function Section({ title, tone = 'green', children, className = '', subhead }: SectionProps) {
+function Section({
+  title,
+  tone = 'green',
+  children,
+  className = '',
+  semanticClassName = '',
+  subhead,
+}: SectionProps) {
   return (
-    <section className={`${styles.section} ${className}`}>
+    <section className={`${styles.section} ${semanticClassName} ${className}`.trim()}>
       <div className={`${styles.sectionTitle} ${styles[tone]}`}>{title}</div>
       {subhead && <div className={styles.subhead}>{subhead}</div>}
       <div className={styles.sectionBody}>{children}</div>
@@ -332,7 +340,7 @@ const SHOWCASE_IMAGES = [
     src: '/images/menu/tv-native/drinks/11-dino-fuel-vietnamese-coffee-and-thai-tea-cutout.png',
   },
   {
-    name: 'Viet Coffee',
+    name: 'Vietnamese Iced Coffee',
     alt: 'Vietnamese Iced Coffee preview',
     src: '/images/menu/tv-native/drinks/81-vietnamese-iced-coffee-cutout.png',
   },
@@ -383,14 +391,10 @@ function LeftMenu({ debugRegions = false }: { debugRegions?: boolean }) {
           </div>
           <div className={styles.legendItem}>
             <span className={`${styles.legendIcon} ${styles.cloudIcon}`}>☁️</span>
-            <span className={`${styles.legendText} ${styles.legendTextStack}`}>
-              Pairs well with
-              <br />
-              Cream Tops
-            </span>
+            <span className={styles.legendText}>Pairs well with Cream Tops</span>
           </div>
         </div>
-        <div className={styles.options}>
+        <div className={`${styles.options} ${styles.drinkOptions} drink-options`}>
           <div className={`${styles.optionGroup} ${styles.sweetenerOptions}`}>
             <div className={styles.optionRow}>
               <span className={styles.optionLabel}>Sweetness Options:</span> 100% · 75% · 50% · 25%
@@ -411,8 +415,8 @@ function LeftMenu({ debugRegions = false }: { debugRegions?: boolean }) {
               <span className={styles.optionLabel}>Milk Options:</span> Dairy · Oat (+$0.75)
             </div>
             <div className={`${styles.optionRow} ${styles.boostOptions}`}>
-              <span className={styles.optionLabel}>Additional Boosts (+$1):</span> Protein 💪 ·
-              Creatine ⚡
+              <span className={styles.optionLabel}>Additional Boosts (+$1):</span> Whey Protein 💪 ·
+              Pea Protein 🫛 · Creatine ⚡
             </div>
           </div>
         </div>
@@ -428,6 +432,7 @@ function LeftMenu({ debugRegions = false }: { debugRegions?: boolean }) {
                 <Emoji>🦖</Emoji> Tea-Rek&apos;z Signatures <Emoji>❄️</Emoji>
               </>
             }
+            semanticClassName="section-signatures"
             className={styles.signatures}
           >
             <Item code="S1" description="Magnolia Green Tea with Jasmine Cream">
@@ -457,7 +462,8 @@ function LeftMenu({ debugRegions = false }: { debugRegions?: boolean }) {
               <Price>$8</Price>
             </Item>
             <Item code="S5" description="Lychee Jasmine Green Tea with Jasmine Cream">
-              <Colored color={FRUIT_COLORS.lychee}>Lychee</Colored> Blossom <Price>$8</Price>
+              <Colored color={FRUIT_COLORS.lychee}>Lychee</Colored>{' '}
+              <Colored color={CREAM_COLORS.jasmine}>Blossom</Colored> <Price>$8</Price>
             </Item>
             <Item code="S6" description="Vietnamese Iced Coffee with Pistachio Cream">
               <Colored color={CREAM_COLORS.pistachio}>Pistachio</Colored> Cream Coffee{' '}
@@ -503,7 +509,8 @@ function LeftMenu({ debugRegions = false }: { debugRegions?: boolean }) {
               </>
             }
             tone="orange"
-            className={styles.compactSection}
+            semanticClassName="section-milk-teas"
+            className={`${styles.milkTeas} ${styles.compactSection}`}
           >
             <Item code="21">
               Lychee Black Milk Tea <Price>$6.75</Price>
@@ -544,6 +551,7 @@ function LeftMenu({ debugRegions = false }: { debugRegions?: boolean }) {
                 <Emoji>🫖</Emoji> Pure Teas
               </>
             }
+            semanticClassName="section-pure-teas"
             className={styles.pureTeas}
           >
             <Item code="1">
@@ -576,7 +584,8 @@ function LeftMenu({ debugRegions = false }: { debugRegions?: boolean }) {
               </>
             }
             tone="orange"
-            className={styles.compactSection}
+            semanticClassName="section-milk-drinks"
+            className={`${styles.milkDrinks} ${styles.compactSection}`}
           >
             <Item code="41">
               🐯 Tiger Milk (with boba) 🌙 ❄️ <Price>$7</Price>
@@ -608,6 +617,7 @@ function LeftMenu({ debugRegions = false }: { debugRegions?: boolean }) {
                 <Emoji>🍵</Emoji> Matcha
               </>
             }
+            semanticClassName="section-matcha"
             className={styles.matcha}
           >
             <Item code="31">
@@ -633,7 +643,7 @@ function LeftMenu({ debugRegions = false }: { debugRegions?: boolean }) {
         </div>
 
         <aside className={`${styles.menuColumn} ${styles.leftAside}`}>
-          <div className={`${styles.box} ${styles.creamBox}`}>
+          <div className={`${styles.box} cream-tops-section ${styles.creamBox}`}>
             <div className={`${styles.boxTitle} ${styles.creamTitle}`}>
               <Emoji>☁️</Emoji> Cream Tops
             </div>
@@ -670,7 +680,7 @@ function LeftMenu({ debugRegions = false }: { debugRegions?: boolean }) {
             </div>
           </div>
 
-          <div className={`${styles.box} ${styles.toppingBox}`}>
+          <div className={`${styles.box} toppings-section ${styles.toppingBox}`}>
             <div className={`${styles.boxTitle} ${styles.toppingTitle}`}>
               <Emoji>✨</Emoji> Toppings $.75 each
             </div>
@@ -719,6 +729,7 @@ function RightMenu({ debugRegions = false }: { debugRegions?: boolean }) {
               </>
             }
             subhead="Made with all-natural fruit purée"
+            semanticClassName="section-fruit-teas"
             className={styles.fruitTeas}
           >
             <Item code="51">
@@ -771,6 +782,7 @@ function RightMenu({ debugRegions = false }: { debugRegions?: boolean }) {
               </>
             }
             subhead="Freshly smashed whole lemons blended with all-natural fruit purée"
+            semanticClassName="section-smash-lemonades"
             className={styles.lemonades}
           >
             <Item code="61">
@@ -828,6 +840,7 @@ function RightMenu({ debugRegions = false }: { debugRegions?: boolean }) {
                 <Emoji>❄️</Emoji>
               </>
             }
+            semanticClassName="section-blended-drinks"
             className={styles.blended}
           >
             <Item code="71" description="½ lb. organic mango">
@@ -890,6 +903,7 @@ function RightMenu({ debugRegions = false }: { debugRegions?: boolean }) {
               </>
             }
             tone="orange"
+            semanticClassName="section-coffee-drinks"
             className={styles.coffee}
           >
             <Item code="81">
@@ -952,6 +966,7 @@ function RightMenu({ debugRegions = false }: { debugRegions?: boolean }) {
               </>
             }
             tone="orange"
+            semanticClassName="section-hot-drinks"
             className={styles.hotDrinks}
           >
             <Item code="91">
@@ -977,6 +992,7 @@ function RightMenu({ debugRegions = false }: { debugRegions?: boolean }) {
                 Extras <Emoji>❄️</Emoji>
               </>
             }
+            semanticClassName="section-extras"
             className={styles.extras}
           >
             <Item code="98">
@@ -993,6 +1009,7 @@ function RightMenu({ debugRegions = false }: { debugRegions?: boolean }) {
                 Hawaiian Hand-Shaved Ice <Emoji>🍧</Emoji>
               </>
             }
+            semanticClassName="section-hawaiian-shaved-ice"
             className={styles.shavedIce}
           >
             <Item

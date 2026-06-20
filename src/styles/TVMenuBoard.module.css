@@ -181,10 +181,7 @@
 
 .legendText {
   display: inline-block;
-}
-
-.legendTextStack {
-  line-height: 1.02;
+  white-space: nowrap;
 }
 
 .legendIcon,
@@ -234,6 +231,10 @@
   letter-spacing: -0.025em;
 }
 
+.drinkOptions {
+  left: 27.1cqw;
+}
+
 .optionGroup {
   min-width: 0;
 }
@@ -255,7 +256,7 @@
 
 .iceMilkOptions {
   display: flex;
-  gap: 1.45cqw;
+  gap: 1.1cqw;
   margin-top: 0.42cqh;
   align-items: baseline;
 }
@@ -269,7 +270,11 @@
 }
 
 .boostOptions {
+  margin-left: auto;
   color: var(--palette-section-green-dark);
+  font-weight: 620;
+  text-align: right;
+  white-space: nowrap;
 }
 
 .showcasePreview {
@@ -486,6 +491,11 @@
 
 .signatures .description {
   font-size: calc(var(--menu-description-font-size) - 0.04cqw);
+}
+
+.milkTeas,
+.milkDrinks {
+  min-height: 0;
 }
 
 .compactSection .item {
