@@ -85,7 +85,7 @@
   --addon-section-title-font-size: 1.78cqw;
   --photo-shadow: 0 0.24cqh 0.12cqw rgb(0 0 0 / 0.16);
   --showcase-widget-width: 16.25cqw;
-  --showcase-widget-height: 26.35cqh;
+  --showcase-widget-height: 25.42cqh;
   --showcase-widget-right: 1.05cqw;
   --showcase-widget-bottom: 1.72cqh;
   --showcase-widget-background: var(--palette-white);
@@ -96,7 +96,7 @@
   --showcase-image-scale: 1.1;
   --showcase-caption-font-size: 1.26cqw;
   --showcase-frame-padding-inline: 0.48cqw;
-  --showcase-frame-padding-top: 1.68cqh;
+  --showcase-frame-padding-top: 1.22cqh;
   --showcase-image-y-offset: 0.62cqh;
   --showcase-caption-bottom: 0.82cqh;
   container-type: size;
