@@ -7,6 +7,7 @@ import { SHOWCASE_IMAGES } from '@/data/drink-images/showcaseImages';
 import styles from '@/styles/TVMenuBoard.module.css';
 
 const RELOAD_INTERVAL_MILLIS = 30 * 60 * 1000;
+const SHOWCASE_INTERVAL_MILLIS = 5 * 1000;
 
 type MenuSide = 'left' | 'right';
 
@@ -323,13 +324,26 @@ function Emoji({ children }: { children: ReactNode }) {
 }
 
 function ShowcasePreview() {
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  useEffect(() => {
+    if (SHOWCASE_IMAGES.length <= 1) {
+      return;
+    }
+
+    const timer = window.setInterval(() => {
+      setActiveIndex((currentIndex) => (currentIndex + 1) % SHOWCASE_IMAGES.length);
+    }, SHOWCASE_INTERVAL_MILLIS);
+
+    return () => window.clearInterval(timer);
+  }, []);
+
   return (
     <div className={`${styles.showcaseWidget} showcase-slideshow-widget`} aria-hidden="true">
       {SHOWCASE_IMAGES.map((image, index) => (
         <div
           key={image.src}
-          className={styles.showcaseSlide}
-          style={{ '--showcase-index': index } as CSSProperties}
+          className={`${styles.showcaseSlide} ${index === activeIndex ? styles.showcaseSlideActive : ''}`}
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src={image.src} alt={image.alt} className={styles.showcaseImage} />

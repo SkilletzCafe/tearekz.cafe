@@ -1,3 +1,4 @@
+import { execFileSync } from 'node:child_process';
 import { copyFileSync, existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
 
@@ -66,6 +67,7 @@ const ts =
   `export type ShowcaseImage = (typeof SHOWCASE_IMAGES)[number];\n`;
 
 writeFileSync(dataOutputPath, ts);
+execFileSync('npx', ['prettier', '--write', dataOutputPath], { stdio: 'inherit' });
 console.log(
   `Synced ${images.length} drink showcase images to ${path.relative(repoRoot, outputDir)}`
 );
