@@ -8,6 +8,8 @@ import styles from '@/styles/TVMenuBoard.module.css';
 
 const RELOAD_INTERVAL_MILLIS = 30 * 60 * 1000;
 const SHOWCASE_INTERVAL_MILLIS = 5 * 1000;
+const TV_WIDTH_PX = 3840;
+const TV_HEIGHT_PX = 2160;
 
 type MenuSide = 'left' | 'right';
 
@@ -90,6 +92,22 @@ function useShowCursor() {
   }, []);
 
   return enabled;
+}
+
+function useTvScale() {
+  const [scale, setScale] = useState(1);
+
+  useEffect(() => {
+    function updateScale() {
+      setScale(Math.min(window.innerWidth / TV_WIDTH_PX, window.innerHeight / TV_HEIGHT_PX));
+    }
+
+    updateScale();
+    window.addEventListener('resize', updateScale);
+    return () => window.removeEventListener('resize', updateScale);
+  }, []);
+
+  return scale;
 }
 
 function RegionOverlay({ regions }: { regions: RegionDef[] }) {
@@ -354,56 +372,57 @@ function ShowcasePreview() {
   );
 }
 
+function SymbolLegend() {
+  return (
+    <div className={styles.legend}>
+      <div className={styles.legendItem}>
+        <span className={`${styles.legendIcon} ${styles.iceIcon}`}>❄️</span>
+        <span className={styles.legendText}>Iced only</span>
+      </div>
+      <div className={styles.legendItem}>
+        <span className={`${styles.legendIcon} ${styles.moonIcon}`}>🌙</span>
+        <span className={styles.legendText}>Caffeine-free</span>
+      </div>
+      <div className={styles.legendItem}>
+        <span className={`${styles.legendIcon} ${styles.cloudIcon}`}>☁️</span>
+        <span className={styles.legendText}>Pairs well with Cream Tops</span>
+      </div>
+    </div>
+  );
+}
+
+function DrinkOptions() {
+  return (
+    <div className={`${styles.options} ${styles.drinkOptions} drink-options`}>
+      <div className={`${styles.optionGroup} ${styles.sweetenerOptions}`}>
+        <div className={styles.optionRow}>
+          <span className={styles.optionLabel}>Sweetness Options:</span> 100% · 75% · 50% · 25% ·
+          10% · 0%{' '}
+          <span className={styles.optionExplainer}>(Some drinks contain built-in cane sugar)</span>
+        </div>
+        <div className={`${styles.optionRow} ${styles.optionExplainer}`}>
+          Sugar-free sweetener (Allulose & Monk Fruit) available for most drinks (+$0.5)
+        </div>
+      </div>
+      <div className={`${styles.optionGroup} ${styles.iceMilkOptions}`}>
+        <div className={styles.optionRow}>
+          <span className={styles.optionLabel}>Ice Options:</span> 100% · 50% · 0%
+        </div>
+        <div className={styles.optionRow}>
+          <span className={styles.optionLabel}>Milk Options:</span> Dairy · Oat (+$0.75)
+        </div>
+        <div className={`${styles.optionRow} ${styles.boostOptions}`}>
+          <span className={styles.optionLabel}>Additional Boosts 💪:</span> Whey Protein 🥛 +$2 ·
+          Pea Protein 🫛 +$2 · Creatine ⚡ +$1
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function LeftMenu({ debugRegions = false }: { debugRegions?: boolean }) {
   return (
     <div className={`${styles.board} ${styles.leftBoard}`}>
-      <header className={styles.leftTopBar}>
-        <div className={styles.logoWrap}>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/images/menu/tv-native/tearekz-logo-cropped.png" alt="Tea-Rek'z" />
-        </div>
-        <div className={styles.legend}>
-          <div className={styles.legendItem}>
-            <span className={`${styles.legendIcon} ${styles.iceIcon}`}>❄️</span>
-            <span className={styles.legendText}>Iced only</span>
-          </div>
-          <div className={styles.legendItem}>
-            <span className={`${styles.legendIcon} ${styles.moonIcon}`}>🌙</span>
-            <span className={styles.legendText}>Caffeine-free</span>
-          </div>
-          <div className={styles.legendItem}>
-            <span className={`${styles.legendIcon} ${styles.cloudIcon}`}>☁️</span>
-            <span className={styles.legendText}>Pairs well with Cream Tops</span>
-          </div>
-        </div>
-        <div className={`${styles.options} ${styles.drinkOptions} drink-options`}>
-          <div className={`${styles.optionGroup} ${styles.sweetenerOptions}`}>
-            <div className={styles.optionRow}>
-              <span className={styles.optionLabel}>Sweetness Options:</span> 100% · 75% · 50% · 25%
-              · 10% · 0%{' '}
-              <span className={styles.optionExplainer}>
-                (Some drinks contain built-in cane sugar)
-              </span>
-            </div>
-            <div className={`${styles.optionRow} ${styles.optionExplainer}`}>
-              Sugar-free sweetener (Allulose & Monk Fruit) available for most drinks (+$0.5)
-            </div>
-          </div>
-          <div className={`${styles.optionGroup} ${styles.iceMilkOptions}`}>
-            <div className={styles.optionRow}>
-              <span className={styles.optionLabel}>Ice Options:</span> 100% · 50% · 0%
-            </div>
-            <div className={styles.optionRow}>
-              <span className={styles.optionLabel}>Milk Options:</span> Dairy · Oat (+$0.75)
-            </div>
-            <div className={`${styles.optionRow} ${styles.boostOptions}`}>
-              <span className={styles.optionLabel}>Additional Boosts 💪:</span> Whey Protein 🥛 +$2
-              · Pea Protein 🫛 +$2 · Creatine ⚡ +$1
-            </div>
-          </div>
-        </div>
-      </header>
-
       <main className={styles.leftGrid}>
         <div className={`${styles.menuColumn} ${styles.leftCol1}`}>
           <Section
@@ -505,11 +524,7 @@ function LeftMenu({ debugRegions = false }: { debugRegions?: boolean }) {
               Classic Thai Tea ❄️ <Price>$6.75</Price>
             </Item>
             <Item code="25">
-              <span>
-                Crème Brûlée
-                <br />
-                Classic Thai Tea ❄️ <Price>$8</Price>
-              </span>
+              Crème Brûlée Classic Thai Tea ❄️ <Price>$8</Price>
             </Item>
             <Item code="26">
               Assam Masala Chai Tea <Price>$7</Price>
@@ -1037,6 +1052,14 @@ function RightMenu({ debugRegions = false }: { debugRegions?: boolean }) {
           </Section>
         </div>
       </main>
+      <footer className={styles.rightFooter}>
+        <SymbolLegend />
+        <DrinkOptions />
+        <div className={styles.footerLogoWrap}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/images/menu/tv-native/tearekz-logo-cropped.png" alt="Tea-Rek'z" />
+        </div>
+      </footer>
       {debugRegions && <RegionOverlay regions={RIGHT_REGIONS} />}
     </div>
   );
@@ -1046,6 +1069,7 @@ export function TVMenuBoard({ side }: { side: MenuSide }) {
   useTvRefresh();
   const debugRegions = useDebugRegions();
   const showCursor = useShowCursor();
+  const tvScale = useTvScale();
 
   const pageTitle = `Menu Display - ${side === 'left' ? 'Left' : 'Right'}`;
 
@@ -1055,7 +1079,10 @@ export function TVMenuBoard({ side }: { side: MenuSide }) {
         <title>{pageTitle}</title>
         <meta name="robots" content="noindex, nofollow" />
       </Head>
-      <div className={`${styles.viewport} ${showCursor ? styles.showCursor : ''}`}>
+      <div
+        className={`${styles.viewport} ${showCursor ? styles.showCursor : ''}`}
+        style={{ '--tv-scale': tvScale } as CSSProperties}
+      >
         {side === 'left' ? (
           <LeftMenu debugRegions={debugRegions} />
         ) : (
