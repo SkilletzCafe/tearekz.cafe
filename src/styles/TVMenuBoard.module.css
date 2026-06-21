@@ -101,8 +101,8 @@
   --showcase-image-y-offset: 0.62cqh;
   --showcase-caption-bottom: 0.82cqh;
   container-type: size;
-  width: 3840px;
-  height: 2160px;
+  width: 1920px;
+  height: 1080px;
   aspect-ratio: 16 / 9;
   background: var(--palette-board-cream);
   color: var(--palette-black);

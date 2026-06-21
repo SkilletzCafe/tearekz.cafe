@@ -8,8 +8,8 @@ import styles from '@/styles/TVMenuBoard.module.css';
 
 const RELOAD_INTERVAL_MILLIS = 30 * 60 * 1000;
 const SHOWCASE_INTERVAL_MILLIS = 5 * 1000;
-const TV_WIDTH_PX = 3840;
-const TV_HEIGHT_PX = 2160;
+const TV_WIDTH_PX = 1920;
+const TV_HEIGHT_PX = 1080;
 
 type MenuSide = 'left' | 'right';
 
