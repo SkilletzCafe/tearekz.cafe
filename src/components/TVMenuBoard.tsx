@@ -1,4 +1,4 @@
-import { CSSProperties, ReactNode, useEffect, useState } from 'react';
+import { CSSProperties, ReactNode, RefObject, useEffect, useRef, useState } from 'react';
 
 import Head from 'next/head';
 
@@ -8,6 +8,8 @@ import styles from '@/styles/TVMenuBoard.module.css';
 
 const RELOAD_INTERVAL_MILLIS = 30 * 60 * 1000;
 const SHOWCASE_INTERVAL_MILLIS = 5 * 1000;
+const TV_WIDTH_PX = 1920;
+const TV_HEIGHT_PX = 1080;
 
 type MenuSide = 'left' | 'right';
 
@@ -25,13 +27,7 @@ type SectionProps = {
   className?: string;
   semanticClassName?: string;
   subhead?: ReactNode;
-};
-
-type RegionDef = {
-  id: number;
-  label: string;
-  color: string;
-  style: CSSProperties;
+  debugLabel?: string;
 };
 
 function useTvRefresh() {
@@ -61,13 +57,17 @@ function useTvRefresh() {
   }, []);
 }
 
+function isEnabledParam(value: string | null) {
+  return value ? ['1', 'true', 'yes'].includes(value.toLowerCase()) : false;
+}
+
 function useDebugRegions() {
   const [enabled, setEnabled] = useState(false);
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
-    const value = params.get('debugRegions') ?? params.get('regions') ?? '';
-    setEnabled(['1', 'true', 'yes'].includes(value.toLowerCase()));
+    const value = params.get('debug') ?? params.get('debugRegions') ?? params.get('regions');
+    setEnabled(isEnabledParam(value));
   }, []);
 
   return enabled;
@@ -81,7 +81,7 @@ function useShowCursor() {
     const override = params.get('debug') ?? params.get('showCursor') ?? params.get('cursor');
 
     if (override) {
-      setEnabled(['1', 'true', 'yes'].includes(override.toLowerCase()));
+      setEnabled(isEnabledParam(override));
       return;
     }
 
@@ -92,137 +92,189 @@ function useShowCursor() {
   return enabled;
 }
 
-function RegionOverlay({ regions }: { regions: RegionDef[] }) {
+function useTvScale() {
+  const [scale, setScale] = useState(1);
+
+  useEffect(() => {
+    function updateScale() {
+      setScale(Math.min(window.innerWidth / TV_WIDTH_PX, window.innerHeight / TV_HEIGHT_PX));
+    }
+
+    updateScale();
+    window.addEventListener('resize', updateScale);
+    return () => window.removeEventListener('resize', updateScale);
+  }, []);
+
+  return scale;
+}
+
+type DebugRegion = {
+  id: number;
+  label: string;
+  color: string;
+  left: number;
+  top: number;
+  width: number;
+  height: number;
+};
+
+type DebugMeasurement = {
+  boardWidth: number;
+  boardHeight: number;
+  layoutWidth: number;
+  layoutHeight: number;
+  scaleX: number;
+  scaleY: number;
+  regions: DebugRegion[];
+};
+
+const DEBUG_REGION_SELECTOR = '[data-debug-region]';
+const DEBUG_COLORS = [
+  '#e53935',
+  '#8e24aa',
+  '#1e88e5',
+  '#43a047',
+  '#fb8c00',
+  '#7cb342',
+  '#6d4c41',
+  '#d81b60',
+  '#f6a000',
+  '#00897b',
+  '#3949ab',
+  '#c0a000',
+];
+
+function getRegionLabel(element: HTMLElement) {
+  return (
+    element.dataset.debugRegion || element.getAttribute('aria-label') || element.id || 'Region'
+  );
+}
+
+function measureDebugRegions(board: HTMLElement): DebugMeasurement {
+  const boardRect = board.getBoundingClientRect();
+  const scaleX = boardRect.width > 0 ? TV_WIDTH_PX / boardRect.width : 1;
+  const scaleY = boardRect.height > 0 ? TV_HEIGHT_PX / boardRect.height : 1;
+
+  const regions = Array.from(board.querySelectorAll<HTMLElement>(DEBUG_REGION_SELECTOR))
+    .map((element, index) => {
+      const rect = element.getBoundingClientRect();
+      return {
+        id: index + 1,
+        label: getRegionLabel(element),
+        color: DEBUG_COLORS[index % DEBUG_COLORS.length],
+        left: (rect.left - boardRect.left) * scaleX,
+        top: (rect.top - boardRect.top) * scaleY,
+        width: rect.width * scaleX,
+        height: rect.height * scaleY,
+      };
+    })
+    .filter((region) => region.width > 0 && region.height > 0);
+
+  return {
+    boardWidth: boardRect.width,
+    boardHeight: boardRect.height,
+    layoutWidth: TV_WIDTH_PX,
+    layoutHeight: TV_HEIGHT_PX,
+    scaleX,
+    scaleY,
+    regions,
+  };
+}
+
+function useDebugMeasurement(enabled: boolean, boardRef: RefObject<HTMLElement | null>) {
+  const [measurement, setMeasurement] = useState<DebugMeasurement | null>(null);
+
+  useEffect(() => {
+    if (!enabled || !boardRef.current) {
+      setMeasurement(null);
+      return;
+    }
+
+    const board = boardRef.current;
+    let frameId = 0;
+
+    const updateMeasurement = () => {
+      frameId = 0;
+      setMeasurement(measureDebugRegions(board));
+    };
+
+    const scheduleMeasurement = () => {
+      if (frameId) return;
+      frameId = window.requestAnimationFrame(updateMeasurement);
+    };
+
+    scheduleMeasurement();
+    window.addEventListener('resize', scheduleMeasurement);
+    window.addEventListener('load', scheduleMeasurement);
+
+    const resizeObserver =
+      'ResizeObserver' in window ? new ResizeObserver(scheduleMeasurement) : undefined;
+    resizeObserver?.observe(board);
+    board.querySelectorAll<HTMLElement>(DEBUG_REGION_SELECTOR).forEach((element) => {
+      resizeObserver?.observe(element);
+    });
+
+    return () => {
+      if (frameId) window.cancelAnimationFrame(frameId);
+      window.removeEventListener('resize', scheduleMeasurement);
+      window.removeEventListener('load', scheduleMeasurement);
+      resizeObserver?.disconnect();
+    };
+  }, [boardRef, enabled]);
+
+  return measurement;
+}
+
+function roundPixel(value: number) {
+  return `${Math.round(value)}px`;
+}
+
+function getRegionMetrics(region: DebugRegion) {
+  return `${roundPixel(region.width)} × ${roundPixel(region.height)} · x ${roundPixel(
+    region.left
+  )}, y ${roundPixel(region.top)}`;
+}
+
+function getBoardMetrics(measurement: DebugMeasurement | null) {
+  if (!measurement) return `Board: ${TV_WIDTH_PX}px × ${TV_HEIGHT_PX}px`;
+
+  const scale = (measurement.boardWidth / measurement.layoutWidth).toFixed(3);
+  return `Board: ${Math.round(measurement.boardWidth)}px × ${Math.round(
+    measurement.boardHeight
+  )}px screen · ${measurement.layoutWidth}px × ${measurement.layoutHeight}px layout · scale ${scale}`;
+}
+
+function RegionOverlay({ boardRef }: { boardRef: RefObject<HTMLElement | null> }) {
+  const measurement = useDebugMeasurement(true, boardRef);
+  const regions = measurement?.regions ?? [];
+
   return (
     <div className={styles.regionOverlay} aria-hidden="true">
+      <div className={styles.regionBoardLabel}>{getBoardMetrics(measurement)}</div>
       {regions.map((region) => (
         <div
-          key={region.id}
+          key={`${region.id}-${region.label}`}
           className={styles.regionBox}
-          style={{ ...region.style, borderColor: region.color, color: region.color }}
+          style={{
+            left: region.left,
+            top: region.top,
+            width: region.width,
+            height: region.height,
+            borderColor: region.color,
+            color: region.color,
+          }}
         >
           <span className={styles.regionLabel} style={{ backgroundColor: region.color }}>
-            {region.id}. {region.label}
+            <strong>
+              {region.id}. {region.label}
+            </strong>
+            <span>{getRegionMetrics(region)}</span>
           </span>
         </div>
       ))}
     </div>
   );
 }
-
-const LEFT_REGIONS: RegionDef[] = [
-  {
-    id: 1,
-    label: 'Logo',
-    color: '#e53935',
-    style: { left: '0.2cqw', top: '0.1cqh', width: '7.1cqw', height: '11.5cqh' },
-  },
-  {
-    id: 2,
-    label: 'Legend',
-    color: '#8e24aa',
-    style: { left: '7.6cqw', top: '0.4cqh', width: '19.2cqw', height: '9.5cqh' },
-  },
-  {
-    id: 3,
-    label: 'Options',
-    color: '#1e88e5',
-    style: { left: '23.6cqw', top: '0.35cqh', width: '75.0cqw', height: '8.4cqh' },
-  },
-  {
-    id: 4,
-    label: 'Col 1 — Signatures',
-    color: '#43a047',
-    style: { left: '0.48cqw', top: '13.45cqh', width: '24.35cqw', height: '81.8cqh' },
-  },
-  {
-    id: 5,
-    label: 'Col 2 — Milk Teas',
-    color: '#fb8c00',
-    style: { left: '25.85cqw', top: '13.45cqh', width: '20.85cqw', height: '38.0cqh' },
-  },
-  {
-    id: 6,
-    label: 'Col 2 — Pure Teas',
-    color: '#fb8c00',
-    style: { left: '25.85cqw', top: '56.05cqh', width: '20.85cqw', height: '34.6cqh' },
-  },
-  {
-    id: 7,
-    label: 'Col 3 — Milk Drinks',
-    color: '#7cb342',
-    style: { left: '47.72cqw', top: '13.45cqh', width: '22.25cqw', height: '39.3cqh' },
-  },
-  {
-    id: 8,
-    label: 'Col 3 — Matcha',
-    color: '#7cb342',
-    style: { left: '47.72cqw', top: '54.5cqh', width: '22.25cqw', height: '38.0cqh' },
-  },
-  {
-    id: 9,
-    label: 'Col 4 — Cream Tops',
-    color: '#6d4c41',
-    style: { left: '70.05cqw', top: '13.45cqh', width: '28.9cqw', height: '37.1cqh' },
-  },
-  {
-    id: 10,
-    label: 'Col 4 — Toppings',
-    color: '#d81b60',
-    style: { left: '70.05cqw', top: '51.75cqh', width: '28.9cqw', height: '43.4cqh' },
-  },
-  {
-    id: 11,
-    label: 'Showcase',
-    color: '#f6a000',
-    style: { left: '84.1cqw', top: '80.8cqh', width: '15.7cqw', height: '18.25cqh' },
-  },
-];
-
-const RIGHT_REGIONS: RegionDef[] = [
-  {
-    id: 1,
-    label: 'Col 1 — Fruit Teas',
-    color: '#43a047',
-    style: { left: '0.85cqw', top: '1.05cqh', width: '31.6cqw', height: '48.3cqh' },
-  },
-  {
-    id: 2,
-    label: 'Col 1 — Smash Lemonades',
-    color: '#43a047',
-    style: { left: '0.85cqw', top: '50.7cqh', width: '31.6cqw', height: '45.5cqh' },
-  },
-  {
-    id: 3,
-    label: 'Col 2 — Blended Drinks',
-    color: '#fb8c00',
-    style: { left: '33.6cqw', top: '1.05cqh', width: '34.7cqw', height: '51.9cqh' },
-  },
-  {
-    id: 4,
-    label: 'Col 2 — Coffee Drinks',
-    color: '#fb8c00',
-    style: { left: '33.6cqw', top: '54.3cqh', width: '34.7cqw', height: '42.5cqh' },
-  },
-  {
-    id: 5,
-    label: 'Col 3 — Hot Drinks',
-    color: '#1e88e5',
-    style: { left: '69.45cqw', top: '1.05cqh', width: '29.5cqw', height: '27.7cqh' },
-  },
-  {
-    id: 6,
-    label: 'Col 3 — Extras',
-    color: '#1e88e5',
-    style: { left: '69.45cqw', top: '30.1cqh', width: '29.5cqw', height: '15.9cqh' },
-  },
-  {
-    id: 7,
-    label: 'Col 3 — Hawaiian Shaved Ice',
-    color: '#1e88e5',
-    style: { left: '69.45cqw', top: '47.4cqh', width: '29.5cqw', height: '47.2cqh' },
-  },
-];
 
 function Section({
   title,
@@ -231,9 +283,13 @@ function Section({
   className = '',
   semanticClassName = '',
   subhead,
+  debugLabel,
 }: SectionProps) {
   return (
-    <section className={`${styles.section} ${semanticClassName} ${className}`.trim()}>
+    <section
+      className={`${styles.section} ${semanticClassName} ${className}`.trim()}
+      data-debug-region={debugLabel}
+    >
       <div className={`${styles.sectionTitle} ${styles[tone]}`}>{title}</div>
       {subhead && <div className={styles.subhead}>{subhead}</div>}
       <div className={styles.sectionBody}>{children}</div>
@@ -323,6 +379,17 @@ function Emoji({ children }: { children: ReactNode }) {
   );
 }
 
+function ToppingItem({ icon, children }: { icon: ReactNode; children: ReactNode }) {
+  return (
+    <p className={styles.toppingItem}>
+      <span className={styles.toppingIcon} aria-hidden="true">
+        {icon}
+      </span>
+      <span className={styles.toppingText}>{children}</span>
+    </p>
+  );
+}
+
 function ShowcasePreview() {
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -339,7 +406,11 @@ function ShowcasePreview() {
   }, []);
 
   return (
-    <div className={`${styles.showcaseWidget} showcase-slideshow-widget`} aria-hidden="true">
+    <div
+      className={`${styles.showcaseWidget} showcase-slideshow-widget`}
+      aria-hidden="true"
+      data-debug-region="Showcase slideshow"
+    >
       {SHOWCASE_IMAGES.map((image, index) => (
         <div
           key={image.src}
@@ -354,56 +425,62 @@ function ShowcasePreview() {
   );
 }
 
-function LeftMenu({ debugRegions = false }: { debugRegions?: boolean }) {
+function SymbolLegend() {
   return (
-    <div className={`${styles.board} ${styles.leftBoard}`}>
-      <header className={styles.leftTopBar}>
-        <div className={styles.logoWrap}>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/images/menu/tv-native/tearekz-logo-cropped.png" alt="Tea-Rek'z" />
-        </div>
-        <div className={styles.legend}>
-          <div className={styles.legendItem}>
-            <span className={`${styles.legendIcon} ${styles.iceIcon}`}>❄️</span>
-            <span className={styles.legendText}>Iced only</span>
-          </div>
-          <div className={styles.legendItem}>
-            <span className={`${styles.legendIcon} ${styles.moonIcon}`}>🌙</span>
-            <span className={styles.legendText}>Caffeine-free</span>
-          </div>
-          <div className={styles.legendItem}>
-            <span className={`${styles.legendIcon} ${styles.cloudIcon}`}>☁️</span>
-            <span className={styles.legendText}>Pairs well with Cream Tops</span>
-          </div>
-        </div>
-        <div className={`${styles.options} ${styles.drinkOptions} drink-options`}>
-          <div className={`${styles.optionGroup} ${styles.sweetenerOptions}`}>
-            <div className={styles.optionRow}>
-              <span className={styles.optionLabel}>Sweetness Options:</span> 100% · 75% · 50% · 25%
-              · 10% · 0%{' '}
-              <span className={styles.optionExplainer}>
-                (Some drinks contain built-in cane sugar)
-              </span>
-            </div>
-            <div className={`${styles.optionRow} ${styles.optionExplainer}`}>
-              Sugar-free sweetener (Allulose & Monk Fruit) available for most drinks (+$0.5)
-            </div>
-          </div>
-          <div className={`${styles.optionGroup} ${styles.iceMilkOptions}`}>
-            <div className={styles.optionRow}>
-              <span className={styles.optionLabel}>Ice Options:</span> 100% · 50% · 0%
-            </div>
-            <div className={styles.optionRow}>
-              <span className={styles.optionLabel}>Milk Options:</span> Dairy · Oat (+$0.75)
-            </div>
-            <div className={`${styles.optionRow} ${styles.boostOptions}`}>
-              <span className={styles.optionLabel}>Additional Boosts 💪:</span> Whey Protein 🥛 +$2
-              · Pea Protein 🫛 +$2 · Creatine ⚡ +$1
-            </div>
-          </div>
-        </div>
-      </header>
+    <div className={styles.legend} data-debug-region="Symbol legend">
+      <div className={styles.legendItem}>
+        <span className={`${styles.legendIcon} ${styles.iceIcon}`}>❄️</span>
+        <span className={styles.legendText}>Iced only</span>
+      </div>
+      <div className={styles.legendItem}>
+        <span className={`${styles.legendIcon} ${styles.moonIcon}`}>🌙</span>
+        <span className={styles.legendText}>Caffeine-free</span>
+      </div>
+      <div className={styles.legendItem}>
+        <span className={`${styles.legendIcon} ${styles.cloudIcon}`}>☁️</span>
+        <span className={styles.legendText}>Pairs well with Cream Tops</span>
+      </div>
+    </div>
+  );
+}
 
+function DrinkOptions() {
+  return (
+    <div
+      className={`${styles.options} ${styles.drinkOptions} drink-options`}
+      data-debug-region="Drink options"
+    >
+      <div className={`${styles.optionGroup} ${styles.sweetenerOptions}`}>
+        <div className={styles.optionRow}>
+          <span className={styles.optionLabel}>Sweetness Options:</span> 100% · 75% · 50% · 25% ·
+          10% · 0%{' '}
+          <span className={styles.optionExplainer}>(Some drinks contain built-in cane sugar)</span>
+        </div>
+        <div className={`${styles.optionRow} ${styles.optionExplainer}`}>
+          Sugar-free sweetener (Allulose & Monk Fruit) available for most drinks (+$0.5)
+        </div>
+      </div>
+      <div className={`${styles.optionGroup} ${styles.iceMilkOptions}`}>
+        <div className={styles.optionRow}>
+          <span className={styles.optionLabel}>Ice Options:</span> 100% · 50% · 0%
+        </div>
+        <div className={styles.optionRow}>
+          <span className={styles.optionLabel}>Milk Options:</span> Dairy · Oat (+$0.75)
+        </div>
+        <div className={`${styles.optionRow} ${styles.boostOptions}`}>
+          <span className={styles.optionLabel}>Additional Boosts 💪:</span> Whey Protein 🥛 +$2 ·
+          Pea Protein 🫛 +$2 · Creatine ⚡ +$1
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function LeftMenu({ debugRegions = false }: { debugRegions?: boolean }) {
+  const boardRef = useRef<HTMLDivElement>(null);
+
+  return (
+    <div ref={boardRef} className={`${styles.board} ${styles.leftBoard}`}>
       <main className={styles.leftGrid}>
         <div className={`${styles.menuColumn} ${styles.leftCol1}`}>
           <Section
@@ -413,6 +490,7 @@ function LeftMenu({ debugRegions = false }: { debugRegions?: boolean }) {
               </>
             }
             semanticClassName="section-signatures"
+            debugLabel="Signatures section"
             className={styles.signatures}
           >
             <Item code="S1" description="Magnolia Green Tea with Jasmine Cream">
@@ -490,6 +568,7 @@ function LeftMenu({ debugRegions = false }: { debugRegions?: boolean }) {
             }
             tone="orange"
             semanticClassName="section-milk-teas"
+            debugLabel="Milk Teas section"
             className={`${styles.milkTeas} ${styles.compactSection}`}
           >
             <Item code="21">
@@ -505,11 +584,7 @@ function LeftMenu({ debugRegions = false }: { debugRegions?: boolean }) {
               Classic Thai Tea ❄️ <Price>$6.75</Price>
             </Item>
             <Item code="25">
-              <span>
-                Crème Brûlée
-                <br />
-                Classic Thai Tea ❄️ <Price>$8</Price>
-              </span>
+              Crème Brûlée Classic Thai Tea ❄️ <Price>$8</Price>
             </Item>
             <Item code="26">
               Assam Masala Chai Tea <Price>$7</Price>
@@ -532,6 +607,7 @@ function LeftMenu({ debugRegions = false }: { debugRegions?: boolean }) {
               </>
             }
             semanticClassName="section-pure-teas"
+            debugLabel="Pure Teas section"
             className={styles.pureTeas}
           >
             <Item code="1">
@@ -565,6 +641,7 @@ function LeftMenu({ debugRegions = false }: { debugRegions?: boolean }) {
             }
             tone="orange"
             semanticClassName="section-milk-drinks"
+            debugLabel="Milk Drinks section"
             className={`${styles.milkDrinks} ${styles.compactSection}`}
           >
             <Item code="41">
@@ -598,6 +675,7 @@ function LeftMenu({ debugRegions = false }: { debugRegions?: boolean }) {
               </>
             }
             semanticClassName="section-matcha"
+            debugLabel="Matcha section"
             className={styles.matcha}
           >
             <Item code="31">
@@ -620,7 +698,10 @@ function LeftMenu({ debugRegions = false }: { debugRegions?: boolean }) {
         </div>
 
         <aside className={`${styles.menuColumn} ${styles.leftAside}`}>
-          <div className={`${styles.box} cream-tops-section ${styles.creamBox}`}>
+          <div
+            className={`${styles.box} cream-tops-section ${styles.creamBox}`}
+            data-debug-region="Cream Tops box"
+          >
             <div className={`${styles.boxTitle} ${styles.creamTitle}`}>
               <Emoji>☁️</Emoji> Cream Tops
             </div>
@@ -657,41 +738,46 @@ function LeftMenu({ debugRegions = false }: { debugRegions?: boolean }) {
             </div>
           </div>
 
-          <div className={`${styles.box} toppings-section ${styles.toppingBox}`}>
+          <div
+            className={`${styles.box} toppings-section ${styles.toppingBox}`}
+            data-debug-region="Toppings box"
+          >
             <div className={`${styles.boxTitle} ${styles.toppingTitle}`}>
               <Emoji>✨</Emoji> Toppings $.75 each
             </div>
             <div className={styles.boxBody}>
-              <p>⚫ Boba (Tapioca Pearls)</p>
-              <p>
-                🔴 Popping Boba: <Colored color={FRUIT_COLORS.mango}>Mango</Colored> ·{' '}
+              <ToppingItem icon="⚫">Boba (Tapioca Pearls)</ToppingItem>
+              <ToppingItem icon="🔴">
+                Popping Boba: <Colored color={FRUIT_COLORS.mango}>Mango</Colored> ·{' '}
                 <Colored color={FRUIT_COLORS.strawberry}>Strawberry</Colored> ·{' '}
                 <Colored color={FRUIT_COLORS.lychee}>Lychee</Colored>
-              </p>
-              <p>
-                ⭐ Jelly: <Colored color={FRUIT_COLORS.mango}>Mango Star</Colored> ·{' '}
+              </ToppingItem>
+              <ToppingItem icon="⭐">
+                Jelly: <Colored color={FRUIT_COLORS.mango}>Mango Star</Colored> ·{' '}
                 <Colored color={FRUIT_COLORS.lychee}>Lychee</Colored>
-              </p>
-              <p>
-                🟤 Agar Boba: <Colored color={TOPPING_COLORS.crystal}>Crystal</Colored> ·{' '}
+              </ToppingItem>
+              <ToppingItem icon="🟤">
+                Agar Boba: <Colored color={TOPPING_COLORS.crystal}>Crystal</Colored> ·{' '}
                 <Colored color={TOPPING_COLORS.brownSugar}>Brown Sugar</Colored>
-              </p>
-              <p>🍉 Grapefruit Pulp</p>
-              <p>🟨 Diced Mango</p>
+              </ToppingItem>
+              <ToppingItem icon="🍉">Grapefruit Pulp</ToppingItem>
+              <ToppingItem icon="🟨">Diced Mango</ToppingItem>
             </div>
           </div>
         </aside>
       </main>
 
       <ShowcasePreview />
-      {debugRegions && <RegionOverlay regions={LEFT_REGIONS} />}
+      {debugRegions && <RegionOverlay boardRef={boardRef} />}
     </div>
   );
 }
 
 function RightMenu({ debugRegions = false }: { debugRegions?: boolean }) {
+  const boardRef = useRef<HTMLDivElement>(null);
+
   return (
-    <div className={`${styles.board} ${styles.rightBoard}`}>
+    <div ref={boardRef} className={`${styles.board} ${styles.rightBoard}`}>
       <main className={styles.rightGrid}>
         <div className={`${styles.menuColumn} ${styles.rightCol1}`}>
           <Section
@@ -705,6 +791,7 @@ function RightMenu({ debugRegions = false }: { debugRegions?: boolean }) {
             }
             subhead="Made with all-natural fruit purée"
             semanticClassName="section-fruit-teas"
+            debugLabel="Fruit Teas section"
             className={styles.fruitTeas}
           >
             <Item code="51">
@@ -758,6 +845,7 @@ function RightMenu({ debugRegions = false }: { debugRegions?: boolean }) {
             }
             subhead="Freshly smashed whole lemons blended with all-natural fruit purée"
             semanticClassName="section-smash-lemonades"
+            debugLabel="Smash Lemonades section"
             className={styles.lemonades}
           >
             <Item code="61">
@@ -816,6 +904,7 @@ function RightMenu({ debugRegions = false }: { debugRegions?: boolean }) {
               </>
             }
             semanticClassName="section-blended-drinks"
+            debugLabel="Blended Drinks section"
             className={styles.blended}
           >
             <Item code="71" description="½ lb. organic mango">
@@ -882,6 +971,7 @@ function RightMenu({ debugRegions = false }: { debugRegions?: boolean }) {
             }
             tone="orange"
             semanticClassName="section-coffee-drinks"
+            debugLabel="Coffee Drinks section"
             className={styles.coffee}
           >
             <Item code="81">
@@ -945,6 +1035,7 @@ function RightMenu({ debugRegions = false }: { debugRegions?: boolean }) {
             }
             tone="orange"
             semanticClassName="section-hot-drinks"
+            debugLabel="Hot Drinks section"
             className={styles.hotDrinks}
           >
             <Item code="91">
@@ -971,6 +1062,7 @@ function RightMenu({ debugRegions = false }: { debugRegions?: boolean }) {
               </>
             }
             semanticClassName="section-extras"
+            debugLabel="Extras section"
             className={styles.extras}
           >
             <Item code="98">
@@ -988,6 +1080,7 @@ function RightMenu({ debugRegions = false }: { debugRegions?: boolean }) {
               </>
             }
             semanticClassName="section-hawaiian-shaved-ice"
+            debugLabel="Hawaiian Shaved Ice section"
             className={styles.shavedIce}
           >
             <Item
@@ -1037,7 +1130,15 @@ function RightMenu({ debugRegions = false }: { debugRegions?: boolean }) {
           </Section>
         </div>
       </main>
-      {debugRegions && <RegionOverlay regions={RIGHT_REGIONS} />}
+      <footer className={styles.rightFooter} data-debug-region="Footer bar">
+        <SymbolLegend />
+        <DrinkOptions />
+        <div className={styles.footerLogoWrap} data-debug-region="Footer logo">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/images/menu/tv-native/tearekz-logo-cropped.png" alt="Tea-Rek'z" />
+        </div>
+      </footer>
+      {debugRegions && <RegionOverlay boardRef={boardRef} />}
     </div>
   );
 }
@@ -1046,6 +1147,7 @@ export function TVMenuBoard({ side }: { side: MenuSide }) {
   useTvRefresh();
   const debugRegions = useDebugRegions();
   const showCursor = useShowCursor();
+  const tvScale = useTvScale();
 
   const pageTitle = `Menu Display - ${side === 'left' ? 'Left' : 'Right'}`;
 
@@ -1055,7 +1157,10 @@ export function TVMenuBoard({ side }: { side: MenuSide }) {
         <title>{pageTitle}</title>
         <meta name="robots" content="noindex, nofollow" />
       </Head>
-      <div className={`${styles.viewport} ${showCursor ? styles.showCursor : ''}`}>
+      <div
+        className={`${styles.viewport} ${showCursor ? styles.showCursor : ''}`}
+        style={{ '--tv-scale': tvScale } as CSSProperties}
+      >
         {side === 'left' ? (
           <LeftMenu debugRegions={debugRegions} />
         ) : (

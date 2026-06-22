@@ -1,12 +1,13 @@
 .viewport {
-  width: 100vw;
-  height: 100vh;
+  position: fixed;
+  inset: 0;
+  width: 100dvw;
+  height: 100dvh;
   margin: 0;
-  display: grid;
-  place-items: center;
   overflow: hidden;
   background: #000;
   cursor: none;
+  --tv-scale: 1;
 }
 
 .showCursor {
@@ -85,9 +86,9 @@
   --addon-section-title-font-size: 1.78cqw;
   --photo-shadow: 0 0.24cqh 0.12cqw rgb(0 0 0 / 0.16);
   --showcase-widget-width: 16.25cqw;
-  --showcase-widget-height: 25.42cqh;
+  --showcase-widget-height: 27.2cqh;
   --showcase-widget-right: 1.05cqw;
-  --showcase-widget-bottom: 1.72cqh;
+  --showcase-widget-bottom: 1.25cqh;
   --showcase-widget-background: var(--palette-white);
   --showcase-widget-border: 0.085cqw solid rgb(55 55 55 / 0.5);
   --showcase-widget-radius: 0.18cqw;
@@ -100,7 +101,8 @@
   --showcase-image-y-offset: 0.62cqh;
   --showcase-caption-bottom: 0.82cqh;
   container-type: size;
-  width: min(100vw, 177.7778vh);
+  width: 1920px;
+  height: 1080px;
   aspect-ratio: 16 / 9;
   background: var(--palette-board-cream);
   color: var(--palette-black);
@@ -108,8 +110,12 @@
     'Arial Narrow', 'Avenir Next Condensed', 'Impact', 'Roboto Condensed', 'Helvetica Neue', Arial,
     sans-serif;
   font-stretch: condensed;
-  position: relative;
+  position: absolute;
+  top: 50%;
+  left: 50%;
   overflow: hidden;
+  transform: translate(-50%, -50%) scale(var(--tv-scale));
+  transform-origin: center center;
 }
 
 .regionOverlay {
@@ -131,21 +137,47 @@
     0 0 0.28cqw rgb(0 0 0 / 0.22);
 }
 
+.regionBoardLabel {
+  position: absolute;
+  top: 0.45cqh;
+  right: 0.55cqw;
+  z-index: 2;
+  padding: 0.35cqh 0.58cqw 0.4cqh;
+  border: 0.08cqw solid rgb(255 255 255 / 0.82);
+  border-radius: 0.2cqw;
+  background: rgb(0 0 0 / 0.72);
+  color: var(--palette-white);
+  font-size: 0.86cqw;
+  font-weight: 800;
+  line-height: 1;
+  text-shadow: 0 0.08cqw 0.12cqw rgb(0 0 0 / 0.45);
+}
+
 .regionLabel {
   position: absolute;
   left: 0.22cqw;
   top: 0.28cqh;
   max-width: calc(100% - 0.44cqw);
-  padding: 0.28cqh 0.5cqw 0.34cqh;
+  padding: 0.28cqh 0.5cqw 0.36cqh;
   color: var(--palette-white);
-  font-size: 0.89cqw;
-  font-weight: 800;
-  line-height: 1;
+  font-size: 0.72cqw;
+  font-weight: 700;
+  line-height: 1.12;
   letter-spacing: 0;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
   text-shadow: 0 0.08cqw 0.12cqw rgb(0 0 0 / 0.45);
+}
+
+.regionLabel strong,
+.regionLabel span {
+  display: block;
+}
+
+.regionLabel strong {
+  font-size: 0.86cqw;
+  font-weight: 900;
 }
 
 .leftBoard {
@@ -154,12 +186,6 @@
 
 .rightBoard {
   background: var(--palette-white);
-}
-
-.leftTopBar {
-  position: absolute;
-  inset: 1.5cqw 1.1cqw auto 0.75cqw;
-  height: 10.6cqh;
 }
 
 .logoWrap {
@@ -178,8 +204,8 @@
 
 .legend {
   position: absolute;
-  left: 8.05cqw;
-  top: -0.1cqh;
+  left: 1.15cqw;
+  top: 2.1cqh;
   color: var(--palette-black);
   white-space: nowrap;
 }
@@ -236,18 +262,18 @@
 
 .options {
   position: absolute;
-  left: 23.6cqw;
-  right: 0.5cqw;
-  top: -0.04cqh;
+  left: 13.5cqw;
+  right: 12.2cqw;
+  top: 2.25cqh;
   color: var(--palette-sugar-pink);
-  font-size: 1.18cqw;
+  font-size: 1.02cqw;
   line-height: 1.22;
   font-weight: 400;
   letter-spacing: -0.025em;
 }
 
 .drinkOptions {
-  left: 27.1cqw;
+  left: 17.6cqw;
 }
 
 .optionGroup {
@@ -271,7 +297,7 @@
 
 .iceMilkOptions {
   display: flex;
-  gap: 1.1cqw;
+  gap: 0.9cqw;
   margin-top: 0.42cqh;
   align-items: baseline;
 }
@@ -348,15 +374,15 @@
 .leftGrid {
   position: absolute;
   z-index: 1;
-  inset: 13.45cqh 1.05cqw 1.55cqh 0.48cqw;
+  inset: 1.05cqh 1.05cqw 1.1cqh 0.48cqw;
   display: grid;
-  grid-template-columns: 24.35cqw 20.85cqw 23.2cqw 1fr;
+  grid-template-columns: 24.75cqw 21.95cqw 22.9cqw 1fr;
   gap: 0.72cqw;
 }
 
 .rightGrid {
   position: absolute;
-  inset: 1.05cqh 1cqw 1.7cqh 0.85cqw;
+  inset: 1.05cqh 1cqw 14.35cqh 0.85cqw;
   display: grid;
   grid-template-columns: 31.6cqw 34.7cqw 29.5cqw;
   gap: 1.15cqw;
@@ -392,6 +418,8 @@
 }
 
 .sectionTitle {
+  position: relative;
+  z-index: 2;
   min-height: 5.22cqh;
   display: flex;
   align-items: center;
@@ -426,10 +454,14 @@
 }
 
 .sectionBody {
+  position: relative;
+  z-index: 2;
   padding: 0.72cqh 0.22cqw 0;
 }
 
 .subhead {
+  position: relative;
+  z-index: 2;
   font-size: 1.29cqw;
   font-style: italic;
   line-height: 1.08;
@@ -509,6 +541,14 @@
 .milkTeas,
 .milkDrinks {
   min-height: 0;
+}
+
+.milkTeas .itemLine {
+  white-space: nowrap;
+}
+
+.milkTeas .item {
+  font-size: 1.5cqw;
 }
 
 .compactSection .item {
@@ -609,23 +649,49 @@
   overflow: visible;
 }
 
+.toppingItem {
+  display: grid;
+  grid-template-columns: 1.24em minmax(0, 1fr);
+  column-gap: 0.48cqw;
+  align-items: baseline;
+}
+
+.toppingIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.24em;
+  line-height: 1;
+  font-family: 'Apple Color Emoji', 'Segoe UI Emoji', sans-serif;
+  letter-spacing: 0;
+  transform: translateY(0.03em);
+}
+
+.toppingText {
+  min-width: 0;
+}
+
 /* Right-board tuning */
 .rightGrid {
   --section-stack-gap: var(--section-stack-gap-right);
-  --section-stack-gap-right: 12px;
+  --section-stack-gap-right: 8px;
+  --menu-item-font-size: 1.46cqw;
+  --menu-description-font-size: 1.04cqw;
+  --right-menu-description-font-size: 1.03cqw;
+  --builder-options-font-size: 1.22cqw;
 }
 
 .rightGrid .sectionTitle {
-  min-height: 5.16cqh;
-  font-size: 1.75cqw;
+  min-height: 4.82cqh;
+  font-size: 1.66cqw;
 }
 
 .rightGrid .blended + .coffee {
-  margin-top: 22px;
+  margin-top: 8px;
 }
 
 .rightGrid .item {
-  margin-bottom: 0.72cqh;
+  margin-bottom: 0.58cqh;
 }
 
 .rightGrid .description {
@@ -654,35 +720,39 @@
 }
 
 .fruitTeas {
-  min-height: 48.3cqh;
+  min-height: 39.4cqh;
 }
 
 .lemonades {
-  min-height: 45.5cqh;
+  min-height: 37.6cqh;
 }
 
 .blended {
-  min-height: 37cqh;
+  min-height: 40.4cqh;
 }
 
 .coffee {
-  min-height: 42.5cqh;
+  min-height: 33.4cqh;
 }
 
 .hotDrinks {
-  min-height: 27.7cqh;
+  min-height: 23.8cqh;
 }
 
 .extras {
-  min-height: 15.9cqh;
+  min-height: 13.6cqh;
 }
 
 .shavedIce {
-  min-height: 47.2cqh;
+  min-height: 39.7cqh;
 }
 
 .blended .builderCopy {
   max-width: 31.5cqw;
+}
+
+.blended .description {
+  max-width: 23.8cqw;
 }
 
 .productPhotoSlot {
@@ -721,15 +791,15 @@
 }
 
 .blendedCluster {
-  right: -0.75cqw;
-  top: 9.25cqh;
+  right: -1.95cqw;
+  top: 11.55cqh;
   width: 12.9cqw;
   height: 24.4cqh;
 }
 
 .coffeeCluster {
   right: -0.1cqw;
-  top: 8.7cqh;
+  top: 7.7cqh;
   width: 12.35cqw;
   height: 21.8cqh;
 }
@@ -759,27 +829,27 @@
 }
 
 .productPhoto71 {
-  left: 0.95cqw;
+  left: 0.65cqw;
   top: 0.25cqh;
-  width: 6.45cqw;
-  height: 17.05cqh;
+  width: 6.1cqw;
+  height: 16.2cqh;
 }
 
 .productPhoto75 {
-  right: 0.25cqw;
+  right: 0.05cqw;
   top: 0.25cqh;
-  width: 6.45cqw;
-  height: 17.05cqh;
+  width: 6.1cqw;
+  height: 16.2cqh;
 }
 
 .photoCaption71 {
-  left: 2.85cqw;
-  top: 17.55cqh;
+  left: 2.45cqw;
+  top: 16.75cqh;
 }
 
 .photoCaption75 {
-  right: 2.7cqw;
-  top: 17.55cqh;
+  right: 2.5cqw;
+  top: 16.75cqh;
 }
 
 .productPhoto82 {
@@ -806,16 +876,36 @@
   top: 17.75cqh;
 }
 
-@media (max-aspect-ratio: 16 / 9) {
-  .board {
-    width: 100vw;
-    height: auto;
-  }
+.rightFooter {
+  position: absolute;
+  left: 0.85cqw;
+  right: 0.85cqw;
+  bottom: 0.85cqh;
+  height: 12.35cqh;
+  border-top: 0.1cqw solid rgb(48 93 50 / 0.45);
+  background: rgb(255 255 255 / 0.58);
+  box-shadow: inset 0 0.1cqh 0 rgb(255 255 255 / 0.72);
 }
 
-@media (min-aspect-ratio: 16 / 9) {
-  .board {
-    width: auto;
-    height: 100vh;
-  }
+.rightFooter .legend {
+  left: 1cqw;
+  top: 1.7cqh;
+}
+
+.rightFooter .options {
+  top: 1.5cqh;
+}
+
+.footerLogoWrap {
+  position: absolute;
+  right: -0.65cqw;
+  bottom: calc(-0.95cqh + 5px);
+  width: 9.9cqw;
+  height: 12.4cqh;
+}
+
+.footerLogoWrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
