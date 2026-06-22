@@ -834,8 +834,9 @@
   right: 0.85cqw;
   bottom: 0.85cqh;
   height: 12.35cqh;
-  border-top: 0.1cqw solid rgb(48 93 50 / 0.62);
-  background: linear-gradient(180deg, #fffdf8 0%, #f7f4df 100%);
+  border-top: 0.1cqw solid rgb(48 93 50 / 0.45);
+  background: rgb(255 255 255 / 0.58);
+  box-shadow: inset 0 0.1cqh 0 rgb(255 255 255 / 0.72);
 }
 
 .rightFooter .legend {
