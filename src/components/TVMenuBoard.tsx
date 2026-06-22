@@ -63,13 +63,17 @@ function useTvRefresh() {
   }, []);
 }
 
+function isEnabledParam(value: string | null) {
+  return value ? ['1', 'true', 'yes'].includes(value.toLowerCase()) : false;
+}
+
 function useDebugRegions() {
   const [enabled, setEnabled] = useState(false);
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
-    const value = params.get('debugRegions') ?? params.get('regions') ?? '';
-    setEnabled(['1', 'true', 'yes'].includes(value.toLowerCase()));
+    const value = params.get('debug') ?? params.get('debugRegions') ?? params.get('regions');
+    setEnabled(isEnabledParam(value));
   }, []);
 
   return enabled;
@@ -83,7 +87,7 @@ function useShowCursor() {
     const override = params.get('debug') ?? params.get('showCursor') ?? params.get('cursor');
 
     if (override) {
-      setEnabled(['1', 'true', 'yes'].includes(override.toLowerCase()));
+      setEnabled(isEnabledParam(override));
       return;
     }
 
@@ -110,9 +114,40 @@ function useTvScale() {
   return scale;
 }
 
+function getCssLength(value: CSSProperties[keyof CSSProperties]) {
+  return typeof value === 'number' ? `${value}px` : String(value ?? '');
+}
+
+function formatRegionLength(value: CSSProperties[keyof CSSProperties], axis: 'x' | 'y') {
+  const text = getCssLength(value);
+  const match = text.match(/^([\d.]+)cq([wh])$/);
+
+  if (!match) return text;
+
+  const amount = Number(match[1]);
+  const unit = match[2];
+  const pixels = Math.round((amount / 100) * (unit === 'w' ? TV_WIDTH_PX : TV_HEIGHT_PX));
+  const expectedUnit = axis === 'x' ? 'w' : 'h';
+  const axisHint = unit === expectedUnit ? '' : ` ${unit}`;
+
+  return `${amount}%${axisHint} / ${pixels}px`;
+}
+
+function getRegionMetrics(style: CSSProperties) {
+  const width = formatRegionLength(style.width, 'x');
+  const height = formatRegionLength(style.height, 'y');
+  const left = formatRegionLength(style.left, 'x');
+  const top = formatRegionLength(style.top, 'y');
+
+  return `${width} × ${height} · x ${left}, y ${top}`;
+}
+
 function RegionOverlay({ regions }: { regions: RegionDef[] }) {
   return (
     <div className={styles.regionOverlay} aria-hidden="true">
+      <div className={styles.regionBoardLabel}>
+        Board: {TV_WIDTH_PX}px × {TV_HEIGHT_PX}px
+      </div>
       {regions.map((region) => (
         <div
           key={region.id}
@@ -120,7 +155,10 @@ function RegionOverlay({ regions }: { regions: RegionDef[] }) {
           style={{ ...region.style, borderColor: region.color, color: region.color }}
         >
           <span className={styles.regionLabel} style={{ backgroundColor: region.color }}>
-            {region.id}. {region.label}
+            <strong>
+              {region.id}. {region.label}
+            </strong>
+            <span>{getRegionMetrics(region.style)}</span>
           </span>
         </div>
       ))}

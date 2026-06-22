@@ -137,21 +137,47 @@
     0 0 0.28cqw rgb(0 0 0 / 0.22);
 }
 
+.regionBoardLabel {
+  position: absolute;
+  top: 0.45cqh;
+  right: 0.55cqw;
+  z-index: 2;
+  padding: 0.35cqh 0.58cqw 0.4cqh;
+  border: 0.08cqw solid rgb(255 255 255 / 0.82);
+  border-radius: 0.2cqw;
+  background: rgb(0 0 0 / 0.72);
+  color: var(--palette-white);
+  font-size: 0.86cqw;
+  font-weight: 800;
+  line-height: 1;
+  text-shadow: 0 0.08cqw 0.12cqw rgb(0 0 0 / 0.45);
+}
+
 .regionLabel {
   position: absolute;
   left: 0.22cqw;
   top: 0.28cqh;
   max-width: calc(100% - 0.44cqw);
-  padding: 0.28cqh 0.5cqw 0.34cqh;
+  padding: 0.28cqh 0.5cqw 0.36cqh;
   color: var(--palette-white);
-  font-size: 0.89cqw;
-  font-weight: 800;
-  line-height: 1;
+  font-size: 0.72cqw;
+  font-weight: 700;
+  line-height: 1.12;
   letter-spacing: 0;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
   text-shadow: 0 0.08cqw 0.12cqw rgb(0 0 0 / 0.45);
+}
+
+.regionLabel strong,
+.regionLabel span {
+  display: block;
+}
+
+.regionLabel strong {
+  font-size: 0.86cqw;
+  font-weight: 900;
 }
 
 .leftBoard {
