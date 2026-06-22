@@ -877,7 +877,7 @@
 .footerLogoWrap {
   position: absolute;
   right: -0.65cqw;
-  bottom: -0.95cqh;
+  bottom: calc(-0.95cqh + 5px);
   width: 9.9cqw;
   height: 12.4cqh;
 }
