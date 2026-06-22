@@ -4,6 +4,8 @@ import Head from 'next/head';
 
 import { SHOWCASE_IMAGES } from '@/data/drink-images/showcaseImages';
 
+import { tvMenu } from '@/config/fonts';
+
 import styles from '@/styles/TVMenuBoard.module.css';
 
 const RELOAD_INTERVAL_MILLIS = 30 * 60 * 1000;
@@ -1158,7 +1160,7 @@ export function TVMenuBoard({ side }: { side: MenuSide }) {
         <meta name="robots" content="noindex, nofollow" />
       </Head>
       <div
-        className={`${styles.viewport} ${showCursor ? styles.showCursor : ''}`}
+        className={`${tvMenu.variable} ${styles.viewport} ${showCursor ? styles.showCursor : ''}`}
         style={{ '--tv-scale': tvScale } as CSSProperties}
       >
         {side === 'left' ? (
