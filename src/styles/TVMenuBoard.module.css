@@ -75,6 +75,8 @@
   --menu-color-brown-sugar: #7a4b21;
   --section-stack-gap: var(--section-stack-gap-default);
   --section-stack-gap-default: 14px;
+  --section-title-font-size: 1.79cqw;
+  --section-title-min-height: 5.22cqh;
   --menu-item-font-size: 1.58cqw;
   --menu-item-line-height: 1.1;
   --menu-price-font-size: calc(var(--menu-item-font-size) * 0.98);
@@ -422,14 +424,14 @@
 .sectionTitle {
   position: relative;
   z-index: 2;
-  min-height: 5.22cqh;
+  min-height: var(--section-title-min-height);
   display: flex;
   align-items: center;
   gap: 0.12cqw;
   padding: 0 1.02cqw;
   box-sizing: border-box;
   color: var(--palette-white);
-  font-size: 1.79cqw;
+  font-size: var(--section-title-font-size);
   line-height: 1;
   font-weight: 700;
   letter-spacing: -0.035em;
@@ -677,15 +679,11 @@
 .rightGrid {
   --section-stack-gap: var(--section-stack-gap-right);
   --section-stack-gap-right: 8px;
+  --section-title-min-height: 4.82cqh;
   --menu-item-font-size: 1.46cqw;
   --menu-description-font-size: 1.04cqw;
   --right-menu-description-font-size: 1.03cqw;
   --builder-options-font-size: 1.22cqw;
-}
-
-.rightGrid .sectionTitle {
-  min-height: 4.82cqh;
-  font-size: 1.66cqw;
 }
 
 .rightGrid .blended + .coffee {
