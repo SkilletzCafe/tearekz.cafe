@@ -379,6 +379,17 @@ function Emoji({ children }: { children: ReactNode }) {
   );
 }
 
+function ToppingItem({ icon, children }: { icon: ReactNode; children: ReactNode }) {
+  return (
+    <p className={styles.toppingItem}>
+      <span className={styles.toppingIcon} aria-hidden="true">
+        {icon}
+      </span>
+      <span className={styles.toppingText}>{children}</span>
+    </p>
+  );
+}
+
 function ShowcasePreview() {
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -735,22 +746,22 @@ function LeftMenu({ debugRegions = false }: { debugRegions?: boolean }) {
               <Emoji>✨</Emoji> Toppings $.75 each
             </div>
             <div className={styles.boxBody}>
-              <p>⚫ Boba (Tapioca Pearls)</p>
-              <p>
-                🔴 Popping Boba: <Colored color={FRUIT_COLORS.mango}>Mango</Colored> ·{' '}
+              <ToppingItem icon="⚫">Boba (Tapioca Pearls)</ToppingItem>
+              <ToppingItem icon="🔴">
+                Popping Boba: <Colored color={FRUIT_COLORS.mango}>Mango</Colored> ·{' '}
                 <Colored color={FRUIT_COLORS.strawberry}>Strawberry</Colored> ·{' '}
                 <Colored color={FRUIT_COLORS.lychee}>Lychee</Colored>
-              </p>
-              <p>
-                ⭐ Jelly: <Colored color={FRUIT_COLORS.mango}>Mango Star</Colored> ·{' '}
+              </ToppingItem>
+              <ToppingItem icon="⭐">
+                Jelly: <Colored color={FRUIT_COLORS.mango}>Mango Star</Colored> ·{' '}
                 <Colored color={FRUIT_COLORS.lychee}>Lychee</Colored>
-              </p>
-              <p>
-                🟤 Agar Boba: <Colored color={TOPPING_COLORS.crystal}>Crystal</Colored> ·{' '}
+              </ToppingItem>
+              <ToppingItem icon="🟤">
+                Agar Boba: <Colored color={TOPPING_COLORS.crystal}>Crystal</Colored> ·{' '}
                 <Colored color={TOPPING_COLORS.brownSugar}>Brown Sugar</Colored>
-              </p>
-              <p>🍉 Grapefruit Pulp</p>
-              <p>🟨 Diced Mango</p>
+              </ToppingItem>
+              <ToppingItem icon="🍉">Grapefruit Pulp</ToppingItem>
+              <ToppingItem icon="🟨">Diced Mango</ToppingItem>
             </div>
           </div>
         </aside>

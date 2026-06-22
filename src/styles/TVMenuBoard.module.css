@@ -649,6 +649,28 @@
   overflow: visible;
 }
 
+.toppingItem {
+  display: grid;
+  grid-template-columns: 1.24em minmax(0, 1fr);
+  column-gap: 0.48cqw;
+  align-items: baseline;
+}
+
+.toppingIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.24em;
+  line-height: 1;
+  font-family: 'Apple Color Emoji', 'Segoe UI Emoji', sans-serif;
+  letter-spacing: 0;
+  transform: translateY(0.03em);
+}
+
+.toppingText {
+  min-width: 0;
+}
+
 /* Right-board tuning */
 .rightGrid {
   --section-stack-gap: var(--section-stack-gap-right);
