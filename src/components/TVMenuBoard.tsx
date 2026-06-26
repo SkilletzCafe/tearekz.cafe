@@ -656,8 +656,8 @@ function LeftMenu({ debugRegions = false }: { debugRegions?: boolean }) {
                 Tiger Milk (with boba) 🌙 ❄️ <Price>$8</Price>
               </span>
             </Item>
-            <Item code="43" description="real taro & ube, no artificial flavor or color">
-              Ube Taro Milk 🌙 <Price>$7.5</Price>
+            <Item code="43" description="real taro, vanilla & milk">
+              Taro Milk 🌙 <Price>$7</Price>
             </Item>
             <Item code="44" description="organic strawberries and fresh milk">
               Strawberry Milk 🌙 ❄️ ☁️ <Price>$7</Price>

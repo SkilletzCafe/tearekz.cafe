@@ -63,8 +63,8 @@ export const SHOWCASE_IMAGES = [
     src: '/images/drinks/showcase/42-creme-brulee-tiger-milk-with-boba.webp',
   },
   {
-    name: 'Ube Taro Milk 🍠🌙',
-    alt: 'Ube Taro Milk 🍠🌙 drink preview',
+    name: 'Taro Milk 🍠🌙',
+    alt: 'Taro Milk 🍠🌙 drink preview',
     category: 'Milk Drinks 🥛',
     src: '/images/drinks/showcase/43-ube-taro-milk.webp',
   },
