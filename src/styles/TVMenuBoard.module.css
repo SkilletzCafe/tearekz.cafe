@@ -189,13 +189,16 @@
 }
 
 .rightBoard {
-  --showcase-widget-width: 14cqw;
-  --showcase-widget-height: 18cqh;
-  --showcase-image-bottom-space: 3.1cqh;
-  --showcase-caption-font-size: 1.08cqw;
-  --showcase-frame-padding-top: 0.8cqh;
-  --showcase-image-scale: 1.02;
-  --showcase-caption-bottom: 0.65cqh;
+  --showcase-widget-width: 28.9cqw;
+  --showcase-widget-height: 31.8cqh;
+  --showcase-widget-right: 0.52cqw;
+  --showcase-widget-bottom: 0.93cqh;
+  --showcase-image-bottom-space: 4.3cqh;
+  --showcase-caption-font-size: 1.74cqw;
+  --showcase-frame-padding-inline: 0.62cqw;
+  --showcase-frame-padding-top: 0.9cqh;
+  --showcase-image-scale: 1.06;
+  --showcase-caption-bottom: 0.9cqh;
   background: var(--palette-white);
 }
 
