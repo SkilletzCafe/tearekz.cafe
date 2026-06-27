@@ -766,8 +766,14 @@ function LeftMenu({ debugRegions = false }: { debugRegions?: boolean }) {
           </div>
         </aside>
       </main>
-
-      <ShowcasePreview />
+      <footer className={styles.screenFooter} data-debug-region="Footer bar">
+        <SymbolLegend />
+        <DrinkOptions />
+        <div className={styles.footerLogoWrap} data-debug-region="Footer logo">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/images/menu/tv-native/tearekz-logo-cropped.png" alt="Tea-Rek'z" />
+        </div>
+      </footer>
       {debugRegions && <RegionOverlay boardRef={boardRef} />}
     </div>
   );
@@ -1130,14 +1136,7 @@ function RightMenu({ debugRegions = false }: { debugRegions?: boolean }) {
           </Section>
         </div>
       </main>
-      <footer className={styles.rightFooter} data-debug-region="Footer bar">
-        <SymbolLegend />
-        <DrinkOptions />
-        <div className={styles.footerLogoWrap} data-debug-region="Footer logo">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/images/menu/tv-native/tearekz-logo-cropped.png" alt="Tea-Rek'z" />
-        </div>
-      </footer>
+      <ShowcasePreview />
       {debugRegions && <RegionOverlay boardRef={boardRef} />}
     </div>
   );
