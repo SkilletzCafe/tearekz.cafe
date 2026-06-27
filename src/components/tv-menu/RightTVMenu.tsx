@@ -2,6 +2,8 @@ import { useRef } from 'react';
 
 import styles from '@/styles/TVMenuBoard.module.css';
 
+import { ShowcasePreview } from './ShowcasePreview';
+import { RegionOverlay } from './TVMenuDebug';
 import {
   BlendedDrinksSection,
   CoffeeDrinksSection,
@@ -9,9 +11,7 @@ import {
   HawaiianShavedIceSection,
   HotDrinksSection,
   SmashLemonadesSection,
-} from './RightTVMenuSections';
-import { ShowcasePreview } from './ShowcasePreview';
-import { RegionOverlay } from './TVMenuDebug';
+} from './TVMenuSections';
 
 export function RightTVMenu({ debugRegions = false }: { debugRegions?: boolean }) {
   const boardRef = useRef<HTMLDivElement>(null);

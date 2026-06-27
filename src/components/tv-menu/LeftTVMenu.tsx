@@ -2,16 +2,16 @@ import { useRef } from 'react';
 
 import styles from '@/styles/TVMenuBoard.module.css';
 
+import { CreamTopsBox, ToppingsBox } from './TVMenuAddOns';
+import { RegionOverlay } from './TVMenuDebug';
+import { ScreenFooter } from './TVMenuFooter';
 import {
   MatchaSection,
   MilkDrinksSection,
   MilkTeasSection,
   PureTeasSection,
   SignaturesSection,
-} from './LeftTVMenuSections';
-import { CreamTopsBox, ToppingsBox } from './TVMenuAddOns';
-import { RegionOverlay } from './TVMenuDebug';
-import { ScreenFooter } from './TVMenuFooter';
+} from './TVMenuSections';
 
 export function LeftTVMenu({ debugRegions = false }: { debugRegions?: boolean }) {
   const boardRef = useRef<HTMLDivElement>(null);
