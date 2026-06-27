@@ -371,6 +371,7 @@ const TEA_COLORS = {
 const TOPPING_COLORS = {
   crystal: 'var(--menu-color-crystal)',
   brownSugar: 'var(--menu-color-brown-sugar)',
+  taro: 'var(--menu-color-purple)',
 } as const;
 
 function Emoji({ children }: { children: ReactNode }) {
@@ -765,6 +766,9 @@ function LeftMenu({ debugRegions = false }: { debugRegions?: boolean }) {
               </ToppingItem>
               <ToppingItem icon="🍉">Grapefruit Pulp</ToppingItem>
               <ToppingItem icon="🟨">Diced Mango</ToppingItem>
+              <ToppingItem icon="🍠">
+                <Colored color={TOPPING_COLORS.taro}>Taro</Colored>
+              </ToppingItem>
             </div>
           </div>
         </aside>
@@ -1104,7 +1108,8 @@ function RightMenu({ debugRegions = false }: { debugRegions?: boolean }) {
               <b>Add toppings (choose up to 3):</b>
               <br />
               <Colored color={FRUIT_COLORS.strawberry}>Fresh Strawberries</Colored> ·{' '}
-              <Colored color={FRUIT_COLORS.mango}>Diced Mango</Colored> · Grapefruit Pulp
+              <Colored color={FRUIT_COLORS.mango}>Diced Mango</Colored> · Grapefruit Pulp ·{' '}
+              <Colored color={TOPPING_COLORS.taro}>Taro</Colored>
               <br />
               <b>Popping Boba:</b> <Colored color={FRUIT_COLORS.mango}>Mango</Colored> ·{' '}
               <Colored color={FRUIT_COLORS.strawberry}>Strawberry</Colored> ·{' '}
