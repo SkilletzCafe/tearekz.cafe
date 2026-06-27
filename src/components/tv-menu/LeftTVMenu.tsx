@@ -2,6 +2,7 @@ import { useRef } from 'react';
 
 import styles from '@/styles/TVMenuBoard.module.css';
 
+import { CreamTopsBox, ToppingsBox } from './TVMenuAddOns';
 import { RegionOverlay } from './TVMenuDebug';
 import { ScreenFooter } from './TVMenuFooter';
 import {
@@ -14,8 +15,6 @@ import {
   Price,
   Section,
   TEA_COLORS,
-  TOPPING_COLORS,
-  ToppingItem,
 } from './TVMenuPrimitives';
 
 export function LeftTVMenu({ debugRegions = false }: { debugRegions?: boolean }) {
@@ -240,76 +239,9 @@ export function LeftTVMenu({ debugRegions = false }: { debugRegions?: boolean })
         </div>
 
         <aside className={`${styles.menuColumn} ${styles.leftAside}`}>
-          <div
-            className={`${styles.box} cream-tops-section ${styles.creamBox}`}
-            data-debug-region="Cream Tops box"
-          >
-            <div className={`${styles.boxTitle} ${styles.creamTitle}`}>
-              <Emoji>☁️</Emoji> Cream Tops
-            </div>
-            <div className={styles.boxBody}>
-              <p className={styles.boxNote}>(Made with Real Cream · Contains Dairy)</p>
-              <p>
-                <Colored color={CREAM_COLORS.brulee}>Crème Brûlée</Colored>{' '}
-                <span className={styles.creamQualifier}>(on cold drinks only)</span>{' '}
-                <Price>$1.5</Price>
-              </p>
-              <p>
-                <Colored color={CREAM_COLORS.iceCream}>Vanilla Ice Cream Float</Colored>{' '}
-                <span className={styles.creamQualifier}>(on cold drinks only)</span>{' '}
-                <Price>$2</Price>
-              </p>
-              <p>
-                <Colored color={CREAM_COLORS.jasmine}>Jasmine Cream</Colored> (Whipped){' '}
-                <Price>$1.5</Price>
-              </p>
-              <p>
-                <Colored color={CREAM_COLORS.matcha}>Matcha Cream</Colored> <Price>$2</Price>
-              </p>
-              <p>
-                <Colored color={CREAM_COLORS.pistachio}>Pistachio Cream</Colored> <Price>$2</Price>
-              </p>
-              <p>
-                <Colored color={CREAM_COLORS.raspberry}>Raspberry Cream</Colored>{' '}
-                <Price>$1.5</Price>
-              </p>
-              <p>
-                <Colored color={CREAM_COLORS.seaSaltCheese}>Sea Salt Cheese Cream</Colored>{' '}
-                <Price>$1.5</Price>
-              </p>
-            </div>
-          </div>
+          <CreamTopsBox />
 
-          <div
-            className={`${styles.box} toppings-section ${styles.toppingBox}`}
-            data-debug-region="Toppings box"
-          >
-            <div className={`${styles.boxTitle} ${styles.toppingTitle}`}>
-              <Emoji>✨</Emoji> Toppings $.75 each
-            </div>
-            <div className={styles.boxBody}>
-              <ToppingItem icon="⚫">Boba (Tapioca Pearls)</ToppingItem>
-              <ToppingItem icon="🔴">
-                Popping Boba: <Colored color={FRUIT_COLORS.mango}>Mango</Colored> ·{' '}
-                <Colored color={FRUIT_COLORS.strawberry}>Strawberry</Colored> ·{' '}
-                <Colored color={FRUIT_COLORS.lychee}>Lychee</Colored>
-              </ToppingItem>
-              <ToppingItem icon="⭐">
-                Jelly: <Colored color={FRUIT_COLORS.mango}>Mango Star</Colored> ·{' '}
-                <Colored color={FRUIT_COLORS.strawberry}>Strawberry Heart</Colored> ·{' '}
-                <Colored color={FRUIT_COLORS.lychee}>Lychee</Colored>
-              </ToppingItem>
-              <ToppingItem icon="🟤">
-                Agar Boba: <Colored color={TOPPING_COLORS.crystal}>Crystal</Colored> ·{' '}
-                <Colored color={TOPPING_COLORS.brownSugar}>Brown Sugar</Colored>
-              </ToppingItem>
-              <ToppingItem icon="🍉">Grapefruit Pulp</ToppingItem>
-              <ToppingItem icon="🟨">Diced Mango</ToppingItem>
-              <ToppingItem icon="🍠">
-                <Colored color={TOPPING_COLORS.taro}>Taro</Colored>
-              </ToppingItem>
-            </div>
-          </div>
+          <ToppingsBox />
         </aside>
       </main>
       <ScreenFooter />
