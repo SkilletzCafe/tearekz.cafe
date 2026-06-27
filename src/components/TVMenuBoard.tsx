@@ -4,6 +4,8 @@ import Head from 'next/head';
 
 import { SHOWCASE_IMAGES } from '@/data/drink-images/showcaseImages';
 
+import { tvMenu } from '@/config/fonts';
+
 import styles from '@/styles/TVMenuBoard.module.css';
 
 const RELOAD_INTERVAL_MILLIS = 30 * 60 * 1000;
@@ -654,8 +656,8 @@ function LeftMenu({ debugRegions = false }: { debugRegions?: boolean }) {
                 Tiger Milk (with boba) 🌙 ❄️ <Price>$8</Price>
               </span>
             </Item>
-            <Item code="43" description="real taro & ube, no artificial flavor or color">
-              Ube Taro Milk 🌙 <Price>$7.5</Price>
+            <Item code="43" description="real taro, vanilla & milk">
+              Taro Milk 🌙 <Price>$7</Price>
             </Item>
             <Item code="44" description="organic strawberries and fresh milk">
               Strawberry Milk 🌙 ❄️ ☁️ <Price>$7</Price>
@@ -692,7 +694,7 @@ function LeftMenu({ debugRegions = false }: { debugRegions?: boolean }) {
               <Colored color={FRUIT_COLORS.mango}>Mango</Colored> Matcha Latte <Price>$8</Price>
             </Item>
             <Item code="35">
-              <Colored color="#7760a8">Taro</Colored> Matcha Latte <Price>$8.5</Price>
+              <Colored color="#7760a8">Taro</Colored> Matcha Latte <Price>$8</Price>
             </Item>
           </Section>
         </div>
@@ -754,6 +756,7 @@ function LeftMenu({ debugRegions = false }: { debugRegions?: boolean }) {
               </ToppingItem>
               <ToppingItem icon="⭐">
                 Jelly: <Colored color={FRUIT_COLORS.mango}>Mango Star</Colored> ·{' '}
+                <Colored color={FRUIT_COLORS.strawberry}>Strawberry Heart</Colored> ·{' '}
                 <Colored color={FRUIT_COLORS.lychee}>Lychee</Colored>
               </ToppingItem>
               <ToppingItem icon="🟤">
@@ -1064,24 +1067,6 @@ function RightMenu({ debugRegions = false }: { debugRegions?: boolean }) {
           <Section
             title={
               <>
-                Extras <Emoji>❄️</Emoji>
-              </>
-            }
-            semanticClassName="section-extras"
-            debugLabel="Extras section"
-            className={styles.extras}
-          >
-            <Item code="98">
-              Fresh Squeezed Orange Juice 🌙 <Price>$8</Price>
-            </Item>
-            <Item code="99">
-              🍨 Boba Sundae 🌙 <Price>$6</Price>
-            </Item>
-          </Section>
-
-          <Section
-            title={
-              <>
                 Hawaiian Hand-Shaved Ice <Emoji>🍧</Emoji>
               </>
             }
@@ -1126,6 +1111,7 @@ function RightMenu({ debugRegions = false }: { debugRegions?: boolean }) {
               <Colored color={FRUIT_COLORS.lychee}>Lychee</Colored>
               <br />
               <b>Jelly:</b> <Colored color={FRUIT_COLORS.mango}>Mango Star</Colored> ·{' '}
+              <Colored color={FRUIT_COLORS.strawberry}>Strawberry Heart</Colored> ·{' '}
               <Colored color={FRUIT_COLORS.lychee}>Lychee</Colored>
               <br />
               <b>Agar Boba:</b> <Colored color={TOPPING_COLORS.crystal}>Crystal</Colored> ·{' '}
@@ -1157,7 +1143,7 @@ export function TVMenuBoard({ side }: { side: MenuSide }) {
         <meta name="robots" content="noindex, nofollow" />
       </Head>
       <div
-        className={`${styles.viewport} ${showCursor ? styles.showCursor : ''}`}
+        className={`${tvMenu.variable} ${styles.viewport} ${showCursor ? styles.showCursor : ''}`}
         style={{ '--tv-scale': tvScale } as CSSProperties}
       >
         {side === 'left' ? (

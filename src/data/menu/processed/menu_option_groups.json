@@ -2076,6 +2076,13 @@
           "orderableOnline": "YES"
         },
         {
+          "name": "Strawberry Heart Jelly ❤️",
+          "guid": "125f5ecb-0668-412d-8458-b62652de53b1",
+          "description": "Heart-shaped strawberry jelly",
+          "price": 0.75,
+          "orderableOnline": "YES"
+        },
+        {
           "name": "Lychee Jelly 🤍",
           "guid": "dacfef9b-5a8b-4c94-b0e2-398d2f9c2f31",
           "description": "Delicate lychee jelly",
@@ -2982,6 +2989,13 @@
           "name": "Mango Star Jelly ⭐️",
           "guid": "0f46f70c-ff24-4650-97aa-72cac7215a2e",
           "description": "Star-shaped mango jelly",
+          "price": 0,
+          "orderableOnline": "YES"
+        },
+        {
+          "name": "Strawberry Heart Jelly ❤️",
+          "guid": "125f5ecb-0668-412d-8458-b62652de53b1",
+          "description": "Heart-shaped strawberry jelly",
           "price": 0,
           "orderableOnline": "YES"
         },
