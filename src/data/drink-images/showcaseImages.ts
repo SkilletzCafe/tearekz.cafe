@@ -141,12 +141,6 @@ export const SHOWCASE_IMAGES = [
     src: '/images/drinks/showcase/85-dirty-horchata-de-avena.webp',
   },
   {
-    name: 'Boba Sundae 🧋🍨🌙',
-    alt: 'Boba Sundae 🧋🍨🌙 drink preview',
-    category: 'Extras 🍨',
-    src: '/images/drinks/showcase/99-boba-sundae.webp',
-  },
-  {
     name: 'Strawberry Shaved Ice 🍧',
     alt: 'Strawberry Shaved Ice 🍧 drink preview',
     category: 'Hawaiian Hand-Shaved Ice 🍧',

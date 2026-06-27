@@ -694,7 +694,7 @@ function LeftMenu({ debugRegions = false }: { debugRegions?: boolean }) {
               <Colored color={FRUIT_COLORS.mango}>Mango</Colored> Matcha Latte <Price>$8</Price>
             </Item>
             <Item code="35">
-              <Colored color="#7760a8">Taro</Colored> Matcha Latte <Price>$8.5</Price>
+              <Colored color="#7760a8">Taro</Colored> Matcha Latte <Price>$8</Price>
             </Item>
           </Section>
         </div>
@@ -756,6 +756,7 @@ function LeftMenu({ debugRegions = false }: { debugRegions?: boolean }) {
               </ToppingItem>
               <ToppingItem icon="⭐">
                 Jelly: <Colored color={FRUIT_COLORS.mango}>Mango Star</Colored> ·{' '}
+                <Colored color={FRUIT_COLORS.strawberry}>Strawberry Heart</Colored> ·{' '}
                 <Colored color={FRUIT_COLORS.lychee}>Lychee</Colored>
               </ToppingItem>
               <ToppingItem icon="🟤">
@@ -1060,24 +1061,6 @@ function RightMenu({ debugRegions = false }: { debugRegions?: boolean }) {
           <Section
             title={
               <>
-                Extras <Emoji>❄️</Emoji>
-              </>
-            }
-            semanticClassName="section-extras"
-            debugLabel="Extras section"
-            className={styles.extras}
-          >
-            <Item code="98">
-              Fresh Squeezed Orange Juice 🌙 <Price>$8</Price>
-            </Item>
-            <Item code="99">
-              🍨 Boba Sundae 🌙 <Price>$6</Price>
-            </Item>
-          </Section>
-
-          <Section
-            title={
-              <>
                 Hawaiian Hand-Shaved Ice <Emoji>🍧</Emoji>
               </>
             }
@@ -1122,6 +1105,7 @@ function RightMenu({ debugRegions = false }: { debugRegions?: boolean }) {
               <Colored color={FRUIT_COLORS.lychee}>Lychee</Colored>
               <br />
               <b>Jelly:</b> <Colored color={FRUIT_COLORS.mango}>Mango Star</Colored> ·{' '}
+              <Colored color={FRUIT_COLORS.strawberry}>Strawberry Heart</Colored> ·{' '}
               <Colored color={FRUIT_COLORS.lychee}>Lychee</Colored>
               <br />
               <b>Agar Boba:</b> <Colored color={TOPPING_COLORS.crystal}>Crystal</Colored> ·{' '}
