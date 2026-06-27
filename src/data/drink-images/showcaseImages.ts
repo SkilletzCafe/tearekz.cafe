@@ -63,8 +63,8 @@ export const SHOWCASE_IMAGES = [
     src: '/images/drinks/showcase/42-creme-brulee-tiger-milk-with-boba.webp',
   },
   {
-    name: 'Taro Milk 🍠🌙',
-    alt: 'Taro Milk 🍠🌙 drink preview',
+    name: 'Ube Taro Milk 🍠🌙',
+    alt: 'Ube Taro Milk 🍠🌙 drink preview',
     category: 'Milk Drinks 🥛',
     src: '/images/drinks/showcase/43-ube-taro-milk.webp',
   },
@@ -139,6 +139,12 @@ export const SHOWCASE_IMAGES = [
     alt: 'Dirty Horchata de Avena 🍂🥛☕️ drink preview',
     category: 'Coffee Drinks ☕',
     src: '/images/drinks/showcase/85-dirty-horchata-de-avena.webp',
+  },
+  {
+    name: 'Boba Sundae 🧋🍨🌙',
+    alt: 'Boba Sundae 🧋🍨🌙 drink preview',
+    category: 'Extras 🍨',
+    src: '/images/drinks/showcase/99-boba-sundae.webp',
   },
   {
     name: 'Strawberry Shaved Ice 🍧',
