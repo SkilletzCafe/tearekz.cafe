@@ -1,7 +1,9 @@
 .viewport {
   position: fixed;
   inset: 0;
+  width: 100vw;
   width: 100dvw;
+  height: 100vh;
   height: 100dvh;
   margin: 0;
   overflow: hidden;
@@ -73,12 +75,14 @@
   --menu-color-brown-sugar: #7a4b21;
   --section-stack-gap: var(--section-stack-gap-default);
   --section-stack-gap-default: 14px;
+  --section-title-font-size: 1.79cqw;
+  --section-title-min-height: 5.22cqh;
   --menu-item-font-size: 1.58cqw;
   --menu-item-line-height: 1.1;
   --menu-price-font-size: calc(var(--menu-item-font-size) * 0.98);
   --menu-description-font-size: 1.18cqw;
   --menu-description-line-height: 1.16;
-  --menu-description-font-weight: 520;
+  --menu-description-font-weight: 500;
   --menu-description-letter-spacing: -0.028em;
   --right-menu-description-font-size: 1.16cqw;
   --builder-options-font-size: 1.36cqw;
@@ -107,9 +111,9 @@
   background: var(--palette-board-cream);
   color: var(--palette-black);
   font-family:
-    'Arial Narrow', 'Avenir Next Condensed', 'Impact', 'Roboto Condensed', 'Helvetica Neue', Arial,
-    sans-serif;
-  font-stretch: condensed;
+    var(--font-tv-menu), 'Roboto Condensed', 'Arial Narrow', 'Helvetica Neue', Arial, sans-serif;
+  font-synthesis: none;
+  font-stretch: normal;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -216,7 +220,7 @@
   gap: 0.26cqw;
   font-size: 1.36cqw;
   line-height: 1.12;
-  font-weight: 740;
+  font-weight: 700;
   letter-spacing: -0.045em;
 }
 
@@ -313,7 +317,7 @@
 .boostOptions {
   margin-left: auto;
   color: var(--palette-section-green-dark);
-  font-weight: 620;
+  font-weight: 600;
   text-align: right;
   white-space: nowrap;
 }
@@ -420,16 +424,16 @@
 .sectionTitle {
   position: relative;
   z-index: 2;
-  min-height: 5.22cqh;
+  min-height: var(--section-title-min-height);
   display: flex;
   align-items: center;
   gap: 0.12cqw;
   padding: 0 1.02cqw;
   box-sizing: border-box;
   color: var(--palette-white);
-  font-size: 1.79cqw;
+  font-size: var(--section-title-font-size);
   line-height: 1;
-  font-weight: 740;
+  font-weight: 700;
   letter-spacing: -0.035em;
   text-shadow: 0 0.055cqw 0 rgba(0, 0, 0, 0.2);
   white-space: nowrap;
@@ -471,7 +475,7 @@
 
 .item {
   margin: 0 0 0.72cqh;
-  font-weight: 705;
+  font-weight: 700;
   font-size: var(--menu-item-font-size);
   line-height: var(--menu-item-line-height);
   letter-spacing: -0.046em;
@@ -488,7 +492,7 @@
   color: var(--palette-section-green-dark);
   text-decoration: underline;
   text-underline-offset: 0.1em;
-  font-weight: 760;
+  font-weight: 800;
   margin-right: 0.38cqw;
 }
 
@@ -500,12 +504,12 @@
   margin-left: 0.18cqw;
   color: var(--palette-near-black);
   font-size: var(--menu-price-font-size);
-  font-weight: 760;
+  font-weight: 800;
   white-space: nowrap;
 }
 
 .colored {
-  font-weight: 760;
+  font-weight: 800;
 }
 
 .gradientText {
@@ -587,7 +591,7 @@
   padding: 0 1.02cqw;
   box-sizing: border-box;
   font-size: var(--addon-section-title-font-size);
-  font-weight: 820;
+  font-weight: 800;
   font-style: italic;
   letter-spacing: -0.04em;
 }
@@ -603,7 +607,7 @@
 .boxBody {
   padding: 0.74cqh 0.95cqw 0.82cqh;
   font-size: 1.44cqw;
-  font-weight: 520;
+  font-weight: 500;
   line-height: 1.18;
   letter-spacing: -0.034em;
 }
@@ -625,7 +629,7 @@
   color: var(--palette-body-gray);
   font-size: 0.94em;
   font-style: italic;
-  font-weight: 360;
+  font-weight: 400;
 }
 
 .creamBox {
@@ -675,15 +679,11 @@
 .rightGrid {
   --section-stack-gap: var(--section-stack-gap-right);
   --section-stack-gap-right: 8px;
+  --section-title-min-height: 4.82cqh;
   --menu-item-font-size: 1.46cqw;
   --menu-description-font-size: 1.04cqw;
   --right-menu-description-font-size: 1.03cqw;
   --builder-options-font-size: 1.22cqw;
-}
-
-.rightGrid .sectionTitle {
-  min-height: 4.82cqh;
-  font-size: 1.66cqw;
 }
 
 .rightGrid .blended + .coffee {
@@ -703,7 +703,7 @@
   margin: 0.36cqh 0 0 2.55cqw;
   font-size: 1.23cqw;
   line-height: 1.2;
-  font-weight: 540;
+  font-weight: 500;
   letter-spacing: -0.03em;
   color: var(--palette-body-gray);
 }
@@ -778,7 +778,7 @@
   color: var(--palette-caption-gray);
   font-size: 1.03cqw;
   line-height: 1;
-  font-weight: 620;
+  font-weight: 600;
   letter-spacing: -0.02em;
   text-align: center;
 }
