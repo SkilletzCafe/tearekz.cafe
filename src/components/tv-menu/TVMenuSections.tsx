@@ -451,9 +451,6 @@ export function CoffeeDrinksSection() {
       <Item code="85">
         <Colored color="#744b2a">Dirty Horchata de Avena</Colored> ❄️ <Price>$8</Price>
       </Item>
-      <Item code="86">
-        <Colored color="#502d1d">Vietnamese Mocha</Colored> (Iced or Hot) <Price>$8</Price>
-      </Item>
       <ProductPhotoCluster
         className={styles.coffeeCluster}
         photos={[
