@@ -451,9 +451,11 @@ export function CoffeeDrinksSection() {
       <Item code="85">
         <Colored color="#744b2a">Dirty Horchata de Avena</Colored> ❄️ <Price>$8</Price>
       </Item>
+      {/* Seasonal item: hidden from the current TV menu, but preserved for easy reactivation.
       <Item code="86">
         <Colored color="#502d1d">Vietnamese Mocha</Colored> (Iced or Hot) <Price>$8</Price>
       </Item>
+      */}
       <ProductPhotoCluster
         className={styles.coffeeCluster}
         photos={[
