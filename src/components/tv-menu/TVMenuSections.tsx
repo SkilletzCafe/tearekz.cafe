@@ -128,6 +128,9 @@ export function MilkTeasSection() {
       <Item code="28">
         White Peach Oolong Milk Tea <Price>$7</Price>
       </Item>
+      <Item code="29">
+        Magnolia Green Milk Tea <Price>$7</Price>
+      </Item>
     </Section>
   );
 }
