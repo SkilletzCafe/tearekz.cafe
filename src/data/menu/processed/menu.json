@@ -4311,13 +4311,6 @@
               "description": "A smooth, floral oolong with a natural white peach aroma. Light and refreshing with a subtle fruit fragrance, not sweet on its own.",
               "price": 6,
               "imageUrl": null
-            },
-            {
-              "name": "5 Rooibos Tea 🌙",
-              "guid": "47d3cd45-c531-4553-a20a-7054195b565b",
-              "description": "Naturally caffeine-free 🌙 herbal tea from South Africa, with a smooth, earthy flavor and gentle notes of honey and vanilla.",
-              "price": 5.75,
-              "imageUrl": null
             }
           ]
         },
@@ -4381,13 +4374,6 @@
               "description": "Fragrant oolong tea with a delicate white peach aroma, blended with creamy milk for a smooth, floral, and subtly fruity taste. Naturally not sweet on its own.",
               "price": 7,
               "imageUrl": "https://toasttab.s3.amazonaws.com/restaurants/restaurant-244719000000000000/menu/items/4/item-1300000005129626884_1757235096.jpg"
-            },
-            {
-              "name": "29 Rooibos Milk Tea🌙",
-              "guid": "b694a634-dfb5-40fb-a28a-accf27351324",
-              "description": "Naturally caffeine-free rooibos blended with creamy milk for a smooth, earthy cup with gentle notes of honey and vanilla.",
-              "price": 6.75,
-              "imageUrl": "https://toasttab.s3.amazonaws.com/restaurants/restaurant-244719000000000000/menu/items/8/item-1300000005129626888_1757235175.jpg"
             }
           ]
         },
@@ -4976,13 +4962,6 @@
               "description": "A smooth, floral oolong with a natural white peach aroma. Light and refreshing with a subtle fruit fragrance, not sweet on its own.",
               "price": 6,
               "imageUrl": null
-            },
-            {
-              "name": "5 Rooibos Tea 🌙",
-              "guid": "47d3cd45-c531-4553-a20a-7054195b565b",
-              "description": "Naturally caffeine-free 🌙 herbal tea from South Africa, with a smooth, earthy flavor and gentle notes of honey and vanilla.",
-              "price": 5.75,
-              "imageUrl": null
             }
           ]
         },
@@ -5046,13 +5025,6 @@
               "description": "Fragrant oolong tea with a delicate white peach aroma, blended with creamy milk for a smooth, floral, and subtly fruity taste. Naturally not sweet on its own.",
               "price": 7,
               "imageUrl": "https://toasttab.s3.amazonaws.com/restaurants/restaurant-244719000000000000/menu/items/4/item-1300000005129626884_1757235096.jpg"
-            },
-            {
-              "name": "29 Rooibos Milk Tea🌙",
-              "guid": "b694a634-dfb5-40fb-a28a-accf27351324",
-              "description": "Naturally caffeine-free rooibos blended with creamy milk for a smooth, earthy cup with gentle notes of honey and vanilla.",
-              "price": 6.75,
-              "imageUrl": "https://toasttab.s3.amazonaws.com/restaurants/restaurant-244719000000000000/menu/items/8/item-1300000005129626888_1757235175.jpg"
             }
           ]
         },
