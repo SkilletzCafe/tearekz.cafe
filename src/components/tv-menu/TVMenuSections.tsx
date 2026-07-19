@@ -128,9 +128,6 @@ export function MilkTeasSection() {
       <Item code="28">
         White Peach Oolong Milk Tea <Price>$7</Price>
       </Item>
-      <Item code="29">
-        Rooibos Milk Tea 🌙 <Price>$6.75</Price>
-      </Item>
     </Section>
   );
 }
@@ -162,9 +159,6 @@ export function PureTeasSection() {
         <Colored color={TEA_COLORS.white}>White</Colored>{' '}
         <Colored color={TEA_COLORS.peach}>Peach</Colored>{' '}
         <Colored color={TEA_COLORS.assam}>Oolong</Colored> <Price>$6</Price> ☁️
-      </Item>
-      <Item code="5">
-        <Colored color={TEA_COLORS.rooibos}>Rooibos</Colored> 🌙 <Price>$5.75</Price>
       </Item>
     </Section>
   );
