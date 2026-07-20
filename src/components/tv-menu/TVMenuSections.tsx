@@ -123,7 +123,7 @@ export function MilkTeasSection() {
         Assam Masala Chai Tea <Price>$7</Price>
       </Item>
       <Item code="27">
-        Jasmine Green Milk Tea <Price>$6.75</Price>
+        Jasmine Green Milk Tea <Price>$7</Price>
       </Item>
       <Item code="28">
         White Peach Oolong Milk Tea <Price>$7</Price>
@@ -149,7 +149,7 @@ export function PureTeasSection() {
     >
       <Item code="1">
         <Colored color={TEA_COLORS.jasmine}>Jasmine</Colored>{' '}
-        <Colored color={TEA_COLORS.magnolia}>Green</Colored> ☁️ <Price>$5.75</Price>
+        <Colored color={TEA_COLORS.magnolia}>Green</Colored> ☁️ <Price>$6</Price>
       </Item>
       <Item code="2">
         <Colored color={TEA_COLORS.magnolia}>Magnolia Green</Colored> ❄️ ☁️ <Price>$6</Price>
