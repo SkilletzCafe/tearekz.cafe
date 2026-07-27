@@ -31,6 +31,11 @@ export const PAGES: Record<string, Page> = {
     name: 'Contact',
     showInNav: true,
   },
+  careers: {
+    path: '/careers',
+    name: 'Careers',
+    showInNav: false,
+  },
   orderOnline: {
     path: '/order-online',
     name: 'Order Online',
