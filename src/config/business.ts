@@ -26,7 +26,7 @@ export const BUSINESS = {
   },
   contact: {
     email: 'hello@tearekz.cafe',
-    careersEmail: 'hello@skilletz.cafe',
+    careersEmail: 'hr@skilletz.cafe',
   },
   hours: {
     mondayToWednesday: {
