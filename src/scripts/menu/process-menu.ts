@@ -91,6 +91,8 @@ interface ProcessedOptionGroupsData {
  * Process the raw Toast menu export into an optimized format for the website
  */
 
+const HIDDEN_MENU_ITEM_NAMES = new Set(['H1 Strawberry Shaved Ice 🍧']);
+
 // Helper function to convert HTTP URLs to HTTPS
 function ensureHttps(url: string | null): string | null {
   if (!url) return null;
@@ -170,7 +172,10 @@ async function processMenu() {
           items: group.items
             .filter(
               (item) =>
-                item.orderableOnline === 'YES' && item.visibility === 'ALL' && item.name !== null
+                item.orderableOnline === 'YES' &&
+                item.visibility === 'ALL' &&
+                item.name !== null &&
+                !HIDDEN_MENU_ITEM_NAMES.has(item.name)
             )
             .map((item) => ({
               name: item.name,

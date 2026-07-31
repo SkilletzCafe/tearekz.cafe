@@ -147,12 +147,6 @@ export const SHOWCASE_IMAGES = [
     src: '/images/drinks/showcase/99-boba-sundae.webp',
   },
   {
-    name: 'Strawberry Shaved Ice 🍧',
-    alt: 'Strawberry Shaved Ice 🍧 drink preview',
-    category: 'Hawaiian Hand-Shaved Ice 🍧',
-    src: '/images/drinks/showcase/h1-strawberry-shaved-ice.webp',
-  },
-  {
     name: 'Magnolia Cloud',
     alt: 'Magnolia Cloud drink preview',
     category: '🆕 Tea-Rek’z Signatures 🦖',

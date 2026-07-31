@@ -4719,13 +4719,6 @@
           "description": "",
           "items": [
             {
-              "name": "H1 Strawberry Shaved Ice 🍧",
-              "guid": "d51a98da-68d7-4b30-8f74-516e5e3d874e",
-              "description": "Fresh strawberries, all-natural strawberry puree, condensed milk",
-              "price": 8,
-              "imageUrl": "https://toasttab.s3.amazonaws.com/menu_service/restaurants/2d838293-2776-4151-b65b-1c9eea686461/MenuItem/2136a41d-7063-4dd2-9629-b40403f66456.png"
-            },
-            {
               "name": "H2 Build You Own Shaved Ice 🍧",
               "guid": "918649b1-5ca3-4588-8c58-f61aa793654e",
               "description": "",
@@ -5376,13 +5369,6 @@
           "guid": "0b41f464-02a9-4682-9ff9-ca0762cd352f",
           "description": "",
           "items": [
-            {
-              "name": "H1 Strawberry Shaved Ice 🍧",
-              "guid": "d51a98da-68d7-4b30-8f74-516e5e3d874e",
-              "description": "Fresh strawberries, all-natural strawberry puree, condensed milk",
-              "price": 8,
-              "imageUrl": "https://toasttab.s3.amazonaws.com/menu_service/restaurants/2d838293-2776-4151-b65b-1c9eea686461/MenuItem/2136a41d-7063-4dd2-9629-b40403f66456.png"
-            },
             {
               "name": "H2 Build You Own Shaved Ice 🍧",
               "guid": "918649b1-5ca3-4588-8c58-f61aa793654e",
