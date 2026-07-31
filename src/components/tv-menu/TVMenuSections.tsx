@@ -357,7 +357,7 @@ export function BlendedDrinksSection() {
       <Item code="72" description="½ lb. organic mango, jasmine or magnolia tea">
         🥭 Jasmine / Magnolia Mango ☁️ <Price>$8</Price>
       </Item>
-      <Item code="73" description="½ lb. organic mango, organic coconut milk">
+      <Item code="73" description="½ lb. organic mango, coconut cream">
         🥭 Coco Mango <Price>$8</Price>
       </Item>
       <Item code="74" description="Golden Mango with chamoy and Tajín">
@@ -365,7 +365,7 @@ export function BlendedDrinksSection() {
       </Item>
       <Item
         code="75"
-        description="organic mango, jasmine tea, organic coconut milk, grapefruit pulp and crystal boba"
+        description="organic mango, jasmine tea, coconut cream, grapefruit pulp and crystal boba"
       >
         🥭 Mango Grapefruit Crystal 🌙 <Price>$8.5</Price>
       </Item>
