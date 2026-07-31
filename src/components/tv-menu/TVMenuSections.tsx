@@ -492,9 +492,6 @@ export function HotDrinksSection() {
       <Item code="91">
         Hazelnut Hot Chocolate 🌙 <Price>$6</Price>
       </Item>
-      <Item code="92">
-        Jasmine Hot Chocolate <Price>$7</Price>
-      </Item>
       <Item code="93">
         Masala Chai Hot Chocolate <Price>$8</Price>
       </Item>
@@ -520,18 +517,6 @@ export function HawaiianShavedIceSection() {
       debugLabel="Hawaiian Shaved Ice section"
       className={styles.shavedIce}
     >
-      <Item
-        code="H1"
-        description={
-          <>
-            Fresh strawberries, all-natural strawberry puree, condensed
-            <br />
-            milk
-          </>
-        }
-      >
-        <Colored color={FRUIT_COLORS.strawberry}>Strawberry</Colored> Shaved Ice <Price>$8</Price>
-      </Item>
       <Item code="H2">
         Build Your Own Shaved Ice <Price>$8</Price>
       </Item>
