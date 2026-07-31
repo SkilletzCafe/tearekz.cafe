@@ -4684,13 +4684,6 @@
               "imageUrl": null
             },
             {
-              "name": "92 Jasmine Hot Chocolate 🍫☕🌙",
-              "guid": "03c70935-3d44-46fc-91c5-e30104278a23",
-              "description": "Deep organic cocoa meets a whisper of jasmine tea for a refined twist on classic hot chocolate — rich, smooth, and lightly floral.",
-              "price": 7,
-              "imageUrl": null
-            },
-            {
               "name": "93 Masala Chai Hot Chocolate 🍫☕🌙",
               "guid": "5e81bce7-e5b9-4773-9ec2-3b2dbd771a79",
               "description": "Organic cocoa blended with steamed milk, warm chai spices, and a subtle touch of Assam tea. Rich, aromatic, and gently spiced.",
@@ -5332,13 +5325,6 @@
               "guid": "ed047973-c0cd-4bb7-8309-a6344a3260d4",
               "description": "Crafted with organic cocoa, fresh milk, and roasted hazelnut for a luxuriously smooth, deeply chocolatey experience.",
               "price": 6,
-              "imageUrl": null
-            },
-            {
-              "name": "92 Jasmine Hot Chocolate 🍫☕🌙",
-              "guid": "03c70935-3d44-46fc-91c5-e30104278a23",
-              "description": "Deep organic cocoa meets a whisper of jasmine tea for a refined twist on classic hot chocolate — rich, smooth, and lightly floral.",
-              "price": 7,
               "imageUrl": null
             },
             {

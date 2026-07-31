@@ -94,6 +94,8 @@ interface ProcessedOptionGroupsData {
 const EXCLUDED_MENU_ITEM_GUIDS = new Set([
   // H1 Strawberry Shaved Ice 🍧 — removed from Tea-Rek'z menu on 2026-07-31.
   'd51a98da-68d7-4b30-8f74-516e5e3d874e',
+  // 92 Jasmine Hot Chocolate 🍫☕🌙 — removed from Tea-Rek'z menu on 2026-07-31.
+  '03c70935-3d44-46fc-91c5-e30104278a23',
 ]);
 
 // Helper function to convert HTTP URLs to HTTPS
