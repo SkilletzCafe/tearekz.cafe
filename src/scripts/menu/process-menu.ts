@@ -98,7 +98,9 @@ const EXCLUDED_MENU_ITEM_GUIDS = new Set([
   '03c70935-3d44-46fc-91c5-e30104278a23',
 ]);
 
-const EXCLUDED_OPTION_ITEM_GUIDS = new Set([
+const SHAVED_ICE_TOPPINGS_OPTION_GROUP_GUID = '0d09c8b3-6860-4cc1-bfb6-0b5fc7795dcb';
+
+const EXCLUDED_SHAVED_ICE_TOPPING_GUIDS = new Set([
   // Fresh Strawberries — removed from Build Your Own Shaved Ice add toppings on 2026-07-31.
   '624a7631-f897-4924-836e-696d15a37129',
 ]);
@@ -127,7 +129,11 @@ function extractOptionGroups(
               maxSelections: optionGroup.maxSelections,
               pricingMode: optionGroup.pricingMode,
               items: optionGroup.items
-                .filter((item) => !EXCLUDED_OPTION_ITEM_GUIDS.has(item.guid))
+                .filter(
+                  (item) =>
+                    optionGroup.guid !== SHAVED_ICE_TOPPINGS_OPTION_GROUP_GUID ||
+                    !EXCLUDED_SHAVED_ICE_TOPPING_GUIDS.has(item.guid)
+                )
                 .map((item) => ({
                   name: item.name,
                   guid: item.guid,
