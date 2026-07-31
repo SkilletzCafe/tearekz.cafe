@@ -91,7 +91,17 @@ interface ProcessedOptionGroupsData {
  * Process the raw Toast menu export into an optimized format for the website
  */
 
-const HIDDEN_MENU_ITEM_NAMES = new Set(['H1 Strawberry Shaved Ice 🍧']);
+const EXCLUDED_MENU_ITEM_GUIDS = new Set([
+  // H1 Strawberry Shaved Ice 🍧 — removed from Tea-Rek'z menu on 2026-07-31.
+  'd51a98da-68d7-4b30-8f74-516e5e3d874e',
+  // 92 Jasmine Hot Chocolate 🍫☕🌙 — removed from Tea-Rek'z menu on 2026-07-31.
+  '03c70935-3d44-46fc-91c5-e30104278a23',
+]);
+
+const EXCLUDED_OPTION_GROUP_ITEM_GUIDS = new Set([
+  // Fresh Strawberries — removed from Build Your Own Shaved Ice add toppings on 2026-07-31.
+  '624a7631-f897-4924-836e-696d15a37129',
+]);
 
 // Helper function to convert HTTP URLs to HTTPS
 function ensureHttps(url: string | null): string | null {
@@ -116,14 +126,16 @@ function extractOptionGroups(
               minSelections: optionGroup.minSelections,
               maxSelections: optionGroup.maxSelections,
               pricingMode: optionGroup.pricingMode,
-              items: optionGroup.items.map((item) => ({
-                name: item.name,
-                guid: item.guid,
-                description: item.description,
-                price: item.price,
-                orderableOnline: item.orderableOnline,
-                visibility: item.visibility,
-              })),
+              items: optionGroup.items
+                .filter((item) => !EXCLUDED_OPTION_GROUP_ITEM_GUIDS.has(item.guid))
+                .map((item) => ({
+                  name: item.name,
+                  guid: item.guid,
+                  description: item.description,
+                  price: item.price,
+                  orderableOnline: item.orderableOnline,
+                  visibility: item.visibility,
+                })),
             });
           }
         }
@@ -175,7 +187,7 @@ async function processMenu() {
                 item.orderableOnline === 'YES' &&
                 item.visibility === 'ALL' &&
                 item.name !== null &&
-                !HIDDEN_MENU_ITEM_NAMES.has(item.name)
+                !EXCLUDED_MENU_ITEM_GUIDS.has(item.guid)
             )
             .map((item) => ({
               name: item.name,

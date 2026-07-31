@@ -492,9 +492,6 @@ export function HotDrinksSection() {
       <Item code="91">
         Hazelnut Hot Chocolate 🌙 <Price>$6</Price>
       </Item>
-      <Item code="92">
-        Jasmine Hot Chocolate <Price>$7</Price>
-      </Item>
       <Item code="93">
         Masala Chai Hot Chocolate <Price>$8</Price>
       </Item>

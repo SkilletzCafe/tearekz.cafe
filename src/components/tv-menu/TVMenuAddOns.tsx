@@ -123,7 +123,6 @@ export function ShavedIceBuilderOptions() {
       <br />
       <b>Add toppings (choose up to 3):</b>
       <br />
-      <Colored color={FRUIT_COLORS.strawberry}>Fresh Strawberries</Colored> ·{' '}
       <Colored color={FRUIT_COLORS.mango}>Diced Mango</Colored> · Grapefruit Pulp ·{' '}
       <Colored color={TOPPING_COLORS.taro}>Taro</Colored>
       <br />
