@@ -98,6 +98,11 @@ const EXCLUDED_MENU_ITEM_GUIDS = new Set([
   '03c70935-3d44-46fc-91c5-e30104278a23',
 ]);
 
+const EXCLUDED_OPTION_ITEM_GUIDS = new Set([
+  // Fresh Strawberries — removed from Build Your Own Shaved Ice add toppings on 2026-07-31.
+  '624a7631-f897-4924-836e-696d15a37129',
+]);
+
 // Helper function to convert HTTP URLs to HTTPS
 function ensureHttps(url: string | null): string | null {
   if (!url) return null;
@@ -121,14 +126,16 @@ function extractOptionGroups(
               minSelections: optionGroup.minSelections,
               maxSelections: optionGroup.maxSelections,
               pricingMode: optionGroup.pricingMode,
-              items: optionGroup.items.map((item) => ({
-                name: item.name,
-                guid: item.guid,
-                description: item.description,
-                price: item.price,
-                orderableOnline: item.orderableOnline,
-                visibility: item.visibility,
-              })),
+              items: optionGroup.items
+                .filter((item) => !EXCLUDED_OPTION_ITEM_GUIDS.has(item.guid))
+                .map((item) => ({
+                  name: item.name,
+                  guid: item.guid,
+                  description: item.description,
+                  price: item.price,
+                  orderableOnline: item.orderableOnline,
+                  visibility: item.visibility,
+                })),
             });
           }
         }

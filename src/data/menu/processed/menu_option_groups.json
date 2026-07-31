@@ -2944,13 +2944,6 @@
       "pricingMode": "INCLUDED",
       "items": [
         {
-          "name": "Fresh Strawberries",
-          "guid": "624a7631-f897-4924-836e-696d15a37129",
-          "description": "",
-          "price": 0,
-          "orderableOnline": "YES"
-        },
-        {
           "name": "Diced Mango",
           "guid": "072343dd-6e83-46f9-bbf5-ad502226921a",
           "description": "",
