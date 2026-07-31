@@ -35,7 +35,11 @@ if (!existsSync(manifestPath)) {
 
 const raw = readFileSync(manifestPath, 'utf8');
 const manifest = JSON.parse(raw) as DrinkImageManifestEntry[];
-const cutouts = manifest.filter((entry) => entry.status === 'cutout' && entry.assets?.tv);
+const HIDDEN_SHOWCASE_SLUGS = new Set(['h1-strawberry-shaved-ice']);
+
+const cutouts = manifest.filter(
+  (entry) => entry.status === 'cutout' && entry.assets?.tv && !HIDDEN_SHOWCASE_SLUGS.has(entry.slug)
+);
 
 rmSync(outputDir, { recursive: true, force: true });
 mkdirSync(outputDir, { recursive: true });
