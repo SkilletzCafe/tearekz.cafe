@@ -91,6 +91,11 @@ interface ProcessedOptionGroupsData {
  * Process the raw Toast menu export into an optimized format for the website
  */
 
+const EXCLUDED_MENU_ITEM_GUIDS = new Set([
+  // H1 Strawberry Shaved Ice 🍧 — removed from Tea-Rek'z menu on 2026-07-31.
+  'd51a98da-68d7-4b30-8f74-516e5e3d874e',
+]);
+
 // Helper function to convert HTTP URLs to HTTPS
 function ensureHttps(url: string | null): string | null {
   if (!url) return null;
@@ -170,7 +175,10 @@ async function processMenu() {
           items: group.items
             .filter(
               (item) =>
-                item.orderableOnline === 'YES' && item.visibility === 'ALL' && item.name !== null
+                item.orderableOnline === 'YES' &&
+                item.visibility === 'ALL' &&
+                item.name !== null &&
+                !EXCLUDED_MENU_ITEM_GUIDS.has(item.guid)
             )
             .map((item) => ({
               name: item.name,
