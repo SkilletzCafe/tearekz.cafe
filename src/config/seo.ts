@@ -7,6 +7,10 @@ export const SEO = {
   formatTitle: (page?: string) => (page ? `${page} | ${BASE_TITLE}` : BASE_TITLE),
 
   description: {
-    default: `Premium boba tea and specialty drinks in ${LOCATION}. Serving fresh, handcrafted bubble tea, milk tea, fruit tea, and specialty beverages daily. Open ${BUSINESS.hours.mondayToWednesday.days} ${BUSINESS.hours.mondayToWednesday.display}, ${BUSINESS.hours.thursdayFriday.days} ${BUSINESS.hours.thursdayFriday.display}, ${BUSINESS.hours.weekend.days} ${BUSINESS.hours.weekend.display}. Fresh, quality ingredients in every cup.`,
+    default: `Premium boba tea and specialty drinks in ${LOCATION}. Serving fresh, handcrafted bubble tea, milk tea, fruit tea, and specialty beverages daily. Open ${Object.values(
+      BUSINESS.hours
+    )
+      .map(({ days, display }) => `${days} ${display}`)
+      .join(', ')}. Fresh, quality ingredients in every cup.`,
   },
 } as const;

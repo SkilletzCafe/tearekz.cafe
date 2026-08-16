@@ -1,54 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
     <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-      
+
             <url>
               <loc>https://tearekz.cafe/</loc>
-              <lastmod>2026-07-31T09:53:07.190Z</lastmod>
+              <lastmod>2026-08-16T01:22:35.978Z</lastmod>
               <changefreq>daily</changefreq>
               <priority>1.0</priority>
             </url>
-          
+
             <url>
               <loc>https://tearekz.cafe/menu</loc>
-              <lastmod>2026-07-31T09:53:07.190Z</lastmod>
+              <lastmod>2026-08-16T01:22:35.979Z</lastmod>
               <changefreq>daily</changefreq>
               <priority>0.8</priority>
             </url>
-          
+
             <url>
               <loc>https://tearekz.cafe/our-story</loc>
-              <lastmod>2026-07-31T09:53:07.190Z</lastmod>
+              <lastmod>2026-08-16T01:22:35.979Z</lastmod>
               <changefreq>daily</changefreq>
               <priority>0.8</priority>
             </url>
-          
+
             <url>
               <loc>https://tearekz.cafe/press</loc>
-              <lastmod>2026-07-31T09:53:07.190Z</lastmod>
+              <lastmod>2026-08-16T01:22:35.979Z</lastmod>
               <changefreq>daily</changefreq>
               <priority>0.8</priority>
             </url>
-          
+
             <url>
               <loc>https://tearekz.cafe/contact</loc>
-              <lastmod>2026-07-31T09:53:07.190Z</lastmod>
+              <lastmod>2026-08-16T01:22:35.979Z</lastmod>
               <changefreq>daily</changefreq>
               <priority>0.8</priority>
             </url>
-          
+
             <url>
               <loc>https://tearekz.cafe/careers</loc>
-              <lastmod>2026-07-31T09:53:07.190Z</lastmod>
+              <lastmod>2026-08-16T01:22:35.979Z</lastmod>
               <changefreq>daily</changefreq>
               <priority>0.8</priority>
             </url>
-          
+
             <url>
               <loc>https://tearekz.cafe/order-online</loc>
-              <lastmod>2026-07-31T09:53:07.190Z</lastmod>
+              <lastmod>2026-08-16T01:22:35.979Z</lastmod>
               <changefreq>daily</changefreq>
               <priority>0.8</priority>
             </url>
-          
+
     </urlset>
-  
