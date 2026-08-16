@@ -89,16 +89,11 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
             <div className={styles.infoItem}>
               <FontAwesomeIcon icon={faClock} />
               <div>
-                <p>
-                  {BUSINESS.hours.mondayToWednesday.days}:{' '}
-                  {BUSINESS.hours.mondayToWednesday.display}
-                </p>
-                <p>
-                  {BUSINESS.hours.thursdayFriday.days}: {BUSINESS.hours.thursdayFriday.display}
-                </p>
-                <p>
-                  {BUSINESS.hours.weekend.days}: {BUSINESS.hours.weekend.display}
-                </p>
+                {Object.values(BUSINESS.hours).map((hours) => (
+                  <p key={hours.days}>
+                    {hours.days}: {hours.display}
+                  </p>
+                ))}
               </div>
             </div>
 

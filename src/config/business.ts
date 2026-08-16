@@ -36,16 +36,30 @@ export const BUSINESS = {
       close: '19:00',
       display: '12pm - 7pm',
     },
-    thursdayFriday: {
-      days: 'Thursday - Friday',
-      dayList: ['Thursday', 'Friday'],
+    thursday: {
+      days: 'Thursday',
+      dayList: ['Thursday'],
       open: '12:00',
       close: '20:00',
       display: '12pm - 8pm',
     },
-    weekend: {
-      days: 'Saturday - Sunday',
-      dayList: ['Saturday', 'Sunday'],
+    friday: {
+      days: 'Friday',
+      dayList: ['Friday'],
+      open: '12:00',
+      close: '21:00',
+      display: '12pm - 9pm',
+    },
+    saturday: {
+      days: 'Saturday',
+      dayList: ['Saturday'],
+      open: '10:00',
+      close: '21:00',
+      display: '10am - 9pm',
+    },
+    sunday: {
+      days: 'Sunday',
+      dayList: ['Sunday'],
       open: '10:00',
       close: '20:00',
       display: '10am - 8pm',

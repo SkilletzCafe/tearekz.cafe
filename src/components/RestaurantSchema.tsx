@@ -25,26 +25,12 @@ export const RestaurantSchema = ({ description }: RestaurantSchemaProps) => {
     },
     url: `https://${BUSINESS.domain}`,
     telephone: BUSINESS.location.phone,
-    openingHoursSpecification: [
-      {
-        '@type': 'OpeningHoursSpecification',
-        dayOfWeek: BUSINESS.hours.mondayToWednesday.dayList,
-        opens: BUSINESS.hours.mondayToWednesday.open,
-        closes: BUSINESS.hours.mondayToWednesday.close,
-      },
-      {
-        '@type': 'OpeningHoursSpecification',
-        dayOfWeek: BUSINESS.hours.thursdayFriday.dayList,
-        opens: BUSINESS.hours.thursdayFriday.open,
-        closes: BUSINESS.hours.thursdayFriday.close,
-      },
-      {
-        '@type': 'OpeningHoursSpecification',
-        dayOfWeek: BUSINESS.hours.weekend.dayList,
-        opens: BUSINESS.hours.weekend.open,
-        closes: BUSINESS.hours.weekend.close,
-      },
-    ],
+    openingHoursSpecification: Object.values(BUSINESS.hours).map((hours) => ({
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: hours.dayList,
+      opens: hours.open,
+      closes: hours.close,
+    })),
     servesCuisine: ['Bubble Tea', 'Boba Tea', 'Asian Drinks', 'Tea'],
     priceRange: '$',
     image: 'https://tearekz.cafe/images/tearekz_shop.jpg',
