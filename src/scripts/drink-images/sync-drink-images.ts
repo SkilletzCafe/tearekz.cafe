@@ -35,7 +35,7 @@ if (!existsSync(manifestPath)) {
 
 const raw = readFileSync(manifestPath, 'utf8');
 const manifest = JSON.parse(raw) as DrinkImageManifestEntry[];
-const HIDDEN_SHOWCASE_SLUGS = new Set(['h1-strawberry-shaved-ice']);
+const HIDDEN_SHOWCASE_SLUGS = new Set(['h1-strawberry-shaved-ice', '99-boba-sundae']);
 
 const cutouts = manifest.filter(
   (entry) => entry.status === 'cutout' && entry.assets?.tv && !HIDDEN_SHOWCASE_SLUGS.has(entry.slug)
