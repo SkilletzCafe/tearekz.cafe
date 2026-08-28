@@ -64,8 +64,7 @@ export function ToppingsBox() {
         <ToppingItem icon="⚫">Boba (Tapioca Pearls)</ToppingItem>
         <ToppingItem icon="🔴">
           Popping Boba: <Colored color={FRUIT_COLORS.mango}>Mango</Colored> ·{' '}
-          <Colored color={FRUIT_COLORS.strawberry}>Strawberry</Colored> ·{' '}
-          <Colored color={FRUIT_COLORS.lychee}>Lychee</Colored>
+          <Colored color={FRUIT_COLORS.strawberry}>Strawberry</Colored>
         </ToppingItem>
         <ToppingItem icon="⭐">
           Jelly: <Colored color={FRUIT_COLORS.mango}>Mango Star</Colored> ·{' '}
@@ -127,8 +126,7 @@ export function ShavedIceBuilderOptions() {
       <Colored color={TOPPING_COLORS.taro}>Taro</Colored>
       <br />
       <b>Popping Boba:</b> <Colored color={FRUIT_COLORS.mango}>Mango</Colored> ·{' '}
-      <Colored color={FRUIT_COLORS.strawberry}>Strawberry</Colored> ·{' '}
-      <Colored color={FRUIT_COLORS.lychee}>Lychee</Colored>
+      <Colored color={FRUIT_COLORS.strawberry}>Strawberry</Colored>
       <br />
       <b>Jelly:</b> <Colored color={FRUIT_COLORS.mango}>Mango Star</Colored> ·{' '}
       <Colored color={FRUIT_COLORS.strawberry}>Strawberry Heart</Colored> ·{' '}
