@@ -69,7 +69,7 @@ export function ToppingsBox() {
         <ToppingItem icon="⭐">
           Jelly: <Colored color={FRUIT_COLORS.mango}>Mango Star</Colored> ·{' '}
           <Colored color={FRUIT_COLORS.strawberry}>Strawberry Heart</Colored> ·{' '}
-          <Colored color={FRUIT_COLORS.lychee}>Lychee</Colored>
+          <Colored color={FRUIT_COLORS.lychee}>Lychee Star</Colored>
         </ToppingItem>
         <ToppingItem icon="🟤">
           Agar Boba: <Colored color={TOPPING_COLORS.crystal}>Crystal</Colored> ·{' '}
@@ -130,7 +130,7 @@ export function ShavedIceBuilderOptions() {
       <br />
       <b>Jelly:</b> <Colored color={FRUIT_COLORS.mango}>Mango Star</Colored> ·{' '}
       <Colored color={FRUIT_COLORS.strawberry}>Strawberry Heart</Colored> ·{' '}
-      <Colored color={FRUIT_COLORS.lychee}>Lychee</Colored>
+      <Colored color={FRUIT_COLORS.lychee}>Lychee Star</Colored>
       <br />
       <b>Agar Boba:</b> <Colored color={TOPPING_COLORS.crystal}>Crystal</Colored> ·{' '}
       <Colored color={TOPPING_COLORS.brownSugar}>Brown Sugar</Colored>
