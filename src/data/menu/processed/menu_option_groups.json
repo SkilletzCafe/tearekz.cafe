@@ -2069,13 +2069,6 @@
           "orderableOnline": "YES"
         },
         {
-          "name": "Lychee Popping Boba ⚪️",
-          "guid": "9d1063c9-acde-4988-bea1-1612e28607fe",
-          "description": "Bursting lychee-flavored boba",
-          "price": 0.75,
-          "orderableOnline": "YES"
-        },
-        {
           "name": "Mango Star Jelly ⭐️",
           "guid": "0f46f70c-ff24-4650-97aa-72cac7215a2e",
           "description": "Star-shaped mango jelly",
@@ -2090,7 +2083,7 @@
           "orderableOnline": "YES"
         },
         {
-          "name": "Lychee Jelly 🤍",
+          "name": "Lychee Star Jelly ☆",
           "guid": "dacfef9b-5a8b-4c94-b0e2-398d2f9c2f31",
           "description": "Delicate lychee jelly",
           "price": 0.75,
@@ -2282,77 +2275,77 @@
       "pricingMode": "ADJUSTS_PRICE",
       "items": [
         {
-          "name": "100% sweet (cane sugar, already included with condensed milk)",
+          "name": "100% sweet (cane sugar, default with condensed milk)",
           "guid": "e372683a-31bc-4299-9a74-96e501a73285",
           "description": "",
           "price": 0,
           "orderableOnline": "YES"
         },
         {
-          "name": "75% sweet (cane sugar, not available with condensed milk)",
+          "name": "75% sweet (cane sugar, N/A with condensed milk)",
           "guid": "d91062cd-55af-4c1b-8804-1d7e9f30b6bc",
           "description": "",
           "price": 0,
           "orderableOnline": "YES"
         },
         {
-          "name": "50% sweet (cane sugar, not available with condensed milk)",
+          "name": "50% sweet (cane sugar, N/A with condensed milk)",
           "guid": "9ecfc17c-50e7-4768-8b84-a538f723f13d",
           "description": "",
           "price": 0,
           "orderableOnline": "YES"
         },
         {
-          "name": "25% sweet (cane sugar, not available with condensed milk)",
+          "name": "25% sweet (cane sugar,  N/A with condensed milk)",
           "guid": "31087d9f-e981-4a33-bbfd-0b76501fcbba",
           "description": "",
           "price": 0,
           "orderableOnline": "YES"
         },
         {
-          "name": "10% sweet (cane sugar, not available with condensed milk)",
+          "name": "10% sweet (cane sugar, N/A with condensed milk)",
           "guid": "ccfbaa98-99ff-4232-900f-841d65642ca5",
           "description": "",
           "price": 0,
           "orderableOnline": "YES"
         },
         {
-          "name": "0% sweet (cane sugar, not available with condensed milk)",
+          "name": "0% sweet (cane sugar,  N/A with condensed milk)",
           "guid": "22829255-4f0e-452a-b033-4c393d0b8354",
           "description": "",
           "price": 0,
           "orderableOnline": "YES"
         },
         {
-          "name": "100% sweet (allulose + monk fruit, not available with condensed milk)",
+          "name": "100% sweet (allulose + monk fruit,  N/A with condensed milk)",
           "guid": "68d05d6e-8b57-4c08-b9a5-21eb318101da",
           "description": "",
           "price": 0.5,
           "orderableOnline": "YES"
         },
         {
-          "name": "75% sweet (allulose + monk fruit, not available with condensed milk)",
+          "name": "75% sweet (allulose + monk fruit, N/A with condensed milk)",
           "guid": "2a2e5919-b8f4-4df7-82b4-41918436965a",
           "description": "",
           "price": 0.5,
           "orderableOnline": "YES"
         },
         {
-          "name": "50% sweet (allulose + monk fruit, not available with condensed milk)",
+          "name": "50% sweet (allulose + monk fruit, N/A with condensed milk)",
           "guid": "d0775323-18d7-442b-9a72-6dd05660b870",
           "description": "",
           "price": 0.5,
           "orderableOnline": "YES"
         },
         {
-          "name": "25% sweet (allulose + monk fruit, not available with condensed milk)",
+          "name": "25% sweet (allulose + monk fruit, N/A with condensed milk)",
           "guid": "bc1fea85-850e-417a-bbe2-5a45cbb3dfdd",
           "description": "",
           "price": 0.5,
           "orderableOnline": "YES"
         },
         {
-          "name": "10% sweet (allulose, not available with condensed milk)",
+          "name": "10% sweet (allulose, N/A with condensed milk)",
           "guid": "4c9807b8-8498-499a-8b29-d89987117964",
           "description": "",
           "price": 0.5,
@@ -2500,13 +2493,6 @@
         {
           "name": "Raspberry",
           "guid": "46ce2b0b-f0e3-400e-96f7-34674de24aaf",
-          "description": "",
-          "price": 0,
-          "orderableOnline": "YES"
-        },
-        {
-          "name": "Pineapple",
-          "guid": "c2203e23-7af4-4341-8a79-90bf3cdbc7a5",
           "description": "",
           "price": 0,
           "orderableOnline": "YES"
@@ -2907,22 +2893,6 @@
       ]
     },
     {
-      "name": "No Condensed Milk",
-      "guid": "30762107-c554-4585-831b-0c12fdb4de9b",
-      "minSelections": 0,
-      "maxSelections": 1,
-      "pricingMode": "ADJUSTS_PRICE",
-      "items": [
-        {
-          "name": "No Condensed Milk",
-          "guid": "aba63ee0-b626-4e8a-ae5d-dbc7e161c1ab",
-          "description": "",
-          "price": 0,
-          "orderableOnline": "YES"
-        }
-      ]
-    },
-    {
       "name": "Choose a base flavor",
       "guid": "b518bcab-1704-423b-8a76-6d4bc28e8089",
       "minSelections": 1,
@@ -2985,7 +2955,7 @@
       "guid": "0d09c8b3-6860-4cc1-bfb6-0b5fc7795dcb",
       "minSelections": 0,
       "maxSelections": 3,
-      "pricingMode": "INCLUDED",
+      "pricingMode": "FIXED_PRICE",
       "items": [
         {
           "name": "Diced Mango 🥭",
@@ -3016,13 +2986,6 @@
           "orderableOnline": "YES"
         },
         {
-          "name": "Lychee Popping Boba ⚪️",
-          "guid": "9d1063c9-acde-4988-bea1-1612e28607fe",
-          "description": "Bursting lychee-flavored boba",
-          "price": 0,
-          "orderableOnline": "YES"
-        },
-        {
           "name": "Mango Star Jelly ⭐️",
           "guid": "0f46f70c-ff24-4650-97aa-72cac7215a2e",
           "description": "Star-shaped mango jelly",
@@ -3037,7 +3000,7 @@
           "orderableOnline": "YES"
         },
         {
-          "name": "Lychee Jelly 🤍",
+          "name": "Lychee Star Jelly ☆",
           "guid": "dacfef9b-5a8b-4c94-b0e2-398d2f9c2f31",
           "description": "Delicate lychee jelly",
           "price": 0,

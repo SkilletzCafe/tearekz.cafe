@@ -112,7 +112,12 @@ export default function Menu({ menuData, menuOptionGroupsData }: MenuPageProps) 
 
   // Define excluded menu groups by selected tab
   const excludedGroups: Partial<Record<MenuTab, string[]>> = {
-    "Tea-Rek'z": ['Grab n Go', 'Archived Items (Not Displayed)', 'Warm Add-Ons 🍜'],
+    "Tea-Rek'z": [
+      'Grab n Go',
+      'Archived Items (Not Displayed)',
+      'Warm Add-Ons 🍜',
+      'Barista Add-Ons',
+    ],
     // Add other exclusions as needed
   };
 
