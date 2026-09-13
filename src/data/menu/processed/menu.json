@@ -4595,7 +4595,7 @@
             {
               "name": "73 Coco Mango 🥥🥭🌙",
               "guid": "b0212c8a-b50f-40a0-8ca7-f0d23d06d144",
-              "description": "Over half a pound organic mangos + golden cane sugar + coconut cream.",
+              "description": "organic mangos + coconut cream",
               "price": 8,
               "imageUrl": "https://toasttab.s3.amazonaws.com/restaurants/restaurant-244719000000000000/menu/items/5/item-1300000007709137805_1783595759.png"
             },
@@ -4707,30 +4707,9 @@
             {
               "name": "H2 Build You Own Shaved Ice 🍧",
               "guid": "918649b1-5ca3-4588-8c58-f61aa793654e",
-              "description": "",
+              "description": "Choose up to 3 free toppings!",
               "price": 8,
               "imageUrl": null
-            }
-          ]
-        },
-        {
-          "name": "Warm Add-Ons 🍜",
-          "guid": "ea0b4b0b-557b-4668-8ea7-ef2e67bbc7e5",
-          "description": "",
-          "items": [
-            {
-              "name": "Nongshim Gourmet Spicy (Red)",
-              "guid": "5a65a0c3-a7ba-4e4e-9da2-924d54cde66c",
-              "description": "Please open lid halfway, add packets, and give to barista for hot water — RO-filtered & multi-remineralized.",
-              "price": 5,
-              "imageUrl": "https://toasttab.s3.amazonaws.com/restaurants/restaurant-244719000000000000/menu/items/6/item-1300000008636419186_1770462286.jpg"
-            },
-            {
-              "name": "Nongshim Tonkotsu",
-              "guid": "4d1dd9ee-1d18-452e-8073-836fb83eeb91",
-              "description": "Please open lid halfway, add packets, and give to barista for hot water — RO-filtered & multi-remineralized.",
-              "price": 5.5,
-              "imageUrl": "https://toasttab.s3.amazonaws.com/restaurants/restaurant-244719000000000000/menu/items/8/item-1300000008636419188_1770462305.jpg"
             }
           ]
         },
@@ -4751,6 +4730,20 @@
               "guid": "c1e2776c-2244-447d-870d-2ef84e7a77a0",
               "description": "",
               "price": 20,
+              "imageUrl": null
+            }
+          ]
+        },
+        {
+          "name": "Barista Add-Ons",
+          "guid": "67aa7b68-818e-45a6-ad28-413674171825",
+          "description": null,
+          "items": [
+            {
+              "name": "Boba",
+              "guid": "af8cf2b1-3b4e-46a1-8c18-44396b9e9801",
+              "description": "",
+              "price": 0.75,
               "imageUrl": null
             }
           ]
@@ -5232,7 +5225,7 @@
             {
               "name": "73 Coco Mango 🥥🥭🌙",
               "guid": "b0212c8a-b50f-40a0-8ca7-f0d23d06d144",
-              "description": "Over half a pound organic mangos + golden cane sugar + coconut cream.",
+              "description": "organic mangos + coconut cream",
               "price": 8,
               "imageUrl": "https://toasttab.s3.amazonaws.com/restaurants/restaurant-244719000000000000/menu/items/5/item-1300000007709137805_1783595759.png"
             },
@@ -5344,30 +5337,9 @@
             {
               "name": "H2 Build You Own Shaved Ice 🍧",
               "guid": "918649b1-5ca3-4588-8c58-f61aa793654e",
-              "description": "",
+              "description": "Choose up to 3 free toppings!",
               "price": 8,
               "imageUrl": null
-            }
-          ]
-        },
-        {
-          "name": "Warm Add-Ons 🍜",
-          "guid": "a39af5bc-c4ef-4c94-bf5d-0070bdeb743f",
-          "description": "",
-          "items": [
-            {
-              "name": "Nongshim Gourmet Spicy (Red)",
-              "guid": "5a65a0c3-a7ba-4e4e-9da2-924d54cde66c",
-              "description": "Please open lid halfway, add packets, and give to barista for hot water — RO-filtered & multi-remineralized.",
-              "price": 5,
-              "imageUrl": "https://toasttab.s3.amazonaws.com/restaurants/restaurant-244719000000000000/menu/items/6/item-1300000008636419186_1770462286.jpg"
-            },
-            {
-              "name": "Nongshim Tonkotsu",
-              "guid": "4d1dd9ee-1d18-452e-8073-836fb83eeb91",
-              "description": "Please open lid halfway, add packets, and give to barista for hot water — RO-filtered & multi-remineralized.",
-              "price": 5.5,
-              "imageUrl": "https://toasttab.s3.amazonaws.com/restaurants/restaurant-244719000000000000/menu/items/8/item-1300000008636419188_1770462305.jpg"
             }
           ]
         },
@@ -5388,6 +5360,20 @@
               "guid": "c1e2776c-2244-447d-870d-2ef84e7a77a0",
               "description": "",
               "price": 20,
+              "imageUrl": null
+            }
+          ]
+        },
+        {
+          "name": "Barista Add-Ons",
+          "guid": "c4ffbc19-4240-436f-80cf-5ea145674b04",
+          "description": "",
+          "items": [
+            {
+              "name": "Boba",
+              "guid": "af8cf2b1-3b4e-46a1-8c18-44396b9e9801",
+              "description": "",
+              "price": 0.75,
               "imageUrl": null
             }
           ]
