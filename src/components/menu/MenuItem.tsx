@@ -2,6 +2,8 @@ import Image from 'next/image';
 
 import { MenuItemState, MenuItem as MenuItemType } from '@/types/menu';
 
+import { getMenuItemDisplayName } from '@/utils/menuItemName';
+
 import styles from '@/styles/Menu.module.css';
 
 interface MenuItemProps {
@@ -26,6 +28,7 @@ export function MenuItem({
   sectionGuid,
 }: MenuItemProps) {
   const uniqueId = sectionGuid ? `${sectionGuid}-${item.guid}` : item.guid;
+  const displayName = getMenuItemDisplayName(item.name);
 
   return (
     <div
@@ -45,7 +48,7 @@ export function MenuItem({
             {!itemState.isLoaded && <div className={styles.imagePlaceholder} aria-hidden="true" />}
             <Image
               src={item.imageUrl}
-              alt={`Photo of ${item.name}`}
+              alt={`Photo of ${displayName}`}
               width={1980}
               height={1080}
               className={`${styles.image} ${itemState.isLoaded ? styles.loaded : ''}`}
@@ -65,7 +68,7 @@ export function MenuItem({
       <div className={styles.itemDetails}>
         <div className={styles.itemHeader}>
           <h3 id={`item-name-${uniqueId}`} className={styles.itemName}>
-            {item.name}
+            {displayName}
           </h3>
           <span className={styles.price}>${item.price.toFixed(2)}</span>
         </div>
