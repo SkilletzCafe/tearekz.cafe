@@ -1,2 +1,0 @@
-(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[509],{5059:(_,n,u)=>{"use strict";u.r(n),u.d(n,{default:()=>t});var e=u(516),r=u(3451);function t(){return(0,e.jsx)(r.g,{side:"right"})}},5784:(_,n,u)=>{(window.__NEXT_P=window.__NEXT_P||[]).push(["/tv/menu-right",function(){return u(5059)}])}},_=>{var n=n=>_(_.s=n);_.O(0,[451,636,593,792],()=>n(5784)),_N_E=_.O()}]);
-//# sourceMappingURL=menu-right-6c0ee9607e223feb.js.map
