@@ -12,6 +12,7 @@ import { LANDSCAPE_HEIGHT_SAFE_IN, printMenuLandscapeStyles } from '@/config/pri
 
 import { PrintMenuHeader } from '@/components/menu/PrintMenuHeader';
 
+import { getMenuItemDisplayName } from '@/utils/menuItemName';
 import { loadMenuData, loadMenuOptionGroupsData } from '@/utils/menu_static';
 
 import styles from '@/styles/MenuPrint.module.css';
@@ -370,7 +371,9 @@ const TeaRekzPrint: React.FC<TeaRekzPrintProps> = ({ teaRekzMenu, optionGroups }
             {group.items.map((item) => (
               <div key={item.guid} className={styles.menuItem}>
                 <div className={`${styles.itemRow} item-row`}>
-                  <span className={`${styles.itemName} item-name`}>{item.name}</span>
+                  <span className={`${styles.itemName} item-name`}>
+                    {getMenuItemDisplayName(item.name)}
+                  </span>
                   <span className={`${styles.itemPrice} item-price`}>
                     {Number.isInteger(item.price)
                       ? item.price
