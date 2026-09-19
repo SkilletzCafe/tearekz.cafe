@@ -492,13 +492,13 @@ export function HotDrinksSection() {
       <Item code="91">
         Hazelnut Hot Chocolate 🌙 <Price>$6</Price>
       </Item>
-      <Item code="93">
+      <Item code="92">
         Masala Chai Hot Chocolate <Price>$7</Price>
       </Item>
-      <Item code="94">
+      <Item code="93">
         Hot Honey Yuzu Tea 🌙 <Price>$5</Price>
       </Item>
-      <Item code="95">
+      <Item code="94">
         Hot Ginger Honey Yuzu Tea 🌙 <Price>$6</Price>
       </Item>
     </Section>
