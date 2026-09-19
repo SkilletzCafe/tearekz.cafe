@@ -140,11 +140,11 @@ export function PureTeasSection() {
     <Section
       title={
         <>
-          <Emoji>🫖</Emoji> Pure Teas
+          <Emoji>🫖</Emoji> Iced Teas
         </>
       }
       semanticClassName="section-pure-teas"
-      debugLabel="Pure Teas section"
+      debugLabel="Iced Teas section"
       className={styles.pureTeas}
     >
       <Item code="1">

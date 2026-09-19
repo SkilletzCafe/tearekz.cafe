@@ -10,7 +10,6 @@ import {
   MilkDrinksSection,
   MilkTeasSection,
   PureTeasSection,
-  SignaturesSection,
 } from './TVMenuSections';
 
 export function LeftTVMenu({ debugRegions = false }: { debugRegions?: boolean }) {
@@ -20,13 +19,11 @@ export function LeftTVMenu({ debugRegions = false }: { debugRegions?: boolean })
     <div ref={boardRef} className={`${styles.board} ${styles.leftBoard}`}>
       <main className={styles.leftGrid}>
         <div className={`${styles.menuColumn} ${styles.leftCol1}`}>
-          <SignaturesSection />
+          <PureTeasSection />
         </div>
 
         <div className={`${styles.menuColumn} ${styles.leftCol2}`}>
           <MilkTeasSection />
-
-          <PureTeasSection />
         </div>
 
         <div className={`${styles.menuColumn} ${styles.leftCol3}`}>
