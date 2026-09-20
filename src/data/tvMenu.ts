@@ -44,7 +44,7 @@ export const milkTeas: TVMenuSectionData = {
       code: '20',
       name: 'Brown Sugar Milk Tea',
       description: '(Decaf Available)',
-      price: '$8',
+      price: '$7.5',
     },
     { code: '21', name: 'Black Milk Tea', qualifier: '(Decaf Available)', price: '$7' },
     { code: '22', name: 'Lychee Black Milk Tea', price: '$7' },
