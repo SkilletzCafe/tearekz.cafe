@@ -1,0 +1,285 @@
+/* Native, editable 16:9 TV menus. The shared viewport scales this 1080p board. */
+.board {
+  --ink: #173f36;
+  --muted: #567066;
+  --rule: #aebdb1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1920px;
+  height: 1080px;
+  transform: translate(-50%, -50%) scale(var(--tv-scale));
+  transform-origin: center;
+  container-type: size;
+  background: #faf8f0;
+  color: var(--ink);
+  font-family: var(--font-tv-menu), 'Arial Narrow', sans-serif;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.board * {
+  box-sizing: border-box;
+}
+.board h2,
+.board h3,
+.board p,
+.board ul {
+  margin: 0;
+}
+.board ul {
+  padding: 0;
+  list-style: none;
+}
+.board h2,
+.board h3 {
+  font-weight: 500;
+  text-transform: uppercase;
+}
+.board h2 {
+  font-size: 40px;
+  line-height: 1.18;
+}
+.board h3 {
+  font-size: 30px;
+}
+.board small {
+  font-size: 0.8em;
+  color: var(--muted);
+}
+
+.leftGrid {
+  position: absolute;
+  inset: 42px 40px auto 40px;
+  height: 610px;
+  display: grid;
+  grid-template-columns: 396px 444px 526px 1fr;
+}
+.column {
+  min-width: 0;
+  padding: 0 20px;
+}
+.column + .column {
+  border-left: 1px solid var(--rule);
+}
+.sectionHeader {
+  height: 92px;
+  border-bottom: 1px solid var(--rule);
+}
+.subtitle {
+  margin-top: 8px !important;
+  font-size: 23px;
+  font-style: italic;
+  color: var(--muted);
+}
+.items {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  margin-top: 26px !important;
+}
+.item {
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr) auto;
+  column-gap: 14px;
+  align-items: baseline;
+  font-size: 25px;
+}
+.itemCopy {
+  min-width: 0;
+}
+.price {
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+.description {
+  font-size: 21px;
+  color: var(--muted);
+  white-space: pre-line;
+  line-height: 1.18;
+}
+.milkTeas .items {
+  gap: 16px;
+}
+.matcha .items {
+  gap: 36px;
+}
+.pairings {
+  margin: 50px 0 0 4px;
+  font-size: 20px;
+  line-height: 1.25;
+}
+.pairings h3 {
+  font-size: 20px;
+  margin-bottom: 24px;
+}
+.pairings p + p {
+  margin-top: 24px;
+}
+.pairings strong {
+  font-weight: 500;
+}
+
+.customize {
+  position: absolute;
+  left: 35px;
+  right: 35px;
+  top: 685px;
+  bottom: 26px;
+  display: grid;
+  grid-template-columns: 252px 860px 1fr;
+  padding: 28px 26px 24px;
+  background: #eaf0e1;
+}
+.customizeTitle {
+  font-size: 40px !important;
+  line-height: 1.3 !important;
+}
+.addOns {
+  border-left: 1px solid var(--rule);
+  padding: 0 34px 0 28px;
+}
+.customize h3 {
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 9px;
+}
+.creamHeader {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  white-space: nowrap;
+}
+.creamHeader small {
+  font-size: 21px;
+  text-transform: none;
+  font-weight: 400;
+}
+.extraPrice {
+  margin-left: 20px;
+  font-weight: 400;
+  text-transform: none;
+}
+.creamColumns {
+  display: grid;
+  grid-template-columns: 1.08fr 1fr;
+  margin-top: 12px;
+  font-size: 23px;
+  line-height: 1.4;
+}
+.toppingsHeader {
+  margin-top: 12px !important;
+}
+.toppingsHeader .extraPrice {
+  margin-left: 135px;
+}
+.toppings {
+  margin-top: 9px !important;
+  font-size: 20px;
+  line-height: 1.35;
+}
+.preferences {
+  border-left: 1px solid var(--rule);
+  padding-left: 32px;
+}
+.preferenceColumns {
+  display: grid;
+  grid-template-columns: 1fr 214px;
+  gap: 62px;
+}
+.levels {
+  margin-top: 17px !important;
+  font-size: 24px;
+  word-spacing: 10px;
+  white-space: nowrap;
+}
+.preferenceNote {
+  font-size: 20px;
+  color: var(--muted);
+  margin-top: 2px !important;
+}
+.sweetener {
+  margin-top: 16px !important;
+  font-size: 20px;
+  line-height: 1.25;
+  color: var(--muted);
+}
+.boostHeader {
+  margin-top: 22px !important;
+}
+.boosts {
+  display: flex;
+  gap: 28px;
+  margin-top: 16px !important;
+  font-size: 23px;
+  white-space: nowrap;
+}
+
+.rightGrid {
+  position: absolute;
+  inset: 40px 24px 42px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.rightGrid .column {
+  padding: 0 36px;
+}
+.rightGrid .sectionHeader {
+  height: 92px;
+}
+.rightGrid h2 {
+  font-size: 38px;
+}
+.rightGrid .item {
+  grid-template-columns: 34px minmax(0, 1fr) auto;
+  gap: 14px;
+  font-size: 26px;
+}
+.rightGrid .items {
+  gap: 18px;
+  margin-top: 24px !important;
+}
+.rightGrid .qualifier {
+  font-size: 21px;
+}
+.rightGrid .description {
+  font-size: 19px;
+  line-height: 1.3;
+}
+.builder {
+  margin: 20px 0 0 48px;
+  font-size: 19px;
+  line-height: 1.35;
+}
+.builder strong {
+  display: block;
+  font-weight: 500;
+}
+.builder p {
+  margin: 6px 0 !important;
+}
+.blended {
+  margin-top: 48px;
+}
+.blended .qualifier,
+.hotDrinks .qualifier {
+  font-size: 18px;
+  font-style: italic;
+}
+.blended .items {
+  gap: 12px;
+}
+.blended .builder {
+  margin-top: 4px;
+}
+.coffee {
+  margin-top: 56px;
+}
+.coffee .items {
+  gap: 44px;
+}
+.hotDrinks {
+  margin-top: 62px;
+}
+.hotDrinks .items {
+  gap: 21px;
+}
