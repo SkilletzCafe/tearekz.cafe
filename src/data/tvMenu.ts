@@ -136,7 +136,7 @@ export const blendedDrinks: TVMenuSectionData = {
       name: 'Mangonada',
       qualifier: 'Caffeine-Free',
       description: '½ lb. organic mango, Chamoy and Tajín',
-      price: '$8',
+      price: '$8.50',
     },
     {
       code: '75',
@@ -166,7 +166,7 @@ export const coffee: TVMenuSectionData = {
     {
       code: '84',
       name: 'Dirty Horchata de Avena',
-      description: 'oat milk horchata with coffee\n(add caramel +$1)',
+      description: 'oat milk horchata with coffee',
       price: '$8',
     },
   ],
