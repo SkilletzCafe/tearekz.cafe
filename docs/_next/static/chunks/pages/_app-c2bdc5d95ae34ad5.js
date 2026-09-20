@@ -1,2 +1,0 @@
-(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[636],{3199:(_,n,u)=>{"use strict";u.r(n),u.d(n,{default:()=>r});var e=u(1189);function r(_){let{Component:n,pageProps:u}=_;return(0,e.jsx)(n,{...u})}u(6978)},6978:()=>{},8925:(_,n,u)=>{(window.__NEXT_P=window.__NEXT_P||[]).push(["/_app",function(){return u(3199)}])}},_=>{var n=n=>_(_.s=n);_.O(0,[593,792],()=>(n(8925),n(5823))),_N_E=_.O()}]);
-//# sourceMappingURL=_app-c2bdc5d95ae34ad5.js.map

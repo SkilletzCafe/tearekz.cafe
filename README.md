@@ -115,3 +115,17 @@ This project is licensed under the Creative Commons Zero v1.0 Universal license.
 ---
 
 _Serving dino-mite boba tea since 2025_ 🦖🧋
+
+## TV menu boards
+
+`/tv/menu-left/` and `/tv/menu-right/` render native HTML text and CSS, not menu
+images, screenshots, or slideshows. Keep future TV-menu updates in this format.
+
+- Menu names, numbers, prices, availability, and builder choices: `src/data/tvMenu.ts`
+- Board layout and customization copy: `src/components/tv-menu/LeftTVMenu.tsx` and `RightTVMenu.tsx`
+- Shared section renderer: `src/components/tv-menu/TextMenuSection.tsx`
+- Cream/green menu styling: `src/styles/TVTextMenu.module.css`
+
+Both boards use the existing 1920 × 1080 canvas and scale to fit the TV viewport.
+The 30-minute refresh and optional `?debug=1` region overlays remain available.
+Build with `make build` and commit the generated `docs/` export with source changes.
