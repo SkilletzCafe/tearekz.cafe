@@ -136,7 +136,7 @@ export const blendedDrinks: TVMenuSectionData = {
       name: 'Mangonada',
       qualifier: 'Caffeine-Free',
       description: '½ lb. organic mango, Chamoy and Tajín',
-      price: '$8',
+      price: '$8.50',
     },
     {
       code: '75',
