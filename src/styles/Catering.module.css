@@ -1,0 +1,61 @@
+.page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  line-height: 1.8;
+}
+
+.page h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.page p {
+  margin-bottom: 1.5rem;
+}
+
+.intro {
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.options {
+  padding-left: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.options li {
+  margin-bottom: 1rem;
+}
+
+.contactLink {
+  color: var(--link-text);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.contactLink:hover {
+  text-decoration-thickness: 2px;
+}
+
+.notice {
+  border-left: 4px solid var(--button-bg);
+  padding: 1rem 1.5rem;
+  background: var(--bg-color);
+}
+
+.notice p:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .page {
+    padding: 2rem 1rem;
+  }
+
+  .page h1 {
+    font-size: 2rem;
+  }
+}

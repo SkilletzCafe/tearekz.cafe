@@ -3,49 +3,56 @@
       
             <url>
               <loc>https://tearekz.cafe/</loc>
-              <lastmod>2026-09-20T08:35:29.898Z</lastmod>
+              <lastmod>2026-09-24T10:23:36.756Z</lastmod>
               <changefreq>daily</changefreq>
               <priority>1.0</priority>
             </url>
           
             <url>
               <loc>https://tearekz.cafe/menu</loc>
-              <lastmod>2026-09-20T08:35:29.899Z</lastmod>
+              <lastmod>2026-09-24T10:23:36.758Z</lastmod>
               <changefreq>daily</changefreq>
               <priority>0.8</priority>
             </url>
           
             <url>
               <loc>https://tearekz.cafe/our-story</loc>
-              <lastmod>2026-09-20T08:35:29.899Z</lastmod>
+              <lastmod>2026-09-24T10:23:36.758Z</lastmod>
+              <changefreq>daily</changefreq>
+              <priority>0.8</priority>
+            </url>
+          
+            <url>
+              <loc>https://tearekz.cafe/catering</loc>
+              <lastmod>2026-09-24T10:23:36.758Z</lastmod>
               <changefreq>daily</changefreq>
               <priority>0.8</priority>
             </url>
           
             <url>
               <loc>https://tearekz.cafe/press</loc>
-              <lastmod>2026-09-20T08:35:29.899Z</lastmod>
+              <lastmod>2026-09-24T10:23:36.758Z</lastmod>
               <changefreq>daily</changefreq>
               <priority>0.8</priority>
             </url>
           
             <url>
               <loc>https://tearekz.cafe/contact</loc>
-              <lastmod>2026-09-20T08:35:29.899Z</lastmod>
+              <lastmod>2026-09-24T10:23:36.758Z</lastmod>
               <changefreq>daily</changefreq>
               <priority>0.8</priority>
             </url>
           
             <url>
               <loc>https://tearekz.cafe/careers</loc>
-              <lastmod>2026-09-20T08:35:29.899Z</lastmod>
+              <lastmod>2026-09-24T10:23:36.758Z</lastmod>
               <changefreq>daily</changefreq>
               <priority>0.8</priority>
             </url>
           
             <url>
               <loc>https://tearekz.cafe/order-online</loc>
-              <lastmod>2026-09-20T08:35:29.899Z</lastmod>
+              <lastmod>2026-09-24T10:23:36.758Z</lastmod>
               <changefreq>daily</changefreq>
               <priority>0.8</priority>
             </url>

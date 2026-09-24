@@ -21,6 +21,11 @@ export const PAGES: Record<string, Page> = {
     name: 'Our Story',
     showInNav: true,
   },
+  catering: {
+    path: '/catering',
+    name: 'We Cater!',
+    showInNav: true,
+  },
   press: {
     path: '/press',
     name: 'Press',

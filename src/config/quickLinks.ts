@@ -28,6 +28,11 @@ export const QUICK_LINKS: QuickLink[] = [
     isInternal: true,
   },
   {
+    label: 'We Cater!',
+    href: '/catering',
+    isInternal: true,
+  },
+  {
     label: 'Careers',
     href: '/careers',
     isInternal: true,
