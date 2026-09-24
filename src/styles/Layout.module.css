@@ -163,7 +163,7 @@
 }
 
 /* Responsive */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .desktopNav {
     display: none;
   }
@@ -179,7 +179,9 @@
   .headerContent {
     padding: 1rem;
   }
+}
 
+@media (max-width: 768px) {
   .footer {
     padding: 2rem 1rem 1rem;
   }
