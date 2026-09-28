@@ -160,7 +160,7 @@ interface TeaRekzPrintProps {
 // Structure: landscape layout with three columns for Tea-Rek'z items
 const GRID_ORDER = [
   // Left column
-  ['Freshly Brewed Teas 🌱', 'Matcha 🍵', 'Thai & Chai', 'Coffee Drinks ☕', 'Crème Brûlée 🍮'],
+  ['Freshly Brewed Teas 🌱', 'Matcha 🍵', 'Thai & Chai', 'Vietnamese Coffee☕', 'Crème Brûlée 🍮'],
   // Middle column
   ['Tropical & Dessert 🌴🍯', 'Lemonade & Juice 🍋🍊'],
   // Right column - all configurations/options
