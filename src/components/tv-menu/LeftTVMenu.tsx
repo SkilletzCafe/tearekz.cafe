@@ -51,7 +51,7 @@ function CustomizationPanel() {
         <p className={styles.toppings}>
           Boba (Tapioca Pearls) · Popping Boba (Mango · Strawberry)
           <br />
-          Jelly (Mango Star · Strawberry Heart · Lychee Star)
+          Jelly (Mango Star · Lychee Star)
           <br />
           Agar Boba (Crystal · Brown Sugar) · Grapefruit Pulp · Diced Mango
         </p>
