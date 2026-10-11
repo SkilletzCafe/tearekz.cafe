@@ -1,5 +1,26 @@
 import { MenuData } from '@/types/menu';
 
+// Keep the weekend assortment, but use the owner-updated milk-tea copy from
+// Toast's weekday group. These groups have separate identities in Toast.
+export const getTeaRekzWebsiteMenu = (menuData: MenuData) => {
+  const menus = menuData.menus.filter((menu) => menu.name.startsWith("Tea-Rek'z"));
+  const menu = menus.find((candidate) => candidate.name.includes('Sun')) || menus[0];
+  const milkTeaCopy = menus
+    .flatMap((candidate) => candidate.groups)
+    .find((group) => group.guid === 'eb68e8ed-691c-4428-a976-fbf271749603');
+
+  if (!menu || !milkTeaCopy) return menu;
+
+  return {
+    ...menu,
+    groups: menu.groups.map((group) =>
+      group.guid === 'f74d6bec-71fd-4075-835b-f62ef9a38ee8'
+        ? { ...group, name: milkTeaCopy.name, description: milkTeaCopy.description }
+        : group
+    ),
+  };
+};
+
 // Image loader for external images
 export const imageLoader = ({ src }: { src: string }) => {
   return src;

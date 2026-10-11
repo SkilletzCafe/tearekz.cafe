@@ -12,6 +12,7 @@ import { LANDSCAPE_HEIGHT_SAFE_IN, printMenuLandscapeStyles } from '@/config/pri
 
 import { PrintMenuHeader } from '@/components/menu/PrintMenuHeader';
 
+import { getTeaRekzWebsiteMenu } from '@/utils/menu';
 import { getMenuItemDisplayName } from '@/utils/menuItemName';
 import { loadMenuData, loadMenuOptionGroupsData } from '@/utils/menu_static';
 
@@ -442,9 +443,7 @@ const TeaRekzPrint: React.FC<TeaRekzPrintProps> = ({ teaRekzMenu, optionGroups }
 export const getStaticProps: GetStaticProps<TeaRekzPrintProps> = async () => {
   const menuData = loadMenuData();
   const optionGroups = loadMenuOptionGroupsData();
-  const teaRekzMenu =
-    menuData.menus.find((m) => m.name.startsWith("Tea-Rek'z") && m.name.includes('Sun')) ||
-    menuData.menus.find((m) => m.name.startsWith("Tea-Rek'z"));
+  const teaRekzMenu = getTeaRekzWebsiteMenu(menuData);
 
   if (!teaRekzMenu) {
     return { notFound: true };
