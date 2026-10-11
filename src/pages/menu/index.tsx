@@ -14,7 +14,7 @@ import { MenuCategorySwitcher } from '@/components/menu/MenuCategorySwitcher';
 import { MenuItem } from '@/components/menu/MenuItem';
 import { MenuSections } from '@/components/menu/MenuSections';
 
-import { getMainMenus, imageLoader } from '@/utils/menu';
+import { getTeaRekzWebsiteMenu } from '@/utils/menu';
 import { loadMenuData, loadMenuOptionGroupsData } from '@/utils/menu_static';
 
 import styles from '@/styles/Menu.module.css';
@@ -45,10 +45,7 @@ export default function Menu({ menuData, menuOptionGroupsData }: MenuPageProps) 
     (group) => group.guid === '8876b8d5-0d83-4d63-9495-ff08b0ccc15c'
   );
 
-  // Get Tea-Rek'z menu (prefer Sun variant for extended hours)
-  const teaRekzMenu =
-    menuData.menus.find((menu) => menu.name.startsWith("Tea-Rek'z") && menu.name.includes('Sun')) ||
-    menuData.menus.find((menu) => menu.name.startsWith("Tea-Rek'z"));
+  const teaRekzMenu = getTeaRekzWebsiteMenu(menuData);
 
   // Create a special "Toppings" group for Tea-Rek'z if we have the data
   const createTeaRekzWithToppings = () => {
