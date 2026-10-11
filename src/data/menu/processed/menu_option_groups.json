@@ -2196,13 +2196,6 @@
           "orderableOnline": "YES"
         },
         {
-          "name": "Strawberry Heart Jelly ❤️",
-          "guid": "125f5ecb-0668-412d-8458-b62652de53b1",
-          "description": "Heart-shaped strawberry jelly",
-          "price": 0.75,
-          "orderableOnline": "YES"
-        },
-        {
           "name": "Lychee Star Jelly ☆",
           "guid": "dacfef9b-5a8b-4c94-b0e2-398d2f9c2f31",
           "description": "Delicate lychee jelly",
@@ -2244,13 +2237,13 @@
       "guid": "8876b8d5-0d83-4d63-9495-ff08b0ccc15c",
       "minSelections": 0,
       "maxSelections": 1,
-      "pricingMode": "ADJUSTS_PRICE",
+      "pricingMode": "FIXED_PRICE",
       "items": [
         {
           "name": "Crème Brûlée (on cold drinks only)",
           "guid": "dc91fc61-c0b8-4293-96bf-18f7e68f0ea1",
           "description": "",
-          "price": 1.5,
+          "price": 2,
           "orderableOnline": "YES"
         },
         {
@@ -2264,7 +2257,7 @@
           "name": "Jasmine Cream (Whipped)",
           "guid": "39dca51b-99ee-4cb4-aa93-dd5788f8ae8c",
           "description": "",
-          "price": 1.5,
+          "price": 2,
           "orderableOnline": "YES"
         },
         {
@@ -2285,14 +2278,14 @@
           "name": "Raspberry Cream",
           "guid": "7c9e7eca-c052-45ab-9f75-f90f55491315",
           "description": "",
-          "price": 1.5,
+          "price": 2,
           "orderableOnline": "YES"
         },
         {
           "name": "Sea Salt Cheese Cream",
           "guid": "261ceea7-cd61-4274-a7d5-b35a5ad588d5",
           "description": "",
-          "price": 1.5,
+          "price": 2,
           "orderableOnline": "YES"
         }
       ]
@@ -2307,7 +2300,14 @@
         {
           "name": "Grass-Fed Whey Protein 🥛",
           "guid": "9bd9972f-eb12-46b0-ac93-98045e6b72e2",
-          "description": "Classic dairy protein (~20 g) for a creamy, muscle-friendly upgrade.",
+          "description": "Approximately 20g of premium dairy protein from grass-fed cows.",
+          "price": 2,
+          "orderableOnline": "YES"
+        },
+        {
+          "name": "Vegan Clear Pea Protein🌱",
+          "guid": "cd0ebdcf-76dd-4200-8a04-246e8395cc82",
+          "description": "Approximately 20g of non-GMO, plant-based protein that dissolves clear and smooth, without cloudiness, milkiness, or a gritty mouthfeel. Perfect for lemonades, fruit teas, and other refreshing drinks.",
           "price": 2,
           "orderableOnline": "YES"
         },

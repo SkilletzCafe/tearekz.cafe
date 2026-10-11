@@ -4562,9 +4562,9 @@
           ]
         },
         {
-          "name": "Milk Teas 🧋",
+          "name": "Premium Milk Teas 🧋",
           "guid": "eb68e8ed-691c-4428-a976-fbf271749603",
-          "description": "",
+          "description": "Made with New Zealand grass-fed dairy or organic oat milk instead of artificial non-dairy creamer. Enjoy the clean taste of real ingredients and let the tea shine through.",
           "items": [
             {
               "name": "20 Brown Sugar Milk Tea",
@@ -4618,7 +4618,7 @@
             {
               "name": "27 Classic Thai Tea 🇹🇭🫖",
               "guid": "5b5e969a-bf1d-44f2-a67c-69fd5f704731",
-              "description": "Bold, spiced Thai black tea layered with organic half & half — smooth, rich, and served at fixed sweetness.",
+              "description": "We use No.1 Thai tea leaves from Thailand, slow brewed overnight.",
               "price": 7,
               "imageUrl": "https://toasttab.s3.amazonaws.com/restaurants/restaurant-244719000000000000/menu/items/0/item-1300000004994025830_1766817442.png"
             },
@@ -5227,7 +5227,7 @@
             {
               "name": "27 Classic Thai Tea 🇹🇭🫖",
               "guid": "5b5e969a-bf1d-44f2-a67c-69fd5f704731",
-              "description": "Bold, spiced Thai black tea layered with organic half & half — smooth, rich, and served at fixed sweetness.",
+              "description": "We use No.1 Thai tea leaves from Thailand, slow brewed overnight.",
               "price": 7,
               "imageUrl": "https://toasttab.s3.amazonaws.com/restaurants/restaurant-244719000000000000/menu/items/0/item-1300000004994025830_1766817442.png"
             },
