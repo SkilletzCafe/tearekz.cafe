@@ -29,12 +29,19 @@ export const BUSINESS = {
     careersEmail: 'hr@skilletz.cafe',
   },
   hours: {
-    mondayToWednesday: {
-      days: 'Monday - Wednesday',
-      dayList: ['Monday', 'Tuesday', 'Wednesday'],
+    mondayToTuesday: {
+      days: 'Monday - Tuesday',
+      dayList: ['Monday', 'Tuesday'],
       open: '12:00',
       close: '19:00',
       display: '12pm - 7pm',
+    },
+    wednesday: {
+      days: 'Wednesday',
+      dayList: ['Wednesday'],
+      open: '00:00',
+      close: '00:00',
+      display: 'Closed',
     },
     thursday: {
       days: 'Thursday',

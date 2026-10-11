@@ -7,7 +7,7 @@ export const SEO = {
   formatTitle: (page?: string) => (page ? `${page} | ${BASE_TITLE}` : BASE_TITLE),
 
   description: {
-    default: `Premium boba tea and specialty drinks in ${LOCATION}. Serving fresh, handcrafted bubble tea, milk tea, fruit tea, and specialty beverages daily. Open ${Object.values(
+    default: `Premium boba tea and specialty drinks in ${LOCATION}. Serving fresh, handcrafted bubble tea, milk tea, fruit tea, and specialty beverages. Hours: ${Object.values(
       BUSINESS.hours
     )
       .map(({ days, display }) => `${days} ${display}`)

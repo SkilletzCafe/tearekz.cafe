@@ -8,7 +8,7 @@ const openPositions = [
   {
     title: "Tea-Rek'z Barista",
     location: FULL_ADDRESS,
-    schedule: 'Part-time, after-school and weekend availability preferred',
+    schedule: '11:30am to 4pm weekday availability preferred',
     status: 'Hiring selectively for exceptional candidates',
     summary:
       "Make premium craft tea, boba, smoothies, and specialty drinks while giving every guest a warm, fast, accurate Tea-Rek'z experience.",

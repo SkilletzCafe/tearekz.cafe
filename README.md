@@ -20,7 +20,8 @@ Tea-Rek'z is a modern boba tea shop serving the Fremont community with delicious
 ### Hours & Location
 
 - **Hours:**
-  - Mon-Wed: 12pm - 7pm
+  - Mon-Tue: 12pm - 7pm
+  - Wed: Closed
   - Thu: 12pm - 8pm
   - Fri: 12pm - 9pm
   - Sat: 10am - 9pm
